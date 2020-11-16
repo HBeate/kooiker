@@ -16,7 +16,7 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    fetch('http://159.65.127.175/kooiker/items/puppies?fields=*.*')
+    fetch('https://api.kooiker-fr.com/kooiker/items/puppies?fields=*.*')
       .then(response => response.json())
       .then(data => {
         let dogs = [];
