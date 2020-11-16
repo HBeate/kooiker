@@ -1,8 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import DogList from './components/DogList';
 import Header from './components/Header';
-import DogCard from './components/DogCard';
 import DogCardContainer from './components/DogCardContainer';
 import React, { Component } from 'react';
 
