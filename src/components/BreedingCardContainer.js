@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import DogCard from './DogCard';
+import BreedingCard from './BreedingCard';
+
 
 
 /*
@@ -24,7 +25,7 @@ class BreedingCardContainer extends Component {
     getDogs = () => {
         let widgets = [];
         this.props.breedings.forEach(element => {
-            widgets.push(<DogCard onClick={this.onDogSelected} dog={element} />);
+            widgets.push(<BreedingCard onClick={this.onDogSelected} dog={element} />);
         });
         return widgets;
     }

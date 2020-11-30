@@ -44,24 +44,7 @@ export default class App extends Component {
         })
 
       });
-    fetch('https://api.kooiker-fr.com/kooiker/items/dogs?fields=*.*')
-      .then(response => response.json())
-      .then(data => {
-        let puppies = [];
-        data.data.forEach(element => {
-          let puppy = {
-            id: element.id,
-            name: element.name,
-            dateOfBirth: element.date_of_birth,
-          }
-          puppies.push(puppy);
-        });
 
-        this.setState({
-          puppies: puppies
-        })
-
-      });
   }
 
   onBreedingSelected = (id) => {
