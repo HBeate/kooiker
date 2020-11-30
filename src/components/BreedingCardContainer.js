@@ -15,26 +15,41 @@ import BreedingCard from './BreedingCard';
 class BreedingCardContainer extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            actualDog: { "name": "unknown" },
+            test: "hans"
+        }
     }
 
-    onDogSelected = (id)=>{
-       this.props.onDogSelected(id);
+    onDogSelected = (dog) => {
+
+        let obj = {
+            actualDog: dog,
+            test: "sepp"
+        };
+        this.setState(obj);
     }
 
-    getDogs = () => {
+    getBreedings = () => {
         let widgets = [];
         this.props.breedings.forEach(element => {
-            widgets.push(<BreedingCard onClick={this.onDogSelected} dog={element} />);
+            widgets.push(<BreedingCard onClick={this.onDogSelected} breeding={element} />);
         });
         return widgets;
     }
 
+    showActualDog = () => {
+        if (this.state.actualDog.name != "unknown") {
+            return <p>Dog:{this.state.actualDog.name}</p>
+        }
+    }
 
     render() {
         return (
             <div>
-                {this.getDogs()}
+                {this.getBreedings()}
+                {this.showActualDog()}
+
             </div>
         );
     }

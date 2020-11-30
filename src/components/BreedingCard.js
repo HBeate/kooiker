@@ -15,10 +15,13 @@ class BreedingCard extends Component {
         }
     }
 
-/*     componentDidMount() {
-        fetch('https://api.kooiker-fr.com/kooiker/items/dogs?fields=*&filter[date_of_birth][eq]=' + this.props.breeding.id)
-/*         let url ="https://api.kooiker-fr.com/kooiker/items/dogs?fields=*&filter[date_of_birth][eq]=" + this.props.breeding.id;
-               .then(response => response.json())
+
+    componentDidMount() {
+        /*         fetch('https://api.kooiker-fr.com/kooiker/items/dogs?fields=*&filter[date_of_birth][eq]=' + this.props.breeding.id)
+                   let url ='https://api.kooiker-fr.com/kooiker/items/dogs?fields=*&filter[date_of_birth][eq]=' + this.props.breeding.id; */
+        let url = 'https://api.kooiker-fr.com/kooiker/items/dogs?fields=*&filter[date_of_birth][eq]=';
+        fetch(url + this.props.breeding.id)
+            .then(response => response.json())
             .then(data => {
                 let puppies = [];
                 data.data.forEach(element => {
@@ -29,46 +32,45 @@ class BreedingCard extends Component {
                     }
                     puppies.push(puppy);
                 });
-
                 this.setState({
                     puppies: puppies
                 })
-
             });
-
-    } */
-
-
-
-    getDogs() {
-
-
-        /*         getDogs = () => {
-                    let widgets = [];
-                    this.props.breedings.forEach(element => {
-                        widgets.push(<BreedingCard onClick={this.onDogSelected} dog={element} />);
-                    });
-                    return widgets;
-                } */
-
     }
 
-    onClick = () => {
-        this.props.onClick(this.props.id);
-
-        //alert("click" + this.props.id)
+    onDogSelected = (element) =>{
+      
+        this.props.onClick(element);
     }
+
+    getPuppies = () => {
+        let widgets = [];
+        this.state.puppies.forEach(element => {
+            widgets.push(<li onClick={()=>{this.onDogSelected(element)}}> {element.name}</li>);
+        });
+        return widgets;
+    }
+
+
+    onClick = ()=>{
+        alert("card clicked");
+    }
+
     render() {
         return (
             <div className={styles.container} onClick={this.onClick}>
-                <div className={styles.imageContainer} style={{ backgroundImage: `url(${this.props.dog.image})` }}>
+                <div className={styles.imageContainer} style={{ backgroundImage: `url(${this.props.breeding.image})` }}>
                 </div>
                 <div className={styles.dataContainer}>
-                    <div><h1>{this.props.dog.parents}</h1></div>
-                    <div>{this.props.dog.dateOfBirth}</div>
-                    <div>{this.props.dog.description}</div>
-                    <div>Mother: {this.props.dog.mother}</div>
-                    <div>Father: {this.props.dog.father}</div>
+                    <div><h1>{this.props.breeding.parents}</h1></div>
+                    <div>{this.props.breeding.dateOfBirth}</div>
+                    <div>{this.props.breeding.description}</div>
+                    <div>Mother: {this.props.breeding.mother}</div>
+                    <div>Father: {this.props.breeding.father}</div>
+                    <ul>
+                        {this.getPuppies()}
+                    </ul>
+
                 </div>
             </div>
         );

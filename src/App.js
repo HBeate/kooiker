@@ -3,8 +3,6 @@ import Header from './components/Header';
 import BreedingCardContainer from './components/BreedingCardContainer';
 import React, { Component } from 'react';
 import DogDetail from './components/DogDetail';
-import OffspringCard from './components/OffspringCard';
-import OffspringCardContainer from './components/OffspringCardContainer';
 
 
 export default class App extends Component {
@@ -15,7 +13,6 @@ export default class App extends Component {
       puppies: [],
       breedings: [],
       showDetail: false
-
     }
   }
 
