@@ -11,7 +11,7 @@ import DogCard from './DogCard';
           }
 
 */
-class DogCardContainer extends Component {
+class BreedingCardContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {}
@@ -23,7 +23,7 @@ class DogCardContainer extends Component {
 
     getDogs = () => {
         let widgets = [];
-        this.props.dogs.forEach(element => {
+        this.props.breedings.forEach(element => {
             widgets.push(<DogCard onClick={this.onDogSelected} dog={element} />);
         });
         return widgets;
@@ -39,4 +39,4 @@ class DogCardContainer extends Component {
     }
 }
 
-export default DogCardContainer;
+export default BreedingCardContainer;

@@ -1,6 +1,6 @@
 import './App.css';
 import Header from './components/Header';
-import DogCardContainer from './components/DogCardContainer';
+import BreedingCardContainer from './components/BreedingCardContainer';
 import React, { Component } from 'react';
 import DogDetail from './components/DogDetail';
 import OffspringCard from './components/OffspringCard';
@@ -13,7 +13,7 @@ export default class App extends Component {
     super(props);
     this.state = {
       puppies: [],
-      dogs: [],
+      breedings: [],
       showDetail: false
 
     }
@@ -24,9 +24,9 @@ export default class App extends Component {
     fetch('https://api.kooiker-fr.com/kooiker/items/breeding?fields=*.*')
       .then(response => response.json())
       .then(data => {
-        let dogs = [];
+        let breedings = [];
         data.data.forEach(element => {
-          let dog = {
+          let breeding = {
             id: element.id,
             father: element.father.name,
             mother: element.mother.name,
@@ -36,11 +36,11 @@ export default class App extends Component {
             parents: element.mother.name + " x " + element.father.name
 
           }
-          dogs.push(dog);
+          breedings.push(breeding);
         });
 
         this.setState({
-          dogs: dogs
+          breedings: breedings
         })
 
       });
@@ -64,23 +64,20 @@ export default class App extends Component {
       });
   }
 
-  onDogSelected = (id) => {
+  onBreedingSelected = (id) => {
     alert("top App:" + id);
     this.setState({
       showDetail: true,
-      actualDog: id
+      actualBreeding: id
     })
   }
 
-  getOffspringContent = () => {
-    <OffspringCardContainer puppies={this.state.puppies} />
-  }
 
-  getDogContent = () => {
+  getBreedingContent = () => {
     if (this.state.showDetail) {
-      return (<div>Detail{this.state.dogs[this.state.actualDog].name}<DogDetail /></div>);
+      return (<div>Detail{this.state.breedings[this.state.actualBreeding].name}<DogDetail /></div>);
     } else {
-      return (<DogCardContainer onDogSelected={this.onDogSelected} dogs={this.state.dogs} />)
+      return (<BreedingCardContainer onBreedingSelected={this.onBreedingSelected} breedings={this.state.breedings} />)
     }
   }
 
@@ -92,7 +89,7 @@ export default class App extends Component {
           <div className="doglist">
 {/*             {<OffspringCard />} 
             {this.getOffspringContent()}  */}
-            {this.getDogContent()}
+            {this.getBreedingContent()}
           </div>
         </div>
       </div>
