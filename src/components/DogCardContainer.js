@@ -24,7 +24,7 @@ class DogCardContainer extends Component {
     getDogs = () => {
         let widgets = [];
         this.props.dogs.forEach(element => {
-            widgets.push(<DogCard onClick={this.onDogSelected} id={element.id} name={element.name} parents={element.parents} dob={element.dateOfBirth} image={element.image} />);
+            widgets.push(<DogCard onClick={this.onDogSelected} dog={element} />);
         });
         return widgets;
     }

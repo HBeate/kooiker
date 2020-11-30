@@ -1,8 +1,10 @@
 import './App.css';
-import DogList from './components/DogList';
 import Header from './components/Header';
 import DogCardContainer from './components/DogCardContainer';
 import React, { Component } from 'react';
+import DogDetail from './components/DogDetail';
+import OffspringCard from './components/OffspringCard';
+import OffspringCardContainer from './components/OffspringCardContainer';
 
 
 export default class App extends Component {
@@ -10,46 +12,74 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      puppies: [],
       dogs: [],
-      showDetail:false
+      showDetail: false
+
     }
   }
 
+
   componentDidMount() {
-    fetch('https://api.kooiker-fr.com/kooiker/items/puppies?fields=*.*')
+    fetch('https://api.kooiker-fr.com/kooiker/items/breeding?fields=*.*')
       .then(response => response.json())
       .then(data => {
         let dogs = [];
         data.data.forEach(element => {
           let dog = {
             id: element.id,
-            name: element.name,
-            dateOfBirth:element.dateofbirth,
-            image:element.teaserimage.data.thumbnails[7].url,
-            parents:element.parents
+            father: element.father.name,
+            mother: element.mother.name,
+            dateOfBirth: element.dateofbirth,
+            description: element.description,
+            image: element.image.data.thumbnails[7].url,
+            parents: element.mother.name + " x " + element.father.name
+
           }
           dogs.push(dog);
         });
 
         this.setState({
-          dogs:dogs
+          dogs: dogs
+        })
+
+      });
+    fetch('https://api.kooiker-fr.com/kooiker/items/dogs?fields=*.*')
+      .then(response => response.json())
+      .then(data => {
+        let puppies = [];
+        data.data.forEach(element => {
+          let puppy = {
+            id: element.id,
+            name: element.name,
+            dateOfBirth: element.date_of_birth,
+          }
+          puppies.push(puppy);
+        });
+
+        this.setState({
+          puppies: puppies
         })
 
       });
   }
 
-  onDogSelected = (id)=>{
-    alert("top:" + id);
+  onDogSelected = (id) => {
+    alert("top App:" + id);
     this.setState({
-      showDetail:true,
-      actualDog:id
+      showDetail: true,
+      actualDog: id
     })
   }
 
-  getContent = ()=>{
-    if (this.state.showDetail){
-      return (<div>Detail{this.state.dogs[this.state.actualDog].name}</div>);
-    }else{
+  getOffspringContent = () => {
+    <OffspringCardContainer puppies={this.state.puppies} />
+  }
+
+  getDogContent = () => {
+    if (this.state.showDetail) {
+      return (<div>Detail{this.state.dogs[this.state.actualDog].name}<DogDetail /></div>);
+    } else {
       return (<DogCardContainer onDogSelected={this.onDogSelected} dogs={this.state.dogs} />)
     }
   }
@@ -58,14 +88,13 @@ export default class App extends Component {
     return (
       <div className="App">
         <Header />
-        <DogList />
         <div className="center">
           <div className="doglist">
-              {this.getContent()}
+{/*             {<OffspringCard />} 
+            {this.getOffspringContent()}  */}
+            {this.getDogContent()}
           </div>
         </div>
-
-
       </div>
     );
   }
