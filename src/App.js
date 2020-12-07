@@ -3,7 +3,7 @@ import Header from './components/Header';
 import BreedingCardContainer from './components/BreedingCardContainer';
 import React, { Component } from 'react';
 import DogDetail from './components/DogDetail';
-
+import Button from '@material-ui/core/Button';
 
 export default class App extends Component {
 
@@ -18,7 +18,7 @@ export default class App extends Component {
 
 
   componentDidMount() {
-    fetch('https://api.kooiker-fr.com/kooiker/items/breeding?fields=*.*')
+    fetch('https://api.kooiker-fr.com/kooiker/items/breeding?fields=*.*.*')
       .then(response => response.json())
       .then(data => {
         let breedings = [];
@@ -65,9 +65,12 @@ export default class App extends Component {
     return (
       <div className="App">
         <Header />
+        <Button variant="contained" color="primary">
+          Primary
+        </Button>
         <div className="center">
           <div className="doglist">
-{/*             {<OffspringCard />} 
+            {/*             {<OffspringCard />} 
             {this.getOffspringContent()}  */}
             {this.getBreedingContent()}
           </div>
