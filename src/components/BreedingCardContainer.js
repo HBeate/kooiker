@@ -39,7 +39,7 @@ class BreedingCardContainer extends Component {
     }
 
     showActualDog = () => {
-        if (this.state.actualDog.name != "unknown") {
+        if (this.state.actualDog.name !== "unknown") {
             return <p>Dog:{this.state.actualDog.name}</p>
         }
     }
