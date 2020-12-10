@@ -3,7 +3,8 @@ import Header from './components/Header';
 import BreedingCardContainer from './components/BreedingCardContainer';
 import React, { Component } from 'react';
 import DogDetail from './components/DogDetail';
-import Button from '@material-ui/core/Button';
+import MyTabs from './components/MyTabs';
+
 
 export default class App extends Component {
 
@@ -64,10 +65,10 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
-        <Button variant="contained" color="primary">
-          Primary
-        </Button>
+                <Header />
+        <MyTabs />
+
+
         <div className="center">
           <div className="doglist">
             {/*             {<OffspringCard />} 
