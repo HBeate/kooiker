@@ -13,7 +13,8 @@ class BreedingCard extends Component {
         super(props);
         this.state = {
             puppies: [],
-            showGallery:false
+            showGallery:false,
+            tileData:[]
         }
     }
 
@@ -41,12 +42,13 @@ class BreedingCard extends Component {
             });
     }
 
-    onDogSelected = (element) => {
+    onDogSelected = (dog) => {
         this.setState({
             showGallery:true,
-            actualDog:element
+            actualDog:dog
         })
-        this.props.onClick(element);
+        this.loadImagesOfDog(dog)
+        this.props.onClick(dog);
     }
 
     getPuppies = () => {
@@ -61,6 +63,38 @@ class BreedingCard extends Component {
     onClick = () => {
         alert("card clicked - now the Detail of the first dog should show up and then change when another Puppy in the list is chosen");
     }
+
+    loadImagesOfDog(dog){
+        var id = dog.id;
+        fetch('https://api.kooiker-fr.com/kooiker/items/dogs?filter[id][eq]='+ id +'&fields=id,images.directus_files_id.private_hash')
+            .then(response => response.json())
+            .then(data => {
+                let tileData = [];
+               
+                let index = 0;
+                data.data[0].images.forEach(element => {
+                    let url = "https://api.kooiker-fr.com/kooiker/assets/" + element.directus_files_id.private_hash + "?key=directus-medium-crop"
+                    let cols=1;
+                     if (index%3===0){
+                         cols = 1; 
+                    } 
+                    let tile = {
+                        id:index,
+                        img: url,
+                        title: "empty",
+                        cols: cols
+                    }
+                    tileData.push(tile);
+                    index++;
+                });
+
+                this.setState({
+                    tileData: tileData
+                })
+
+            });
+    }
+
 
     render() {
         return (
@@ -80,7 +114,7 @@ class BreedingCard extends Component {
                         </ul>
                     </div>
                 </div>
-                <div>{this.state.showGallery?<Gallery dog={this.state.actualDog} /> : "nothing"}</div>
+                <div>{this.state.showGallery?<Gallery name={this.state.actualDog.name} images={this.state.tileData} /> : "nothing"}</div>
             </div>
         );
     }
