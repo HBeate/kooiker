@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import styles from './BreedingCard.module.css';
 import Gallery from './Gallery';
 
-
 /*
-
-
 
 */
 class BreedingCard extends Component {
@@ -13,8 +10,8 @@ class BreedingCard extends Component {
         super(props);
         this.state = {
             puppies: [],
-            showGallery:false,
-            tileData:[]
+            showGallery: false,
+            tileData: []
         }
     }
 
@@ -44,8 +41,8 @@ class BreedingCard extends Component {
 
     onDogSelected = (dog) => {
         this.setState({
-            showGallery:true,
-            actualDog:dog
+            showGallery: true,
+            actualDog: dog
         })
         this.loadImagesOfDog(dog)
         this.props.onClick(dog);
@@ -64,22 +61,22 @@ class BreedingCard extends Component {
         alert("card clicked - now the Detail of the first dog should show up and then change when another Puppy in the list is chosen");
     }
 
-    loadImagesOfDog(dog){
+    loadImagesOfDog(dog) {
         var id = dog.id;
-        fetch('https://api.kooiker-fr.com/kooiker/items/dogs?filter[id][eq]='+ id +'&fields=id,images.directus_files_id.private_hash')
+        fetch('https://api.kooiker-fr.com/kooiker/items/dogs?filter[id][eq]=' + id + '&fields=id,images.directus_files_id.private_hash')
             .then(response => response.json())
             .then(data => {
                 let tileData = [];
-               
+
                 let index = 0;
                 data.data[0].images.forEach(element => {
                     let url = "https://api.kooiker-fr.com/kooiker/assets/" + element.directus_files_id.private_hash + "?key=directus-medium-crop"
-                    let cols=1;
-                     if (index%3===0){
-                         cols = 1; 
-                    } 
+                    let cols = 1;
+                    if (index % 3 === 0) {
+                        cols = 1;
+                    }
                     let tile = {
-                        id:index,
+                        id: index,
                         img: url,
                         title: "empty",
                         cols: cols
@@ -107,14 +104,14 @@ class BreedingCard extends Component {
                         <div><h1>{this.props.breeding.parents}</h1></div>
                         <div>{this.props.breeding.dateOfBirth}</div>
                         <div>{this.props.breeding.description}</div>
-{/*                         <div>Mother: {this.props.breeding.mother}</div>
+                        {/*                         <div>Mother: {this.props.breeding.mother}</div>
                         <div>Father: {this.props.breeding.father}</div> */}
                         <ul>
                             {this.getPuppies()}
                         </ul>
                     </div>
                 </div>
-                <div>{this.state.showGallery?<Gallery name={this.state.actualDog.name} images={this.state.tileData} /> : "nothing"}</div>
+                <div>{this.state.showGallery ? <Gallery name={this.state.actualDog.name} images={this.state.tileData} /> : "nothing"}</div>
             </div>
         );
     }

@@ -4,6 +4,8 @@ import BreedingCardContainer from './components/BreedingCardContainer';
 import React, { Component } from 'react';
 import DogDetail from './components/DogDetail';
 import MyTabs from './components/MyTabs';
+import Constants from './components/helper/Constants';
+import Contact from './components/contact/Contact';
 
 
 export default class App extends Component {
@@ -19,7 +21,7 @@ export default class App extends Component {
 
 
   componentDidMount() {
-    fetch('https://api.kooiker-fr.com/kooiker/items/breeding?fields=*.*.*')
+    fetch(Constants.breeding)
       .then(response => response.json())
       .then(data => {
         let breedings = [];
@@ -65,9 +67,9 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-                <Header />
+        <Header />
         <MyTabs />
-
+<Contact />
 
         <div className="center">
           <div className="doglist">

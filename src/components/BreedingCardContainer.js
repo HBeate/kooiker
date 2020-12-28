@@ -1,17 +1,6 @@
 import React, { Component } from 'react';
 import BreedingCard from './BreedingCard';
 
-
-
-/*
-  let dog = {
-            name: element.name,
-            dateOfBirth:element.dateofbirth,
-            image:element.teaserimage.data.thumbnails[7].url,
-            parents:element.parents
-          }
-
-*/
 class BreedingCardContainer extends Component {
     constructor(props) {
         super(props);
@@ -49,7 +38,6 @@ class BreedingCardContainer extends Component {
             <div>
                 {this.getBreedings()}
                 {this.showActualDog()}
-
             </div>
         );
     }
