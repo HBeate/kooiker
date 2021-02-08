@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from './BreedingCard.module.css';
-import Gallery from './Gallery';
+import Gallery from '../Gallery/Gallery';
 
 class BreedingCard extends Component {
     constructor(props) {

@@ -1,10 +1,10 @@
 import './App.css';
 import Header from './components/Header';
-import BreedingCardContainer from './components/BreedingCardContainer';
+import BreedingCardContainer from './components/Offspring/BreedingCardContainer';
 import React, { Component } from 'react';
-import DogDetail from './components/DogDetail';
+import DogDetail from './components/Offspring/DogDetail';
 import MyTabs from './components/MyTabs';
-import Constants from './components/helper/Constants'
+import Constants from './helper/Constants'
 
 
 export default class App extends Component {
@@ -41,9 +41,7 @@ export default class App extends Component {
         this.setState({
           breedings: breedings
         })
-
       });
-
   }
 
   onBreedingSelected = (id) => {
