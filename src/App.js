@@ -4,8 +4,7 @@ import BreedingCardContainer from './components/BreedingCardContainer';
 import React, { Component } from 'react';
 import DogDetail from './components/DogDetail';
 import MyTabs from './components/MyTabs';
-import Constants from './components/helper/Constants';
-import Contact from './components/contact/Contact';
+import Constants from './components/helper/Constants'
 
 
 export default class App extends Component {
@@ -69,7 +68,6 @@ export default class App extends Component {
       <div className="App">
         <Header />
         <MyTabs />
-<Contact />
 
         <div className="center">
           <div className="doglist">

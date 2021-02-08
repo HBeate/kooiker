@@ -6,8 +6,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import { blue } from '@material-ui/core/colors';
-import { createMuiTheme } from '@material-ui/core/styles';
+/* import { createMuiTheme } from '@material-ui/core/styles'; */
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -42,7 +41,7 @@ function a11yProps(index) {
   };
 }
 
-const theme = createMuiTheme({
+/* const theme = createMuiTheme({
   palette: {
     primary: {
       // light: will be calculated from palette.primary.main,
@@ -64,7 +63,7 @@ const theme = createMuiTheme({
     // E.g., shift from Red 500 to Red 300 or Red 700.
     tonalOffset: 0.2,
   },
-});
+}); */
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -103,8 +102,7 @@ export default function ScrollableTabsButtonAuto() {
           <Tab label="Gallery" {...a11yProps(4)} />
           <Tab label="Item Six" {...a11yProps(5)} />
           <Tab label="Item Seven" {...a11yProps(6)} />
-          <Tab label="Item Eight" {...a11yProps(5)} />
-          <Tab label="Item Nine" {...a11yProps(6)} />
+
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>

@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import styles from './BreedingCard.module.css';
 import Gallery from './Gallery';
 
-/*
-
-*/
 class BreedingCard extends Component {
     constructor(props) {
         super(props);
@@ -14,7 +11,6 @@ class BreedingCard extends Component {
             tileData: []
         }
     }
-
 
     componentDidMount() {
         /*         fetch('https://api.kooiker-fr.com/kooiker/items/dogs?fields=*&filter[date_of_birth][eq]=' + this.props.breeding.id)
@@ -51,7 +47,7 @@ class BreedingCard extends Component {
     getPuppies = () => {
         let widgets = [];
         this.state.puppies.forEach(element => {
-            widgets.push(<li onClick={() => { this.onDogSelected(element) }}> {element.name}</li>);
+            widgets.push(<li onClick={() => { this.onDogSelected(element) }} key={element.id} > {element.name}</li>);
         });
         return widgets;
     }

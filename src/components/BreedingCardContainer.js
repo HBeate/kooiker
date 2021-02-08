@@ -22,7 +22,7 @@ class BreedingCardContainer extends Component {
     getBreedings = () => {
         let widgets = [];
         this.props.breedings.forEach(element => {
-            widgets.push(<BreedingCard onClick={this.onDogSelected} breeding={element} />);
+            widgets.push(<BreedingCard onClick={this.onDogSelected} key={element.id} breeding={element} />);
         });
         return widgets;
     }
