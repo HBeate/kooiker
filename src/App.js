@@ -6,7 +6,7 @@ import DogDetail from './components/Offspring/DogDetail';
 import MyTabs from './components/MyTabs';
 import Constants from './helper/Constants';
 import Aboutus from './components/Aboutus/Aboutus';
-
+import publicIp from "public-ip";
 
 export default class App extends Component {
 
@@ -15,12 +15,20 @@ export default class App extends Component {
     this.state = {
       puppies: [],
       breedings: [],
-      showDetail: false
+      showDetail: false,
+      ip:''
     }
   }
 
-
   componentDidMount() {
+    (async () => {
+      console.log(await publicIp.v4());
+      //=> '46.5.21.123'
+      this.setState({
+        ip: await publicIp.v4(),
+       
+      })
+  })();
     fetch(Constants.breeding)
       .then(response => response.json())
       .then(data => {
@@ -40,7 +48,8 @@ export default class App extends Component {
         });
 
         this.setState({
-          breedings: breedings
+          breedings: breedings,
+         
         })
       });
   }
@@ -52,7 +61,15 @@ export default class App extends Component {
       actualBreeding: id
     })
   }
+ ip =()=>{
 
+  setTimeout(function() {
+    this.state.ipAd.forEach(element => {
+      console.log(element)
+    });
+  }, 5000);
+
+ }
 
   getBreedingContent = () => {
     if (this.state.showDetail) {
@@ -65,6 +82,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
+        <p>Your IP: {this.state.ip}</p>
         <Header />
         <MyTabs />
         <Aboutus />
