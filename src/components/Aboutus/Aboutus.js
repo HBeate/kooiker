@@ -20,7 +20,7 @@ class Aboutus extends Component {
       .then((result) => {
         // let id =''
         // let title =''
-        // let body =''
+
 
         console.log(result.data[0].translations)
         // console.log(result)
@@ -33,7 +33,7 @@ class Aboutus extends Component {
         this.setState({
           // id: id,
           // title: title,
-          // body: body,
+
 
         });
       },
