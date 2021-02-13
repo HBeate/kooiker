@@ -1,12 +1,13 @@
 import './App.css';
-import Header from './components/Header';
 import BreedingCardContainer from './components/Offspring/BreedingCardContainer';
 import React, { Component } from 'react';
 import DogDetail from './components/Offspring/DogDetail';
-import MyTabs from './components/MyTabs';
 import Constants from './helper/Constants';
 import Aboutus from './components/Aboutus/Aboutus';
 import publicIp from "public-ip";
+import Navbar from './components/Navbar/Navbar';
+import { Switch, Route} from 'react-router-dom';
+import Home from './components/Home/Home';
 
 export default class App extends Component {
 
@@ -82,18 +83,22 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <p>Your IP: {this.state.ip}</p>
-        <Header />
-        <MyTabs />
-        <Aboutus />
+        {/* <p>Your IP: {this.state.ip}</p> */}
+        <Navbar />
+        <Switch>
+          <Route path='/' exact render ={()=><Home/> }/>
+          {/* <Route path='/Mytab' exact render ={()=><MyTabs /> }/> */}
+        {/* <Header /> */}
+        {/* <MyTabs /> */}
 
-        <div className="center">
+        {/* <div className="center">
           <div className="doglist">
-            {/*             {<OffspringCard />} 
-            {this.getOffspringContent()}  */}
+                        {<OffspringCard />} 
+            {this.getOffspringContent()} 
             {this.getBreedingContent()}
           </div>
-        </div>
+        </div> */}
+        </Switch>
       </div>
     );
   }
