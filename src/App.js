@@ -5,6 +5,7 @@ import DogDetail from './components/Offspring/DogDetail';
 import Constants from './helper/Constants';
 import Aboutus from './components/Aboutus/Aboutus';
 import publicIp from "public-ip";
+import getUserLocale from 'get-user-locale';
 import Navbar from './components/Navbar/Navbar';
 import { Switch, Route} from 'react-router-dom';
 import Home from './components/Home/Home';
@@ -82,9 +83,13 @@ export default class App extends Component {
   }
 
   render() {
+    const userLocale = getUserLocale();
     return (
       <div className="App">
+
          <p>Your IP: {this.state.ip}</p> 
+              <h1>UserLocale: {userLocale}</h1>
+
         <Navbar />
         <Switch>
           <Route path='/' exact render ={()=><Home/> }/>
