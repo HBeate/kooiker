@@ -7,6 +7,7 @@ import MyTabs from './components/MyTabs';
 import Constants from './helper/Constants';
 import Aboutus from './components/Aboutus/Aboutus';
 import publicIp from "public-ip";
+import getUserLocale from 'get-user-locale';
 
 export default class App extends Component {
 
@@ -80,9 +81,11 @@ export default class App extends Component {
   }
 
   render() {
+    const userLocale = getUserLocale();
     return (
       <div className="App">
         <p>Your IP: {this.state.ip}</p>
+        <h1>UserLocale: {userLocale}</h1>
         <Header />
         <MyTabs />
         <Aboutus />
