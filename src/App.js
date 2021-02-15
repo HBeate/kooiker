@@ -8,6 +8,7 @@ import publicIp from "public-ip";
 import Navbar from './components/Navbar/Navbar';
 import { Switch, Route} from 'react-router-dom';
 import Home from './components/Home/Home';
+import Slideshow from './components/Aboutus/Slideshow';
 
 export default class App extends Component {
 
@@ -101,6 +102,7 @@ export default class App extends Component {
 
         </Switch>
         <Aboutus />
+        <Slideshow />
       </div>
     );
   }
