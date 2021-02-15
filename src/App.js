@@ -83,7 +83,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <p>Your IP: {this.state.ip}</p> */}
+         <p>Your IP: {this.state.ip}</p> 
         <Navbar />
         <Switch>
           <Route path='/' exact render ={()=><Home/> }/>
@@ -98,7 +98,9 @@ export default class App extends Component {
             {this.getBreedingContent()}
           </div>
         </div> */}
+
         </Switch>
+        <Aboutus />
       </div>
     );
   }
