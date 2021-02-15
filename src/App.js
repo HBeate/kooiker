@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 import DogDetail from './components/Offspring/DogDetail';
 import Constants from './helper/Constants';
 import Aboutus from './components/Aboutus/Aboutus';
-import publicIp from "public-ip";
 import getUserLocale from 'get-user-locale';
 import Navbar from './components/Navbar/Navbar';
 import { Switch, Route} from 'react-router-dom';
@@ -19,19 +18,15 @@ export default class App extends Component {
       puppies: [],
       breedings: [],
       showDetail: false,
-      ip:''
+      language: 'fr'
     }
   }
 
+
   componentDidMount() {
-    (async () => {
-      console.log(await publicIp.v4());
-      //=> '46.5.21.123'
-      this.setState({
-        ip: await publicIp.v4(),
-       
-      })
-  })();
+
+  let userLocale = getUserLocale();
+  var res = userLocale.substring(0, 2);
     fetch(Constants.breeding)
       .then(response => response.json())
       .then(data => {
@@ -52,7 +47,7 @@ export default class App extends Component {
 
         this.setState({
           breedings: breedings,
-         
+          language: res
         })
       });
   }
@@ -83,12 +78,9 @@ export default class App extends Component {
   }
 
   render() {
-    const userLocale = getUserLocale();
     return (
       <div className="App">
-
-         <p>Your IP: {this.state.ip}</p> 
-              <h1>UserLocale: {userLocale}</h1>
+              <h1>UserLocale ist: {this.state.language}</h1>
 
         <Navbar />
         <Switch>
@@ -106,7 +98,7 @@ export default class App extends Component {
         </div> */}
 
         </Switch>
-        <Aboutus />
+        <Aboutus language={this.state.language}/>
         <Slideshow />
       </div>
     );
