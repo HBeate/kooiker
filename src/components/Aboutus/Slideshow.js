@@ -146,12 +146,12 @@ class Slideshow extends React.Component {
             {
               this.state.showVideo[item.embedUrl] ?
                 <div className='video-wrapper'>
-                    <a
+                    <a href
                         className='close-video'
                       onClick={this._toggleShowVideo.bind(this, item.embedUrl)}
                     >
                     </a>
-                    <iframe
+                    <iframe title='myiframe'
                       width='560'
                       height='315'
                       src={item.embedUrl}
@@ -161,9 +161,9 @@ class Slideshow extends React.Component {
                     </iframe>
                 </div>
               :
-                <a onClick={this._toggleShowVideo.bind(this, item.embedUrl)}>
+                <a href onClick={this._toggleShowVideo.bind(this, item.embedUrl)}>
                   <div className='play-button'></div>
-                  <img className='image-gallery-image' src={item.original} />
+                  <img className='image-gallery-image' src={item.original} alt='aboutus' />
                   {
                     item.description &&
                       <span
