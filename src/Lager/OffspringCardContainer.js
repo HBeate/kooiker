@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import OffspringCard from './OffspringCard';
 
-
-
 class OffspringCardContainer extends Component {
     constructor(props) {
         super(props);

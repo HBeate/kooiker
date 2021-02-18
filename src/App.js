@@ -9,6 +9,7 @@ import Navbar from './components/Navbar/Navbar';
 import { Switch, Route} from 'react-router-dom';
 import Home from './components/Home/Home';
 import Slideshow from './components/Aboutus/Slideshow';
+import OffspringCard from './Lager/OffspringCard';
 
 export default class App extends Component {
 
@@ -22,9 +23,7 @@ export default class App extends Component {
     }
   }
 
-
   componentDidMount() {
-
   let userLocale = getUserLocale();
   var res = userLocale.substring(0, 2);
     fetch(Constants.breeding)
@@ -40,7 +39,6 @@ export default class App extends Component {
             description: element.description,
             image: element.image.data.thumbnails[7].url,
             parents: element.mother.name + " x " + element.father.name
-
           }
           breedings.push(breeding);
         });
@@ -59,6 +57,7 @@ export default class App extends Component {
       actualBreeding: id
     })
   }
+  
  ip =()=>{
 
   setTimeout(function() {
@@ -89,17 +88,19 @@ export default class App extends Component {
         {/* <Header /> */}
         {/* <MyTabs /> */}
 
-        {/* <div className="center">
-          <div className="doglist">
-                        {<OffspringCard />} 
-            {this.getOffspringContent()} 
-            {this.getBreedingContent()}
-          </div>
-        </div> */}
+
 
         </Switch>
         <Aboutus language={this.state.language}/>
         <Slideshow />
+        <div className="center">
+          <div className="doglist">
+{/*            <OffspringCard /> */}
+                      {/*    {this.getOffspringContent()} */}
+            {this.getBreedingContent()}
+          </div>
+        </div> 
+
       </div>
     );
   }

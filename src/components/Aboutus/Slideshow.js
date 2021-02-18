@@ -1,7 +1,6 @@
 import ImageGallery from 'react-image-gallery';
 import React from 'react';
 import Constants from '../../helper/Constants';
-// import styles from './Slideshow.module.css'
 
 class Slideshow extends React.Component {
     constructor() {
@@ -20,7 +19,7 @@ class Slideshow extends React.Component {
           slideDuration: 450,
           slideInterval: 2000,
           slideOnThumbnailOver: false,
-          thumbnailPosition: 'bottom',
+          thumbnailPosition: 'left',
           showVideo: {},
           useWindowKeyDown: true,
           images:[]
@@ -33,12 +32,14 @@ class Slideshow extends React.Component {
             .then((result) => {
                 let gallery = []
                 result.data[0].gallery.forEach(element => {
+                  if (element.directus_files_id.type === "image/jpeg") {
                     let part = {
-                        // id: element.id,
-                        original: element.directus_files_id.data.thumbnails[3].url,
-                        thumbnail: element.directus_files_id.data.thumbnails[0].url,
-                    }
+                      // id: element.id,
+                      original: element.directus_files_id.data.thumbnails[7].url,
+                      thumbnail: element.directus_files_id.data.thumbnails[0].url,
+                    };
                     gallery.push(part);
+                  }
                 });
                 this.setState({
                     images: gallery
@@ -107,7 +108,6 @@ class Slideshow extends React.Component {
     //         thumbnail:`${i}t.jpg`
     //       });
     //     }
-    
     //     return images;
     //   }
     
@@ -182,7 +182,7 @@ class Slideshow extends React.Component {
     render() {
 
         return (
-            <ImageGallery
+            <ImageGallery 
           ref={i => this._imageGallery = i}
           items={this.state.images}
           lazyLoad={false}
