@@ -20,9 +20,6 @@ const classes = {
 export default class Gallery extends Component {
    
 
-
-
-    
     render() {
         return (
             <div className={classes.root}>

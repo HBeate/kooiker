@@ -9,7 +9,6 @@ import Navbar from './components/Navbar/Navbar';
 import { Switch, Route} from 'react-router-dom';
 import Home from './components/Home/Home';
 import Slideshow from './components/Aboutus/Slideshow';
-import OffspringCard from './Lager/OffspringCard';
 
 export default class App extends Component {
 
