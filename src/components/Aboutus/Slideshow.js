@@ -124,9 +124,10 @@ class Slideshow extends React.Component {
       }
     
       _toggleShowVideo(url) {
-        this.state.showVideo[url] = !Boolean(this.state.showVideo[url]);
+        // this.state.showVideo[url] = !Boolean(this.state.showVideo[url]);
         this.setState({
-          showVideo: this.state.showVideo
+          // showVideo: this.state.showVideo,
+          showVideo: !Boolean(this.state.showVideo[url]),
         });
     
         if (this.state.showVideo[url]) {
