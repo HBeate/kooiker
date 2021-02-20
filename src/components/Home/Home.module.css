@@ -12,12 +12,34 @@
   background-size: cover;
 }
 
-.content{
-    height: auto;
-    background-color: white;
-    font-size: x-large;
-    /* box-shadow: 0 0px 10px rgba(0, 0, 0, 0.6) */
+
+
+.header{
+  display: flex;
+  justify-content: center;
+  background:transparent;
 }
+
+.header h1{
+  font-size: 4rem;
+  font-family: 'Dancing Script', cursive;
+  color: white;
+}
+
+.content{
+    display: flex;
+    width: 50%;
+    margin-left: 10%;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.596);
+    font-size: x-large;
+    background-size:contain;
+    border-radius: 10px;
+    padding: 0.5rem;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.6)
+}
+
+
 
 /* .container {
     margin-right: auto;

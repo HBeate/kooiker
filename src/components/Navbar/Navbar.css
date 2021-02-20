@@ -13,7 +13,7 @@
 }
 
 .navbar__brown{
-  background:  rgba(167, 69, 39, 0.918);
+  background:  rgb(167, 69, 39);
   height: 80px;
   display: flex;
   justify-content: center;
@@ -44,6 +44,7 @@
   font-size: 2rem;
   display: flex;
   align-items: center;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .nav-menu {
@@ -64,6 +65,7 @@
   text-decoration: none;
   padding: 0.5rem 1rem;
   height: 100%;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .nav-links:hover {
@@ -89,7 +91,7 @@
   }
 
   .navbar{
-    background:  rgba(167, 69, 39, 0.918);
+    background:  rgb(167, 69, 39);
   }
 
   .nav-menu {
@@ -99,14 +101,14 @@
     height: auto;
     position: absolute;
     top: 80px;
-    left: -110%;
+    left: -150%;
     opacity: 1;
     transition: all 0.5s ease;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.6);
   }
 
   .nav-menu.active {
-    background: rgba(167, 69, 39, 0.918);
+    background: rgb(167, 69, 39);
     left: 0;
     opacity: 1;
     transition: all 0.5s ease;
