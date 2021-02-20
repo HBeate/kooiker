@@ -3,10 +3,19 @@ import styles from "./Home.module.css";
 
 class Home extends Component {
   state = {};
+
+  
   render() {
     return (
       <div className={styles.container}>
         <div className={styles.parallax}></div>
+        <div className={styles.parallax}>
+          <div className={styles.header}>
+            <h1>Kooikerhondje “de la bande de rigolos“</h1>
+          </div>
+        </div>
+        <div className={styles.parallax}></div>
+        <div className={styles.parallax}>
         <div className={styles.content}>
           <p>
             Lorem ipsum dolor sit amet, harum paulo moderatius sea no, duo
@@ -35,7 +44,9 @@ class Home extends Component {
             Numquam gloriatur vituperata qui te, no altera petentium vim.
           </p>
         </div>
+        </div>
         <div className={styles.parallax}></div>
+        <div className={styles.parallax}>
         <div className={styles.content}>
           <p>
             Lorem ipsum dolor sit amet, harum paulo moderatius sea no, duo
@@ -63,6 +74,7 @@ class Home extends Component {
             debet detracto. No sed harum ubique. Vel probo quodsi volumus ad.
             Numquam gloriatur vituperata qui te, no altera petentium vim.
           </p>
+        </div>
         </div>
         <div className={styles.parallax}></div>
       </div>
