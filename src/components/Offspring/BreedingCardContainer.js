@@ -14,7 +14,7 @@ class BreedingCardContainer extends Component {
 
         let obj = {
             actualDog: dog,
-            test: "sepp"
+/*             test: "sepp" */
         };
         this.setState(obj);
     }
@@ -27,17 +27,17 @@ class BreedingCardContainer extends Component {
         return widgets;
     }
 
-    showActualDog = () => {
+/*     showActualDog = () => {
         if (this.state.actualDog.name !== "unknown") {
             return <p>Dog:{this.state.actualDog.name}</p>
         }
-    }
+    } */
 
     render() {
         return (
             <div>
                 {this.getBreedings()}
-                {this.showActualDog()}
+{/*                 {this.showActualDog()} */}
             </div>
         );
     }

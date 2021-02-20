@@ -3,7 +3,7 @@ import styles from './BreedingCard.module.css';
 import Gallery from '../Gallery/Gallery';
 /* import clsx from 'clsx'; */
 import Button from '@material-ui/core/Button';
-/* import { withStyles } from '@material-ui/core/styles'; */
+import Constants from '../../helper/Constants'
 
 /* const styles = {
   root: {
@@ -34,7 +34,7 @@ class BreedingCard extends Component {
                    let url ='https://api.kooiker-fr.com/kooiker/items/dogs?fields=*&filter[date_of_birth][eq]=' + this.props.breeding.id; */
         let url = 'https://api.kooiker-fr.com/kooiker/items/dogs?fields=*&filter[date_of_birth][eq]=';
 
-        fetch(url + this.props.breeding.id)
+        fetch(Constants.dogs + this.props.breeding.id)
             .then(response => response.json())
             .then(data => {
                 let puppies = [];
@@ -58,9 +58,10 @@ class BreedingCard extends Component {
             showGallery: true,
             actualDog: dog,
             showSubNav: true
+
         })
         this.loadImagesOfDog(dog)
-        this.props.onClick(dog);
+        this.props.onClick(dog);  
     }
 
     getPuppies = () => {
@@ -80,10 +81,18 @@ class BreedingCard extends Component {
         })
     }
 
-    getPuppiesList = () => {
+    switch=()=>{
+        let x =!this.state.showSubNav
+        let y =!this.state.showGallery
+        this.setState({
+            showGallery: y,
+            showSubNav: x
+        })
+    }
+    getPuppiesNav = () => {
         let widgets = [];
         this.state.puppies.forEach(element => {
-            widgets.push(<Button className={styles.newbutton} onClick={() => { this.onDogSelected(element) }} key={element.id}>{element.name}</Button>);
+            widgets.push(<Button className={styles.newbutton} onClick={() => { this.onDogSelected(element) }} key={element.id} >{element.name}</Button>);
         });
         widgets.push(<Button className={styles.newbutton} key={'50000'} onClick={() => { this.closeGallery() }}>X</Button>);
         return widgets;
@@ -126,26 +135,21 @@ class BreedingCard extends Component {
     //onClick={() => { this.onDogSelected(this.state.puppies[0]) }}
     render() {
         return (
-            <div className={styles.puppyContainer} >
-
-                <div className={styles.container} onClick={() => { this.onDogSelected(this.state.puppies[0]) }}>
+            <div className={styles.puppyContainer} /* onClick={this.switch} */>
+                <div className={styles.container} onClick={() => {  this.onDogSelected(this.state.puppies[0]); this.switch() }}>
                     <div className={styles.imageContainer} style={{ backgroundImage: `url(${this.props.breeding.image})` }}>
                     </div>
                     <div className={styles.dataContainer}>
                         <div><h1>{this.props.breeding.parents}</h1></div>
                         <div>{this.props.breeding.dateOfBirth}</div>
                         <div>{this.props.breeding.description}</div>
-                        {/*                         <div>Mother: {this.props.breeding.mother}</div>
-                        <div>Father: {this.props.breeding.father}</div> */}
                         <ul>
                             {this.getPuppies()}
                         </ul>
                     </div>
                 </div>
                 <div>
-
-
-                    {this.state.showSubNav ? <ul className={styles.subnav}>{this.getPuppiesList()}</ul> : ""}
+                    {this.state.showSubNav ? <ul className={styles.subnav}>{this.getPuppiesNav()}</ul> : ""}
                     {this.state.showGallery ? <Gallery name={this.state.actualDog.name} images={this.state.tileData} /> : ""}</div>
             </div>
         );
