@@ -1,21 +1,8 @@
 import React, { Component } from 'react';
 import styles from './BreedingCard.module.css';
 import Gallery from '../Gallery/Gallery';
-/* import clsx from 'clsx'; */
 import Button from '@material-ui/core/Button';
 import Constants from '../../helper/Constants'
-
-/* const styles = {
-  root: {
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-    borderRadius: 3,
-    border: 0,
-    color: 'white',
-    height: 48,
-    padding: '0 30px',
-    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-  },
-}; */
 
 class BreedingCard extends Component {
     constructor(props) {
@@ -30,10 +17,6 @@ class BreedingCard extends Component {
     }
 
     componentDidMount() {
-        /*         fetch('https://api.kooiker-fr.com/kooiker/items/dogs?fields=*&filter[date_of_birth][eq]=' + this.props.breeding.id)
-                   let url ='https://api.kooiker-fr.com/kooiker/items/dogs?fields=*&filter[date_of_birth][eq]=' + this.props.breeding.id; */
-        let url = 'https://api.kooiker-fr.com/kooiker/items/dogs?fields=*&filter[date_of_birth][eq]=';
-
         fetch(Constants.dogs + this.props.breeding.id)
             .then(response => response.json())
             .then(data => {
@@ -69,9 +52,7 @@ class BreedingCard extends Component {
         this.state.puppies.forEach(element => {
             widgets.push(<li onClick={() => { this.onDogSelected(element) }} key={element.id} > {element.name}</li>);
         });
-
         return widgets;
-        /*         this.onDogSelected(this.state.puppies[0]); */
     }
 
     closeGallery = () => {
@@ -96,10 +77,6 @@ class BreedingCard extends Component {
         });
         widgets.push(<Button className={styles.newbutton} key={'50000'} onClick={() => { this.closeGallery() }}>X</Button>);
         return widgets;
-    }
-
-    onClick = () => {
-        alert("card clicked - now the Detail of the first dog should show up and then change when another Puppy in the list is chosen");
     }
 
     loadImagesOfDog(dog) {
@@ -132,10 +109,9 @@ class BreedingCard extends Component {
 
             });
     }
-    //onClick={() => { this.onDogSelected(this.state.puppies[0]) }}
     render() {
         return (
-            <div className={styles.puppyContainer} /* onClick={this.switch} */>
+            <div className={styles.puppyContainer}>
                 <div className={styles.container} onClick={() => {  this.onDogSelected(this.state.puppies[0]); this.switch() }}>
                     <div className={styles.imageContainer} style={{ backgroundImage: `url(${this.props.breeding.image})` }}>
                     </div>
