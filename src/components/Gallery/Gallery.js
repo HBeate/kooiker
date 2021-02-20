@@ -20,14 +20,11 @@ const classes = {
 export default class Gallery extends Component {
    
 
-
-
-    
     render() {
         return (
             <div className={classes.root}>
                <div><h2>{ this.props.name}</h2></div>
-                <GridList cellHeight={160} styles={classes.gridList} cols={4}>
+                <GridList cellHeight={250} styles={classes.gridList} cols={4}>
                     {this.props.images.map((tile) => (
                         <GridListTile key={tile.id} cols={tile.cols || 1}>
                             <img src={tile.img} alt={tile.title} />
