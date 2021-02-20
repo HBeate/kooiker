@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styles from "./Home.module.css";
 import Fade from "react-reveal/Fade";
-import Zoom from 'react-reveal/Zoom';
+import Zoom from "react-reveal/Zoom";
 
 class Home extends Component {
   state = {};
@@ -12,81 +12,57 @@ class Home extends Component {
         <div className={styles.parallax}></div>
         <div className={styles.parallax}>
           <Zoom>
-          <div className={styles.header}>
-            <h1>Kooikerhondje “de la bande de rigolos“</h1>
-          </div>
+            <div className={styles.header}>
+              <h1>Kooikerhondje “de la bande de rigolos“</h1>
+            </div>
           </Zoom>
         </div>
         <div className={styles.parallax}></div>
-        <div className={styles.parallax}>
+        {/* <div className={styles.parallax}> */}
+        
+          <div className={styles.content}>
           <Fade left>
-            <div className={styles.content}>
+            <div>
+              <h2>Kooikerhondje Steckbrief</h2>
               <p>
-                Lorem ipsum dolor sit amet, harum paulo moderatius sea no, duo
-                vocent mediocrem ne. Eum vidisse torquatos voluptatum ad, sea et
-                legere doctus dissentiunt. Mei quas essent invidunt ea, cum
-                civibus antiopam in. Et ullum dolores quo, commodo lobortis
-                volutpat at mea. Ius albucius argumentum ne, cum ut consetetur
-                quaerendum, te aeque tollit est. Autem ipsum est ut, euismod
-                recusabo id quo. Vel cu liber invenire, adhuc graeco nonumes ei
-                quo, cu eos alia dicant. Cum decore scriptorem eu, ne movet
-                dolore pro, erant graeco has ut. Zril liberavisse intellegebat
-                sit ex, at cetero option consequuntur vix. At reque appetere
-                quaestio vel. Usu nulla dicunt ei. No illum feugait nostrum has.
-                Vim ipsum clita conclusionemque ei. Ad mundi euripidis
-                interesset nec, vim ad invidunt sententiae. In cum eripuit
-                molestiae, habemus noluisse pro ad. Pri prima meliore adipiscing
-                cu, veniam necessitatibus has eu. Graece iriure mei id, nec tota
-                porro aliquip cu. Ad copiosae luptatum vim, cu atqui phaedrum
-                omittantur sit, id erat mundi sed. Cu vel harum dicant molestie.
-                Sit ne viris feugiat, porro salutandi assueverit ut sea, vide
-                pertinax eu nam. Id cum tritani epicuri. Mucius apeirian cum id.
-                Te vel illud partiendo splendide, ad simul consul facilisis nam.
-                Eum ex malis meliore admodum, ius graecis deserunt facilisis in.
-                Eos ad utinam labores invidunt, decore feugiat est at. Ferri
-                iusto lobortis pro ad, an partem legendos per. An ius tempor
-                delenit efficiantur, ius ad augue debet detracto. No sed harum
-                ubique. Vel probo quodsi volumus ad. Numquam gloriatur
-                vituperata qui te, no altera petentium vim.
+                Der Kooikerhondje, auch Nederlandse Kooikerhondje genannt, ist
+                ein ehemaliger Jagdhund aus den Niederlanden, der heute
+                hauptsächlich als Familienhund Verwendung findet. Hier im
+                Steckbrief bekommt ihr Informationen über die Geschichte,
+                Haltung und Pflege der Hunderasse.
               </p>
             </div>
-          </Fade>
-        </div>
-        <div className={styles.parallax}></div>
-        <div className={styles.parallax}>
-        <Fade right>
-          <div className={styles.content}>
-            <p>
-              Lorem ipsum dolor sit amet, harum paulo moderatius sea no, duo
-              vocent mediocrem ne. Eum vidisse torquatos voluptatum ad, sea et
-              legere doctus dissentiunt. Mei quas essent invidunt ea, cum
-              civibus antiopam in. Et ullum dolores quo, commodo lobortis
-              volutpat at mea. Ius albucius argumentum ne, cum ut consetetur
-              quaerendum, te aeque tollit est. Autem ipsum est ut, euismod
-              recusabo id quo. Vel cu liber invenire, adhuc graeco nonumes ei
-              quo, cu eos alia dicant. Cum decore scriptorem eu, ne movet dolore
-              pro, erant graeco has ut. Zril liberavisse intellegebat sit ex, at
-              cetero option consequuntur vix. At reque appetere quaestio vel.
-              Usu nulla dicunt ei. No illum feugait nostrum has. Vim ipsum clita
-              conclusionemque ei. Ad mundi euripidis interesset nec, vim ad
-              invidunt sententiae. In cum eripuit molestiae, habemus noluisse
-              pro ad. Pri prima meliore adipiscing cu, veniam necessitatibus has
-              eu. Graece iriure mei id, nec tota porro aliquip cu. Ad copiosae
-              luptatum vim, cu atqui phaedrum omittantur sit, id erat mundi sed.
-              Cu vel harum dicant molestie. Sit ne viris feugiat, porro
-              salutandi assueverit ut sea, vide pertinax eu nam. Id cum tritani
-              epicuri. Mucius apeirian cum id. Te vel illud partiendo splendide,
-              ad simul consul facilisis nam. Eum ex malis meliore admodum, ius
-              graecis deserunt facilisis in. Eos ad utinam labores invidunt,
-              decore feugiat est at. Ferri iusto lobortis pro ad, an partem
-              legendos per. An ius tempor delenit efficiantur, ius ad augue
-              debet detracto. No sed harum ubique. Vel probo quodsi volumus ad.
-              Numquam gloriatur vituperata qui te, no altera petentium vim.
-            </p>
+            </Fade>
+            <Fade right>
+            <div>
+              <h2>Wesen und Charakter</h2>
+              <p>
+                Der Kooikerhondje ist ein lebhafter und fröhlicher Begleithund,
+                der seinem Besitzer treu ergeben und kooperativ ist. Der
+                intelligente Hund lässt sich gut erziehen und strahlt
+                Lebensfreude aus. Er ist kein Kläffer und verhält sich Fremden
+                gegenüber eher zurückhaltend. Auch anderen Hunden gegenüber
+                verhalten sich die kleinen Hund schüchtern und reagieren nie mit
+                Aggression. Der Kooiker ist verspielt und temperamentvoll –
+                verhält sich beim Spiel mit Kindern jedoch vorsichtig. In der
+                Wohnung kuschelt der verschmuste Hund gerne und genießt
+                Streicheleinheiten. Durch die gemütliche und anpassungsfähige
+                Art ist er ein angenehmer Begleithund für Familien.
+              </p>
+            </div>
+            </Fade>
           </div>
-          </Fade>
-        </div>
-        <div className={styles.parallax}></div>
+        
+        {/* </div>*/}
+        <div className={styles.parallax1}></div>
+        {/* <div className={styles.parallax}>  */}
+        
+          <div className={styles.content}>
+            <h2>Kooikerhondje Steckbrief</h2>
+          </div>
+        
+        {/* </div> */}
+        <div className={styles.parallax1}></div>
       </div>
     );
   }
