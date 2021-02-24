@@ -1,0 +1,53 @@
+.Footer {
+  background: rgb(167, 69, 39);
+  color: white;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+}
+
+.Copyright {
+  width: 100%;
+}
+.Favicon {
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.Favicon a {
+  font-size: 22px;
+  width: 45px;
+  height: 45px;
+  line-height: 39px;
+  display: inline-block;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0px 0px 0px 1px rgb(255, 255, 255, 0.4);
+  color: white;
+  margin: 10px;
+}
+
+.Favicon a:hover {
+  opacity: 0.8;
+  color: #eee;
+}
+
+@media only screen and (max-width: 600px) {
+  .Footer {
+    position: relative;
+    bottom: 0;
+    flex-direction: column;
+  }
+  .Favicon {
+    margin-top: 0.5rem;
+  }
+}
