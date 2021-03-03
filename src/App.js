@@ -9,6 +9,7 @@ import Navbar from './components/Navbar/Navbar';
 import { Switch, Route} from 'react-router-dom';
 import Home from './components/Home/Home';
 import Slideshow from './components/Aboutus/Slideshow';
+import News from './components/News/News';
 
 export default class App extends Component {
 
@@ -18,7 +19,8 @@ export default class App extends Component {
       puppies: [],
       breedings: [],
       showDetail: false,
-      language: 'fr'
+      language: 'fr',
+      image:''
     }
   }
 
@@ -43,6 +45,7 @@ export default class App extends Component {
         });
 
         this.setState({
+          image: data.data[0].image.data.thumbnails[7].url,
           breedings: breedings,
           language: res
         })
@@ -90,15 +93,16 @@ export default class App extends Component {
 
 
         </Switch>
-        <Aboutus language={this.state.language}/>
+        <Switch>
+          <Route path='/news' exact render ={()=><News picture={this.state.image}/> }/>
+        </Switch>
+        {/* <Aboutus language={this.state.language}/>
         <Slideshow />
         <div className="center">
           <div className="doglist">
-{/*            <OffspringCard /> */}
-                      {/*    {this.getOffspringContent()} */}
             {this.getBreedingContent()}
           </div>
-        </div> 
+        </div>  */}
 
       </div>
     );
