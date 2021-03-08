@@ -98,36 +98,26 @@ export default class App extends Component {
         <Navbar />
         <Switch>
           <Route path="/" exact render={() => <Home />} />
-          {/* <Route path='/Mytab' exact render ={()=><MyTabs /> }/> */}
-          {/* <Header /> */}
-          {/* <MyTabs /> */}
         </Switch>
 
-        {/* <Aboutus language={this.state.language} />
-        <Slideshow /> */}
-        <div className="center">
+        <Switch>
+        <Route path='/offspring' exact render ={()=>
+          <div className="center">
           <div className="doglist">
-            {/*            <OffspringCard /> */}
-            {/*    {this.getOffspringContent()} */}
             {this.getBreedingContent()}
           </div>
-        </div>
-        <Footer/>
+        </div>}/>
+        </Switch>
 
         <Switch>
           <Route path='/news' exact render ={()=><News picture={this.state.image}/> }/>
         </Switch>
+
         <Switch>
         <Aboutus path='/aboutus' language={this.state.language}/>
         </Switch>
-        {/* <Aboutus language={this.state.language}/>
-        <Slideshow />
-        <div className="center">
-          <div className="doglist">
-            {this.getBreedingContent()}
-          </div>
-        </div>  */}
 
+        <Footer/>
       </div>
     );
   }
