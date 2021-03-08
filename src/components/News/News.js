@@ -21,7 +21,7 @@ class News extends Component {
               née, à savoir 3 mâles et 2 femelles. La naissance s'est déroulée
               sans problème et a été maîtrisée par Ivy souverain et en peu de
               temps.
-              <button >détails</button>
+              <div><button >détails</button></div>
             </div>
             <div className={styles.imageContainer}>
               <img className={styles.imgRight} src={this.props.picture} alt={"card"}></img>
@@ -44,7 +44,7 @@ class News extends Component {
               Jet-Set Declic est prévu comme le futur père. Les contacts avec
               son propriétaire sont déjà pris et j'espère que le rendez-vous
               sera couronné de succès.
-              <button className={styles.buttonRight}>détails</button>
+              <div><button className={styles.buttonRight}>détails</button></div>
             </div>
           </div>
 
