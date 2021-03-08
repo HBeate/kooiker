@@ -15,10 +15,10 @@ class Footer extends Component {
         </div>
         <div className={styles.Favicon}>
           <a href="#">
-            <i class="far fa-envelope"></i>
+            <i className ="far fa-envelope"></i>
           </a>
           <a href="#">
-          <i class="fas fa-map-marker-alt"></i>
+          <i className="fas fa-map-marker-alt"></i>
           </a>
         </div>
       </div>
