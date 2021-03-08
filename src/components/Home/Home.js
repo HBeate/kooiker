@@ -18,8 +18,6 @@ class Home extends Component {
           </Zoom>
         </div>
         <div className={styles.parallax}></div>
-        {/* <div className={styles.parallax}> */}
-        
           <div className={styles.content}>
           <Fade left>
             <div>
@@ -52,16 +50,10 @@ class Home extends Component {
             </div>
             </Fade>
           </div>
-        
-        {/* </div>*/}
         <div className={styles.parallax1}></div>
-        {/* <div className={styles.parallax}>  */}
-        
           <div className={styles.content}>
             <h2>Kooikerhondje Steckbrief</h2>
           </div>
-        
-        {/* </div> */}
         <div className={styles.parallax1}></div>
       </div>
     );

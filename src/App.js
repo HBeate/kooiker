@@ -67,7 +67,6 @@ export default class App extends Component {
   ip = () => {
     setTimeout(function () {
       this.state.ipAd.forEach((element) => {
-        console.log(element);
       });
     }, 5000);
   };
