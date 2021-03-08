@@ -1,3 +1,4 @@
+
 import "./App.css";
 import BreedingCardContainer from "./components/Offspring/BreedingCardContainer";
 import React, { Component } from "react";
@@ -10,6 +11,8 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Slideshow from "./components/Aboutus/Slideshow";
 import Footer from "./components/Footer/Footer";
+import News from './components/News/News';
+
 
 export default class App extends Component {
   constructor(props) {
@@ -18,8 +21,11 @@ export default class App extends Component {
       puppies: [],
       breedings: [],
       showDetail: false,
-      language: "fr",
-    };
+
+      language: 'fr',
+      image:''
+    }
+
   }
 
   componentDidMount() {
@@ -43,6 +49,7 @@ export default class App extends Component {
         });
 
         this.setState({
+          image: data.data[0].image.data.thumbnails[7].url,
           breedings: breedings,
           language: res,
         });
@@ -95,6 +102,7 @@ export default class App extends Component {
           {/* <Header /> */}
           {/* <MyTabs /> */}
         </Switch>
+
         <Aboutus language={this.state.language} />
         <Slideshow />
         <div className="center">
@@ -105,6 +113,21 @@ export default class App extends Component {
           </div>
         </div>
         <Footer/>
+
+        <Switch>
+          <Route path='/news' exact render ={()=><News picture={this.state.image}/> }/>
+        </Switch>
+        <Switch>
+        <Aboutus path='/aboutus' language={this.state.language}/>
+        </Switch>
+        {/* <Aboutus language={this.state.language}/>
+        <Slideshow />
+        <div className="center">
+          <div className="doglist">
+            {this.getBreedingContent()}
+          </div>
+        </div>  */}
+
       </div>
     );
   }
