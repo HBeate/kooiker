@@ -96,6 +96,9 @@ export default class App extends Component {
         <Switch>
           <Route path='/news' exact render ={()=><News picture={this.state.image}/> }/>
         </Switch>
+        <Switch>
+        <Aboutus path='/aboutus' language={this.state.language}/>
+        </Switch>
         {/* <Aboutus language={this.state.language}/>
         <Slideshow />
         <div className="center">

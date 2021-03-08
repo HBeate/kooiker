@@ -58,7 +58,7 @@ class Navbar extends Component {
               </NavLink> 
             </li>
             <li className='nav-item'>
-              <NavLink to='/' className='nav-links' onClick={this.closeMobileMenu}>
+              <NavLink to='/aboutus' className='nav-links' onClick={this.closeMobileMenu}>
                 Über Uns
               </NavLink> 
             </li>
