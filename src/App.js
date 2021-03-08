@@ -103,8 +103,8 @@ export default class App extends Component {
           {/* <MyTabs /> */}
         </Switch>
 
-        <Aboutus language={this.state.language} />
-        <Slideshow />
+        {/* <Aboutus language={this.state.language} />
+        <Slideshow /> */}
         <div className="center">
           <div className="doglist">
             {/*            <OffspringCard /> */}

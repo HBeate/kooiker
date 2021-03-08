@@ -63,6 +63,16 @@ class Navbar extends Component {
               </NavLink> 
             </li>
             <li className='nav-item'>
+              <NavLink to='/ivy' className='nav-links' onClick={this.closeMobileMenu}>
+                IVY
+              </NavLink> 
+            </li>
+            <li className='nav-item'>
+              <NavLink to='/offspring' className='nav-links' onClick={this.closeMobileMenu}>
+                nachkommen
+              </NavLink> 
+            </li>
+            <li className='nav-item'>
               <NavLink to='/news' className='nav-links' onClick={this.closeMobileMenu}>
                 Aktuell
               </NavLink> 
