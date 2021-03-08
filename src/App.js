@@ -92,7 +92,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>UserLocale ist: {this.state.language}</h1>
+        <h5>UserLocale ist: {this.state.language}</h5>
 
         <Navbar />
         <Switch>
