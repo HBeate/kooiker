@@ -9,7 +9,7 @@ class News extends Component {
   render() {
     return (
       <div className={styles.container}>
-        <div className={styles.dogCard}>
+        <div className={styles.newsCard}>
           <h3 className={styles.header}>iiiii</h3>
           <div className={styles.content}>
           <p >
@@ -17,7 +17,7 @@ class News extends Component {
             excepteur nulla. Sint Lorem sint fugiat minim nulla est deserunt.
             Dolor ullamco qui commodo do veniam quis.
           </p> 
-          <img src={this.props.picture} className={styles.imgDog}></img>
+          <img src={this.props.picture} className={styles.imgDog} alt={'card'}></img>
           </div>
           <button className={styles.moreButton}>mehr</button>
         </div>
