@@ -10,11 +10,6 @@
   background-position: 0px 0px;
   background-repeat: no-repeat;
   background-size: cover;
-
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 }
 
 .parallax1 {
@@ -29,11 +24,6 @@
   background-position: 0px 0px;
   background-repeat: no-repeat;
   background-size: cover;
-
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 }
 
 .header {
@@ -46,10 +36,6 @@
   font-size: 4rem;
   font-family: "Dancing Script", cursive;
   color: white;
-}
-
-.headerContent1 {
-  padding-bottom: 1rem;
 }
 
 .content {
@@ -72,140 +58,13 @@
   align-items: center;
 }
 
-@media only screen and (max-width: 1200px) and (min-width: 200px) {
-  .parallax {
-    /* The image used */
-    background-image: url("./dog.jpg");
+/* .container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 80px;
   
-    /* Set a specific height */
-    min-height: 500px;
-  
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: 0px 0px;
-    background-repeat: no-repeat;
-    background-size:contain;
-    background-position:center;
-  }
-  
-  .parallax1 {
-    /* The image used */
-    background-image: url("./dog1.jpg");
-  
-    /* Set a specific height */
-    min-height: 100vh;
-  
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: 0px 0px;
-    background-repeat: no-repeat;
-    background-size:contain;
-    background-position:center;
-  }
-
-  .content{
-    font-size: medium;
-  }
-
-  .header h1{
-    font-size: x-large;
-  }
-
-}
-
-@media (max-width: 400px) {
-  .parallax {
-    /* The image used */
-    background-image: url("./dog.jpg");
-  
-    /* Set a specific height */
-    min-height: 500px;
-  
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: 0px 0px;
-    background-repeat: no-repeat;
-    background-size:contain;
-    background-position:center;
-  }
-  
-  .parallax1 {
-    /* The image used */
-    background-image: url("./dog1.jpg");
-  
-    /* Set a specific height */
-    min-height: 100vh;
-  
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: 0px 0px;
-    background-repeat: no-repeat;
-    background-size:contain;
-    background-position:center;
-  }
-
-}
-@media (min-width: 401px) and (max-width: 800px) {
-  .parallax {
-    /* The image used */
-    background-image: url("./dog.jpg");
-  
-    /* Set a specific height */
-    min-height: 500px;
-  
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: 0px 0px;
-    background-repeat: no-repeat;
-    background-size:contain;
-    background-position:center;
-  }
-  
-  .parallax1 {
-    /* The image used */
-    background-image: url("./dog1.jpg");
-  
-    /* Set a specific height */
-    min-height: 100vh;
-  
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: 0px 0px;
-    background-repeat: no-repeat;
-    background-size:contain;
-    background-position:center;
-  }
-
-}
-@media (min-width: 801px) and (max-width: 1200px) {
-  .parallax {
-    /* The image used */
-    background-image: url("./dog.jpg");
-  
-    /* Set a specific height */
-    min-height: 500px;
-  
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: 0px 0px;
-    background-repeat: no-repeat;
-    background-size:contain;
-    background-position:center;
-  }
-  
-  .parallax1 {
-    /* The image used */
-    background-image: url("./dog1.jpg");
-  
-    /* Set a specific height */
-    min-height: 100vh;
-  
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: 0px 0px;
-    background-repeat: no-repeat;
-    background-size:contain;
-    background-position:center;
-  }
-
-}
+    width: 100%;
+    max-width: 80%;
+  } */
