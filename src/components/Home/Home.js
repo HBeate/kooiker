@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import styles from "./Home.module.css";
 import Fade from "react-reveal/Fade";
 import Zoom from "react-reveal/Zoom";
+import logo1 from "./FCI.png";
+import logo2 from "./centraleCanine.png";
+import logo3 from "./logoFracaise.jpg";
 
 class Home extends Component {
   state = {};
@@ -59,7 +62,11 @@ class Home extends Component {
         
         <div className={styles.content}>
         <Fade right>
-          <img src={Zertifikat} alt="Zertifikat"/>
+          <div className={styles.zertifikat}>
+          <img src={logo1} alt="Zertifikat"/>
+          <img src={logo2} alt="Zertifikat"/>
+          <img src={logo3} alt="Zertifikat"/>
+          </div>
           </Fade>
         </div>
         
