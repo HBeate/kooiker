@@ -48,8 +48,24 @@ class Home extends Component {
                 Art ist er ein angenehmer Begleithund für Familien.
               </p>
             </div>
-            </Fade>
-          </div>
+
+
+          </Fade>
+        </div>
+
+        {/* </div>*/}
+        <div className={styles.parallax1}></div>
+        {/* <div className={styles.parallax}>  */}
+        
+        <div className={styles.content}>
+        <Fade right>
+          <img src={Zertifikat} alt="Zertifikat"/>
+          </Fade>
+        </div>
+        
+           
+         
+
         <div className={styles.parallax1}></div>
           <div className={styles.content}>
             <h2>Kooikerhondje Steckbrief</h2>
