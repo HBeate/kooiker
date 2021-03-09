@@ -19,9 +19,9 @@ class Home extends Component {
           </Zoom>
         </div>
         <div className={styles.parallax}></div>
-        {/* <div className={styles.parallax}> */}
 
         <div className={styles.content}>
+
           <Fade left>
             <div>
               <h2 className={styles.headerContent1}>Le Kooikerhonje, caractéristiques et détention :</h2>
@@ -42,6 +42,7 @@ class Home extends Component {
                 peut facilement être logé dans un appartement.
               </p>
             </div>
+
           </Fade>
         </div>
 
@@ -55,7 +56,13 @@ class Home extends Component {
           </Fade>
         </div>
         
-        {/* </div> */}
+            </Fade>
+          </div>
+        <div className={styles.parallax1}></div>
+          <div className={styles.content}>
+            <h2>Kooikerhondje Steckbrief</h2>
+          </div>
+
         <div className={styles.parallax1}></div>
       </div>
     );

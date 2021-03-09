@@ -20,8 +20,6 @@ class Aboutus extends Component {
         let translation = result.data[0].translations
         translation.forEach(element => {
           if (element.language === this.props.language) {
-            console.log('Übersetzung ' + element.uebersetzung)
-            console.log('Überschrift ' + element.title)
             this.setState({
               title: element.title,
               body: element.uebersetzung,
