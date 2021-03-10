@@ -119,11 +119,9 @@
 
     /* Set a specific height */
     min-height: 100vh;
-
-
-
+  }
+  
   .content{
-
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: 0px 0px;
