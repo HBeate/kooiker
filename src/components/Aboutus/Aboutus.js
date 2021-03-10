@@ -1,6 +1,7 @@
 // import { RssFeed } from '@material-ui/icons';
 import React, { Component } from 'react';
 import Constants from '../../helper/Constants';
+import styles from './Aboutus.module.css';
 
 class Aboutus extends Component {
   state = {
@@ -59,10 +60,13 @@ class Aboutus extends Component {
 
   render() {
     return (
-      <div>
-         <div><img src={this.state.image} alt={this.state.image_alt} /></div>
-        <div>{this.state.title}</div>
+      <div className={styles.container}>
+                <h1 className={styles.mainHeader}>{this.state.title}</h1>
+         <div className={styles.aboutUsCard}><div className={styles.imageContainer}><img src={this.state.image} alt={this.state.image_alt} /></div>
+         <div className={styles.dataContainer}>
         {this.getAboutusContent()}
+        </div>
+        </div>
       </div>
     );
   }
