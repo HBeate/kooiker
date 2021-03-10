@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styles from "./Home.module.css";
 import Fade from "react-reveal/Fade";
 import Zoom from "react-reveal/Zoom";
-import Zertifikat from './zertifikat.gif';
+
 
 class Home extends Component {
   state = {};
@@ -51,7 +51,7 @@ class Home extends Component {
         
         <div className={styles.content}>
         <Fade right>
-          <img src={Zertifikat} alt="Zertifikat"/>
+          
           </Fade>
         </div>
         

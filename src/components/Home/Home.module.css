@@ -72,46 +72,7 @@
   align-items: center;
 }
 
-@media only screen and (max-width: 1200px) and (min-width: 200px) {
-  .parallax {
-    /* The image used */
-    background-image: url("./dog.jpg");
-  
-    /* Set a specific height */
-    min-height: 500px;
-  
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: 0px 0px;
-    background-repeat: no-repeat;
-    background-size:contain;
-    background-position:center;
-  }
-  
-  .parallax1 {
-    /* The image used */
-    background-image: url("./dog1.jpg");
-  
-    /* Set a specific height */
-    min-height: 100vh;
-  
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: 0px 0px;
-    background-repeat: no-repeat;
-    background-size:contain;
-    background-position:center;
-  }
 
-  .content{
-    font-size: medium;
-  }
-
-  .header h1{
-    font-size: x-large;
-  }
-
-}
 
 @media (max-width: 400px) {
   .parallax {
@@ -144,6 +105,13 @@
     background-position:center;
   }
 
+  .header h1 {
+    font-size: medium;
+  }
+
+  .content{
+    font-size: medium;
+  }
 }
 @media (min-width: 401px) and (max-width: 800px) {
   .parallax {
@@ -174,6 +142,14 @@
     background-repeat: no-repeat;
     background-size:contain;
     background-position:center;
+  }
+
+  .header h1 {
+    font-size: x-large;
+  }
+
+  .content{
+    font-size: medium;
   }
 
 }
