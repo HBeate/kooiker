@@ -52,18 +52,14 @@ class Home extends Component {
         
         <div className={styles.content}>
         <Fade right>
-          
+        <div className={styles.content}>
+            <h2>Kooikerhondje Steckbrief</h2>
+          </div>
           </Fade>
         </div>
         
-            </Fade>
-          </div>
         <div className={styles.parallax1}></div>
-          <div className={styles.content}>
-            <h2>Kooikerhondje Steckbrief</h2>
-          </div>
-
-        <div className={styles.parallax1}></div>
+        
       </div>
     );
   }
