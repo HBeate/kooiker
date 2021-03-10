@@ -58,8 +58,18 @@ class Navbar extends Component {
               </NavLink> 
             </li>
             <li className='nav-item'>
-              <NavLink to='/' className='nav-links' onClick={this.closeMobileMenu}>
+              <NavLink to='/aboutus' className='nav-links' onClick={this.closeMobileMenu}>
                 Über Uns
+              </NavLink> 
+            </li>
+            <li className='nav-item'>
+              <NavLink to='/ivy' className='nav-links' onClick={this.closeMobileMenu}>
+                IVY
+              </NavLink> 
+            </li>
+            <li className='nav-item'>
+              <NavLink to='/offspring' className='nav-links' onClick={this.closeMobileMenu}>
+                nachkommen
               </NavLink> 
             </li>
             <li className='nav-item'>
@@ -68,7 +78,7 @@ class Navbar extends Component {
               </NavLink> 
             </li>
             <li className='nav-item'>
-              <NavLink to='/' className='nav-links' onClick={this.closeMobileMenu}>
+              <NavLink to='/contact' className='nav-links' onClick={this.closeMobileMenu}>
                 Contact
               </NavLink> 
             </li> 

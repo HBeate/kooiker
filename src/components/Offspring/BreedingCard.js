@@ -36,7 +36,6 @@ class BreedingCard extends Component {
     }
 
     onDogSelected = (dog) => {
-        console.log(dog)
         this.setState({
             showGallery: true,
             actualDog: dog,
