@@ -1,4 +1,3 @@
-
 import "./App.css";
 import BreedingCardContainer from "./components/Offspring/BreedingCardContainer";
 import React, { Component } from "react";
@@ -9,9 +8,11 @@ import getUserLocale from "get-user-locale";
 import Navbar from "./components/Navbar/Navbar";
 import { Switch, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
-import Slideshow from "./components/Aboutus/Slideshow";
+//import Slideshow from "./components/Aboutus/Slideshow";
 import Footer from "./components/Footer/Footer";
 import News from './components/News/News';
+import { If, Else } from 'rc-if-else';
+import * as ReactBootStrap from 'react-bootstrap';
 
 
 export default class App extends Component {
@@ -21,16 +22,20 @@ export default class App extends Component {
       puppies: [],
       breedings: [],
       showDetail: false,
-
-      language: 'fr',
-      image:''
+      language: '',
+      image:'',
+      showApp: false,
     }
-
   }
 
   componentDidMount() {
     let userLocale = getUserLocale();
     var res = userLocale.substring(0, 2);
+    console.log('XXX '+res)
+    this.setState({
+      language: res,
+      showApp: true,
+    });
     fetch(Constants.breeding)
       .then((response) => response.json())
       .then((data) => {
@@ -47,12 +52,11 @@ export default class App extends Component {
           };
           breedings.push(breeding);
         });
-
         this.setState({
           image: data.data[0].image.data.thumbnails[7].url,
           breedings: breedings,
-          language: res,
         });
+       
       });
   }
 
@@ -62,13 +66,6 @@ export default class App extends Component {
       showDetail: true,
       actualBreeding: id,
     });
-  };
-
-  ip = () => {
-    setTimeout(function () {
-      this.state.ipAd.forEach((element) => {
-      });
-    }, 5000);
   };
 
   getBreedingContent = () => {
@@ -91,10 +88,11 @@ export default class App extends Component {
 
   render() {
     return (
+      <If condition={!this.state.showApp} >
+        {<ReactBootStrap.Spinner animation='grow' style={{ position: 'fixed', top: '50%', left: '50%'}}/>}
+        <Else >
       <div className="App">
-        <h5>UserLocale ist: {this.state.language}</h5>
-
-        <Navbar />
+        <Navbar language={this.state.language}/>
         <Switch>
           <Route path="/" exact render={() => <Home />} />
         </Switch>
@@ -118,6 +116,8 @@ export default class App extends Component {
 
         <Footer/>
       </div>
+      </Else>
+        </If>
     );
   }
 }
