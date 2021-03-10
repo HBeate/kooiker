@@ -58,6 +58,7 @@
   align-items: center;
 }
 
+
 @media (max-width: 400px) {
   .parallax {
     /* The image used */
@@ -91,6 +92,10 @@
   .header h1 {
     font-size: medium;
   }
+  .content{
+    font-size: medium;
+  }
+
 }
 @media (min-width: 401px) and (max-width: 800px) {
   .parallax {
@@ -115,6 +120,10 @@
     /* Set a specific height */
     min-height: 100vh;
 
+
+
+  .content{
+
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: 0px 0px;
@@ -123,6 +132,7 @@
     background-position: center;
   }
   .header h1 {
+
     font-size: medium;
   }
 }
