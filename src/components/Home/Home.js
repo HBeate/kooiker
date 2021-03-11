@@ -2,7 +2,10 @@ import React, { Component } from "react";
 import styles from "./Home.module.css";
 import Fade from "react-reveal/Fade";
 import Zoom from "react-reveal/Zoom";
-
+import Flip from "react-reveal/Flip";
+import logo from "./logo.jpg";
+import logo1 from "./logo1.png";
+import logo2 from "./logo2.png";
 
 class Home extends Component {
   state = {};
@@ -19,66 +22,51 @@ class Home extends Component {
           </Zoom>
         </div>
         <div className={styles.parallax}></div>
-          <div className={styles.content}>
+        <div className={styles.content}>
           <Fade left>
             <div>
-              <h2>Kooikerhondje Steckbrief</h2>
+              <h2>Le Kooikerhonje, caractéristiques et détention:</h2>
               <p>
-                Der Kooikerhondje, auch Nederlandse Kooikerhondje genannt, ist
-                ein ehemaliger Jagdhund aus den Niederlanden, der heute
-                hauptsächlich als Familienhund Verwendung findet. Hier im
-                Steckbrief bekommt ihr Informationen über die Geschichte,
-                Haltung und Pflege der Hunderasse.
+                Le Kooikerhondje (chien hollandais de canadière) est un chien
+                blanc de petite taille, arrivant à peu près jusqu'aux genoux. Sa
+                robe a des plaques rouge-orange. Son poil est de longueur
+                moyenne, lisse ou légèrement ondulé. C'est un chien drôle et
+                très facile à éduquer. Il est trés affectueux et sociable. Il a
+                besoin d´une éducation douce mais cohérente et appropriée,.
+                Toute sanction sévère est à éviter. Comme il est très sportif,
+                un entraînement à l'agilité, au flyball ou tout autre
+                entrainement est approprié. Cette race a également fait ses
+                preuves en tant que chien thérapeutique. Mais il est également
+                heureux quand on lui fait simplement faire régulièrement de
+                l'exercice ; Ce chien rapporteur aime aussi l'eau et toutes
+                sortes de jeux de recherche. En raison de sa taille agréable, il
+                peut facilement être logé dans un appartement.
               </p>
             </div>
-            </Fade>
-            <Fade right>
-            <div>
-              <h2>Wesen und Charakter</h2>
-              <p>
-                Der Kooikerhondje ist ein lebhafter und fröhlicher Begleithund,
-                der seinem Besitzer treu ergeben und kooperativ ist. Der
-                intelligente Hund lässt sich gut erziehen und strahlt
-                Lebensfreude aus. Er ist kein Kläffer und verhält sich Fremden
-                gegenüber eher zurückhaltend. Auch anderen Hunden gegenüber
-                verhalten sich die kleinen Hund schüchtern und reagieren nie mit
-                Aggression. Der Kooiker ist verspielt und temperamentvoll –
-                verhält sich beim Spiel mit Kindern jedoch vorsichtig. In der
-                Wohnung kuschelt der verschmuste Hund gerne und genießt
-                Streicheleinheiten. Durch die gemütliche und anpassungsfähige
-                Art ist er ein angenehmer Begleithund für Familien.
-              </p>
+          </Fade>
+        </div>
+        <div className={styles.parallax1}></div>
+        <div className={styles.content2}>
+          <Fade right>
+            <div className={styles.certificatLogo}>
+              <img src={logo2} alt={"logo2"} />
+              <img src={logo1} alt={"logo1"} />
+              <img src={logo} alt={"logo"} />
             </div>
-
-
+            <div className={styles.exLinks}>
+                <ul>
+                  <li><a href="http://association-francaise-kooikerhondje.fr/" target="_blank" rel="noreferrer">Association Francaise Kooikerhond</a></li> 
+                  <li><a href="https://www.vom-kooikerbeis.de/" target="_blank" rel="noreferrer">Vom Kooikerbeis</a></li> 
+                  <li><a href="https://www.vom-haus-tusburch.de/" target="_blank" rel="noreferrer">Vom Haus Tusburch</a></li> 
+                  <li><a href="http://www.rundumahund.com/" target="_blank" rel="noreferrer">Rund uma Hund</a></li>  
+                  <li><a href="https://www.cdc-goetzis.at/" target="_blank" rel="noreferrer">CDC Götzis</a></li>  
+                </ul>
+              </div>
           </Fade>
+
         </div>
 
-        {/* </div>*/}
         <div className={styles.parallax1}></div>
-        {/* <div className={styles.parallax}>  */}
-        
-        <div className={styles.content}>
-        <Fade right>
-
-        <div className={styles.content}>
-            <h2>Kooikerhondje Steckbrief</h2>
-          </div>
-          </Fade>
-        </div>
-        
-
-        
-           
-         
-
-        <div className={styles.parallax1}></div>
-          <div className={styles.content}>
-            <h2>Kooikerhondje Steckbrief</h2>
-          </div>
-
-        <div className={styles.parallax1}></div>
-        
       </div>
     );
   }

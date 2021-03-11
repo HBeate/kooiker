@@ -17,7 +17,7 @@
   background-image: url("./dog1.jpg");
 
   /* Set a specific height */
-  min-height: 100vh;
+  min-height: 500px;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
@@ -36,13 +36,12 @@
   font-size: 4rem;
   font-family: "Dancing Script", cursive;
   color: white;
+
 }
 
 .content {
   /* Set a specific height */
   min-height: 100vh;
-
-  margin-top: 3rem;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -57,6 +56,56 @@
   padding: 0.5rem;
   align-items: center;
 }
+.content h2{
+  padding-bottom: 1rem;
+}
+
+.content2 {
+  /* Set a specific height */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.596);
+  font-size: x-large;
+  background-size: contain;
+  border-radius: 10px;
+  padding: 0.5rem;
+  align-items: center;
+}
+
+.certificatLogo{
+  display: flex;
+  flex-direction:row;
+}
+
+.certificatLogo img{
+  margin: 1rem;
+}
+
+ul{
+  list-style-type: none;
+}
+
+a:link {
+  font-family: 'Josefin Sans', sans-serif;
+  text-decoration: none;
+  color: black;
+  
+}
+
+a:visited{
+  color: black;
+}
+
+.exLinks a{
+  display: flex;
+  justify-content: center;
+}
 
 
 @media (max-width: 400px) {
@@ -65,7 +114,7 @@
     background-image: url("./dog.jpg");
 
     /* Set a specific height */
-    min-height: 500px;
+    min-height: 300px;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -80,7 +129,7 @@
     background-image: url("./dog1.jpg");
 
     /* Set a specific height */
-    min-height: 100vh;
+    min-height: 500px;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -91,11 +140,19 @@
   }
   .header h1 {
     font-size: medium;
+   
   }
   .content{
     font-size: medium;
   }
 
+  .certificatLogo{
+    flex-direction:column;
+  }
+
+  .exLinks a{
+    font-size: medium;
+  }
 }
 @media (min-width: 401px) and (max-width: 800px) {
   .parallax {
@@ -103,7 +160,7 @@
     background-image: url("./dog.jpg");
 
     /* Set a specific height */
-    min-height: 500px;
+    min-height: 300px;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -118,10 +175,8 @@
     background-image: url("./dog1.jpg");
 
     /* Set a specific height */
-    min-height: 100vh;
-  }
-  
-  .content{
+    min-height: 500px;
+
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: 0px 0px;
@@ -130,9 +185,21 @@
     background-position: center;
   }
   .header h1 {
-
+    font-size: medium;
+   
+  }
+  .content{
     font-size: medium;
   }
+
+  .certificatLogo{
+    flex-direction:column;
+  }
+
+  .exLinks a{
+    font-size: medium;
+  }
+
 }
 @media (min-width: 801px) and (max-width: 1200px){
   .parallax {
@@ -155,7 +222,7 @@
     background-image: url("./dog1.jpg");
 
     /* Set a specific height */
-    min-height: 100vh;
+    min-height: 500px;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -169,6 +236,4 @@
   }
 }
 
-.zertifikat img {
-  height: 30%;
-}
+
