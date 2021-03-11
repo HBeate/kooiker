@@ -108,7 +108,7 @@ a:visited{
 }
 
 
-@media (max-width: 400px) {
+@media (max-width: 590px) {
   .parallax {
     /* The image used */
     background-image: url("./dog.jpg");
@@ -122,6 +122,7 @@ a:visited{
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+ 
   }
 
   .parallax1 {
@@ -137,6 +138,7 @@ a:visited{
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+   
   }
   .header h1 {
     font-size: medium;
@@ -154,7 +156,7 @@ a:visited{
     font-size: medium;
   }
 }
-@media (min-width: 401px) and (max-width: 800px) {
+@media (min-width: 591px) and (max-width: 800px) {
   .parallax {
     /* The image used */
     background-image: url("./dog.jpg");
@@ -166,8 +168,8 @@ a:visited{
     background-attachment: fixed;
     background-position: 0px 0px;
     background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    background-size: cover;
+    
   }
 
   .parallax1 {
@@ -181,8 +183,8 @@ a:visited{
     background-attachment: fixed;
     background-position: 0px 0px;
     background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    background-size: cover;
+ 
   }
   .header h1 {
     font-size: medium;
@@ -213,8 +215,8 @@ a:visited{
     background-attachment: fixed;
     background-position: 0px 0px;
     background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    background-size: cover;
+  
   }
 
   .parallax1 {
@@ -228,8 +230,8 @@ a:visited{
     background-attachment: fixed;
     background-position: 0px 0px;
     background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    background-size: cover;
+    
   }
   .header h1 {
     font-size: medium;
