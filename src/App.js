@@ -95,7 +95,7 @@ export default class App extends Component {
       <div className="App">
         <Navbar language={this.state.language}/>
         <Switch>
-          <Route path="/" exact render={() => <Home />} />
+          <Route path="/" exact render={() => <Home language={this.state.language}/>} />
         </Switch>
 
         <Switch>
