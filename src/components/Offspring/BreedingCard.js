@@ -116,8 +116,9 @@ class BreedingCard extends Component {
                     </div>
                     <div className={styles.dataContainer}>
                         <div><h3 className={styles.header}>{this.props.breeding.parents}<h3></h3></h3></div>
-                 {/*        <div>{this.props.breeding.dateOfBirth}</div> */}
-                   {/*      <p>{this.props.breeding.description}</p> */}
+                      {/*    <div>{this.props.breeding.dateOfBirth}</div> 
+                       <p>{this.props.breeding.description}</p>  */}
+                       
                         <ul>
                             {this.getPuppies()}
                         </ul>
