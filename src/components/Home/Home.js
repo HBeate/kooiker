@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import styles from "./Home.module.css";
 import Fade from "react-reveal/Fade";
 import Zoom from "react-reveal/Zoom";
-import Flip from "react-reveal/Flip";
 import logo from "./logo.jpg";
 import logo1 from "./logo1.png";
 import logo2 from "./logo2.png";
@@ -17,7 +16,8 @@ class Home extends Component {
         <div className={styles.parallax}>
           <Zoom>
             <div className={styles.header}>
-              <h1>Kooikerhondje “de la bande de rigolos“</h1>
+              <h1>Kooikerhondje</h1>
+              <h2>“de la bande de rigolos“</h2>
             </div>
           </Zoom>
         </div>

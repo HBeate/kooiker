@@ -141,6 +141,12 @@
     color: white;
   }
 
+  .nav-header{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: medium;
+  }
+
   .menu-icon {
     display: block;
     position: absolute;

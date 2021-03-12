@@ -30,13 +30,22 @@
   display: flex;
   justify-content: center;
   background: transparent;
+  flex-direction: column;
+  text-align: center;
+  align-content: flex-end;
 }
 
 .header h1 {
+  font-size: 2rem;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  font-style: italic;
+}
+
+.header h2{
   font-size: 4rem;
   font-family: "Dancing Script", cursive;
   color: white;
-
 }
 
 .content {
