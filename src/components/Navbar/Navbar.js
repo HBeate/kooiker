@@ -69,8 +69,11 @@ class Navbar extends Component {
       <>
         <nav className={`navbar ${this.state.nav && "navbar__brown"}`}>
           <div className="navbar-container">
-            <NavLink to="/" className="navbar-logo">IVY</NavLink>
+            <div className="navbar-logo">
+            <NavLink to="/" >IVY</NavLink>
+            </div>
             <div className="menu-icon" onClick={this.handleClick}><i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i></div>
+            <div className="nav-menu">
             <ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
               <li className="nav-item"><NavLink  to="/" className="nav-links" onClick={this.closeMobileMenu}>Home</NavLink></li>
               <li className="nav-item"><NavLink to="/aboutus"  className="nav-links"  onClick={this.closeMobileMenu}>{this.state.AboutUs} </NavLink></li>
@@ -79,6 +82,7 @@ class Navbar extends Component {
               <li className="nav-item"><NavLink to="/news" className="nav-links" onClick={this.closeMobileMenu}>{this.state.News}</NavLink></li>
               <li className="nav-item"><NavLink to="/contact" className="nav-links" onClick={this.closeMobileMenu}>{this.state.Contact}</NavLink></li>
             </ul>
+            </div>
           </div>
         </nav>
       </>
