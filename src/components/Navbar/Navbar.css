@@ -2,7 +2,6 @@
   background: rgba(255, 255, 255, 0.705);
   height: 80px;
   display: flex;
-  justify-content: center;
   align-items: center;
   font-size: 1.2rem;
   position: fixed;
@@ -16,7 +15,6 @@
   background:  rgb(167, 69, 39);
   height: 80px;
   display: flex;
-  justify-content: center;
   align-items: center;
   font-size: 1.2rem;
   position: fixed;
@@ -29,33 +27,37 @@
 
 .navbar-container {
   display: flex;
-  justify-content: center;
   align-items: center;
   height: 80px;
-  max-width: 85%;
+  width: 100%;
 }
 
 .navbar-logo {
   color: black;
-  justify-self: start;
+  /* justify-content: flex-start; */
   margin-left: 20px;
   cursor: pointer;
   text-decoration: none;
   font-size: 2rem;
-  display: flex;
+  /* display: flex; */
   align-items: center;
   font-family: 'Josefin Sans', sans-serif;
 }
 
-.nav-menu {
+.nav-menu{
   display: grid;
-  grid-template-columns: repeat(4, auto);
+  grid-template-columns: repeat(6, auto);
   grid-gap: 10px;
   list-style: none;
   text-align: center;
-  width: 70vw;
-  justify-content: end;
+  width: 100%;
+  justify-content: flex-end;
   margin-right: 2rem;
+}
+
+.menu-button{
+  display: flex;
+  justify-content: flex-end;
 }
 
 .nav-links {
@@ -83,9 +85,10 @@
 
 .menu-icon {
   display: none;
+  justify-content: flex-end;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 900px) {
   .NavbarItems {
     position: relative;
   }
