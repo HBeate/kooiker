@@ -13,6 +13,7 @@ import Footer from "./components/Footer/Footer";
 import News from './components/News/News';
 import { If, Else } from 'rc-if-else';
 import * as ReactBootStrap from 'react-bootstrap';
+/* import Styles from '../src/components/Offspring/BreedingCardContainer.css'; */
 
 
 export default class App extends Component {
@@ -101,6 +102,7 @@ export default class App extends Component {
         <Route path='/offspring' exact render ={()=>
           <div className="center">
           <div className="doglist">
+          <h1 className="mainHeader">Offspring</h1>
             {this.getBreedingContent()}
           </div>
         </div>}/>

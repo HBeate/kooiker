@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import BreedingCard from './BreedingCard';
+import styles from './BreedingCardContainer.module.css';
+
 
 class BreedingCardContainer extends Component {
     constructor(props) {
@@ -35,7 +37,7 @@ class BreedingCardContainer extends Component {
 
     render() {
         return (
-            <div>
+            <div className={styles.container}>
                 {this.getBreedings()}
 {/*                 {this.showActualDog()} */}
             </div>
