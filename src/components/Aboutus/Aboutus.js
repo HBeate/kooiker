@@ -2,7 +2,10 @@
 import React, { Component } from "react";
 import Constants from "../../helper/Constants";
 import styles from "./Aboutus.module.css";
-import Gallery from "../Gallery/Gallery";
+// import Gallery from "../Gallery/Gallery";
+import Car from "./Carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 
 class Aboutus extends Component {
   state = {
@@ -12,7 +15,7 @@ class Aboutus extends Component {
     id: "",
     title: "",
     image: "",
-    loaded:false,
+    loaded: false,
   };
 
   componentDidMount() {
@@ -31,8 +34,10 @@ class Aboutus extends Component {
             }
           });
           let gallery = [];
-          const posts =  result.data[0].gallery.slice(0,4);
-          posts.forEach((element) => {
+          // const posts =  result.data[0].gallery.slice(0,4);
+          // posts.forEach((element) => {
+
+          result.data[0].gallery.forEach((element) => {
             let part = {
               key: element.directus_files_id.description,
               img: element.directus_files_id.data.thumbnails[7].url,
@@ -74,8 +79,8 @@ class Aboutus extends Component {
   };
 
   render() {
-    if(!this.state.loaded){
-      return (<div>Loading...!</div>)
+    if (!this.state.loaded) {
+      return <div>Loading...!</div>;
     }
     if (this.state.loaded) {
       return (
@@ -89,7 +94,10 @@ class Aboutus extends Component {
               {this.getAboutusContent()}
             </div>
           </div>
-          <Gallery images={this.state.gallery}/>
+          {/* <Gallery images={this.state.gallery}/> */}
+          <div style={{"width" : "300px"}}>
+            <Car images={this.state.gallery} />
+          </div>
         </div>
       );
     }
