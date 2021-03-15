@@ -95,7 +95,8 @@ class Aboutus extends Component {
             </div>
           </div>
           {/* <Gallery images={this.state.gallery}/> */}
-          <div style={{"width" : "300px"}}>
+          {/* <div style={{"width" : "300px"}}> */}
+          <div >
             <Car images={this.state.gallery} />
           </div>
         </div>

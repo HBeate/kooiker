@@ -4,6 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 
 export default class Car extends Component {
+
   getItems  () {
     let tempdata = [];
     let key = 0;
@@ -12,7 +13,7 @@ export default class Car extends Component {
       let line = (
         <div key={this.key}>
         <img alt={element.title} src={element.img} />
-        <p className="legend">{element.title}</p>
+        {/* <p className="legend">{element.title}</p> */}
       </div>
       );
       tempdata.push(line);
@@ -23,7 +24,7 @@ export default class Car extends Component {
 
   render() {
       return (
-        <Carousel autoPlay>
+        <Carousel autoPlay dynamicHeight  infiniteLoop  emulateTouch showThumbs labels={false} width={500}>
         {this.getItems()}
      </Carousel>
       );
