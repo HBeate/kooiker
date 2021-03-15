@@ -94,12 +94,6 @@ class Aboutus extends Component {
               {this.getAboutusContent()}
             </div>
           </div>
-          {/* <Gallery images={this.state.gallery}/> */}
-
-          <div style={{"width" : "300px"}}>
-            {/* <Car images={this.state.gallery} /> */}
-
-          </div>
         </div>
       );
     }
