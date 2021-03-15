@@ -3,6 +3,8 @@ import styles from './BreedingCard.module.css';
 import Gallery from '../Gallery/Gallery';
 import Button from '@material-ui/core/Button';
 import Constants from '../../helper/Constants'
+import Car from "../Aboutus/Carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 class BreedingCard extends Component {
     constructor(props) {
@@ -116,9 +118,6 @@ class BreedingCard extends Component {
                     </div>
                     <div className={styles.dataContainer}>
                         <div><h3 className={styles.header}>{this.props.breeding.parents}</h3></div>
-                      {/*    <div>{this.props.breeding.dateOfBirth}</div> 
-                       <p>{this.props.breeding.description}</p>  */}
-                       
                         <ul>
                             {this.getPuppies()}
                         </ul>
@@ -126,7 +125,8 @@ class BreedingCard extends Component {
                 </div>
                 <div>
                     {this.state.showSubNav ? <ul className={styles.subnav}>{this.getPuppiesNav()}</ul> : ""}
-                    {this.state.showGallery ? <Gallery name={this.state.actualDog.name} images={this.state.tileData} /> : ""}</div>
+                    {/* {this.state.showGallery ? <Gallery name={this.state.actualDog.name} images={this.state.tileData} /> : ""}</div> */}
+                   {this.state.showGallery ? <div><Car images={this.state.tileData} /></div> : ""}</div>
             </div>
         );
     }
