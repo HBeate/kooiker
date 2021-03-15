@@ -13,7 +13,7 @@
 }
 
 .Copyright {
-  width: 30%;
+  width: 35%;
   color: white;
   
 }
@@ -57,12 +57,16 @@
   margin: 10px;
 }
 
+.Favicon i {
+  color:white;
+}
+
 .Favicon a:hover {
   opacity: 0.8;
   color: #eee;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 945px) {
   .Footer {
     position: relative;
     bottom: 0;
@@ -71,5 +75,18 @@
   }
   .Favicon {
     margin-top: 0.5rem;
+    text-align: center;
+  }
+
+  .Copyright1{
+    text-align: center;
+  }
+
+  .Copyright h2{
+    text-align: center;
+  } 
+
+  .Copyright h3{
+    text-align: center;
   }
 }

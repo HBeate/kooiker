@@ -17,7 +17,7 @@ class Home extends Component {
    
     if (this.props.language === "de") {
       this.setState({
-        Atitle1:'Das Kooikerhondje, Charakter und Haltung:',
+        title1:'Das Kooikerhondje, Charakter und Haltung:',
         text1: "Das “Nederlandse Kooikerhondje” ist ein eher kleiner, etwa kniehoher weisser Hund mit orangeroten Platten. Sein Fell ist mittellang, glatt oder leicht wellig. Er ist ein lustiger und sehr gelehriger Hund; er ist familienbezogen und sehr anhänglich, doch Fremden gegenüber eher zurückhaltend und misstrauisch. Eine liebevolle, aber konsequente Erziehung ist angebracht, wobei unnötige Härte zu vermeiden ist. Da er sehr sportlich ist, bietet sich eine Agility-, Flyball- oder ähnliche Ausbildung an. Auch als Therapiehund hat sich diese Rasse bewährt. Er ist aber auch zufrieden, wenn er regelmässig bewegt wird; ausserdem liebt er das Wasser und alle Arten von Suchspielen. Auf Grund seiner angenehmen Grösse kann er auch problemlos in einer Wohnung gehalten werden.",
       });
     } else if (this.props.language === "en") {
@@ -40,10 +40,9 @@ class Home extends Component {
     }
     else{
     return (
-      <div className={styles.container}>
-        <div className={styles.parallax}></div>
+      <div>
         <div className={styles.parallax}>
-          <Zoom>
+        <Zoom>
             <div className={styles.header}>
               <h1>Kooikerhondje</h1>
               <h2>“de la bande de rigolos“</h2>
