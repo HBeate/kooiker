@@ -77,7 +77,7 @@ class Navbar extends Component {
             <ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
               <li className="nav-item"><NavLink  to="/" className="nav-links" onClick={this.closeMobileMenu}>Home</NavLink></li>
               <li className="nav-item"><NavLink to="/aboutus"  className="nav-links"  onClick={this.closeMobileMenu}>{this.state.AboutUs} </NavLink></li>
-              <li className="nav-item"><NavLink to="/ivy" className="nav-links" onClick={this.closeMobileMenu}>IVY</NavLink></li>
+              <li className="nav-item"><NavLink to="/ivy" className="nav-links" onClick={this.closeMobileMenu}>Ivy</NavLink></li>
               <li className="nav-item"><NavLink to="/offspring" className="nav-links" onClick={this.closeMobileMenu}>{this.state.Offspring} </NavLink></li>
               <li className="nav-item"><NavLink to="/news" className="nav-links" onClick={this.closeMobileMenu}>{this.state.News}</NavLink></li>
               <li className="nav-item"><NavLink to="/contact" className="nav-links" onClick={this.closeMobileMenu}>{this.state.Contact}</NavLink></li>
