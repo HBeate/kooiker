@@ -88,7 +88,7 @@ class Aboutus extends Component {
           <h1 className={styles.mainHeader}>{this.state.title}</h1>
           <div className={styles.aboutUsCard}>
             <div className={styles.imageContainer}>
-              <img src={this.state.image} alt={this.state.image_alt} />
+            <Car images={this.state.gallery} />
             </div>
             <div className={styles.dataContainer}>
               {this.getAboutusContent()}
@@ -96,7 +96,7 @@ class Aboutus extends Component {
           </div>
           {/* <Gallery images={this.state.gallery}/> */}
           <div style={{"width" : "300px"}}>
-            <Car images={this.state.gallery} />
+            {/* <Car images={this.state.gallery} /> */}
           </div>
         </div>
       );
