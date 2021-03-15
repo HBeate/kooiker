@@ -30,12 +30,8 @@ body {
     display: flex;
   }
   .imageContainer {
-    flex:content;
-    background-size: cover;
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
-    object-fit: contain;
-    padding: 20px;
+    width: 40%;
+    margin: 1rem;
 
   }
   .dataContainer {
