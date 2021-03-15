@@ -49,7 +49,7 @@ class Navbar extends Component {
   };
 
   handleScroll = () => {
-    if (window.pageYOffset > 240) {
+    if (window.pageYOffset > 1) {
       if (!this.state.nav) {
         this.setState({ nav: true });
       }
@@ -67,24 +67,27 @@ class Navbar extends Component {
   render() {
     return (
       <>
+      <div className="navbar-container">
         <nav className={`navbar ${this.state.nav && "navbar__brown"}`}>
-          <div className="navbar-container">
-            <div className="navbar-logo">
-            <NavLink to="/" >IVY</NavLink>
-            </div>
+            <NavLink to="/" >
+              <div className="navbar-logo">
+              <h2>Kooikerhondje</h2>
+              <h3>"de la bande de rigolos"</h3>
+              </div>
+            </NavLink>
             <div className="menu-icon" onClick={this.handleClick}><i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i></div>
-            <div className="nav-menu">
+            
             <ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
-              <li className="nav-item"><NavLink  to="/" className="nav-links" onClick={this.closeMobileMenu}>Home</NavLink></li>
-              <li className="nav-item"><NavLink to="/aboutus"  className="nav-links"  onClick={this.closeMobileMenu}>{this.state.AboutUs} </NavLink></li>
-              <li className="nav-item"><NavLink to="/ivy" className="nav-links" onClick={this.closeMobileMenu}>Ivy</NavLink></li>
-              <li className="nav-item"><NavLink to="/offspring" className="nav-links" onClick={this.closeMobileMenu}>{this.state.Offspring} </NavLink></li>
-              <li className="nav-item"><NavLink to="/news" className="nav-links" onClick={this.closeMobileMenu}>{this.state.News}</NavLink></li>
-              <li className="nav-item"><NavLink to="/contact" className="nav-links" onClick={this.closeMobileMenu}>{this.state.Contact}</NavLink></li>
+
+              <li className="nav-item"><NavLink  to="/" onClick={this.closeMobileMenu}><div className="nav-links">Home</div> </NavLink></li>
+              <li className="nav-item"><NavLink to="/aboutus"  onClick={this.closeMobileMenu}> <div div className="nav-links">{this.state.AboutUs}</div> </NavLink></li>
+              <li className="nav-item"><NavLink to="/ivy"  onClick={this.closeMobileMenu}><div className="nav-links">Ivy</div></NavLink></li>
+              <li className="nav-item"><NavLink to="/offspring" onClick={this.closeMobileMenu}> <div className="nav-links">{this.state.Offspring}</div> </NavLink></li>
+              <li className="nav-item"><NavLink to="/news" onClick={this.closeMobileMenu}><div  className="nav-links">{this.state.News}</div></NavLink></li>
+              <li className="nav-item"><NavLink to="/contact" onClick={this.closeMobileMenu}><div className="nav-links">{this.state.Contact}</div></NavLink></li>   
             </ul>
-            </div>
-          </div>
         </nav>
+        </div>
       </>
     );
   }

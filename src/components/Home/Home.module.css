@@ -28,15 +28,24 @@
 
 .header {
   display: flex;
-  justify-content: center;
+  align-items: center;
   background: transparent;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 30vh;
 }
 
 .header h1 {
+  font-size: 2rem;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  font-style: italic;
+}
+
+.header h2{
   font-size: 4rem;
   font-family: "Dancing Script", cursive;
   color: white;
-
 }
 
 .content {
@@ -44,20 +53,19 @@
   min-height: 100vh;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   width: 80%;
   margin-left: 10%;
   margin-right: 10%;
   height: auto;
   background-color: rgba(255, 255, 255, 0.596);
   font-size: x-large;
-  background-size: contain;
-  border-radius: 10px;
+  background-size:contain;
   padding: 0.5rem;
   align-items: center;
 }
 .content h2{
   padding-bottom: 1rem;
+  color: rgb(167, 69, 39);
 }
 
 .content2 {
