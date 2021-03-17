@@ -1,0 +1,9 @@
+
+  .mainHeader {
+    font-size: 2rem;
+    color: brown;
+    display: flex;
+    justify-items: end;
+    padding: 20px 20px;
+    border-bottom: brown solid 2px;
+  }

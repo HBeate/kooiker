@@ -17,6 +17,7 @@ class Navbar extends Component {
     if (this.props.language === "de") {
       this.setState({
         AboutUs: "Über uns",
+        Ivy: "Ivy",
         Offspring: "Nachkommen",
         News: "Aktuel",
         Contact: "Kontakt",
@@ -24,6 +25,7 @@ class Navbar extends Component {
     } else if (this.props.language === "en") {
       this.setState({
         AboutUs: "About us",
+        Ivy: "Ivy",
         Offspring: "Offspring",
         News: "News",
         Contact: "Contact",
@@ -31,6 +33,7 @@ class Navbar extends Component {
     }else if (this.props.language === "fr") {
       this.setState({
         AboutUs: "à propos de nous",
+        Ivy: "Ivy",
         Offspring: "Progéniture",
         News: "Actuel",
         Contact: "Contacter",

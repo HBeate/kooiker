@@ -1,5 +1,6 @@
 body {
-  font-family: 'Josefin Sans', sans-serif;
+/*   font-family: 'Josefin Sans', sans-serif; */
+  font-family: 'Roboto', sans-serif;
   /* -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
 }
@@ -13,8 +14,8 @@ h1, h2, h3, h4{
   color: brown;
 }
 
-p{
+/* p{
   font-family: 'Josefin Sans', sans-serif;
-}
+} */
 @import "~react-image-gallery/styles/css/image-gallery.css";
 
