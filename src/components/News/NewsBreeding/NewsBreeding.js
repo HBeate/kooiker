@@ -8,7 +8,17 @@ class NewsBreeding extends Component {
   }
   render() {
     return (
-   <div></div>
+      <div>
+        <h1 className={styles.mainHeader}>
+          Planification de la première portée
+        </h1>
+        <DogDetailCard />
+        <DogDetailCard />
+        <div>
+                <div>Le CS est de 0,195 %</div>
+                <div>L'indice d'implexe est de 96,77 %</div>
+              </div>
+      </div>
     );
   }
 }

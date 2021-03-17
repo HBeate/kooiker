@@ -11,6 +11,7 @@ import Home from "./components/Home/Home";
 //import Slideshow from "./components/Aboutus/Slideshow";
 import Footer from "./components/Footer/Footer";
 import News from './components/News/News';
+import Ivy from './components/Ivy/Ivy';
 import { If, Else } from 'rc-if-else';
 import * as ReactBootStrap from 'react-bootstrap';
 /* import Styles from '../src/components/Offspring/BreedingCardContainer.css'; */
@@ -106,6 +107,10 @@ export default class App extends Component {
             {this.getBreedingContent()}
           </div>
         </div>}/>
+        </Switch>
+
+        <Switch>
+          <Route path='/ivy' exact render ={()=><Ivy /> }/>
         </Switch>
 
         <Switch>
