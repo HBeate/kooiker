@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import DogDetailCard from "../DogDetail/DogDetailCard";
-import styles from "./Ivy.module.css";
 
 class Ivy extends Component {
   constructor(props) {

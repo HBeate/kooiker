@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from './BreedingCard.module.css';
-import Gallery from '../Gallery/Gallery';
+/* import Gallery from '../Gallery/Gallery'; */
 import Button from '@material-ui/core/Button';
 import Constants from '../../helper/Constants'
 import Car from "../Aboutus/Carousel";
