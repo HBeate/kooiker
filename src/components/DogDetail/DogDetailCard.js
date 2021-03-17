@@ -5,48 +5,84 @@ import ivyImg from "../Ivy/ivy.jpg";
 class DogDetailCard extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      parent_full_name: "",
+      parent_date_of_birth: "",
+      willebrand: "",
+      petella: "",
+      eyes: "",
+      dentures: "",
+      height: "",
+      pedigree: "",
+      images: [],
+      parent_image: "",
+      tests: "Tests:",
+      show: "none",
+    };
   }
+  showPedigree = () => {
+    if (this.state.show === "none") {
+      this.setState({
+        show: "flex",
+      }
+      );
+    }else{
+      this.setState({
+        show: "none",
+      }
+      );
+    }
+  };
+
   render() {
     return (
       <div className={styles.container}>
         <div>
-          <h1 className={styles.mainHeader}>Ivy</h1>
+          <h1 className={styles.mainHeader}>{this.props.dog.name}</h1>
         </div>
         <div className={styles.detailCard}>
           <div className={styles.content}>
             <div className={styles.dataContainer}>
-              <h3 className={styles.header}>Ivy-Balea vom Kooikerbeis, </h3>
-              <h4 className={styles.born}>né le 23.04.2017</h4>
+              <h3 className={styles.header}>
+                {this.props.dog.parent_full_name}
+              </h3>
+              <h4 className={styles.born}>
+                {this.props.dog.parent_date_of_birth}
+              </h4>
 
               <div>
                 <div>Tests:</div>
                 <table>
-                  <tr>
-                    <td>Luxation de la rotule: </td>
-                    <td>Indemne</td>
-                  </tr>
-                  <tr>
-                    <td>Tares oculaires: </td>
-                    <td>Indemne</td>
-                  </tr>
-                  <tr>
-                    <td>Dentition: </td>
-                    <td>Ciseaux complets</td>
-                  </tr>
-                  <tr>
-                    <td>Taille: </td>
-                    <td>39 cm</td>
-                  </tr>
+                  <tbody>
+                    <tr>
+                      <td>Luxation de la rotule: </td>
+                      <td>{this.props.dog.willebrand}</td>
+                    </tr>
+                    <tr>
+                      <td>Tares oculaires: </td>
+                      <td>{this.props.dog.petella}</td>
+                    </tr>
+                    <tr>
+                      <td>Dentition: </td>
+                      <td>{this.props.dog.eyes}</td>
+                    </tr>
+                    <tr>
+                      <td>Taille: </td>
+                      <td>{this.props.dog.dentures}</td>
+                    </tr>
+                    <tr>
+                      <td>Taille: </td>
+                      <td>{this.props.dog.height}</td>
+                    </tr>
+                  </tbody>
                 </table>
               </div>
               <div className={styles.expositions}>
-                <p>Exposition canine à Tarbes le 18.11.2018, <br></br>
-                Clase ouverte, juge: Roger Barenne<br></br>
-                Classement: excellent, CACIB, CACS, Meilleur de race</p>
+                <p>{this.props.dog.expositions}</p>
               </div>
               <div>
-                <button>Ahnentafel</button>
+                <button onClick={this.showPedigree}>Ahnentafel</button>
+                
               </div>
             </div>
             <div className={styles.imageContainer}>
@@ -54,6 +90,10 @@ class DogDetailCard extends Component {
             </div>
           </div>
         </div>{" "}
+        <img
+                  style={{ display: this.state.show }}
+                  src={this.props.dog.pedigree.data.full_url}
+                />
       </div>
     );
   }

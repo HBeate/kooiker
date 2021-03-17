@@ -1,15 +1,32 @@
 import React, { Component } from "react";
 import DogDetailCard from "../DogDetail/DogDetailCard";
+import Constants from "../../helper/Constants";
 
 class Ivy extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      dog:'',
+    };
   }
+  componentDidMount() {
+    fetch(Constants.ivy)
+      .then((resp) => resp.json())
+      .then((result) => {
+        let ivy = result.data[0];
+
+        console.log(ivy);
+        console.log(ivy.dentures);
+        this.setState({
+          dog:ivy
+        });
+      });
+  }
+
   render() {
     return (
       <div>
-        <DogDetailCard />
+        <DogDetailCard dog={this.state.dog}/>
       </div>
     );
   }

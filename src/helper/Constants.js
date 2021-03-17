@@ -7,6 +7,7 @@ module.exports = {
   aboutus_trans : baseURL + "/aboutus_translations?filter[language][eq]=",
   aboutus_gallery: baseURL + "/aboutus_directus_files?fields=*.*",
   dogs: baseURL + "/dogs?fields=*&filter[date_of_birth][eq]=",
+  ivy: baseURL + "/dogs?fields=*.*.*&filter[name][eq]=Ivy",
   news: baseURL + "/news_fr?fields=*.*",
 };
 
