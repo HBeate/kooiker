@@ -55,19 +55,19 @@ class DogDetailCard extends Component {
                 <table>
                   <tbody>
                     <tr>
-                      <td>Luxation de la rotule: </td>
+                      <td>Von Willebrand/ENM: </td>
                       <td>{this.props.dog.willebrand}</td>
                     </tr>
                     <tr>
-                      <td>Tares oculaires: </td>
+                      <td>Luxation de la rotule: </td>
                       <td>{this.props.dog.petella}</td>
                     </tr>
                     <tr>
-                      <td>Dentition: </td>
+                      <td>Tares oculaires: </td>
                       <td>{this.props.dog.eyes}</td>
                     </tr>
                     <tr>
-                      <td>Taille: </td>
+                      <td>Dentition: </td>
                       <td>{this.props.dog.dentures}</td>
                     </tr>
                     <tr>
