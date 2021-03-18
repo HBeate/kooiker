@@ -74,27 +74,6 @@ img {
     float: left;
 }
 
-button {
-  background-color: white; /* Green */
-  border: 1px solid rgb(167, 69, 39);
-  border-color: rgb(167, 69, 39);
-  color: black;
-  padding: 10px 10px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 1rem;
-  margin-top: 20px;
-  float: left;
-}
-button:hover {
-  background-color: rgb(167, 69, 39);
-  color: white;
-  cursor: pointer;
-}
-button:focus {
-  outline: 0;
-}
-
 .buttonRight {
   float: right;
   margin-top: 20px;

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import styles from './BreedingCard.module.css';
 /* import Gallery from '../Gallery/Gallery'; */
-import Button from '@material-ui/core/Button';
-import Constants from '../../helper/Constants'
+import Constants from '../../helper/Constants';
 import Car from "../Aboutus/Carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
@@ -74,9 +73,9 @@ class BreedingCard extends Component {
     getPuppiesNav = () => {
         let widgets = [];
         this.state.puppies.forEach(element => {
-            widgets.push(<Button className={styles.newbutton} onClick={() => { this.onDogSelected(element) }} key={element.id} >{element.name}</Button>);
+            widgets.push(< button onClick={() => { this.onDogSelected(element) }} key={element.id} >{element.name}</button>);
         });
-        widgets.push(<Button className={styles.newbutton} key={'50000'} onClick={() => { this.closeGallery() }}>X</Button>);
+        widgets.push(<button key={'50000'} onClick={() => { this.closeGallery() }}>X</button>);
         return widgets;
     }
 

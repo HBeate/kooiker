@@ -13,6 +13,35 @@ h1, h2, h3, h4{
   font-family: 'Dancing Script', cursive;
   color: brown;
 }
+h1 {
+  font-size: 2rem;
+  display: flex;
+  justify-items: end;
+  padding: 20px 20px;
+  border-bottom: brown solid 2px;
+}
+
+button {
+  background-color: white; /* Green */
+  border: 1px solid rgb(167, 69, 39);
+  border-color: rgb(167, 69, 39);
+  color: black;
+  padding: 6px 10px;
+  border-radius: 6px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  margin-top: 20px;
+  float: left;
+}
+button:hover {
+  background-color: rgb(167, 69, 39);
+  color: white;
+  cursor: pointer;
+}
+button:focus {
+  outline: 0;
+}
 
 /* p{
   font-family: 'Josefin Sans', sans-serif;
