@@ -37,13 +37,13 @@
 
 .header h1 {
   font-size: 2rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: white;
   font-style: italic;
-   border-bottom: none; 
+  border-bottom: none;
 }
 
-.header h2{
+.header h2 {
   font-size: 4rem;
   font-family: "Dancing Script", cursive;
   color: white;
@@ -60,11 +60,11 @@
   height: auto;
   background-color: rgba(255, 255, 255, 0.596);
   font-size: x-large;
-  background-size:contain;
+  background-size: contain;
   padding: 0.5rem;
   align-items: center;
 }
-.content h2{
+.content h2 {
   padding-bottom: 1rem;
   color: rgb(167, 69, 39);
 }
@@ -87,35 +87,33 @@
   align-items: center;
 }
 
-.certificatLogo{
+.certificatLogo {
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
 }
 
-.certificatLogo img{
+.certificatLogo img {
   margin: 1rem;
 }
 
-ul{
+ul {
   list-style-type: none;
 }
 
 a:link {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   text-decoration: none;
   color: black;
-  
 }
 
-a:visited{
+a:visited {
   color: black;
 }
 
-.exLinks a{
+.exLinks a {
   display: flex;
   justify-content: center;
 }
-
 
 @media (max-width: 590px) {
   .parallax {
@@ -131,7 +129,6 @@ a:visited{
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
- 
   }
 
   .parallax1 {
@@ -147,21 +144,19 @@ a:visited{
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-   
   }
   .header h1 {
     font-size: medium;
-   
   }
-  .content{
+  .content {
     font-size: medium;
   }
 
-  .certificatLogo{
-    flex-direction:column;
+  .certificatLogo {
+    flex-direction: column;
   }
 
-  .exLinks a{
+  .exLinks a {
     font-size: medium;
   }
 }
@@ -178,7 +173,6 @@ a:visited{
     background-position: 0px 0px;
     background-repeat: no-repeat;
     background-size: cover;
-    
   }
 
   .parallax1 {
@@ -193,26 +187,23 @@ a:visited{
     background-position: 0px 0px;
     background-repeat: no-repeat;
     background-size: cover;
- 
   }
   .header h1 {
     font-size: medium;
-   
   }
-  .content{
+  .content {
     font-size: medium;
   }
 
-  .certificatLogo{
-    flex-direction:column;
+  .certificatLogo {
+    flex-direction: column;
   }
 
-  .exLinks a{
+  .exLinks a {
     font-size: medium;
   }
-
 }
-@media (min-width: 801px) and (max-width: 1200px){
+@media (min-width: 801px) and (max-width: 1200px) {
   .parallax {
     /* The image used */
     background-image: url("./dog.jpg");
@@ -225,7 +216,6 @@ a:visited{
     background-position: 0px 0px;
     background-repeat: no-repeat;
     background-size: cover;
-  
   }
 
   .parallax1 {
@@ -240,11 +230,8 @@ a:visited{
     background-position: 0px 0px;
     background-repeat: no-repeat;
     background-size: cover;
-    
   }
   .header h1 {
     font-size: medium;
   }
 }
-
-
