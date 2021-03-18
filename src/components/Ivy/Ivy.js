@@ -14,9 +14,6 @@ class Ivy extends Component {
       .then((resp) => resp.json())
       .then((result) => {
         let ivy = result.data[0];
-
-        console.log(ivy);
-        console.log(ivy.dentures);
         this.setState({
           dog:ivy
         });

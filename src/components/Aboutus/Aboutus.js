@@ -23,7 +23,6 @@ class Aboutus extends Component {
       .then((resp) => resp.json())
       .then(
         (result) => {
-          //console.log(result)
           let translation = result.data[0].translations;
           translation.forEach((element) => {
             if (element.language === this.props.language) {
@@ -46,7 +45,6 @@ class Aboutus extends Component {
             };
             gallery.push(part);
           });
-          console.log(this.state.gallery);
           this.setState({
             gallery: gallery,
             image: result.data[0].image.data.thumbnails[3].url,
