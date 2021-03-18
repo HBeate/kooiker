@@ -15,7 +15,7 @@ import Ivy from './components/Ivy/Ivy';
 import { If, Else } from 'rc-if-else';
 import * as ReactBootStrap from 'react-bootstrap';
 /* import Styles from '../src/components/Offspring/BreedingCardContainer.css'; */
-import ContactForm from '../src/components/Form/ContactForm';
+/* import ContactForm from '../src/components/Form/ContactForm'; */
 
 
 export default class App extends Component {
@@ -122,9 +122,9 @@ export default class App extends Component {
         <Aboutus path='/aboutus' language={this.state.language}/>
         </Switch>
 
-        <Switch>
+{/*         <Switch>
           <Route path='/contact' exact render ={()=><ContactFrom /> }/>
-        </Switch>
+        </Switch> */}
 
         <Footer/>
       </div>
