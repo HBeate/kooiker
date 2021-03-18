@@ -40,6 +40,7 @@
   font-family: 'Roboto', sans-serif;
   color: white;
   font-style: italic;
+   border-bottom: none; 
 }
 
 .header h2{
