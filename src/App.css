@@ -39,11 +39,11 @@
   width:100%;
 }
 
-.mainHeader {
+/* .mainHeader {
   font-size: 2rem;
   color: rgb(167, 69, 39);
   display: flex;
   justify-items: end;
   padding: 20px 20px;
-  border-bottom: rgb(167, 69, 39) 2px;
-}
+  border-bottom: rgb(167, 69, 39) 2px solid;
+} */

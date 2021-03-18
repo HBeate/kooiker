@@ -85,7 +85,7 @@ class Aboutus extends Component {
     if (this.state.loaded) {
       return (
         <div className={styles.container}>
-          <h1 className={styles.mainHeader}>{this.state.title}</h1>
+          <div><h1 className={styles.mainHeader}>{this.state.title}</h1></div>
           <div className={styles.aboutUsCard}>
             <div className={styles.imageContainer}>
             <Car images={this.state.gallery} />
