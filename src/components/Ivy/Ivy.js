@@ -7,6 +7,7 @@ class Ivy extends Component {
     super(props);
     this.state = {
       dog:'',
+      pedigree:''
     };
   }
   componentDidMount() {
@@ -15,8 +16,10 @@ class Ivy extends Component {
       .then((result) => {
         console.log(result.data[0])
         let ivy = result.data[0];
+        let pedigree = result.data[0].pedigree.data.full_url;
         this.setState({
-          dog:ivy
+          dog:ivy,
+          pedigree:pedigree
         });
       });
   }
@@ -24,7 +27,7 @@ class Ivy extends Component {
   render() {
     return (
       <div>
-        <DogDetailCard dog={this.state.dog}/>
+        <DogDetailCard dog={this.state.dog} pedigree={this.state.pedigree}/>
       </div>
     );
   }
