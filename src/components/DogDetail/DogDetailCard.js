@@ -92,7 +92,8 @@ class DogDetailCard extends Component {
         </div>{" "}
         <img
                   style={{ display: this.state.show }}
-                  src={/* this.props.dog.pedigree.data.full_url */ivyImg}
+                  // src={/* this.props.dog.pedigree.data.full_url */ivyImg}
+                  src={this.props.dog.pedigree.data.full_url}
                   alt={'Ivy'}
                 />
       </div>
