@@ -33,7 +33,7 @@ class News extends Component {
     }
     if(element.topic==="1"){
       let part=(
-      <div className={styles.newsCard} key={element.id}>><p>litter</p>
+      <div className={styles.newsCard} key={element.id}><p>litter</p>
       <div className={styles.content}>
         <div className={styles.imageContainer}><img className={styles.imgLeft} src={element.picture.data.thumbnails[7].url} alt={element.picture.title}></img></div>
         <div className={styles.dataContainer}>
@@ -47,7 +47,7 @@ class News extends Component {
     }
     if(element.topic==="2"){
       let part=(
-      <div className={styles.newsCard} key={element.id}>><p>breeding</p>
+      <div className={styles.newsCard} key={element.id}><p>breeding</p>
       <div className={styles.content}><p>mother</p>
       <h1>{element.breeding_dog_mother.name}</h1>
         <div className={styles.imageContainer}><img className={styles.imgLeft} src={element.breeding_dog_mother.parent_image.data.thumbnails[7].url} alt={element.breeding_dog_mother.images[0].directus_files_id.title}></img></div>
