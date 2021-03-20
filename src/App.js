@@ -34,7 +34,6 @@ export default class App extends Component {
   componentDidMount() {
     let userLocale = getUserLocale();
     var res = userLocale.substring(0, 2);
-    console.log('XXX '+res)
     this.setState({
       language: res,
       showApp: true,

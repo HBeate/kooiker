@@ -1,14 +1,81 @@
 import React, { Component } from "react";
 import styles from "./News.module.css";
+import Constants from "../../helper/Constants";
 
 class News extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      news:[],
+      loaded:false,
+    };
   }
+
+  componentDidMount() {
+    fetch(Constants.news)
+      .then((resp) => resp.json())
+      .then((result) => {
+        let news=[];
+  result.data.forEach(element => {
+    if(element.topic==="3"){
+      let part=(
+      <div className={styles.newsCard} key={element.id}><p>news</p>
+      <div className={styles.content}>
+        {/* <div className={styles.imageContainer}><img className={styles.imgLeft} src={element.picture.data.thumbnails[7].url} alt={element.picture.title}></img></div> */}
+        <div className={styles.dataContainer}>
+            <h3 className={styles.header}>{element.translations[0].title}</h3>
+          {element.translations[0].uebersetzung}
+          <div><button className={styles.buttonRight}>détails</button></div>
+        </div>
+      </div>
+    </div>)
+    news.push(part);
+    }
+    if(element.topic==="1"){
+      let part=(
+      <div className={styles.newsCard} key={element.id}>><p>litter</p>
+      <div className={styles.content}>
+        <div className={styles.imageContainer}><img className={styles.imgLeft} src={element.picture.data.thumbnails[7].url} alt={element.picture.title}></img></div>
+        <div className={styles.dataContainer}>
+            <h3 className={styles.header}>{element.translations[0].title}</h3>
+          {element.translations[0].uebersetzung}
+          {/* <div><button className={styles.buttonRight}>détails</button></div> */}
+        </div>
+      </div>
+    </div>)
+    news.push(part);
+    }
+    if(element.topic==="2"){
+      let part=(
+      <div className={styles.newsCard} key={element.id}>><p>breeding</p>
+      <div className={styles.content}><p>mother</p>
+      <h1>{element.breeding_dog_mother.name}</h1>
+        <div className={styles.imageContainer}><img className={styles.imgLeft} src={element.breeding_dog_mother.parent_image.data.thumbnails[7].url} alt={element.breeding_dog_mother.images[0].directus_files_id.title}></img></div>
+        <div className={styles.dataContainer}>
+        </div>
+      </div>
+<p>father</p>
+      <h1>{element.breeding_dog_father.name}</h1>
+        <div ><img className={styles.imgRight} src={element.breeding_dog_father.parent_image.data.thumbnails[7].url} alt={element.breeding_dog_father.images[0].directus_files_id.title}></img></div>
+      </div>)
+    news.push(part);
+    }
+  });
+        this.setState({
+          news:news,
+          loaded:true
+        });
+      });
+  }
+
   render() {
-    return (
-      <div className={styles.container}>
+ 
+      if (!this.state.loaded) {
+        return <div>Loading...!</div>;
+      }  if (this.state.loaded) {
+        return (
+          <div>
+      {/* <div className={styles.container}>
         <div>
           <h1 className={styles.mainHeader}>Actualités</h1>
         </div>
@@ -49,8 +116,11 @@ class News extends Component {
           </div>
 
         </div>
-      </div>
-    );
+      </div> */}
+         {this.state.news}
+         </div>
+      );
+    }
   }
 }
 
