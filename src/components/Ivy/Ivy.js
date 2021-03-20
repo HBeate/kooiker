@@ -13,6 +13,7 @@ class Ivy extends Component {
     fetch(Constants.ivy)
       .then((resp) => resp.json())
       .then((result) => {
+        console.log(result.data[0])
         let ivy = result.data[0];
         this.setState({
           dog:ivy
