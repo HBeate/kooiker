@@ -1,8 +1,6 @@
-// import { RssFeed } from '@material-ui/icons';
 import React, { Component } from "react";
 import Constants from "../../helper/Constants";
 import styles from "./Aboutus.module.css";
-// import Gallery from "../Gallery/Gallery";
 import Car from "./Carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
@@ -16,6 +14,7 @@ class Aboutus extends Component {
     title: "",
     image: "",
     loaded: false,
+    gallery:[]
   };
 
   componentDidMount() {
@@ -33,9 +32,6 @@ class Aboutus extends Component {
             }
           });
           let gallery = [];
-          // const posts =  result.data[0].gallery.slice(0,4);
-          // posts.forEach((element) => {
-
           result.data[0].gallery.forEach((element) => {
             let part = {
               key: element.directus_files_id.description,
@@ -47,7 +43,6 @@ class Aboutus extends Component {
           });
           this.setState({
             gallery: gallery,
-            image: result.data[0].image.data.thumbnails[3].url,
             loaded: true,
           });
         },
@@ -97,14 +92,4 @@ class Aboutus extends Component {
     }
   }
 }
-
 export default Aboutus;
-
-/* {this.state.body.split(“\n”).map(function(item) {
-  return (
-    <span>
-      {item}
-      <br/>
-    </span>
-  )
-})} */

@@ -5,22 +5,24 @@ import styles from './Carousel.module.css';
 
 
 export default class Car extends Component {
+  constructor( props ) {
+    super( props );
+
+    this.keyCount = 0;
+    this.getKey = this.getKey.bind(this);
+}
+
+getKey(){
+    return this.keyCount++;
+}
 
   getItems  () {
     let tempdata = [];
-    let key = 0;
-  
     this.props.images.forEach((element) => {
       let line = (
-        // <div className={styles.imageCarousel}>
-        <div key={this.key}>
-        <img className={styles.imageCarousel} alt={element.title} src={element.img} />
-        {/* <p className="legend">{element.title}</p> */}
-      </div>
-      // </div>
+        <img key={this.getKey} className={styles.imageCarousel} alt={element.title} src={element.img} />
       );
       tempdata.push(line);
-      return key++;
     });
     return tempdata;
   };
