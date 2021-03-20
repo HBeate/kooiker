@@ -17,7 +17,7 @@ class DogDetailCard extends Component {
       // images: [],
       // parent_image: "",
       // tests: "Tests:",
-      // show: "none",
+      show: "none",
       dog:[]
     };
   }
