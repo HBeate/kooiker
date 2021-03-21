@@ -18,7 +18,9 @@ class DogDetailCard extends Component {
       // parent_image: "",
       // tests: "Tests:",
       show: "none",
+
       dog:[]
+
     };
   }
   // componentDidMount() {
@@ -42,6 +44,7 @@ class DogDetailCard extends Component {
       );
     }
   };
+
 
   render() {
     return (
@@ -93,14 +96,19 @@ class DogDetailCard extends Component {
                 <button onClick={this.showPedigree}>Ahnentafel</button>
                 
               </div>
+              <div>
+                <button onClick={() => { this.showGallery(); this.showPedigree() }}>Galerie</button>
+                
+              </div>
             </div>
             <div className={styles.imageContainer}>
               <img className={styles.imgRight} src={ivyImg} alt={"card"}></img>
             </div>
           </div>
-        </div>{" "}
+        </div> {" "} 
         <img
                   style={{ display: this.state.show }}
+
                   src={this.props.pedigree}
                   //  src={this.props.dog.pedigree.data.full_url}
                   // src={this.props.dog.pedigree.data.thumbnails[5].url}
