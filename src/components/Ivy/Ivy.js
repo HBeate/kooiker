@@ -23,9 +23,6 @@ class Ivy extends Component {
       dog: "",
       showGallery: false,
 
-      dog:'',
-      pedigree:''
-
     };
   }
   componentDidMount() {
@@ -66,12 +63,12 @@ class Ivy extends Component {
 
   render() {
     return (
-
+/* 
       <div>
         <DogDetailCard dog={this.state.dog} pedigree={this.state.pedigree}/>
 
       </div>
-    ); */
+    );  */
       <div className={styles.container}>
         <div>
           <h1 className={styles.mainHeader}>{this.state.dog.name}</h1>
