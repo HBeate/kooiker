@@ -18,6 +18,7 @@ class DogDetailCard extends Component {
       parent_image: "",
       tests: "Tests:",
       show: "none",
+      showGallery: "none",
     };
   }
   showPedigree = () => {
@@ -29,6 +30,20 @@ class DogDetailCard extends Component {
     }else{
       this.setState({
         show: "none",
+      }
+      );
+    }
+  };
+
+  showGallery = () => {
+    if (this.state.show === "none") {
+      this.setState({
+        showGallery: "flex",
+      }
+      );
+    }else{
+      this.setState({
+        showGallery: "none",
       }
       );
     }
@@ -84,15 +99,19 @@ class DogDetailCard extends Component {
                 <button onClick={this.showPedigree}>Ahnentafel</button>
                 
               </div>
+              <div>
+                <button onClick={() => { this.showGallery(); this.showPedigree() }}>Galerie</button>
+                
+              </div>
             </div>
             <div className={styles.imageContainer}>
               <img className={styles.imgRight} src={ivyImg} alt={"card"}></img>
             </div>
           </div>
-        </div>{" "}
+        </div> {" "} 
         <img
                   style={{ display: this.state.show }}
-                  src={this.props.dog.pedigree.data.full_url}
+                  src={/* this.props.dog.pedigree.data.full_url */ ivyImg}
                   // src={this.props.dog.pedigree.data.thumbnails[5].url}
                   alt={'Ivy'}
                 />
