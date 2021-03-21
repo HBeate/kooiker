@@ -6,21 +6,31 @@ class DogDetailCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      parent_full_name: "",
-      parent_date_of_birth: "",
-      willebrand: "",
-      petella: "",
-      eyes: "",
-      dentures: "",
-      height: "",
-      pedigree: "",
-      images: [],
-      parent_image: "",
-      tests: "Tests:",
+      // parent_full_name: "",
+      // parent_date_of_birth: "",
+      // willebrand: "",
+      // petella: "",
+      // eyes: "",
+      // dentures: "",
+      // height: "",
+      // pedigree: "",
+      // images: [],
+      // parent_image: "",
+      // tests: "Tests:",
       show: "none",
-      showGallery: "none",
+
+      dog:[]
+
     };
   }
+  // componentDidMount() {
+  //   console.log(this.props.dog.pedigree.data.full_url)
+  //   let temp = this.props.dog
+  //   this.setState({
+  //     dog:temp,
+  //   });
+  // }
+
   showPedigree = () => {
     if (this.state.show === "none") {
       this.setState({
@@ -35,19 +45,6 @@ class DogDetailCard extends Component {
     }
   };
 
-  showGallery = () => {
-    if (this.state.show === "none") {
-      this.setState({
-        showGallery: "flex",
-      }
-      );
-    }else{
-      this.setState({
-        showGallery: "none",
-      }
-      );
-    }
-  };
 
   render() {
     return (
@@ -111,8 +108,11 @@ class DogDetailCard extends Component {
         </div> {" "} 
         <img
                   style={{ display: this.state.show }}
-                  src={/* this.props.dog.pedigree.data.full_url */ ivyImg}
+
+                  src={this.props.pedigree}
+                  //  src={this.props.dog.pedigree.data.full_url}
                   // src={this.props.dog.pedigree.data.thumbnails[5].url}
+                  // src={/* this.props.dog.pedigree.data.full_url */ivyImg}
                   alt={'Ivy'}
                 />
       </div>
