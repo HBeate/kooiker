@@ -1,0 +1,25 @@
+.iFrame{
+    font-family: 'Roboto', sans-serif;
+}
+
+.contact2{
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+}
+
+.mailContact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+}
+
+.headerKontakt{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+   
+    
+}
