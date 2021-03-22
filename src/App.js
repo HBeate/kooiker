@@ -14,7 +14,7 @@ import News from './components/News/News';
 import Ivy from './components/Ivy/Ivy';
 import { If, Else } from 'rc-if-else';
 import * as ReactBootStrap from 'react-bootstrap';
-import Form from "./components/Form/Form";
+import Contact from "./components/contact/Contact";
 /* import Styles from '../src/components/Offspring/BreedingCardContainer.css'; */
 /* import ContactForm from '../src/components/Form/ContactForm'; */
 
@@ -123,7 +123,7 @@ export default class App extends Component {
         </Switch>
  
         <Switch>
-          <Route path='/contact' exact render ={()=><Form/> }/>
+          <Route path='/contact' exact render ={()=><Contact/> }/>
         </Switch>
  
         <Footer/>
