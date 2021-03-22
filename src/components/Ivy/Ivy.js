@@ -2,27 +2,16 @@ import React, { Component } from "react";
 import Constants from "../../helper/Constants";
 import styles from "./Ivy.module.css";
 import ivyImg from "../Ivy/ivy.jpg";
+import ResponsiveGallery from 'react-responsive-gallery';
 
 class Ivy extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
-      parent_full_name: "",
-      parent_date_of_birth: "",
-      willebrand: "",
-      petella: "",
-      eyes: "",
-      dentures: "",
-      height: "",
-      pedigree: "",
-      images: [],
-      parent_image: "",
-      tests: "Tests:",
       show: "none",
       dog: "",
-      showGallery: false,
-
+      showGallery: "none",
+    images:[]
     };
   }
   componentDidMount() {
@@ -32,7 +21,14 @@ class Ivy extends Component {
         console.log(result.data[0]);
         let ivy = result.data[0];
         let pedigree = result.data[0].pedigree.data.full_url;
+        let images=[];
+        result.data[0].images.forEach(element => {
+          images.push({ 
+            "src" : element.directus_files_id.data.full_url,
+        });
+        });
         this.setState({
+          images:images,
           dog:ivy,
           pedigree:pedigree
         });
@@ -40,33 +36,37 @@ class Ivy extends Component {
   }
 
   showPedigree = () => {
+  
     if (this.state.show === "none") {
       this.setState({
         show: "flex",
+        showGallery: "none",
       });
     } else {
       this.setState({
+        show: "none",
+        showGallery: "none",
+      });
+    }
+  };
+
+  showImages = () => {
+     console.log(this.state.showGallery)
+    if (this.state.showGallery === "none") {
+      this.setState({
+        showGallery: "flex",
+        show: "none",
+      });
+    } else {
+      this.setState({
+        showGallery: "none",
         show: "none",
       });
     }
   };
 
-  closeGallery = () => {
-    this.setState({
-        showGallery: false,
-        showSubNav: false
-    })
-}
-
-
   render() {
     return (
-/* 
-      <div>
-        <DogDetailCard dog={this.state.dog} pedigree={this.state.pedigree}/>
-
-      </div>
-    );  */
       <div className={styles.container}>
         <div>
           <h1 className={styles.mainHeader}>{this.state.dog.name}</h1>
@@ -125,7 +125,7 @@ class Ivy extends Component {
                 <button onClick={this.showPedigree}>Ahnentafel</button>
               </div>
               <div>
-                <button>Galerie</button>
+                <button onClick={this.showImages}>Galerie</button>
               </div>
               <div>
                 <button>Ausstellungen</button>
@@ -134,10 +134,11 @@ class Ivy extends Component {
         </div>{" "}
         <img
           style={{ display: this.state.show }}
-          // src={/* this.props.dog.pedigree.data.full_url */ ivyImg}
           src={this.state.pedigree}
           alt={"Ivy"} onClick={this.showPedigree}
         />
+        <div style={{ display: this.state.showGallery }}><ResponsiveGallery images={this.state.images} useLightBox={true}/></div>
+
       </div>
     );
   }
