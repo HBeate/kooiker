@@ -33,10 +33,8 @@ class Ivy extends Component {
         let ivy = result.data[0];
         let pedigree = result.data[0].pedigree.data.full_url;
         this.setState({
-
           dog:ivy,
           pedigree:pedigree
-
         });
       });
   }
@@ -136,8 +134,8 @@ class Ivy extends Component {
         </div>{" "}
         <img
           style={{ display: this.state.show }}
-          src={/* this.props.dog.pedigree.data.full_url */ ivyImg}
-          // src={this.props.dog.pedigree.data.thumbnails[5].url}
+          // src={/* this.props.dog.pedigree.data.full_url */ ivyImg}
+          src={this.state.pedigree}
           alt={"Ivy"} onClick={this.showPedigree}
         />
       </div>
