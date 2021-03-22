@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import styles from './BreedingCard.module.css';
 /* import Gallery from '../Gallery/Gallery'; */
 import Constants from '../../helper/Constants';
-import Car from "../Aboutus/Carousel";
+// import Car from "../Aboutus/Carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import ResponsiveGallery from 'react-responsive-gallery';
 
 class BreedingCard extends Component {
     constructor(props) {
@@ -13,7 +14,8 @@ class BreedingCard extends Component {
             showGallery: false,
             tileData: [],
             actualDog: '',
-            showSubNav: false
+            showSubNav: false,
+            images:[],
         }
     }
 
@@ -85,6 +87,7 @@ class BreedingCard extends Component {
             .then(response => response.json())
             .then(data => {
                 let tileData = [];
+                let images =[];
 
                 let index = 0;
                 data.data[0].images.forEach(element => {
@@ -99,11 +102,13 @@ class BreedingCard extends Component {
                         title: "empty",
                         cols: cols
                     }
+                    images.push({ "src" : url});
                     tileData.push(tile);
                     index++;
                 });
 
                 this.setState({
+                    images:images,
                     tileData: tileData
                 })
 
@@ -125,7 +130,8 @@ class BreedingCard extends Component {
                 <div>
                     {this.state.showSubNav ? <ul className={styles.subnav}>{this.getPuppiesNav()}</ul> : ""}
                     {/* {this.state.showGallery ? <Gallery name={this.state.actualDog.name} images={this.state.tileData} /> : ""}</div> */}
-                   {this.state.showGallery ? <div><Car images={this.state.tileData} /></div> : ""}</div>
+                   {/* {this.state.showGallery ? <div><Car images={this.state.tileData} /></div> : ""}</div> */}
+                   {this.state.showGallery ? <div><ResponsiveGallery images={this.state.images} useLightBox={true}/></div> : ""}</div>
             </div>
         );
     }
