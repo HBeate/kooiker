@@ -23,3 +23,17 @@
    
     
 }
+
+@media (max-width: 800px){
+    .contact2{
+        flex-direction: column;
+        width: 100%;
+        justify-items: center;
+    }
+
+    .mailContact{
+        width: 100%;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+}
