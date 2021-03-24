@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styles from "../NewsBreeding/NewsBreeding.module.css";
-
+import DogDetailCard from '../../DogDetail/DogDetailCard'
 class NewsBreeding extends Component {
   constructor(props) {
     super(props);
@@ -12,8 +12,8 @@ class NewsBreeding extends Component {
         <h1 className={styles.mainHeader}>
           Planification de la première portée
         </h1>
-        <DogDetailCard />
-        <DogDetailCard />
+        {/* <DogDetailCard />
+        <DogDetailCard /> */}
         <div>
                 <div>Le CS est de 0,195 %</div>
                 <div>L'indice d'implexe est de 96,77 %</div>

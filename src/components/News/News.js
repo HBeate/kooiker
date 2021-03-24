@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styles from "./News.module.css";
 import Constants from "../../helper/Constants";
 import NewsPuppies from './NewsPuppies/NewsPuppies';
+import NewsBreeding from "./NewsBreeding/NewsBreeding";
 
 class News extends Component {
   
@@ -11,8 +12,18 @@ class News extends Component {
       news:[],
       loaded:false,
       // puppies: false,
-      puppiesDOB:''
+      puppiesDOB:'',
+      parents: false,
     };
+  }
+  showStates=()=>{
+    console.log('STATES: '+this.state.parents+'  '+this.props.poppies)
+   
+  }
+  changeBreedingState=()=>{
+    this.setState({
+      parents: true,
+    });
   }
   puppies=()=>{
     this.setState({
@@ -56,15 +67,14 @@ class News extends Component {
     if(element.topic==="2"){
       let part=(
       <div className={styles.newsCard} key={element.id}><p>breeding</p>
-      <div className={styles.content}><p>mother</p>
-      <h1>{element.breeding_dog_mother.name}</h1>
-        <div className={styles.imageContainer}><img className={styles.imgLeft} src={element.breeding_dog_mother.parent_image.data.thumbnails[7].url} alt={element.breeding_dog_mother.images[0].directus_files_id.title}></img></div>
+      <div className={styles.content}>
+      <h1>{element.breeding_dog_mother.name}</h1> + <h1>{element.breeding_dog_father.name}</h1>
+        {/* <div className={styles.imageContainer}><img className={styles.imgLeft} src={element.breeding_dog_mother.parent_image.data.thumbnails[7].url} alt={element.breeding_dog_mother.images[0].directus_files_id.title}></img></div> */}
         <div className={styles.dataContainer}>
         </div>
       </div>
-<p>father</p>
-      <h1>{element.breeding_dog_father.name}</h1>
-        <div ><img className={styles.imgRight} src={element.breeding_dog_father.parent_image.data.thumbnails[7].url} alt={element.breeding_dog_father.images[0].directus_files_id.title}></img></div>
+        {/* <div ><img className={styles.imgRight} src={element.breeding_dog_father.parent_image.data.thumbnails[7].url} alt={element.breeding_dog_father.images[0].directus_files_id.title}></img></div> */}
+        <div><button className={styles.buttonRight}  onClick={ this.changeBreedingState}>details</button></div>
       </div>)
     news.push(part);
     }
@@ -80,19 +90,26 @@ class News extends Component {
  
       if (!this.state.loaded) {
         return <div>Loading...!</div>;
-      }  if (this.state.loaded&&!this.props.poppies) {
+      }  if (this.state.loaded&&!this.props.poppies&&!this.state.parents) {
         return (
           <div>
          {this.state.news}
          </div>
       );
-    }if (this.state.loaded&&this.props.poppies) {
+    }if (this.state.loaded&&this.props.poppies&&!this.state.parents) {
       return (
         <div>
        <NewsPuppies puppiesDOB={this.state.puppiesDOB}/>
        </div>
     );
   }
+  if (this.state.loaded&&this.state.parents&&!this.props.poppies) {
+    return (
+      <div>
+     <NewsBreeding />
+     </div>
+  );
+}
   }
 }
 
