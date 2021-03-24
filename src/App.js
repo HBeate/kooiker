@@ -29,8 +29,18 @@ export default class App extends Component {
       language: '',
       image:'',
       showApp: false,
+      poppies:false
     }
   }
+
+  togglePoppies = () => {
+    this.setState(state => ({ poppies: !state.poppies }));
+    console.log(this.state.poppies)
+  };
+  togglePoppiesNews = () => {
+    this.setState(state => ({ poppies: false }));
+    console.log(this.state.poppies)
+  };
 
   componentDidMount() {
     let userLocale = getUserLocale();
@@ -95,7 +105,7 @@ export default class App extends Component {
         {<ReactBootStrap.Spinner animation='grow' style={{ position: 'fixed', top: '50%', left: '50%'}}/>}
         <Else >
       <div className="App">
-        <Navbar language={this.state.language}/>
+        <Navbar language={this.state.language} togglePoppiesNews={this.togglePoppiesNews}/>
         <Switch>
           <Route path="/" exact render={() => <Home language={this.state.language}/>} />
         </Switch>
@@ -115,7 +125,7 @@ export default class App extends Component {
         </Switch>
 
         <Switch>
-          <Route path='/news' exact render ={()=><News picture={this.state.image}/> }/>
+          <Route path='/news' exact render ={()=><News picture={this.state.image} togglePoppies={this.togglePoppies} poppies={this.state.poppies}/> }/>
         </Switch>
 
         <Switch>

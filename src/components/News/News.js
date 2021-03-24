@@ -10,7 +10,7 @@ class News extends Component {
     this.state = {
       news:[],
       loaded:false,
-      puppies: false,
+      // puppies: false,
       puppiesDOB:''
     };
   }
@@ -47,7 +47,7 @@ class News extends Component {
         <div className={styles.dataContainer}>
             <h3 className={styles.header}>{element.translations[0].title}</h3>
           {element.translations[0].uebersetzung}
-          <div><button className={styles.buttonRight}  onClick={() => this.setState({puppiesDOB: element.dob.dateofbirth, puppies: true}) }>pictures</button></div>
+          <div><button className={styles.buttonRight}  onClick={() => this.setState({puppiesDOB: element.dob.dateofbirth}, this.props.togglePoppies) }>pictures</button></div>
         </div>
       </div>
     </div>)
@@ -71,7 +71,7 @@ class News extends Component {
   });
         this.setState({
           news:news,
-          loaded:true
+          loaded:true,
         });
       });
   }
@@ -80,13 +80,13 @@ class News extends Component {
  
       if (!this.state.loaded) {
         return <div>Loading...!</div>;
-      }  if (this.state.loaded&&!this.state.puppies) {
+      }  if (this.state.loaded&&!this.props.poppies) {
         return (
           <div>
          {this.state.news}
          </div>
       );
-    }if (this.state.loaded&&this.state.puppies) {
+    }if (this.state.loaded&&this.props.poppies) {
       return (
         <div>
        <NewsPuppies puppiesDOB={this.state.puppiesDOB}/>
