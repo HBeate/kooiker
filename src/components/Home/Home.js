@@ -41,6 +41,7 @@ class Home extends Component {
     else{
     return (
       <div>
+        <div className={styles.parallax}></div>
         <div className={styles.parallax}>
         <Zoom>
             <div className={styles.header}>
