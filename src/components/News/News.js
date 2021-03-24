@@ -1,16 +1,24 @@
 import React, { Component } from "react";
 import styles from "./News.module.css";
 import Constants from "../../helper/Constants";
+import NewsPuppies from './NewsPuppies/NewsPuppies';
 
 class News extends Component {
+  
   constructor(props) {
     super(props);
     this.state = {
       news:[],
       loaded:false,
+      puppies: false,
+      puppiesDOB:''
     };
   }
-
+  puppies=()=>{
+    this.setState({
+      puppies: true,
+    });
+  }
   componentDidMount() {
     fetch(Constants.news)
       .then((resp) => resp.json())
@@ -25,7 +33,7 @@ class News extends Component {
         <div className={styles.dataContainer}>
             <h3 className={styles.header}>{element.translations[0].title}</h3>
           {element.translations[0].uebersetzung}
-          <div><button className={styles.buttonRight}>détails</button></div>
+          {/* <div><button className={styles.buttonRight}>détails</button></div> */}
         </div>
       </div>
     </div>)
@@ -39,7 +47,7 @@ class News extends Component {
         <div className={styles.dataContainer}>
             <h3 className={styles.header}>{element.translations[0].title}</h3>
           {element.translations[0].uebersetzung}
-          {/* <div><button className={styles.buttonRight}>détails</button></div> */}
+          <div><button className={styles.buttonRight}  onClick={() => this.setState({puppiesDOB: element.dob.dateofbirth, puppies: true}) }>pictures</button></div>
         </div>
       </div>
     </div>)
@@ -72,9 +80,24 @@ class News extends Component {
  
       if (!this.state.loaded) {
         return <div>Loading...!</div>;
-      }  if (this.state.loaded) {
+      }  if (this.state.loaded&&!this.state.puppies) {
         return (
           <div>
+         {this.state.news}
+         </div>
+      );
+    }if (this.state.loaded&&this.state.puppies) {
+      return (
+        <div>
+       <NewsPuppies puppiesDOB={this.state.puppiesDOB}/>
+       </div>
+    );
+  }
+  }
+}
+
+export default News;
+
       {/* <div className={styles.container}>
         <div>
           <h1 className={styles.mainHeader}>Actualités</h1>
@@ -117,11 +140,3 @@ class News extends Component {
 
         </div>
       </div> */}
-         {this.state.news}
-         </div>
-      );
-    }
-  }
-}
-
-export default News;

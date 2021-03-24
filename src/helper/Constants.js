@@ -9,6 +9,7 @@ module.exports = {
   dogs: baseURL + "/dogs?fields=*&filter[date_of_birth][eq]=",
   ivy: baseURL + "/dogs?fields=*.*.*&filter[name][eq]=Ivy",
   news: baseURL + "/news?fields=*.*.*.*",
+  offspring: baseURL + "/offspring?fields=*.*.*.*",
 };
 
 /* fields=*.*&sort=nr_to_sort" */
