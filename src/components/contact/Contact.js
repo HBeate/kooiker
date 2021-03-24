@@ -14,7 +14,7 @@ class Contact extends Component {
                 width="100%" 
                 height="450" 
                 style={{ border: 0 }} 
-                allowfullscreen="" 
+                allowFullScreen="" 
                 loading="lazy">
                 </iframe>
                 </div>
@@ -26,7 +26,7 @@ class Contact extends Component {
                     <div className={styles.mailContact}>
                         <p>Chemin de Lanegrand; 32400 Fustérouau</p>
                         <a className={styles.iFrame} href = "mailto: helga-henny@kooiker-fr.com">
-                        <i  class="far fa-envelope"> </i>
+                        <i  className="far fa-envelope"> </i>
                         helga-henny@kooiker-fr.com
                         </a>
                     </div>
