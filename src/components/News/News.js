@@ -51,6 +51,7 @@ class News extends Component {
     news.push(part);
     }
     if(element.topic==="1"){
+     
       let part=(
       <div className={styles.newsCard} key={element.id}><p>litter</p>
       <div className={styles.content}>
@@ -65,6 +66,8 @@ class News extends Component {
     news.push(part);
     }
     if(element.topic==="2"){
+      console.log('BREEDING ')
+      console.log(element)
       let part=(
       <div className={styles.newsCard} key={element.id}><p>breeding</p>
       <div className={styles.content}>
