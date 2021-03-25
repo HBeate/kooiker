@@ -74,7 +74,7 @@ class Aboutus extends Component {
 
   render() {
     if (!this.state.loaded) {
-      return <div style={{ textAlign: "center", color: 'rgb(167, 69, 39)' }}><GiJumpingDog size={320} /></div>;
+      return <div style={{ textAlign: "center", color: 'rgb(167, 69, 39)' }}><GiJumpingDog size={'100vh'} /></div>;
     }
     if (this.state.loaded) {
       return (
