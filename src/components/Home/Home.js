@@ -64,9 +64,27 @@ class Home extends Component {
           <div className={styles.content2}>
             <Fade right>
               <div className={styles.certificatLogo}>
-                <img src={logo2} alt={"logo2"} />
-                <img src={logo1} alt={"logo1"} />
-                <img src={logo} alt={"logo"} />
+                <a
+                  href="http://www.fci.be/de/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img src={logo2} alt={"logo2"} />
+                </a>
+                <a
+                  href="https://www.centrale-canine.fr/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img src={logo1} alt={"logo1"} />
+                </a>
+                <a
+                  href="http://association-francaise-kooikerhondje.fr/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img src={logo} alt={"logo"} />
+                </a>
               </div>
               <div className={styles.exLinks}>
                 <ul>
