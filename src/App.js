@@ -14,7 +14,7 @@ import News from './components/News/News';
 import Ivy from './components/Ivy/Ivy';
 import { If, Else } from 'rc-if-else';
 import * as ReactBootStrap from 'react-bootstrap';
-import Contact from "./components/contact/Contact";
+import Contact from "./components/Contact/Contact";
 /* import Styles from '../src/components/Offspring/BreedingCardContainer.css'; */
 /* import ContactForm from '../src/components/Form/ContactForm'; */
 
