@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styles from "./Footer.module.css";
+import { NavLink } from "react-router-dom";
 
 class Footer extends Component {
   constructor(props) {
@@ -15,12 +16,12 @@ class Footer extends Component {
           
         </div>
         <div className={styles.Favicon}>
-          <a href="1#">
+          <NavLink to="/contact">
             <i className ="far fa-envelope"></i>
-          </a>
-          <a href="2#">
+          </NavLink>
+          <NavLink to="/contact">
           <i className="fas fa-map-marker-alt"></i>
-          </a>
+          </NavLink>
         </div>
         <div className={styles.Copyright1}>
         <h6>Copyright © 2021 Alle Rechte vorbehalten</h6>
