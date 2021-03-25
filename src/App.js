@@ -8,16 +8,12 @@ import getUserLocale from "get-user-locale";
 import Navbar from "./components/Navbar/Navbar";
 import { Switch, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
-//import Slideshow from "./components/Aboutus/Slideshow";
 import Footer from "./components/Footer/Footer";
 import News from './components/News/News';
 import Ivy from './components/Ivy/Ivy';
 import { If, Else } from 'rc-if-else';
 import * as ReactBootStrap from 'react-bootstrap';
 import Contact from "./components/Contact/Contact";
-/* import Styles from '../src/components/Offspring/BreedingCardContainer.css'; */
-/* import ContactForm from '../src/components/Form/ContactForm'; */
-
 
 export default class App extends Component {
   constructor(props) {
@@ -35,11 +31,9 @@ export default class App extends Component {
 
   togglePoppies = () => {
     this.setState(state => ({ poppies: !state.poppies }));
-    console.log(this.state.poppies)
   };
   togglePoppiesNews = () => {
     this.setState(state => ({ poppies: false }));
-    console.log(this.state.poppies)
   };
 
   componentDidMount() {
