@@ -8,11 +8,6 @@ module.exports = {
   aboutus_gallery: baseURL + "/aboutus_directus_files?fields=*.*",
   dogs: baseURL + "/dogs?fields=*&filter[date_of_birth][eq]=",
   ivy: baseURL + "/dogs?fields=*.*.*&filter[name][eq]=Ivy",
-  news: baseURL + "/news?fields=*.*.*.*",
+  news: baseURL + "/news?fields=*.*.*.*&sort=-id",
   offspring: baseURL + "/offspring?fields=*.*.*.*",
 };
-
-/* fields=*.*&sort=nr_to_sort" */
-
-
-
