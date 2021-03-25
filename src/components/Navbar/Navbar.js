@@ -66,7 +66,10 @@ class Navbar extends Component {
   handleClick = () => {
     this.setState({ clicked: !this.state.clicked });
   };
-
+newsFunktionen=()=>{
+  this.closeMobileMenu();
+  this.props.togglePoppiesNews();
+}
   render() {
     return (
       <>
@@ -84,7 +87,7 @@ class Navbar extends Component {
               <li className="nav-item"><NavLink to="/aboutus" onClick={this.closeMobileMenu}><div className="nav-links">{this.state.AboutUs}</div></NavLink></li>
               <li className="nav-item"><NavLink to="/ivy" onClick={this.closeMobileMenu}><div className="nav-links">Ivy</div></NavLink></li>
               <li className="nav-item"><NavLink to="/offspring" onClick={this.closeMobileMenu}><div className="nav-links">{this.state.Offspring}</div></NavLink></li>
-              <li className="nav-item"><NavLink to="/news" onClick={()=>(this.closeMobileMenu, this.props.togglePoppiesNews)}><div className="nav-links">{this.state.News}</div></NavLink></li>
+              <li className="nav-item"><NavLink to="/news" onClick={this.newsFunktionen}><div className="nav-links">{this.state.News}</div></NavLink></li>
               <li className="nav-item"><NavLink to="/contact" onClick={this.closeMobileMenu}><div className="nav-links">{this.state.Contact}</div></NavLink></li>   
             </ul>
         </nav>
