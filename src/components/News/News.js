@@ -3,6 +3,8 @@ import styles from "./News.module.css";
 import Constants from "../../helper/Constants";
 import NewsPuppies from './NewsPuppies/NewsPuppies';
 import NewsBreeding from "./NewsBreeding/NewsBreeding";
+//import { GiJumpingDog } from 'react-icons/fa/GiJumpingDog';
+import { GiJumpingDog } from "react-icons/gi";
 
 class News extends Component {
   
@@ -92,7 +94,8 @@ class News extends Component {
   render() {
  
       if (!this.state.loaded) {
-        return <div>Loading...!</div>;
+        return <div style={{ textAlign: "center", color: 'rgb(167, 69, 39)' }}><GiJumpingDog size={320} /></div>;
+        
       }  if (this.state.loaded&&!this.props.poppies&&!this.state.parents) {
         return (
           <div>
