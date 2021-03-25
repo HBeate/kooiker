@@ -3,6 +3,7 @@ import Constants from "../../helper/Constants";
 import styles from "./Ivy.module.css";
 import ivyImg from "../Ivy/ivy.jpg";
 import ResponsiveGallery from 'react-responsive-gallery';
+import { GiJumpingDog } from "react-icons/gi";
 
 class Ivy extends Component {
   constructor(props) {
@@ -11,7 +12,8 @@ class Ivy extends Component {
       show: "none",
       dog: "",
       showGallery: "none",
-    images:[]
+    images:[], 
+    loaded:false,
     };
   }
   componentDidMount() {
@@ -30,7 +32,8 @@ class Ivy extends Component {
         this.setState({
           images:images,
           dog:ivy,
-          pedigree:pedigree
+          pedigree:pedigree,
+          loaded:true,
         });
       });
   }
@@ -66,6 +69,10 @@ class Ivy extends Component {
   };
 
   render() {
+    if (!this.state.loaded) {
+      return <div style={{ textAlign: "center", color: 'rgb(167, 69, 39)' }}><GiJumpingDog size={320} /></div>;
+      
+    } if (this.state.loaded) {
     return (
       <div className={styles.container}>
         <div>
@@ -143,6 +150,6 @@ class Ivy extends Component {
     );
   }
 }
-
+}
 export default Ivy;
 
