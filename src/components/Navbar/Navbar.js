@@ -83,12 +83,12 @@ newsFunktionen=()=>{
             </NavLink>
             <div className="menu-icon" onClick={this.handleClick}><i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i></div>
             <ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
-              <li className="nav-item"><NavLink to="/" onClick={this.closeMobileMenu}><div className="nav-links">Home</div></NavLink></li>
-              <li className="nav-item"><NavLink to="/aboutus" onClick={this.closeMobileMenu}><div className="nav-links">{this.state.AboutUs}</div></NavLink></li>
-              <li className="nav-item"><NavLink to="/ivy" onClick={this.closeMobileMenu}><div className="nav-links">Ivy</div></NavLink></li>
-              <li className="nav-item"><NavLink to="/offspring" onClick={this.closeMobileMenu}><div className="nav-links">{this.state.Offspring}</div></NavLink></li>
-              <li className="nav-item"><NavLink to="/news" onClick={this.newsFunktionen}><div className="nav-links">{this.state.News}</div></NavLink></li>
-              <li className="nav-item"><NavLink to="/contact" onClick={this.closeMobileMenu}><div className="nav-links">{this.state.Contact}</div></NavLink></li>   
+              <li><NavLink to="/" onClick={this.closeMobileMenu}><div className="nav-links">Home</div></NavLink></li>
+              <li><NavLink to="/aboutus" onClick={this.closeMobileMenu}><div className="nav-links">{this.state.AboutUs}</div></NavLink></li>
+              <li><NavLink to="/ivy" onClick={this.closeMobileMenu}><div className="nav-links">Ivy</div></NavLink></li>
+              <li><NavLink to="/offspring" onClick={this.closeMobileMenu}><div className="nav-links">{this.state.Offspring}</div></NavLink></li>
+              <li><NavLink to="/news" onClick={this.newsFunktionen}><div className="nav-links">{this.state.News}</div></NavLink></li>
+              <li><NavLink to="/contact" onClick={this.closeMobileMenu}><div className="nav-links">{this.state.Contact}</div></NavLink></li>   
             </ul>
         </nav>
         </div>
