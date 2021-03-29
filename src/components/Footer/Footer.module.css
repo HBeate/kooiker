@@ -22,7 +22,7 @@
 .Copyright1{
   width: 100%;
   text-align: right;
- 
+  margin-right: 3rem;
 }
 
 .Copyright h2 {
@@ -89,6 +89,7 @@
   }
   .Copyright1{
     text-align: center;
+    margin-right: 0;
   }
 
   .Copyright h2{
