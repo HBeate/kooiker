@@ -12,9 +12,9 @@ body {
     padding-right: 15px;
     padding-left: 15px;
     padding: 15px;
-    width: 960px;
-    margin-bottom: 100px;
-    object-fit: contain;
+    max-width: 960px;
+    /* margin-bottom: 100px;
+    object-fit: contain; */
   }
   .mainHeader {
     font-size: 2rem;
@@ -25,23 +25,16 @@ body {
     border-bottom: brown solid 2px;
   }
   .detailCard {
-/*     border-bottom: brown solid 2px; */
     padding-bottom: 20px;
   }
   .content {
     display: flex;
     flex: 7;
-    /*     flex-direction: row; */
     align-items: center;
-    /*   padding-right: 20px;
-        padding-left: 20px; */
-
   }
   .header {
     font-size: 1.5rem;
     color: brown;
-    /*     display: flex; */
-    /*   justify-items: end; */
     padding-bottom: 8px;
   }
   .born {
@@ -53,7 +46,6 @@ body {
     text-align: left;
     padding: 20px;
     flex-direction: column;
-/*     align-self: flex-start; */
     align-items: center;
     justify-content: center;
   }
@@ -97,3 +89,19 @@ body {
    button {
      margin: 20px;
    }
+   .card {
+    display: flex;
+    flex-wrap: wrap;
+    /* background: silver; */
+  }
+  
+  .card > * {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 280px;
+  }
+  
+  .media {
+    /* background: black; */
+    min-height: 280px;
+  }
