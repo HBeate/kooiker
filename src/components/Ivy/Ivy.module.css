@@ -1,21 +1,48 @@
 body {
   overflow: scroll;
 }
-.mainText {
-  padding: 20px;
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 110px;
+  padding-bottom: 80px;
+  /* for edge cases: */
+  width: 100%;
+  max-width: 100%;
 }
-  .container {
-    display: flex;
-    flex-direction: column;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 15px;
-    padding-left: 15px;
-    padding: 15px;
-    width: 960px;
-    margin-bottom: 100px;
-    object-fit: contain;
+
+.content{
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .container{
+    width: 750px;
   }
+}
+
+@media (min-width: 992px) {
+  .container{
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container{
+    width: 1170px;
+  }
+}
+.ivyPhoto{
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 1px;
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+}
+
   .mainHeader {
     font-size: 2rem;
     color: brown;
@@ -25,35 +52,23 @@ body {
     border-bottom: brown solid 2px;
   }
   .detailCard {
-/*     border-bottom: brown solid 2px; */
     padding-bottom: 20px;
   }
-  .content {
-    display: flex;
-    flex: 7;
-    /*     flex-direction: row; */
-    align-items: center;
-    /*   padding-right: 20px;
-        padding-left: 20px; */
 
-  }
-  .header {
+  
+  /* .header {
     font-size: 1.5rem;
     color: brown;
-    /*     display: flex; */
-    /*   justify-items: end; */
     padding-bottom: 8px;
   }
   .born {
     padding-bottom: 20px;
   }
   .dataContainer {
-    flex: 3;
-    object-fit: contain;
     text-align: left;
     padding: 20px;
     flex-direction: column;
-/*     align-self: flex-start; */
+    float: left;
     align-items: center;
     justify-content: center;
   }
@@ -70,30 +85,11 @@ body {
   .expositions {
     padding-top: 20px;
   }
-  .imageContainer {
-    flex: 3;
-    text-align: right;
-    background-size: cover;
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
-    object-fit: contain;
-    padding: 20px;
-  }
-  img {
-    max-width: 100%;
-    object-fit: contain;
-  }
-  .imgRight {
-    float: right;
-  }
-  .imgLeft {
-    float: left;
-  }
-  
+
   .buttonRight {
     float: right;
     margin-top: 20px;
   }
    button {
      margin: 20px;
-   }
+   } */
