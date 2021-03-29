@@ -42,7 +42,7 @@ class Navbar extends Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll);
+    // window.removeEventListener("scroll", this.handleScroll);
   }
 
   closeMobileMenu = () => {
@@ -51,17 +51,17 @@ class Navbar extends Component {
     });
   };
 
-  handleScroll = () => {
-    if (window.pageYOffset > 1) {
-      if (!this.state.nav) {
-        this.setState({ nav: true });
-      }
-    } else {
-      if (this.state.nav) {
-        this.setState({ nav: false });
-      }
-    }
-  };
+  // handleScroll = () => {
+  //   if (window.pageYOffset > 1) {
+  //     if (!this.state.nav) {
+  //       this.setState({ nav: true });
+  //     }
+  //   } else {
+  //     if (this.state.nav) {
+  //       this.setState({ nav: false });
+  //     }
+  //   }
+  // };
 
   handleClick = () => {
     this.setState({ clicked: !this.state.clicked });
@@ -74,7 +74,8 @@ newsFunktionen=()=>{
     return (
       <>
       <div className="navbar-container">
-        <nav className={`navbar ${this.state.nav && "navbar__brown"}`}>
+        {/* <nav className={`navbar ${this.state.nav && "navbar__brown"}`}> */}
+        <nav className="navbar">
             <NavLink to="/" >
               <div className="navbar-logo">
               <h2>Kooikerhondje</h2>
@@ -83,12 +84,12 @@ newsFunktionen=()=>{
             </NavLink>
             <div className="menu-icon" onClick={this.handleClick}><i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i></div>
             <ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
-              <li><NavLink to="/" onClick={this.closeMobileMenu}><div className="nav-links">Home</div></NavLink></li>
-              <li><NavLink to="/aboutus" onClick={this.closeMobileMenu}><div className="nav-links">{this.state.AboutUs}</div></NavLink></li>
-              <li><NavLink to="/ivy" onClick={this.closeMobileMenu}><div className="nav-links">Ivy</div></NavLink></li>
-              <li><NavLink to="/offspring" onClick={this.closeMobileMenu}><div className="nav-links">{this.state.Offspring}</div></NavLink></li>
-              <li><NavLink to="/news" onClick={this.newsFunktionen}><div className="nav-links">{this.state.News}</div></NavLink></li>
-              <li><NavLink to="/contact" onClick={this.closeMobileMenu}><div className="nav-links">{this.state.Contact}</div></NavLink></li>   
+              <li><NavLink to="/" onClick={this.closeMobileMenu}>Home</NavLink></li>
+              <li><NavLink to="/aboutus" onClick={this.closeMobileMenu}>{this.state.AboutUs}</NavLink></li>
+              <li><NavLink to="/ivy" onClick={this.closeMobileMenu}>Ivy</NavLink></li>
+              <li><NavLink to="/offspring" onClick={this.closeMobileMenu}>{this.state.Offspring}</NavLink></li>
+              <li><NavLink to="/news" onClick={this.newsFunktionen}>{this.state.News}</NavLink></li>
+              <li><NavLink to="/contact" onClick={this.closeMobileMenu}>{this.state.Contact}</NavLink></li>   
             </ul>
         </nav>
         </div>
