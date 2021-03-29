@@ -1,7 +1,6 @@
 .Footer {
   background: rgb(167, 69, 39);
   color: white;
-  padding: 1rem;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -45,10 +44,10 @@
 }
 
 .Favicon a {
-  font-size: 22px;
-  width: 45px;
-  height: 45px;
-  line-height: 45px;
+  font-size: 15px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
   text-align: center;
   display: inline-block;
   border-radius: 50%;
@@ -85,9 +84,11 @@
 
   .Copyright h2{
     text-align: center;
+    font-size: xx-small;
   } 
 
   .Copyright h3{
     text-align: center;
+    font-size: xx-small;
   }
 }
