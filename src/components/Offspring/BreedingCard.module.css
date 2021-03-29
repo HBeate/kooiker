@@ -1,5 +1,6 @@
 .container {
-  flex: 3;
+/*   display: inline-flex;
+  flex: 5; */
   object-fit: contain;
   text-align: left;
   padding: 20px;
@@ -18,9 +19,11 @@
   -moz-box-shadow: 4px 2px 16px 0 rgba(50, 50, 50, 0.62);
   box-shadow: 10px 2px 16px 0 rgba(50, 50, 50, 0.62);
   cursor: pointer;
+  
 }
 .imageContainer {
-  flex: 3;
+  flex: 2;
+  width: auto;
   text-align: right;
   background-size: cover;
   border-top-left-radius: 6px;
@@ -28,9 +31,12 @@
 }
 .dataContainer {
   flex: 2;
+  width: auto;
   object-fit: contain;
   text-align: left;
   padding: 20px;
+  align-items: center;
+  justify-content: center;
 }
 .dataContainer p {
   padding: 8px 0;
