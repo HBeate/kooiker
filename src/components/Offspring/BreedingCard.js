@@ -119,7 +119,7 @@ class BreedingCard extends Component {
             <div className={styles.container}>
                 <div className={styles.containerCard} onClick={() => {  this.onDogSelected(this.state.puppies[0]); this.switch() }}>
                     <div className={styles.imageContainer} /* style={{ backgroundImage: `url(${this.props.breeding.image})` }} */>
-                    <img src={this.props.breeding.image}></img>
+                    <img src={this.props.breeding.image} alt="bild"></img>
                     </div>
                     <div className={styles.dataContainer}>
                         <div><h3 className={styles.header}>{this.props.breeding.parents}</h3></div>
