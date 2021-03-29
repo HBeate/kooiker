@@ -84,7 +84,7 @@ newsFunktionen=()=>{
             </NavLink>
             <div className="menu-icon" onClick={this.handleClick}><i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i></div>
             <ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
-              <li><NavLink to="/" onClick={this.closeMobileMenu}>Home</NavLink></li>
+              <li><NavLink to="/" onClick={this.closeMobileMenu}><i class="fas fa-home"></i></NavLink></li>
               <li><NavLink to="/aboutus" onClick={this.closeMobileMenu}>{this.state.AboutUs}</NavLink></li>
               <li><NavLink to="/ivy" onClick={this.closeMobileMenu}>Ivy</NavLink></li>
               <li><NavLink to="/offspring" onClick={this.closeMobileMenu}>{this.state.Offspring}</NavLink></li>
