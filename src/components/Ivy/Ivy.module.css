@@ -31,6 +31,7 @@ body {
     display: flex;
     flex: 7;
     align-items: center;
+    padding: 20px;
   }
   .header {
     font-size: 1.5rem;
@@ -104,4 +105,5 @@ body {
   .media {
     /* background: black; */
     min-height: 280px;
+    padding: 20px;
   }

@@ -160,19 +160,21 @@ class Ivy extends Component {
           </div>
 
           <div>
-                <button onClick={this.showPedigree}>Ahnentafel</button>
-         
-                <button onClick={this.showImages}>Galerie</button>
-        
-                <button>Ausstellungen</button>
-                
-              </div>
-              <img
-          style={{ display: this.state.show }}
-          src={this.state.pedigree}
-          alt={"Ivy"} onClick={this.showPedigree}
-        />
-        <div style={{ display: this.state.showGallery }}><ResponsiveGallery images={this.state.images} useLightBox={true}/></div>
+            <button onClick={this.showPedigree}>Ahnentafel</button>
+
+            <button onClick={this.showImages}>Galerie</button>
+
+            <button>Ausstellungen</button>
+          </div>
+          <img
+            style={{ display: this.state.show }}
+            src={this.state.pedigree}
+            alt={"Ivy"}
+            onClick={this.showPedigree}
+          />
+          <div style={{ display: this.state.showGallery }}>
+            <ResponsiveGallery images={this.state.images} useLightBox={true} />
+          </div>
         </div>
       );
     }
