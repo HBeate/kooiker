@@ -14,13 +14,13 @@
 }
 
 .Copyright {
-  width: 30%;
+  /* width: 30%; */
   color: white;
- 
+  margin-left: 2.7rem;
 }
 
 .Copyright1{
-  width: 100%;
+  /* width: 100%; */
   text-align: right;
   margin-right: 2.7rem;
 }
@@ -40,7 +40,7 @@
   font-size: medium;
 }
 .Favicon {
-  width: 85%;
+  /* width: 85%; */
   align-items: center;
   text-align: right;
   justify-content: center;
@@ -69,7 +69,7 @@
   color: #eee;
 }
 
-@media only screen and (max-width: 945px) {
+@media only screen and (max-width: 550px) {
   .Footer {
     position: relative;
     bottom: 0;
@@ -85,7 +85,7 @@
   }
 
   .Copyright{
-    width: 100%;
+  
     padding-right: 0;
   }
   .Copyright1{
@@ -102,4 +102,5 @@
     text-align: center;
     font-size: small;
   }
+  
 }
