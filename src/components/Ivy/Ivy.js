@@ -13,15 +13,16 @@ class Ivy extends Component {
       show: "none",
       dog: "",
       showGallery: "none",
+      showExpositions: 'none',
       images: [],
       loaded: false,
+      expositions:[]
     };
   }
   componentDidMount() {
     fetch(Constants.ivy)
       .then((resp) => resp.json())
       .then((result) => {
-        console.log(result.data[0]);
         let ivy = result.data[0];
         let pedigree = result.data[0].pedigree.data.full_url;
         let images = [];
@@ -37,6 +38,15 @@ class Ivy extends Component {
           loaded: true,
         });
       });
+      fetch(Constants.expositions)
+      .then((resp) => resp.json())
+      .then((result) => {
+        console.log(result.data[0]);
+        let expositions = result.data[0];
+        this.setState({
+          expositions: expositions,
+        });
+      });
   }
 
   showPedigree = () => {
@@ -44,11 +54,13 @@ class Ivy extends Component {
       this.setState({
         show: "flex",
         showGallery: "none",
+        showExpositions: "none",
       });
     } else {
       this.setState({
         show: "none",
         showGallery: "none",
+        showExpositions: "none",
       });
     }
   };
@@ -59,14 +71,34 @@ class Ivy extends Component {
       this.setState({
         showGallery: "flex",
         show: "none",
+        showExpositions: "none",
       });
     } else {
       this.setState({
         showGallery: "none",
         show: "none",
+        showExpositions: "none",
       });
     }
   };
+
+  showExpositions = () => {
+    console.log(this.state.showGallery);
+    if (this.state.showExpositions === "none") {
+      this.setState({
+        showGallery: "none",
+        show: "none",
+        showExpositions: "flex",
+      });
+    } else {
+      this.setState({
+        showGallery: "none",
+        show: "none",
+        showExpositions: "none",
+      });
+    }
+  };
+
 
   render() {
     if (!this.state.loaded) {
@@ -164,15 +196,36 @@ class Ivy extends Component {
          
                 <button onClick={this.showImages}>Galerie</button>
         
-                <button>Ausstellungen</button>
+                <button onClick={this.showExpositions}>Ausstellungen</button>
                 
               </div>
+
               <img
           style={{ display: this.state.show }}
           src={this.state.pedigree}
           alt={"Ivy"} onClick={this.showPedigree}
         />
         <div style={{ display: this.state.showGallery }}><ResponsiveGallery images={this.state.images} useLightBox={true}/></div>
+        <div style={{ display: this.state.showExpositions }}>{this.state.expositions.text}</div>
+        <div style={{display:'flex', flexWrap: 'wrap'}}>
+        <img
+          style={{ display: this.state.showExpositions }}
+          src={this.state.expositions.certificates[0].directus_files_id.data.thumbnails[2].url}
+          alt={this.state.expositions.certificates[0].directus_files_id.title}
+          width="300" height="300"
+        />
+        <img
+          style={{ display: this.state.showExpositions }}
+          src={this.state.expositions.certificates[1].directus_files_id.data.thumbnails[2].url}
+          alt={this.state.expositions.certificates[1].directus_files_id.title}
+          width="300" height="300"
+        />
+        <img
+          style={{ display: this.state.showExpositions }}
+          src={this.state.expositions.certificates[2].directus_files_id.data.thumbnails[2].url}
+          alt={this.state.expositions.certificates[2].directus_files_id.title}
+          width="300" height="300"
+        /></div>
         </div>
       );
     }

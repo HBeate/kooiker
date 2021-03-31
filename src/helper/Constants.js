@@ -10,4 +10,5 @@ module.exports = {
   ivy: baseURL + "/dogs?fields=*.*.*&filter[name][eq]=Ivy",
   news: baseURL + "/news?fields=*.*.*.*&sort=-id",
   offspring: baseURL + "/offspring?fields=*.*.*.*",
+  expositions: baseURL + "/expositons?fields=*.*.*.*",
 };
