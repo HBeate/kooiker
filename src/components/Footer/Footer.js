@@ -10,11 +10,10 @@ class Footer extends Component {
   render() {
     return (
       <div className={styles.Footer}>
-        <div className={styles.Copyright}>
-          <h2>Kooikerhondje</h2>
-          <h3>"de la bande de rigolos"</h3>
+        {/* <div className={styles.Copyright}>
+         <p>.</p>
           
-        </div>
+        </div> */}
         <div className={styles.Favicon}>
           <NavLink to="/contact">
             <i className ="far fa-envelope"></i>
