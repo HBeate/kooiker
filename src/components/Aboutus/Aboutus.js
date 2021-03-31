@@ -3,7 +3,8 @@ import Constants from "../../helper/Constants";
 import styles from "./Aboutus.module.css";
 import Car from "./Carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { GiJumpingDog } from "react-icons/gi";
+// import { GiJumpingDog } from "react-icons/gi";
+import  Spinner from './../Spinner/Spinner'
 
 
 class Aboutus extends Component {
@@ -74,7 +75,8 @@ class Aboutus extends Component {
 
   render() {
     if (!this.state.loaded) {
-      return <div style={{ textAlign: "center", color: 'rgb(167, 69, 39)' }}><GiJumpingDog size={'100vh'} /></div>;
+      // return <div style={{ textAlign: "center", color: 'rgb(167, 69, 39)' }}><GiJumpingDog size={'100vh'} /></div>;
+      return(<Spinner/>)
     }
     if (this.state.loaded) {
       return (

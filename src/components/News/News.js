@@ -4,7 +4,8 @@ import Constants from "../../helper/Constants";
 import NewsPuppies from "./NewsPuppies/NewsPuppies";
 import NewsBreeding from "./NewsBreeding/NewsBreeding";
 //import { GiJumpingDog } from 'react-icons/fa/GiJumpingDog';
-import { GiJumpingDog } from "react-icons/gi";
+// import { GiJumpingDog } from "react-icons/gi";
+import  Spinner from './../Spinner/Spinner'
 
 class News extends Component {
   constructor(props) {
@@ -125,11 +126,12 @@ class News extends Component {
 
   render() {
     if (!this.state.loaded) {
-      return (
-        <div style={{ textAlign: "center", color: "rgb(167, 69, 39)" }}>
-          <GiJumpingDog size={"100vh"} />
-        </div>
-      );
+      // return (
+      //   <div style={{ textAlign: "center", color: "rgb(167, 69, 39)" }}>
+      //     <GiJumpingDog size={"100vh"} />
+      //   </div>
+      // );
+      return(<Spinner/>)
     }
     
     if (this.state.loaded && !this.props.poppies && !this.state.parents) {

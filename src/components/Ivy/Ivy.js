@@ -3,7 +3,8 @@ import Constants from "../../helper/Constants";
 import styles from "./Ivy.module.css";
 import ivyImg from "../Ivy/ivy.jpg";
 import ResponsiveGallery from "react-responsive-gallery";
-import { GiJumpingDog } from "react-icons/gi";
+// import { GiJumpingDog } from "react-icons/gi";
+import  Spinner from './../Spinner/Spinner'
 
 class Ivy extends Component {
   constructor(props) {
@@ -69,11 +70,12 @@ class Ivy extends Component {
 
   render() {
     if (!this.state.loaded) {
-      return (
-        <div style={{ textAlign: "center", color: "rgb(167, 69, 39)" }}>
-          <GiJumpingDog size={"100vh"} />
-        </div>
-      );
+      // return (
+      //   <div style={{ textAlign: "center", color: "rgb(167, 69, 39)" }}>
+      //     <GiJumpingDog size={"100vh"} />
+      //   </div>
+      // );
+      return(<Spinner/>)
     }
     if (this.state.loaded) {
       return (
