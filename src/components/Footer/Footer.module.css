@@ -10,40 +10,27 @@
   flex-direction: row;
   align-items: center;
   text-decoration: none;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
-.Copyright {
-  /* width: 30%; */
-  color: white;
+/* .Copyright {
+ 
+  color: rgb(167, 69, 39);
   margin-left: 2.7rem;
-}
+} */
 
 .Copyright1{
   /* width: 100%; */
   text-align: right;
   margin-right: 2.7rem;
 }
-
-.Copyright h2 {
-  color: white;
-  font-family: 'Roboto', sans-serif;
-  font-size: small;
-  text-align: right;
-  font-style: italic;
-}
-
-.Copyright h3 {
-  color: white;
-  text-align: right;
-  font-style: italic;
-  font-size: medium;
-}
 .Favicon {
   /* width: 85%; */
   align-items: center;
-  text-align: right;
+  /* text-align: right; */
   justify-content: center;
+  margin-right: 30vw;
+
 }
 
 .Favicon a {
@@ -82,10 +69,11 @@
   }
   .Favicon { 
     text-align: center;
+    margin-right: 0;
   }
 
   .Copyright{
-  
+   color: rgb(167, 69, 39);
     padding-right: 0;
   }
   .Copyright1{
