@@ -226,6 +226,7 @@ class Ivy extends Component {
           alt={this.state.expositions.certificates[2].directus_files_id.title}
           width="300" height="300"
         /></div>
+
         </div>
       );
     }

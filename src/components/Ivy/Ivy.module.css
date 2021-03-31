@@ -31,6 +31,7 @@ body {
     display: flex;
     flex: 7;
     align-items: center;
+    padding: 20px;
   }
   .header {
     font-size: 1.5rem;
@@ -104,4 +105,15 @@ body {
   .media {
     /* background: black; */
     min-height: 280px;
+    padding: 20px;
+  }
+
+  @media only screen and (max-width: 767px){
+    th,
+    td {
+      padding-right: 6px;
+    }
+    button {
+      margin: 6px;
+    }
   }
