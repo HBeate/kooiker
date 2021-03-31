@@ -107,3 +107,13 @@ body {
     min-height: 280px;
     padding: 20px;
   }
+
+  @media only screen and (max-width: 767px){
+    th,
+    td {
+      padding-right: 6px;
+    }
+    button {
+      margin: 6px;
+    }
+  }
