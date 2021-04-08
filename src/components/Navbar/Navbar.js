@@ -9,6 +9,7 @@ class Navbar extends Component {
     Offspring: "",
     News: "",
     Contact: "",
+    Parents: "",
   };
 
   componentDidMount() {
@@ -21,6 +22,7 @@ class Navbar extends Component {
         Offspring: "Nachkommen",
         News: "Aktuel",
         Contact: "Kontakt",
+        Parents: "Eltern",
       });
     } else if (this.props.language === "en") {
       this.setState({
@@ -29,6 +31,7 @@ class Navbar extends Component {
         Offspring: "Offspring",
         News: "News",
         Contact: "Contact",
+        Parents: "Parents",
       });
     }else if (this.props.language === "fr") {
       this.setState({
@@ -37,6 +40,7 @@ class Navbar extends Component {
         Offspring: "Progéniture",
         News: "Actuel",
         Contact: "Contacter",
+        Parents: "Parents",
       });
     }
   }
@@ -89,7 +93,8 @@ newsFunktionen=()=>{
               <li><NavLink to="/ivy" onClick={this.closeMobileMenu}>Ivy</NavLink></li>
               <li><NavLink to="/offspring" onClick={this.closeMobileMenu}>{this.state.Offspring}</NavLink></li>
               <li><NavLink to="/news" onClick={this.newsFunktionen}>{this.state.News}</NavLink></li>
-              <li><NavLink to="/contact" onClick={this.closeMobileMenu}>{this.state.Contact}</NavLink></li>   
+              <li><NavLink to="/contact" onClick={this.closeMobileMenu}>{this.state.Contact}</NavLink></li> 
+              <li><NavLink to="/parents" onClick={this.closeMobileMenu}>{this.state.Parents}</NavLink></li>   
             </ul>
         </nav>
         </div>
