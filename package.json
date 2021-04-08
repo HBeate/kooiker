@@ -19,6 +19,7 @@
     "react-icons": "^4.2.0",
     "react-image-gallery": "^1.0.8",
     "react-image-video-gallery": "^0.8.18",
+    "react-parallax": "^3.2.1",
     "react-responsive-carousel": "^3.2.13",
     "react-responsive-gallery": "^1.2.5",
     "react-reveal": "^1.2.2",

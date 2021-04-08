@@ -1,15 +1,15 @@
 .parallax {
   /* The image used */
-  background-image: url("./dog.jpg");
+  /* background-image: url("./dog.jpg"); */
 
   /* Set a specific height */
   min-height: 600px;
 
   /* Create the parallax scrolling effect */
-  background-attachment: fixed;
+  /* background-attachment: fixed;
   background-position: 0px 0px;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
 }
 
 .parallax1 {
