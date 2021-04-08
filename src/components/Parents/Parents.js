@@ -97,13 +97,6 @@ class Parents extends Component {
                 <div className={styles.expositions}>
                   <p>{this.state.dog.expositions}</p>
                 </div>
-                {/*                 <div className={styles.img}>
-                  <img
-                    className={styles.imgRight}
-                    src={ivyImg}
-                    alt={"card"}
-                  ></img>
-                </div> */}
               </div>
               <div className={styles.dogbox2}>
                 <h3 className={styles.header}>Déclic Jet-Set</h3>
@@ -142,13 +135,6 @@ class Parents extends Component {
                 <div className={styles.expositions}>
                   <p></p>
                 </div>
-                {/*                 <div className={styles.img}>
-                  <img
-                    className={styles.imgRight}
-                    src={jetSetImg}
-                    alt={"card"}
-                  ></img>
-                </div> */}
               </div>
             </div>
           </div>
