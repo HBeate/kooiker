@@ -47,7 +47,7 @@ class Home extends Component {
       return (
         <div>
           <Parallax bgImage={dogBig} bgImageAlt="the dog" strength={680}>
-          <div className={styles.parallax}>
+          <div style={{ height: 500 }}>
           <Zoom>
               <div className={styles.header}>
                 <h1>Kooikerhondje</h1>
@@ -65,7 +65,7 @@ class Home extends Component {
             </Fade>
           </div>
           <Parallax bgImage={dogSmall} bgImageAlt="the dog" strength={500}>
-          <div className={styles.parallax}>
+          <div style={{ height: 500 }}>
               
          </div>
           </Parallax>
@@ -146,7 +146,7 @@ class Home extends Component {
             </Fade>
           </div>
           <Parallax bgImage={dogSmall} bgImageAlt="the dog" strength={500}>
-          <div className={styles.parallax}>
+          <div style={{ height: 500 }}>
               
          </div>
           </Parallax>
