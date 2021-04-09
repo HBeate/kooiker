@@ -112,6 +112,13 @@
 }
 
 @media (max-width: 590px) {
+  .parallax{
+    background-size: contain;
+  }
+
+  .parallax1{
+    background-size: contain;
+  }
   .header h1 {
     font-size: medium;
   }
@@ -137,6 +144,15 @@
 }
 
 @media (min-width: 591px) and (max-width: 800px) {
+
+  .parallax{
+    background-size: contain;
+  }
+
+  .parallax1{
+    background-size: contain;
+  }
+
   .header h1 {
     font-size: medium;
   }
