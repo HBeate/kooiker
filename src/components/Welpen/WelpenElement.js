@@ -138,6 +138,7 @@ class WelpenElement extends Component {
                     </div>
                   </div>
                   <div style={{ display: this.state.welpenImagesShow }}><NewsPuppies  dob={element.dob.dateofbirth}/></div>
+                  <div style={{ display: this.state.breedingShow }}><DogsDOB dob={element.dob.dateofbirth}/></div>
               </div>
             );
             welpen.push(part);
@@ -175,6 +176,7 @@ class WelpenElement extends Component {
                     </div>
                   </div>
                   <div style={{ display: this.state.welpenImagesShow }}><NewsPuppies  dob={element.dob.dateofbirth}/></div>
+                  <div style={{ display: this.state.breedingShow }}><DogsDOB dob={element.dob.dateofbirth}/></div>
               </div>
                 );
                 welpen.push(part);

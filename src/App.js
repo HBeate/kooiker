@@ -136,10 +136,6 @@ export default class App extends Component {
         <Switch>
           <Route path='/contact' exact render ={()=><Contact/> }/>
         </Switch>
-
-        <Switch>
-          <Route path='/parents' exact render ={()=><Parents/> }/>
-        </Switch>
  
         <Footer/>
       </div>
