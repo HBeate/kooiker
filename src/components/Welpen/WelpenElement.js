@@ -86,6 +86,7 @@ class WelpenElement extends Component {
                     <p>dentures: {element.mutter.dentures}</p>
                     <p>height: {element.mutter.height}</p>
                     <p>dob: {element.mutter.parent_date_of_birth}</p>
+                    <p>expositures: {element.mutter.expositions}</p>
                     </div>
                     <div>
                     <h1>{element.vater.parent_full_name}</h1>
@@ -96,6 +97,7 @@ class WelpenElement extends Component {
                     <p>dentures: {element.vater.dentures}</p>
                     <p>height: {element.vater.height}</p>
                     <p>dob: {element.vater.parent_date_of_birth}</p>
+                    <p>expositures: {element.vater.expositions}</p>
                     </div>
                   </div>
                   <div style={{ display: this.state.welpenImagesShow }}><NewsPuppies  dob={element.dob.dateofbirth}/></div>
@@ -125,6 +127,7 @@ class WelpenElement extends Component {
                     <p>dentures: {element.mutter.dentures}</p>
                     <p>height: {element.mutter.height}</p>
                     <p>dob: {element.mutter.parent_date_of_birth}</p>
+                    <p>expositures: {element.mutter.expositions}</p>
                     </div>
                     <div>
                     <h1>{element.vater.parent_full_name}</h1>
@@ -135,6 +138,7 @@ class WelpenElement extends Component {
                     <p>dentures: {element.vater.dentures}</p>
                     <p>height: {element.vater.height}</p>
                     <p>dob: {element.vater.parent_date_of_birth}</p>
+                    <p>expositures: {element.vater.expositions}</p>
                     </div>
                   </div>
                   <div style={{ display: this.state.welpenImagesShow }}><NewsPuppies  dob={element.dob.dateofbirth}/></div>
@@ -163,6 +167,7 @@ class WelpenElement extends Component {
                     <p>dentures: {element.mutter.dentures}</p>
                     <p>height: {element.mutter.height}</p>
                     <p>dob: {element.mutter.parent_date_of_birth}</p>
+                    <p>expositures: {element.mutter.expositions}</p>
                     </div>
                     <div>
                     <h1>{element.vater.parent_full_name}</h1>
@@ -173,6 +178,7 @@ class WelpenElement extends Component {
                     <p>dentures: {element.vater.dentures}</p>
                     <p>height: {element.vater.height}</p>
                     <p>dob: {element.vater.parent_date_of_birth}</p>
+                    <p>expositures: {element.vater.expositions}</p>
                     </div>
                   </div>
                   <div style={{ display: this.state.welpenImagesShow }}><NewsPuppies  dob={element.dob.dateofbirth}/></div>
