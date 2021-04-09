@@ -9,11 +9,12 @@ import Navbar from "./components/Navbar/Navbar";
 import { Switch, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Footer from "./components/Footer/Footer";
-import News from './components/News/News';
+// import News from './components/News/News';
 import Ivy from './components/Ivy/Ivy';
 import { If, Else } from 'rc-if-else';
 import * as ReactBootStrap from 'react-bootstrap';
 import Contact from "./components/Contact/Contact";
+import Welpen from "./components/Welpen/Welpen";
 
 export default class App extends Component {
   constructor(props) {
@@ -118,8 +119,12 @@ export default class App extends Component {
           <Route path='/ivy' exact render ={()=><Ivy /> }/>
         </Switch>
 
-        <Switch>
+        {/* <Switch>
           <Route path='/news' exact render ={()=><News picture={this.state.image} togglePoppies={this.togglePoppies} poppies={this.state.poppies}/> }/>
+        </Switch> */}
+
+        <Switch>
+          <Route path='/puppys' exact render ={()=><Welpen togglePoppies={this.togglePoppies} poppies={this.state.poppies} language={this.state.language}/> }/>
         </Switch>
 
         <Switch>

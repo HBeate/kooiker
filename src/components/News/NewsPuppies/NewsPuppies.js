@@ -16,7 +16,7 @@ class NewsPuppies extends Component {
       .then((result) => {
         let images=[];
         result.data.forEach(element => {
-          if(this.props.puppiesDOB===element.dateofbirth.dateofbirth)
+          if(this.props.dob===element.dateofbirth.dateofbirth)
           // console.log('HELLO' + element.dateofbirth.dateofbirth)
         element.images.forEach(element => {
           images.push({ 

@@ -41,7 +41,6 @@ class Ivy extends Component {
       fetch(Constants.expositions)
       .then((resp) => resp.json())
       .then((result) => {
-        console.log(result.data[0]);
         let expositions = result.data[0];
         this.setState({
           expositions: expositions,
@@ -66,7 +65,6 @@ class Ivy extends Component {
   };
 
   showImages = () => {
-    console.log(this.state.showGallery);
     if (this.state.showGallery === "none") {
       this.setState({
         showGallery: "flex",
@@ -83,7 +81,6 @@ class Ivy extends Component {
   };
 
   showExpositions = () => {
-    console.log(this.state.showGallery);
     if (this.state.showExpositions === "none") {
       this.setState({
         showGallery: "none",
