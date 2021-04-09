@@ -18,6 +18,12 @@
   background-size: cover;
 }
 
+.parallax-transparent{
+ min-height: 100vh;
+  background: transparent;
+  
+}
+
 .header-home {
   height: 100vh;
   display: flex;
@@ -99,4 +105,10 @@
 
 .exLinks ul {
   list-style-type: none;
+}
+
+@media only screen and (max-device-width: 1366px) {
+  .parallax-home-bg{
+    background-attachment: scroll;
+  }
 }
