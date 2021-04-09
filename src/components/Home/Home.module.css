@@ -1,11 +1,11 @@
-/* .parallax {
-  The image used
-  background-image: url("./dog.jpg");
+.parallax {
+/* The image used */
+background-image: url("./dog.jpg");
 
-  Set a specific height
-  height: 100vh;
+/* Set a specific height */
+height: 100vh;
 
-  Create the parallax scrolling effect
+  /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center 80px;
   background-repeat: no-repeat;
@@ -13,13 +13,13 @@
 }
 
 .parallax1 {
-  The image used
+  /* The image used */
   background-image: url("./dog1.jpg");
-
-  Set a specific height
+  
+  /* Set a specific height */
   height: 100vh;
-
-  Create the parallax scrolling effect
+  
+  /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;
@@ -110,6 +110,13 @@
   list-style-type: none;
 }
 
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+
+/* 
 @media (max-width: 590px) {
   .parallax{
     background-size: contain;
