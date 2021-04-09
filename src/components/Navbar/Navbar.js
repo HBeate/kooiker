@@ -9,6 +9,7 @@ class Navbar extends Component {
     Offspring: "",
     Puppys: "",
     Contact: "",
+    Parents: "",
   };
 
   componentDidMount() {
@@ -21,6 +22,7 @@ class Navbar extends Component {
         Offspring: "Nachkommen",
         Puppys: "Welpen",
         Contact: "Kontakt",
+        Parents: "Eltern",
       });
     } else if (this.props.language === "en") {
       this.setState({
@@ -29,6 +31,7 @@ class Navbar extends Component {
         Offspring: "Offspring",
         Puppys: "Puppys",
         Contact: "Contact",
+        Parents: "Parents",
       });
     }else if (this.props.language === "fr") {
       this.setState({
@@ -37,6 +40,7 @@ class Navbar extends Component {
         Offspring: "Progéniture",
         Puppys: "le chiot",
         Contact: "Contacter",
+        Parents: "Parents",
       });
     }
   }
@@ -87,9 +91,11 @@ newsFunktionen=()=>{
               <li><NavLink to="/" onClick={this.closeMobileMenu}><i className="fas fa-home"></i></NavLink></li>
               <li><NavLink to="/aboutus" onClick={this.closeMobileMenu}>{this.state.AboutUs}</NavLink></li>
               <li><NavLink to="/ivy" onClick={this.closeMobileMenu}>Ivy</NavLink></li>
+
               {/* <li><NavLink to="/offspring" onClick={this.closeMobileMenu}>{this.state.Offspring}</NavLink></li> */}
               <li><NavLink to="/puppys" onClick={this.newsFunktionen}>{this.state.Puppys}</NavLink></li>
               <li><NavLink to="/contact" onClick={this.closeMobileMenu}>{this.state.Contact}</NavLink></li>   
+
             </ul>
         </nav>
         </div>

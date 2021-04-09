@@ -5,18 +5,15 @@ import Zoom from "react-reveal/Zoom";
 import logo from "./logo.jpg";
 import logo1 from "./logo1.png";
 import logo2 from "./logo2.png";
-import {Parallax} from 'react-parallax';
-import dogBig from './dog.jpg';
-import dogSmall from './dog1.jpg';
 
 class Home extends Component {
   state = {
     title1: "",
-    text1: "",
+    text1: ""
   };
 
   componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll);
+    // window.addEventListener("scroll", this.handleScroll);
 
     if (this.props.language === "de") {
       this.setState({
@@ -46,111 +43,7 @@ class Home extends Component {
     } else {
       return (
         <div>
-          <Parallax bgImage={dogBig} bgImageAlt="the dog" strength={680}>
-          <div className={styles.parallax}>
-          <Zoom>
-              <div className={styles.header}>
-                <h1>Kooikerhondje</h1>
-                <h2>“de la bande de rigolos“</h2>
-              </div>
-            </Zoom>
-         </div>
-          </Parallax >
-          <div className={styles.content}>
-            <Fade left>
-              <div>
-                <h2>{this.state.title1}</h2>
-                <p>{this.state.text1}</p>
-              </div>
-            </Fade>
-          </div>
-          <Parallax bgImage={dogSmall} bgImageAlt="the dog" strength={500}>
-          <div className={styles.parallax}>
-              
-         </div>
-          </Parallax>
-          <div className={styles.content2}>
-            <Fade right>
-              <div className={styles.certificatLogo}>
-                <a
-                  href="http://www.fci.be/de/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img src={logo2} alt={"logo2"} />
-                </a>
-                <a
-                  href="https://www.centrale-canine.fr/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img src={logo1} alt={"logo1"} />
-                </a>
-                <a
-                  href="http://association-francaise-kooikerhondje.fr/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img src={logo} alt={"logo"} />
-                </a>
-              </div>
-              <div className={styles.exLinks}>
-                <ul>
-                  <li>
-                    <a
-                      href="http://association-francaise-kooikerhondje.fr/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Association Francaise Kooikerhond
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.vom-kooikerbeis.de/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Vom Kooikerbeis
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.vom-haus-tusburch.de/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Vom Haus Tusburch
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="http://www.rundumahund.com/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Rund uma Hund
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.cdc-goetzis.at/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      CDC Götzis
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </Fade>
-          </div>
-          <Parallax bgImage={dogSmall} bgImageAlt="the dog" strength={500}>
-          <div className={styles.parallax}>
-              
-         </div>
-          </Parallax>
-          {/* <div className={styles.parallax}>
+           <div className={styles.parallax}>
             <Zoom>
               <div className={styles.header}>
                 <h1>Kooikerhondje</h1>
@@ -158,7 +51,7 @@ class Home extends Component {
               </div>
             </Zoom>
           </div>
-          <div className={styles.parallax}></div>
+          {/* <div className={styles.parallax}></div> */}
           <div className={styles.content}>
             <Fade left>
               <div>
@@ -167,7 +60,7 @@ class Home extends Component {
               </div>
             </Fade>
           </div>
-          <div className={styles.parallax1}></div>
+          <div className={styles.parallax}></div>
           <div className={styles.content2}>
             <Fade right>
               <div className={styles.certificatLogo}>
@@ -244,7 +137,7 @@ class Home extends Component {
               </div>
             </Fade>
           </div>
-      <div className={styles.parallax1}></div> */}
+      <div className={styles.parallax1}></div> 
         </div> 
       );
     }

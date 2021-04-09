@@ -1,15 +1,15 @@
 .parallax {
   /* The image used */
-  /* background-image: url("./dog.jpg"); */
+  background-image: url("./dog.jpg");
 
   /* Set a specific height */
-  min-height: 600px;
+  height: 100vh;
 
   /* Create the parallax scrolling effect */
-  /* background-attachment: fixed;
-  background-position: 0px 0px;
+  background-attachment: fixed;
+  background-position: center 80px;
   background-repeat: no-repeat;
-  background-size: cover; */
+  background-size: cover;
 }
 
 .parallax1 {
@@ -17,22 +17,23 @@
   background-image: url("./dog1.jpg");
 
   /* Set a specific height */
-  min-height: 100vh;
+  height: 100vh;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
-  background-position: 0px 0px;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .header {
+  height: 100vh;
   display: flex;
   align-items: center;
   background: transparent;
   flex-direction: column;
   text-align: center;
-  padding-top: 30vh;
+  justify-content: center;
 }
 
 .header h1 {
@@ -45,16 +46,17 @@
 
 .header h2 {
   font-size: 4rem;
-  font-family: "Dancing Script", cursive;
+  font-family: "Dancing Script";
   color: white;
 }
 
 .content {
   /* Set a specific height */
-  min-height: 100vh;
+  min-height: min-content;
   display: flex;
   flex-direction: row;
   width: 80%;
+  margin: 5%;
   margin-left: 10%;
   margin-right: 10%;
   height: auto;
@@ -96,54 +98,26 @@
   margin: 1rem;
 }
 
-ul {
-  list-style-type: none;
-}
-
-a:link {
+.exLinks > ul > li > a {
+  display: flex;
+  justify-content: center;
+  font-size: x-large;
   font-family: "Josefin Sans", sans-serif;
   text-decoration: none;
   color: black;
 }
 
-a:visited {
-  color: black;
-}
-
-.exLinks a {
-  display: flex;
-  justify-content: center;
+.exLinks ul {
+  list-style-type: none;
 }
 
 @media (max-width: 590px) {
-  .parallax {
-    /* The image used */
-    background-image: url("./dog.jpg");
-
-    /* Set a specific height */
-    min-height: 350px;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    
-    background-repeat: no-repeat;
+  .parallax{
     background-size: contain;
-    background-position: center;
   }
 
-  .parallax1 {
-    /* The image used */
-    background-image: url("./dog1.jpg");
-
-    /* Set a specific height */
-    min-height: 100vh;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    
-    background-repeat: no-repeat;
+  .parallax1{
     background-size: contain;
-    background-position: center;
   }
   .header h1 {
     font-size: medium;
@@ -160,38 +134,25 @@ a:visited {
     flex-direction: column;
   }
 
-  .exLinks a {
-    font-size: medium;
+  .exLinks > ul > li > a {
+    font-size: small;
+  }
+
+  .certificatLogo img {
+    margin: 0;
   }
 }
+
 @media (min-width: 591px) and (max-width: 800px) {
-  .parallax {
-    /* The image used */
-    background-image: url("./dog.jpg");
 
-    /* Set a specific height */
-    min-height: 300px;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
+  .parallax{
     background-size: contain;
   }
 
-  .parallax1 {
-    /* The image used */
-    background-image: url("./dog1.jpg");
-
-    /* Set a specific height */
-    min-height: 100vh;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
+  .parallax1{
     background-size: contain;
   }
+
   .header h1 {
     font-size: medium;
   }
@@ -203,39 +164,11 @@ a:visited {
     flex-direction: column;
   }
 
-  .exLinks a {
+  .exLinks > ul > li > a {
     font-size: medium;
   }
-}
-@media (min-width: 801px) and (max-width: 1200px) {
-  .parallax {
-    /* The image used */
-    background-image: url("./dog.jpg");
 
-    /* Set a specific height */
-    min-height: 500px;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-
-  .parallax1 {
-    /* The image used */
-    background-image: url("./dog1.jpg");
-
-    /* Set a specific height */
-    min-height: 100vh;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-  .header h1 {
-    font-size: medium;
+  .certificatLogo img {
+    margin: 0;
   }
 }

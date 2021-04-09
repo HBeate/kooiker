@@ -14,7 +14,9 @@ import Ivy from './components/Ivy/Ivy';
 import { If, Else } from 'rc-if-else';
 import * as ReactBootStrap from 'react-bootstrap';
 import Contact from "./components/Contact/Contact";
+
 import Welpen from "./components/Welpen/Welpen";
+
 
 export default class App extends Component {
   constructor(props) {
@@ -133,6 +135,10 @@ export default class App extends Component {
  
         <Switch>
           <Route path='/contact' exact render ={()=><Contact/> }/>
+        </Switch>
+
+        <Switch>
+          <Route path='/parents' exact render ={()=><Parents/> }/>
         </Switch>
  
         <Footer/>
