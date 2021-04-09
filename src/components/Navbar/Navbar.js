@@ -7,7 +7,7 @@ class Navbar extends Component {
     clicked: false,
     AboutUs: "",
     Offspring: "",
-    News: "",
+    Puppys: "",
     Contact: "",
     Parents: "",
   };
@@ -20,7 +20,7 @@ class Navbar extends Component {
         AboutUs: "Über uns",
         Ivy: "Ivy",
         Offspring: "Nachkommen",
-        News: "Aktuel",
+        Puppys: "Welpen",
         Contact: "Kontakt",
         Parents: "Eltern",
       });
@@ -29,7 +29,7 @@ class Navbar extends Component {
         AboutUs: "About us",
         Ivy: "Ivy",
         Offspring: "Offspring",
-        News: "News",
+        Puppys: "Puppys",
         Contact: "Contact",
         Parents: "Parents",
       });
@@ -38,7 +38,7 @@ class Navbar extends Component {
         AboutUs: "à propos de nous",
         Ivy: "Ivy",
         Offspring: "Progéniture",
-        News: "Actuel",
+        Puppys: "le chiot",
         Contact: "Contacter",
         Parents: "Parents",
       });
@@ -88,13 +88,14 @@ newsFunktionen=()=>{
             </NavLink>
             <div className="menu-icon" onClick={this.handleClick}><i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i></div>
             <ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
-              <li><NavLink to="/" onClick={this.closeMobileMenu}><i class="fas fa-home"></i></NavLink></li>
+              <li><NavLink to="/" onClick={this.closeMobileMenu}><i className="fas fa-home"></i></NavLink></li>
               <li><NavLink to="/aboutus" onClick={this.closeMobileMenu}>{this.state.AboutUs}</NavLink></li>
               <li><NavLink to="/ivy" onClick={this.closeMobileMenu}>Ivy</NavLink></li>
-              <li><NavLink to="/offspring" onClick={this.closeMobileMenu}>{this.state.Offspring}</NavLink></li>
-              <li><NavLink to="/news" onClick={this.newsFunktionen}>{this.state.News}</NavLink></li>
-              <li><NavLink to="/contact" onClick={this.closeMobileMenu}>{this.state.Contact}</NavLink></li> 
-              <li><NavLink to="/parents" onClick={this.closeMobileMenu}>{this.state.Parents}</NavLink></li>   
+
+              {/* <li><NavLink to="/offspring" onClick={this.closeMobileMenu}>{this.state.Offspring}</NavLink></li> */}
+              <li><NavLink to="/puppys" onClick={this.newsFunktionen}>{this.state.Puppys}</NavLink></li>
+              <li><NavLink to="/contact" onClick={this.closeMobileMenu}>{this.state.Contact}</NavLink></li>   
+
             </ul>
         </nav>
         </div>
