@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import styles from "./Home.module.css";
+// import styles from "./Home.module.css";
 import Fade from "react-reveal/Fade";
 import Zoom from "react-reveal/Zoom";
 import logo from "./logo.jpg";
 import logo1 from "./logo1.png";
 import logo2 from "./logo2.png";
+import './Home.css';
 
 class Home extends Component {
   state = {
@@ -13,7 +14,8 @@ class Home extends Component {
   };
 
   componentDidMount() {
-    // window.addEventListener("scroll", this.handleScroll);
+
+    // window.addEventListener ('scroll', this.parallaxShift);
 
     if (this.props.language === "de") {
       this.setState({
@@ -37,22 +39,32 @@ class Home extends Component {
     console.log(this.props.language);
   }
 
+  // componentWillUnmount () {
+  //   window.removeEventListener ('scroll', this.parallaxShift);
+  // }
+
+  // parallaxShift = () => {
+  //   this.setState ({
+  //     offset: window.pageYOffset
+  //   });
+  // };
+
   render() {
     if (!this.props.language) {
       return <div>Loading...!</div>;
     } else {
       return (
-        <div>
-           <div className={styles.parallax}>
+        <div className="home-wrapper">
+           <div className="parallax-home-bg">
             <Zoom>
-              <div className={styles.header}>
+              <div className="header-home">
                 <h1>Kooikerhondje</h1>
                 <h2>“de la bande de rigolos“</h2>
               </div>
             </Zoom>
           </div>
-          {/* <div className={styles.parallax}></div> */}
-          <div className={styles.content}>
+
+          <div className="content-one-home">
             <Fade left>
               <div>
                 <h2>{this.state.title1}</h2>
@@ -60,10 +72,10 @@ class Home extends Component {
               </div>
             </Fade>
           </div>
-          <div className={styles.parallax}></div>
-          <div className={styles.content2}>
+          <div className="parallax-home-bg"></div>
+          <div className="content-two-home">
             <Fade right>
-              <div className={styles.certificatLogo}>
+              <div className="certificatLogo">
                 <a
                   href="http://www.fci.be/de/"
                   target="_blank"
@@ -86,7 +98,7 @@ class Home extends Component {
                   <img src={logo} alt={"logo"} />
                 </a>
               </div>
-              <div className={styles.exLinks}>
+              <div className="exLinks">
                 <ul>
                   <li>
                     <a
@@ -137,8 +149,8 @@ class Home extends Component {
               </div>
             </Fade>
           </div>
-      <div className={styles.parallax1}></div> 
-        </div> 
+      <div className="parallax-home-bg"></div>
+        </div>
       );
     }
   }
