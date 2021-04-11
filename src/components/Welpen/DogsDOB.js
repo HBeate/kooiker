@@ -11,11 +11,13 @@ class DogsDOB extends Component {
     componentDidMount() {
         fetch(Constants.smallDogs + this.props.dob)
             .then(response => response.json())
+
             .then(data => {
                 console.log( data.data)
                 let puppies = [];
-                let x = 0;
+
               if(data.data[1]){
+                  
 
                 data.data.forEach(element => {
                     if (element.images[0].directus_files_id.data.full_url){

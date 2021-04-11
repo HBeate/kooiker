@@ -1,9 +1,15 @@
-.parallax {
-/* The image used */
-background-image: url("./dog.jpg");
+.home-wrapper {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
-/* Set a specific height */
-height: 100vh;
+.parallax-home-bg {
+  /* The image used */
+  background-image: url("./dog.jpg");
+
+  /* Set a specific height */
+  height: 100vh;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
@@ -12,21 +18,13 @@ height: 100vh;
   background-size: cover;
 }
 
-.parallax1 {
-  /* The image used */
-  background-image: url("./dog1.jpg");
+.parallax-transparent{
+ min-height: 100vh;
+  background: transparent;
   
-  /* Set a specific height */
-  height: 100vh;
-  
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
-.header {
+.header-home {
   height: 100vh;
   display: flex;
   align-items: center;
@@ -36,7 +34,7 @@ height: 100vh;
   justify-content: center;
 }
 
-.header h1 {
+.header-home h1 {
   font-size: 2rem;
   font-family: "Roboto", sans-serif;
   color: white;
@@ -44,14 +42,13 @@ height: 100vh;
   border-bottom: none;
 }
 
-.header h2 {
+.header-home h2 {
   font-size: 4rem;
   font-family: "Dancing Script";
   color: white;
 }
 
-.content {
-  
+.content-one-home {
   min-height: min-content;
   display: flex;
   flex-direction: row;
@@ -66,12 +63,12 @@ height: 100vh;
   padding: 0.5rem;
   align-items: center;
 }
-.content h2 {
+.content-one-home h2 {
   padding-bottom: 1rem;
   color: rgb(167, 69, 39);
 }
 
-.content2 {
+.content-two-home {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -111,70 +108,7 @@ height: 100vh;
 }
 
 @media only screen and (max-device-width: 1366px) {
-  .parallax {
+  .parallax-home-bg{
     background-attachment: scroll;
   }
 }
-
-/* 
-@media (max-width: 590px) {
-  .parallax{
-    background-size: contain;
-  }
-
-  .parallax1{
-    background-size: contain;
-  }
-  .header h1 {
-    font-size: medium;
-  }
-  .content {
-    font-size: medium;
-  }
-
-  .header h2 {
-    font-size: 2rem;
-  }
-
-  .certificatLogo {
-    flex-direction: column;
-  }
-
-  .exLinks > ul > li > a {
-    font-size: small;
-  }
-
-  .certificatLogo img {
-    margin: 0;
-  }
-}
-
-@media (min-width: 591px) and (max-width: 800px) {
-
-  .parallax{
-    background-size: contain;
-  }
-
-  .parallax1{
-    background-size: contain;
-  }
-
-  .header h1 {
-    font-size: medium;
-  }
-  .content {
-    font-size: medium;
-  }
-
-  .certificatLogo {
-    flex-direction: column;
-  }
-
-  .exLinks > ul > li > a {
-    font-size: medium;
-  }
-
-  .certificatLogo img {
-    margin: 0;
-  }
-} */
