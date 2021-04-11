@@ -16,7 +16,6 @@ class DogsDOB extends Component {
             .then(data => {
                 console.log( data.data)
                 let puppies = [];
-                let x = 0;
               if(data.data[1]){
                   
                 data.data.forEach(element => {
