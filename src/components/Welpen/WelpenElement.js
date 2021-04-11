@@ -8,6 +8,7 @@ class WelpenElement extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      body: "",
       welpen: [],
       loaded: true,
       showParents: "none",
@@ -63,18 +64,50 @@ class WelpenElement extends Component {
       });
     }
   };
+/* 
+     getWelpenContent = () => {
+    let tempdata = [];
+    let key = 0;
+    let x = this.state.body;
+    x.split("\n").map(function (item) {
+      let line = (
+        <span key={key}>
+          {item}
+          <br />
+        </span>
+      );
+      tempdata.push(line);
+      return key++;
+    });
+    return tempdata;
+  };  */
 
   elements = () => {
     let welpen = [];
     this.props.elements.forEach((element) => {
       if (this.props.language === "en") {
+        /* this.setState({
+          body: element.translations[0].uebersetzung,
+        }); */
         let part = (
           <div key={element.id}>
-            <h1 className={styles.mainHeader}>
-              {element.translations[0].title}
-            </h1>
             <div className={styles.welpenCard}>
               <div className={styles.dataContainer}>
+                <h3 className={styles.header}>
+                  {element.translations[0].title}
+                </h3>
+{/*                 <div>{this.getWelpenContent()}</div> */}
+
+{/* {this.props.text.split('\n').map(function(item, key) {
+  return (
+    <span key={key}>
+      {item}
+      <br/>
+    </span>
+  )
+})} */}
+
+
                 {element.translations[0].uebersetzung}{" "}
                 <div>
                   <button onClick={() => this.parentsSwitch(element)}>
@@ -379,6 +412,7 @@ class WelpenElement extends Component {
     if (this.state.loaded) {
       return (
         <div className={styles.container}>
+          <h1 className={styles.mainHeader}>Litters</h1>
           <div>{this.elements()}</div>
         </div>
       );

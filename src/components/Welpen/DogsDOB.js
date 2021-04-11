@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Constants from "../../helper/Constants";
 // import ResponsiveGallery from 'react-responsive-gallery';
-
 class DogsDOB extends Component {
     constructor(props) {
         super(props);
@@ -13,15 +12,20 @@ class DogsDOB extends Component {
         fetch(Constants.smallDogs + this.props.dob)
             .then(response => response.json())
             .then(data => {
-                console.log(data)
+                console.log( data.data)
                 let puppies = [];
-                data.data.forEach(element => {
+                let x = 0;
+              if(data.data[1]){
 
-                    puppies.push(<div><p>{element.name}</p><img src={element.images[0].directus_files_id.data.full_url} alt={element.id} width="300" height="300"></img></div>);
+                data.data.forEach(element => {
+                    if (element.images[0].directus_files_id.data.full_url){
+                    puppies.push(<div key={element.id}><p>{element.name}</p><img src={element.images[0].directus_files_id.data.full_url} alt={element.id} width="300" height="300"></img></div>);
+                    }
                 });
                 this.setState({
                     puppies: puppies
                 })
+              }
             });
     }
     render() { 
@@ -30,5 +34,4 @@ class DogsDOB extends Component {
 }
  
 export default DogsDOB;
-
 //<img src={element.images[0].directus_files_id.data.full_url} alt={elementelement.id} width="300" height="300">{element.name}</img>

@@ -11,6 +11,6 @@ module.exports = {
   news: baseURL + "/news?fields=*.*.*.*&sort=-id",
   offspring: baseURL + "/offspring?fields=*.*.*.*",
   expositions: baseURL + "/expositons?fields=*.*.*.*",
-  welpen: baseURL + "/welpen?fields=*.*.*.*",
+  welpen: baseURL + "/welpen?fields=*.*.*.*&sort=-id",
   smallDogs: baseURL + '/dogs?fields=*.*.*&filter[date_of_birth.dateofbirth][eq]=',
 };

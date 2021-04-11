@@ -20,7 +20,7 @@ class Navbar extends Component {
         AboutUs: "Über uns",
         Ivy: "Ivy",
         Offspring: "Nachkommen",
-        Puppys: "Welpen",
+        Puppys: "Würfe",
         Contact: "Kontakt",
         Parents: "Eltern",
       });
@@ -29,7 +29,7 @@ class Navbar extends Component {
         AboutUs: "About us",
         Ivy: "Ivy",
         Offspring: "Offspring",
-        Puppys: "Puppys",
+        Puppys: "Litter",
         Contact: "Contact",
         Parents: "Parents",
       });
@@ -38,7 +38,7 @@ class Navbar extends Component {
         AboutUs: "à propos de nous",
         Ivy: "Ivy",
         Offspring: "Progéniture",
-        Puppys: "le chiot",
+        Puppys: "Portées",
         Contact: "Contacter",
         Parents: "Parents",
       });
