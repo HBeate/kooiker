@@ -1,143 +1,4 @@
-// import * as React from "react";
-// import {useEffect, useState} from "react";
-// import './Home.css';
-// import dog from '../Home/dog.jpg'
-// import Zoom from "react-reveal/Zoom";
-// import Fade from "react-reveal/Fade";
-// import logo from "./logo.jpg";
-// import logo1 from "./logo1.png";
-// import logo2 from "./logo2.png";
-
-
-// function Home() {
-
-//   const [offset, setOffset] = useState(0);
-//   useEffect(() => {
-//     function handleScroll(){
-//       setOffset(window.pageYOffset)
-//     }
-//     window.addEventListener("scroll",handleScroll)
-//     return () => {
-//       window.removeEventListener("scroll", handleScroll)
-//     }
-//   }, [offset]);
-
-//   return (
-//     <div className="home-wrapper">
-//       <section className="hero">
-//         <img
-//         src={dog} 
-//         alt="dog background"
-//         className="parallax-home-bg"
-//         style={{
-//           transform: `translateY(${offset * 0.8}px)`
-//         }}
-//         />
-//         <div className="header-home">
-//         <Zoom>  
-//             <h1>Kooikerhondje</h1>
-//             <h2>“de la bande de rigolos“</h2>
-//         </Zoom>
-//         </div>
-//         <div className="content-one-home">
-//             <Fade left>
-//               <div className="content-text">
-//                 <h2>Hier kommt überschrift</h2>
-//                 <p>hier kommt der text</p>
-//               </div>
-//             </Fade>
-//           </div>
-//           <div className="overflow" ></div>
-//           <div>
-//           <div className="content-two-home">
-//              <Fade right>
-//                <div className="certificatLogo">
-//                  <a
-//                    href="http://www.fci.be/de/"
-//                    target="_blank"
-//                    rel="noreferrer"
-//                  >
-//                    <img src={logo2} alt={"logo2"} />
-//                  </a>
-//                  <a
-//                    href="https://www.centrale-canine.fr/"
-//                    target="_blank"
-//                    rel="noreferrer"
-//                  >
-//                    <img src={logo1} alt={"logo1"} />
-//                  </a>
-//                  <a
-//                    href="http://association-francaise-kooikerhondje.fr/"
-//                    target="_blank"
-//                    rel="noreferrer"
-//                  >
-//                    <img src={logo} alt={"logo"} />
-//                  </a>
-//                </div>
-//                <div className="exLinks">
-//                  <ul>
-//                    <li>
-//                      <a
-//                        href="http://association-francaise-kooikerhondje.fr/"
-//                        target="_blank"
-//                        rel="noreferrer"
-//                      >
-//                        Association Francaise Kooikerhond
-//                      </a>
-//                    </li>
-//                    <li>
-//                      <a
-//                        href="https://www.vom-kooikerbeis.de/"
-//                        target="_blank"
-//                        rel="noreferrer"
-//                      >
-//                        Vom Kooikerbeis
-//                      </a>
-//                    </li>
-//                    <li>
-//                      <a
-//                        href="https://www.vom-haus-tusburch.de/"
-//                        target="_blank"
-//                        rel="noreferrer"
-//                      >
-//                        Vom Haus Tusburch
-//                      </a>
-//                    </li>
-//                    <li>
-//                      <a
-//                        href="http://www.rundumahund.com/"
-//                        target="_blank"
-//                        rel="noreferrer"
-//                      >
-//                        Rund uma Hund
-//                      </a>
-//                    </li>
-//                    <li>
-//                      <a
-//                        href="https://www.cdc-goetzis.at/"
-//                        target="_blank"
-//                        rel="noreferrer"
-//                      >
-//                        CDC Götzis
-//                      </a>
-//                    </li>
-//                  </ul>
-//                </div>
-//              </Fade>
-//            </div>
-//           </div>
-//           <div className="overflow" ></div>
-//       </section>
-      
-//     </div>
-//   )
-// }
-
-// export default Home;
-
-
-
-import React, { Component } from "react";
+import React, { Component } from 'react';
 // import styles from "./Home.module.css";
 import Fade from "react-reveal/Fade";
 import Zoom from "react-reveal/Zoom";
@@ -290,3 +151,143 @@ class Home extends Component {
 }
 
 export default Home;
+
+// import * as React from "react";
+// import {useEffect, useState} from "react";
+// import './Home.css';
+// import dog from '../Home/dog.jpg'
+// import Zoom from "react-reveal/Zoom";
+// import Fade from "react-reveal/Fade";
+// import logo from "./logo.jpg";
+// import logo1 from "./logo1.png";
+// import logo2 from "./logo2.png";
+
+
+// function Home() {
+
+//   const [offset, setOffset] = useState(0);
+//   useEffect(() => {
+//     function handleScroll(){
+//       setOffset(window.pageYOffset)
+//     }
+//     window.addEventListener("scroll",handleScroll)
+//     return () => {
+//       window.removeEventListener("scroll", handleScroll)
+//     }
+//   }, [offset]);
+
+//   return (
+//     <div className="home-wrapper">
+//       <section className="hero">
+//         <img
+//         src={dog} 
+//         alt="dog background"
+//         className="parallax-home-bg"
+//         style={{
+//           transform: `translateY(${offset * 0.8}px)`
+//         }}
+//         />
+//         <div className="header-home">
+//         <Zoom>  
+//             <h1>Kooikerhondje</h1>
+//             <h2>“de la bande de rigolos“</h2>
+//         </Zoom>
+//         </div>
+//         <div className="content-one-home">
+//             <Fade left>
+//               <div className="content-text">
+//                 <h2>Hier kommt überschrift</h2>
+//                 <p>hier kommt der text</p>
+//               </div>
+//             </Fade>
+//           </div>
+//           <div className="overflow" ></div>
+//           <div>
+//           <div className="content-two-home">
+//              <Fade right>
+//                <div className="certificatLogo">
+//                  <a
+//                    href="http://www.fci.be/de/"
+//                    target="_blank"
+//                    rel="noreferrer"
+//                  >
+//                    <img src={logo2} alt={"logo2"} />
+//                  </a>
+//                  <a
+//                    href="https://www.centrale-canine.fr/"
+//                    target="_blank"
+//                    rel="noreferrer"
+//                  >
+//                    <img src={logo1} alt={"logo1"} />
+//                  </a>
+//                  <a
+//                    href="http://association-francaise-kooikerhondje.fr/"
+//                    target="_blank"
+//                    rel="noreferrer"
+//                  >
+//                    <img src={logo} alt={"logo"} />
+//                  </a>
+//                </div>
+//                <div className="exLinks">
+//                  <ul>
+//                    <li>
+//                      <a
+//                        href="http://association-francaise-kooikerhondje.fr/"
+//                        target="_blank"
+//                        rel="noreferrer"
+//                      >
+//                        Association Francaise Kooikerhond
+//                      </a>
+//                    </li>
+//                    <li>
+//                      <a
+//                        href="https://www.vom-kooikerbeis.de/"
+//                        target="_blank"
+//                        rel="noreferrer"
+//                      >
+//                        Vom Kooikerbeis
+//                      </a>
+//                    </li>
+//                    <li>
+//                      <a
+//                        href="https://www.vom-haus-tusburch.de/"
+//                        target="_blank"
+//                        rel="noreferrer"
+//                      >
+//                        Vom Haus Tusburch
+//                      </a>
+//                    </li>
+//                    <li>
+//                      <a
+//                        href="http://www.rundumahund.com/"
+//                        target="_blank"
+//                        rel="noreferrer"
+//                      >
+//                        Rund uma Hund
+//                      </a>
+//                    </li>
+//                    <li>
+//                      <a
+//                        href="https://www.cdc-goetzis.at/"
+//                        target="_blank"
+//                        rel="noreferrer"
+//                      >
+//                        CDC Götzis
+//                      </a>
+//                    </li>
+//                  </ul>
+//                </div>
+//              </Fade>
+//            </div>
+//           </div>
+//           <div className="overflow" ></div>
+//       </section>
+      
+//     </div>
+//   )
+// }
+
+// export default Home;
+
+
+
