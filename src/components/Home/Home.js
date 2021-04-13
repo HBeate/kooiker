@@ -1,6 +1,6 @@
 import * as React from "react";
 import {useEffect, useState} from "react";
-import './Home.css';
+import styles from './Homex.module.css';
 import dog from '../Home/dog.jpg'
 import Zoom from "react-reveal/Zoom";
 import Fade from "react-reveal/Fade";
@@ -21,35 +21,35 @@ function Home() {
   }, [offset]);
 
   return (
-    <div className="home-wrapper">
-      <section className="hero">
+    <div className={styles.homeWrapper}>
+      <section className={styles.hero}>
         <img
         src={dog} 
         alt="dog background"
-        className="parallax-home-bg"
+        className={styles.parallaxHomeBg}
         style={{
           transform: `translateY(${offset * 0.8}px)`
         }}
         />
-        <div className="header-home">
+        <div className={styles.headerHome}>
         <Zoom>  
             <h1>Kooikerhondje</h1>
             <h2>“de la bande de rigolos“</h2>
         </Zoom>
         </div>
-        <div className="content-one-home">
+        <div className={styles.contentOneHome}>
             <Fade left>
-              <div className="content-text">
+              <div className={styles.contentText}>
                 <h2>Hier kommt überschrift</h2>
                 <p>hier kommt der text</p>
               </div>
             </Fade>
           </div>
-          <div className="overflow" ></div>
+          <div className={styles.overflow}></div>
           <div>
-          <div className="content-two-home">
+          <div className={styles.contentTwoHome}>
              <Fade right>
-               <div className="certificatLogo">
+               <div className={styles.certificatLogo}>
                  <a
                    href="http://www.fci.be/de/"
                    target="_blank"
@@ -72,7 +72,7 @@ function Home() {
                    <img src={logo} alt={"logo"} />
                  </a>
                </div>
-               <div className="exLinks">
+               <div className={styles.exLinks}>
                  <ul>
                    <li>
                      <a
@@ -124,7 +124,7 @@ function Home() {
              </Fade>
            </div>
           </div>
-          <div className="overflow" ></div>
+          <div className={styles.overflow} ></div>
       </section>
       
     </div>

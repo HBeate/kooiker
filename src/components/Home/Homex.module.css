@@ -1,4 +1,4 @@
-.home-wrapper {
+.homeWrapper {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -16,14 +16,14 @@
   flex-direction: column;
 }
 
-.parallax-home-bg {
+.parallaxHomeBg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
 
   object-fit: cover;
-  z-index: -1;
+  /* z-index: -1; */
 }
 
 .overflow {
@@ -42,7 +42,7 @@
   
 } */
 
-.header-home {
+.headerHome {
   height: 100%;
   display: flex;
   align-items: center;
@@ -52,7 +52,7 @@
   justify-content: center;
 }
 
-.header-home h1 {
+.headerHome h1 {
   font-size: 2rem;
   font-family: "Roboto", sans-serif;
   color: white;
@@ -60,13 +60,13 @@
   border-bottom: none;
 }
 
-.header-home h2 {
+.headerHome h2 {
   font-size: 4rem;
   font-family: "Dancing Script";
   color: white;
 }
 
-.content-one-home {
+.contentOneHome {
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -78,7 +78,7 @@
   align-items: center;
   justify-content: center;
 }
-.content-text {
+.contentText {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
@@ -86,7 +86,7 @@
 
 
 
-.content-two-home {
+.contentTwoHome {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
