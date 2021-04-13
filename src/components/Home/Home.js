@@ -7,6 +7,8 @@ import Fade from "react-reveal/Fade";
 import logo from "./logo.jpg";
 import logo1 from "./logo1.png";
 import logo2 from "./logo2.png";
+
+
 function Home() {
 
   const [offset, setOffset] = useState(0);
