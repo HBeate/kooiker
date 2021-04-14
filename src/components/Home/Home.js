@@ -20,7 +20,7 @@ function Home() {
   return (
     <div style={{width: '100vw'}}>
       <Parallax strength={500} >
-        <Background className="parallaxHomeBg">
+        <Background className="overflow">
           <div className="imgContainer">
           <img  src={dogBackground} alt='background'/>
           </div>
@@ -42,9 +42,12 @@ function Home() {
           </div>
         </Fade>
       </div>
-      <Parallax strength={600}>
-        <Background className="parallaxHomeBg">
+      <Parallax strength={500}>
+        <Background className="overflow">
+          <div className="imgContainer">
+
         <img src={dogBackground} alt='background'/>
+          </div>
         </Background>
         <div className="overflow"></div>
       </Parallax>
