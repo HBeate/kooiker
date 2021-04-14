@@ -1,141 +1,266 @@
-import * as React from "react";
-import {useEffect, useState} from "react";
-import styles from './Homex.module.css';
-import dog from '../Home/dog.jpg'
+import React from "react";
+import { Parallax, Background } from "react-parallax";
+import "./Home.css";
+import dog from "../Home/dog-min.jpg";
 import Zoom from "react-reveal/Zoom";
 import Fade from "react-reveal/Fade";
 import logo from "./logo.jpg";
 import logo1 from "./logo1.png";
 import logo2 from "./logo2.png";
+import dog1 from "./dog1.jpg";
+
+const dogBackground = dog;
+const zertifikat = logo;
+const zertifikat1 = logo1;
+const zertifikat2 = logo2;
+const dogBagroundPuppy = dog1;
 
 
 function Home() {
-
-  const [offset, setOffset] = useState(0);
-  useEffect(() => {
-    function handleScroll(){
-      setOffset(window.pageYOffset)
-    }
-    window.addEventListener("scroll",handleScroll)
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [offset]);
-
   return (
-    <div className={styles.homeWrapper}>
-      <section className={styles.hero}>
-        <img
-        src={dog} 
-        alt="dog background"
-        className={styles.parallaxHomeBg}
-        style={{
-          transform: `translateY(${offset * 0.8}px)`
-        }}
-        />
-        <div className={styles.headerHome}>
-        <Zoom>  
-            <h1>Kooikerhondje</h1>
-            <h2>“de la bande de rigolos“</h2>
-        </Zoom>
+    <div style={{width: '100vw'}}>
+      <Parallax strength={500} >
+        <Background className="parallaxHomeBg">
+          <div className="imgContainer">
+          <img  src={dogBackground} alt='background'/>
+          </div>
+        </Background>
+        <div className="overflow">
+          <Zoom>
+            <div className="headerHome">
+              <h1>Kooikerhondje</h1>
+              <h2>“de la bande de rigolos“</h2>
+            </div>
+          </Zoom>
         </div>
-        <div className={styles.contentOneHome}>
-            <Fade left>
-              <div className={styles.contentText}>
-                <h2>Hier kommt überschrift</h2>
-                <p>hier kommt der text</p>
-              </div>
-            </Fade>
+      </Parallax>
+      <div className="overflow">
+        <Fade left>
+          <div className="contentOneHome">
+            <h2>Hier kommt überschrift</h2>
+            <p>hier kommt der text</p>
           </div>
-          <div className={styles.overflow}></div>
-          <div>
-          <div className={styles.contentTwoHome}>
-             <Fade right>
-               <div className={styles.certificatLogo}>
-                 <a
-                   href="http://www.fci.be/de/"
-                   target="_blank"
-                   rel="noreferrer"
-                 >
-                   <img src={logo2} alt={"logo2"} />
-                 </a>
-                 <a
-                   href="https://www.centrale-canine.fr/"
-                   target="_blank"
-                   rel="noreferrer"
-                 >
-                   <img src={logo1} alt={"logo1"} />
-                 </a>
-                 <a
-                   href="http://association-francaise-kooikerhondje.fr/"
-                   target="_blank"
-                   rel="noreferrer"
-                 >
-                   <img src={logo} alt={"logo"} />
-                 </a>
-               </div>
-               <div className={styles.exLinks}>
-                 <ul>
-                   <li>
-                     <a
-                       href="http://association-francaise-kooikerhondje.fr/"
-                       target="_blank"
-                       rel="noreferrer"
-                     >
-                       Association Francaise Kooikerhond
-                     </a>
-                   </li>
-                   <li>
-                     <a
-                       href="https://www.vom-kooikerbeis.de/"
-                       target="_blank"
-                       rel="noreferrer"
-                     >
-                       Vom Kooikerbeis
-                     </a>
-                   </li>
-                   <li>
-                     <a
-                       href="https://www.vom-haus-tusburch.de/"
-                       target="_blank"
-                       rel="noreferrer"
-                     >
-                       Vom Haus Tusburch
-                     </a>
-                   </li>
-                   <li>
-                     <a
-                       href="http://www.rundumahund.com/"
-                       target="_blank"
-                       rel="noreferrer"
-                     >
-                       Rund uma Hund
-                     </a>
-                   </li>
-                   <li>
-                     <a
-                       href="https://www.cdc-goetzis.at/"
-                       target="_blank"
-                       rel="noreferrer"
-                     >
-                       CDC Götzis
-                     </a>
-                   </li>
-                 </ul>
-               </div>
-             </Fade>
-           </div>
-          </div>
-          <div className={styles.overflow} ></div>
-      </section>
-      
+        </Fade>
+      </div>
+      <Parallax strength={600}>
+        <Background className="parallaxHomeBg">
+        <img src={dogBackground} alt='background'/>
+        </Background>
+        <div className="overflow"></div>
+      </Parallax>
+      <div className="overflow">
+        <div className="contentTwoHome">
+          <Fade right>
+            <div className="certificatLogo">
+              <a href="http://www.fci.be/de/" target="_blank" rel="noreferrer">
+                <img src={zertifikat2} alt={"logo2"} />
+              </a>
+              <a
+                href="https://www.centrale-canine.fr/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={zertifikat1} alt={"logo1"} />
+              </a>
+              <a
+                href="http://association-francaise-kooikerhondje.fr/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={zertifikat} alt={"logo"} />
+              </a>
+            </div>
+            <div className="exLinks">
+              <ul>
+                <li>
+                  <a
+                    href="http://association-francaise-kooikerhondje.fr/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Association Francaise Kooikerhond
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.vom-kooikerbeis.de/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Vom Kooikerbeis
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.vom-haus-tusburch.de/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Vom Haus Tusburch
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="http://www.rundumahund.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Rund uma Hund
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.cdc-goetzis.at/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    CDC Götzis
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </Fade>
+        </div>
+      </div>
+      <Parallax>
+        <Background className="parallaxHomeBg">
+        <img src={dogBagroundPuppy} alt='background'/>
+        </Background>
+        <div className="overflow">
+          
+        </div>
+      </Parallax>
     </div>
-  )
+  );
 }
 
 export default Home;
 
+// function Home() {
 
+//   const [offset, setOffset] = useState(0);
+//   useEffect(() => {
+//     function handleScroll(){
+//       setOffset(window.pageYOffset)
+//     }
+//     window.addEventListener("scroll",handleScroll)
+//     return () => {
+//       window.removeEventListener("scroll", handleScroll)
+//     }
+//   }, [offset]);
+
+//   return (
+//     <div className={styles.homeWrapper}>
+//       <section className={styles.hero}>
+//         <img
+//         src={dog}
+//         alt="dog background"
+//         className={styles.parallaxHomeBg}
+//         style={{
+//           transform: `translateY(${offset * 0.8}px)`
+//         }}
+//         />
+//         <div className={styles.headerHome}>
+//         <Zoom>
+//             <h1>Kooikerhondje</h1>
+//             <h2>“de la bande de rigolos“</h2>
+//         </Zoom>
+//         </div>
+//         <div className={styles.contentOneHome}>
+//             <Fade left>
+//               <div className={styles.contentText}>
+//                 <h2>Hier kommt überschrift</h2>
+//                 <p>hier kommt der text</p>
+//               </div>
+//             </Fade>
+//           </div>
+//           <div className={styles.overflow}></div>
+//           <div>
+//           <div className={styles.contentTwoHome}>
+//              <Fade right>
+//                <div className={styles.certificatLogo}>
+//                  <a
+//                    href="http://www.fci.be/de/"
+//                    target="_blank"
+//                    rel="noreferrer"
+//                  >
+//                    <img src={logo2} alt={"logo2"} />
+//                  </a>
+//                  <a
+//                    href="https://www.centrale-canine.fr/"
+//                    target="_blank"
+//                    rel="noreferrer"
+//                  >
+//                    <img src={logo1} alt={"logo1"} />
+//                  </a>
+//                  <a
+//                    href="http://association-francaise-kooikerhondje.fr/"
+//                    target="_blank"
+//                    rel="noreferrer"
+//                  >
+//                    <img src={logo} alt={"logo"} />
+//                  </a>
+//                </div>
+//                <div className={styles.exLinks}>
+//                  <ul>
+//                    <li>
+//                      <a
+//                        href="http://association-francaise-kooikerhondje.fr/"
+//                        target="_blank"
+//                        rel="noreferrer"
+//                      >
+//                        Association Francaise Kooikerhond
+//                      </a>
+//                    </li>
+//                    <li>
+//                      <a
+//                        href="https://www.vom-kooikerbeis.de/"
+//                        target="_blank"
+//                        rel="noreferrer"
+//                      >
+//                        Vom Kooikerbeis
+//                      </a>
+//                    </li>
+//                    <li>
+//                      <a
+//                        href="https://www.vom-haus-tusburch.de/"
+//                        target="_blank"
+//                        rel="noreferrer"
+//                      >
+//                        Vom Haus Tusburch
+//                      </a>
+//                    </li>
+//                    <li>
+//                      <a
+//                        href="http://www.rundumahund.com/"
+//                        target="_blank"
+//                        rel="noreferrer"
+//                      >
+//                        Rund uma Hund
+//                      </a>
+//                    </li>
+//                    <li>
+//                      <a
+//                        href="https://www.cdc-goetzis.at/"
+//                        target="_blank"
+//                        rel="noreferrer"
+//                      >
+//                        CDC Götzis
+//                      </a>
+//                    </li>
+//                  </ul>
+//                </div>
+//              </Fade>
+//            </div>
+//           </div>
+//           <div className={styles.overflow} ></div>
+//       </section>
+
+//     </div>
+//   )
+// }
+
+// export default Home;
 
 // import React, { Component } from "react";
 // // import styles from "./Home.module.css";
@@ -146,8 +271,6 @@ export default Home;
 // import logo2 from "./logo2.png";
 // import './Home.css';
 
-
-
 // class Home extends Component {
 //   state = {
 //     title1: "",
@@ -155,8 +278,6 @@ export default Home;
 //   };
 
 //   componentDidMount() {
-
-    
 
 //     if (this.props.language === "de") {
 //       this.setState({
@@ -179,8 +300,6 @@ export default Home;
 //     }
 //     console.log(this.props.language);
 //   }
-
-
 
 //   render() {
 //     if (!this.props.language) {
