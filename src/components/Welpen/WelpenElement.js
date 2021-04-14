@@ -3,6 +3,7 @@ import NewsPuppies from "../News/NewsPuppies/NewsPuppies";
 import Spinner from "./../Spinner/Spinner";
 import DogsDOB from "./DogsDOB";
 import styles from "./WelpenElement.module.css";
+import Parents from "../Parents/Parents";
 
 class WelpenElement extends Component {
   constructor(props) {
@@ -11,84 +12,33 @@ class WelpenElement extends Component {
       body: "",
       welpen: [],
       loaded: true,
-      showParents: "none",
+      showParents: false,
       // welpenImages:[],
-      welpenImagesShow: "none",
-      breedingShow: "none",
+      welpenImagesShow: false,
+      breedingShow: false,
+      showLitter: false,
+      parents:'',
+      litterDOB:''
     };
   }
   parentsSwitch = (element) => {
-    if (this.state.showParents === "none") {
-      this.setState({
-        showParents: "flex",
-        welpenImagesShow: "none",
-        breedingShow: "none",
-      });
-    } else {
-      this.setState({
-        showParents: "none",
-        welpenImagesShow: "none",
-        breedingShow: "none",
-      });
-    }
+    console.log(element)
+    console.log(this.state.showParents)
+    this.setState({ showParents: !this.state.showParents, parents:element });
   };
 
-  welpenSwitch = () => {
-    if (this.state.welpenImagesShow === "none") {
-      this.setState({
-        showParents: "none",
-        welpenImagesShow: "flex",
-        breedingShow: "none",
-      });
-    } else {
-      this.setState({
-        welpenImagesShow: "none",
-        showParents: "none",
-        breedingShow: "none",
-      });
-    }
+  welpenSwitch = (element) => {
+    console.log(element)
+    console.log(this.state.showLitter)
+    this.setState({ showLitter: !this.state.showLitter, litterDOB:element });
   };
 
-  breedingSwitch = () => {
-    if (this.state.breedingShow === "none") {
-      this.setState({
-        showParents: "none",
-        welpenImagesShow: "none",
-        breedingShow: "flex",
-      });
-    } else {
-      this.setState({
-        welpenImagesShow: "none",
-        showParents: "none",
-        breedingShow: "none",
-      });
-    }
-  };
-/* 
-     getWelpenContent = () => {
-    let tempdata = [];
-    let key = 0;
-    let x = this.state.body;
-    x.split("\n").map(function (item) {
-      let line = (
-        <span key={key}>
-          {item}
-          <br />
-        </span>
-      );
-      tempdata.push(line);
-      return key++;
-    });
-    return tempdata;
-  };  */
 
   elements = () => {
     let welpen = [];
     this.props.elements.forEach((element) => {
+      console.log(element)
       if (this.props.language === "en") {
-        /* this.setState({
-          body: element.translations[0].uebersetzung,
-        }); */
         let part = (
           <div key={element.id}>
             <div className={styles.welpenCard}>
@@ -96,24 +46,12 @@ class WelpenElement extends Component {
                 <h3 className={styles.header}>
                   {element.translations[0].title}
                 </h3>
-{/*                 <div>{this.getWelpenContent()}</div> */}
-
-{/* {this.props.text.split('\n').map(function(item, key) {
-  return (
-    <span key={key}>
-      {item}
-      <br/>
-    </span>
-  )
-})} */}
-
-
                 {element.translations[0].uebersetzung}{" "}
                 <div>
                   <button onClick={() => this.parentsSwitch(element)}>
                     The parents
                   </button>
-                  <button onClick={() => this.welpenSwitch()}>
+                  <button onClick={() => this.welpenSwitch(element.dob.dateofbirth)}>
                     Week 1 to 9
                   </button>
                   <button onClick={() => this.breedingSwitch()}>
@@ -125,141 +63,15 @@ class WelpenElement extends Component {
                 <img
                   src={element.foto.data.thumbnails[3].url}
                   alt={element.name}
-                ></img>
+                ></img> 
               </div>
             </div>
-            <div style={{ display: this.state.showParents }}>
-              <div>
-                <div className={styles.containerdog1}>
-                  <div className={styles.dogbox1}>
-                    <h3 className={styles.header}>
-                      {element.mutter.parent_full_name}
-                    </h3>
-                    <h4 className={styles.dob}>
-                      {element.mutter.parent_date_of_birth}
-                    </h4>
-                    <div className={styles.img}>
-                      <img
-                        className={styles.imgRight}
-                        src={element.mutter.parent_image.data.full_url}
-                        alt={element.mutter.name}
-                      ></img>
-                    </div>
-                    <table>
-                      <tbody>
-                        <tr>
-                          <td>Von Willebrand/ENM: </td>
-                          <td>{element.mutter.willebrand}</td>
-                        </tr>
-                        <tr>
-                          <td>Patella: </td>
-                          <td>{element.mutter.petella}</td>
-                        </tr>
-                        <tr>
-                          <td>Eyes: </td>
-                          <td>{element.mutter.eyes}</td>
-                        </tr>
-                        <tr>
-                          <td>Dentures: </td>
-                          <td>{element.mutter.dentures}</td>
-                        </tr>
-                        <tr>
-                          <td>Height: </td>
-                          <td>{element.mutter.height}</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <div className={styles.expositions}>
-                      <p>{element.mutter.expositions}</p>
-                    </div>
-                  </div>
-                  <div className={styles.dogbox2}>
-                    <h3 className={styles.header}>
-                      {element.vater.parent_full_name}
-                    </h3>
-                    <h4 className={styles.dob}>
-                      {element.vater.parent_date_of_birth}
-                    </h4>
-                    <div className={styles.img}>
-                      <img
-                        className={styles.imgRight}
-                        src={element.vater.parent_image.data.full_url}
-                        alt={element.vater.name}
-                      ></img>
-                    </div>
-                    <table>
-                      <tbody>
-                        <tr>
-                          <td>Von Willebrand/ENM: </td>
-                          <td>{element.vater.willebrand}</td>
-                        </tr>
-                        <tr>
-                          <td>Patella: </td>
-                          <td>{element.vater.petella}</td>
-                        </tr>
-                        <tr>
-                          <td>Eyes: </td>
-                          <td>{element.vater.eyes}</td>
-                        </tr>
-                        <tr>
-                          <td>Dentures: </td>
-                          <td>{element.vater.dentures}</td>
-                        </tr>
-                        <tr>
-                          <td>Hight: </td>
-                          <td>{element.vater.height}</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <div className={styles.expositions}>
-                      <p></p>
-                    </div>
-                  </div>
-                </div>
-                {/*                 <div className={styles.containerdog1}>
-                  <div className={styles.dogbox1}>
-                    <h3 className={styles.header}>
-                      {element.mutter.parent_full_name}
-                    </h3>
-                    <img
-                      src={element.mutter.parent_image.data.full_url}
-                      alt={element.mutter.name}
-                      width="300"
-                      height="300"
-                    />
-                    <p>willebrand: {element.mutter.willebrand}</p>
-                    <p>petella: {element.mutter.petella}</p>
-                    <p>eyes: {element.mutter.eyes}</p>
-                    <p>dentures: {element.mutter.dentures}</p>
-                    <p>height: {element.mutter.height}</p>
-                    <p>dob: {element.mutter.parent_date_of_birth}</p>
-                    <p>expositures: {element.mutter.expositions}</p>
-                  </div>
-                  <div>
-                    <h1>{element.vater.parent_full_name}</h1>
-                    <img
-                      src={element.vater.parent_image.data.full_url}
-                      alt={element.mutter.name}
-                      width="300"
-                      height="300"
-                    />
-                    <p>willebrand: {element.vater.willebrand}</p>
-                    <p>petella: {element.vater.petella}</p>
-                    <p>eyes: {element.vater.eyes}</p>
-                    <p>dentures: {element.vater.dentures}</p>
-                    <p>height: {element.vater.height}</p>
-                    <p>dob: {element.vater.parent_date_of_birth}</p>
-                    <p>expositures: {element.vater.expositions}</p>
-                  </div>
-                </div> */}
-              </div>
-            </div>
-            <div style={{ display: this.state.welpenImagesShow }}>
+            {/* <div style={{ display: this.state.welpenImagesShow }}>
               <NewsPuppies dob={element.dob.dateofbirth} />
             </div>
             <div style={{ display: this.state.breedingShow }}>
               <DogsDOB dob={element.dob.dateofbirth} />
-            </div>
+            </div>  */}
           </div>
         );
         welpen.push(part);
@@ -287,46 +99,6 @@ class WelpenElement extends Component {
             <p></p>
             <p></p>
             <p></p>
-            <div style={{ display: this.state.showParents }}>
-              <div>
-                <div className={styles.containerdog1}>
-                  <div className={styles.dogbox1}>
-                    <h3 className={styles.header}>
-                      {element.mutter.parent_full_name}
-                    </h3>
-                    <img
-                      src={element.mutter.parent_image.data.full_url}
-                      alt={element.mutter.name}
-                      width="300"
-                      height="300"
-                    />
-                    <p>willebrand: {element.mutter.willebrand}</p>
-                    <p>petella: {element.mutter.petella}</p>
-                    <p>eyes: {element.mutter.eyes}</p>
-                    <p>dentures: {element.mutter.dentures}</p>
-                    <p>height: {element.mutter.height}</p>
-                    <p>dob: {element.mutter.parent_date_of_birth}</p>
-                    <p>expositures: {element.mutter.expositions}</p>
-                  </div>
-                  <div>
-                    <h1>{element.vater.parent_full_name}</h1>
-                    <img
-                      src={element.vater.parent_image.data.full_url}
-                      alt={element.mutter.name}
-                      width="300"
-                      height="300"
-                    />
-                    <p>willebrand: {element.vater.willebrand}</p>
-                    <p>petella: {element.vater.petella}</p>
-                    <p>eyes: {element.vater.eyes}</p>
-                    <p>dentures: {element.vater.dentures}</p>
-                    <p>height: {element.vater.height}</p>
-                    <p>dob: {element.vater.parent_date_of_birth}</p>
-                    <p>expositures: {element.vater.expositions}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
             <div style={{ display: this.state.welpenImagesShow }}>
               <NewsPuppies dob={element.dob.dateofbirth} />
             </div>
@@ -354,40 +126,6 @@ class WelpenElement extends Component {
                 Dans le nouveau foyer
               </button>
             </div>
-            <div style={{ display: this.state.showParents }}>
-              <div>
-                <h1>{element.mutter.parent_full_name}</h1>
-                <img
-                  src={element.mutter.parent_image.data.full_url}
-                  alt={element.mutter.name}
-                  width="300"
-                  height="300"
-                />
-                <p>willebrand: {element.mutter.willebrand}</p>
-                <p>petella: {element.mutter.petella}</p>
-                <p>eyes: {element.mutter.eyes}</p>
-                <p>dentures: {element.mutter.dentures}</p>
-                <p>height: {element.mutter.height}</p>
-                <p>dob: {element.mutter.parent_date_of_birth}</p>
-                <p>expositures: {element.mutter.expositions}</p>
-              </div>
-              <div>
-                <h1>{element.vater.parent_full_name}</h1>
-                <img
-                  src={element.vater.parent_image.data.full_url}
-                  alt={element.mutter.name}
-                  width="300"
-                  height="300"
-                />
-                <p>willebrand: {element.vater.willebrand}</p>
-                <p>petella: {element.vater.petella}</p>
-                <p>eyes: {element.vater.eyes}</p>
-                <p>dentures: {element.vater.dentures}</p>
-                <p>height: {element.vater.height}</p>
-                <p>dob: {element.vater.parent_date_of_birth}</p>
-                <p>expositures: {element.vater.expositions}</p>
-              </div>
-            </div>
             <div style={{ display: this.state.welpenImagesShow }}>
               <NewsPuppies dob={element.dob.dateofbirth} />
             </div>
@@ -402,21 +140,12 @@ class WelpenElement extends Component {
     return welpen;
   };
   render() {
-    if (!this.state.loaded) {
-      return (
-        <div>
-          <Spinner />
-        </div>
-      );
-    }
-    if (this.state.loaded) {
-      return (
-        <div className={styles.container}>
-          <h1 className={styles.mainHeader}>Litters</h1>
-          <div>{this.elements()}</div>
-        </div>
-      );
-    }
+
+    if (!this.state.loaded) {return (<div><Spinner /></div>);}
+    if (this.state.loaded && (!this.state.showParents) && (!this.state.showLitter)) {return (<div className={styles.container}><h1 className={styles.mainHeader}>Litters</h1><div>{this.elements()}</div></div>);}
+    if ((this.state.loaded) && (this.state.showParents) && (!this.state.showLitter)) {return (<div><Parents parents={this.state.parents} /></div>);}
+    if ((this.state.loaded) && (!this.state.showParents) && (this.state.showLitter)) {return (<div><NewsPuppies dob={this.state.litterDOB} /></div>);}
+
   }
 }
 

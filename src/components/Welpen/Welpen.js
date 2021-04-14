@@ -23,7 +23,7 @@ class Welpen extends Component {
       }
     render() { 
         if (!this.state.loaded) {return (<div><Spinner/></div>)}
-        if (this.state.loaded) {return (<WelpenElement elements={this.state.elements} language={this.props.language}/>)}
+        if (this.state.loaded) {return (<WelpenElement elements={this.state.elements} language={this.props.language}  toggleParentsElement={this.props.toggleParentsElement} />)}
     }
 }
  

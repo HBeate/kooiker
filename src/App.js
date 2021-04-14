@@ -16,6 +16,7 @@ import * as ReactBootStrap from 'react-bootstrap';
 import Contact from "./components/Contact/Contact";
 
 import Welpen from "./components/Welpen/Welpen";
+import Parents from "./components/Parents/Parents";
 
 
 export default class App extends Component {
@@ -28,7 +29,8 @@ export default class App extends Component {
       language: '',
       image:'',
       showApp: false,
-      poppies:false
+      poppies:false,
+      showParentsElement:false
     }
   }
 
@@ -38,6 +40,13 @@ export default class App extends Component {
   togglePoppiesNews = () => {
     this.setState(state => ({ poppies: false }));
   };
+
+  toggleParentsElement = () => {
+    console.log(this.state.showParentsElement)
+    this.setState(state => ({ showParentsElement: !state.showParentsElement }));
+    console.log(this.state.showParentsElement)
+  };
+
 
   componentDidMount() {
     let userLocale = getUserLocale();
@@ -108,6 +117,10 @@ export default class App extends Component {
         </Switch>
 
         <Switch>
+          <Route path="/parents" exact render={() => <Parents showParentsElement={this.state.showParentsElement} toggleParentsElement={this.toggleParentsElement}/>} />
+        </Switch>
+
+        <Switch>
         <Route path='/offspring' exact render ={()=>
           <div className="center">
           <div className="doglist">
@@ -126,7 +139,7 @@ export default class App extends Component {
         </Switch> */}
 
         <Switch>
-          <Route path='/puppys' exact render ={()=><Welpen togglePoppies={this.togglePoppies} poppies={this.state.poppies} language={this.state.language}/> }/>
+          <Route path='/puppys' exact render ={()=><Welpen toggleParentsElement={this.toggleParentsElement} poppies={this.state.poppies} language={this.state.language}/> }/>
         </Switch>
 
         <Switch>

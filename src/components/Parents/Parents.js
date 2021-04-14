@@ -1,9 +1,5 @@
 import React, { Component } from "react";
-import Constants from "../../helper/Constants";
 import styles from "./Parents.module.css";
-import ivyImg from "../Ivy/ivy.jpg";
-import jetSetImg from "../Ivy/jetset.jpg";
-import { GiJumpingDog } from "react-icons/gi";
 
 class Parents extends Component {
   constructor(props) {
@@ -13,126 +9,103 @@ class Parents extends Component {
       dog: "",
       showGallery: "none",
       images: [],
-      loaded: false,
+      loaded: true,
+      
     };
   }
   componentDidMount() {
-    fetch(Constants.ivy)
-      .then((resp) => resp.json())
-      .then((result) => {
-        console.log(result.data[0]);
-        let ivy = result.data[0];
-        let pedigree = result.data[0].pedigree.data.full_url;
-        let images = [];
-        result.data[0].images.forEach((element) => {
-          images.push({
-            src: element.directus_files_id.data.full_url,
-          });
-        });
-        this.setState({
-          images: images,
-          dog: ivy,
-          pedigree: pedigree,
-          loaded: true,
-        });
-      });
+    console.log('XXX')
+    console.log(this.props.parents)
   }
 
   render() {
-    if (!this.state.loaded) {
-      return (
-        <div style={{ textAlign: "center", color: "rgb(167, 69, 39)" }}>
-          <GiJumpingDog size={"100vh"} />
-        </div>
-      );
-    }
-    if (this.state.loaded) {
       return (
         <div className={styles.container}>
           <div>
             <h1 className={styles.mainHeader}>
-              {this.state.dog.name} x Jet-Set
+              {this.props.parents.mutter.name} x {this.props.parents.vater.name}
             </h1>
           </div>
           <div>
             <div className={styles.containerdog1}>
               <div className={styles.dogbox1}>
                 <h3 className={styles.header}>
-                  {this.state.dog.parent_full_name}
+                {this.props.parents.mutter.parent_full_name}
                 </h3>
                 <h4 className={styles.dob}>
-                  {this.state.dog.parent_date_of_birth}
+                {this.props.parents.mutter.parent_date_of_birth}
                 </h4>
                 <div className={styles.img}>
                   <img
                     className={styles.imgRight}
-                    src={ivyImg}
-                    alt={"card"}
+                    src={this.props.parents.mutter.parent_image.data.full_url}
+                    alt={this.props.parents.mutter.name}
                   ></img>
                 </div>
                 <table>
                   <tbody>
                     <tr>
                       <td>Von Willebrand/ENM: </td>
-                      <td>{this.state.dog.willebrand}</td>
+                      <td>{this.props.parents.mutter.willebrand}</td>
                     </tr>
                     <tr>
                       <td>Luxation de la rotule: </td>
-                      <td>{this.state.dog.petella}</td>
+                      <td>{this.props.parents.mutter.petella}</td>
                     </tr>
                     <tr>
                       <td>Tares oculaires: </td>
-                      <td>{this.state.dog.eyes}</td>
+                      <td>{this.props.parents.mutter.eyes}</td>
                     </tr>
                     <tr>
                       <td>Dentition: </td>
-                      <td>{this.state.dog.dentures}</td>
+                      <td>{this.props.parents.mutter.dentures}</td>
                     </tr>
                     <tr>
                       <td>Taille: </td>
-                      <td>{this.state.dog.height}</td>
+                      <td>{this.props.parents.mutter.height}</td>
                     </tr>
                   </tbody>
                 </table>
                 <div className={styles.expositions}>
-                  <p>{this.state.dog.expositions}</p>
+                  <p>{this.props.parents.mutter.expositions}</p>
                 </div>
               </div>
               <div className={styles.dogbox2}>
-                <h3 className={styles.header}>Déclic Jet-Set</h3>
-                <h4 className={styles.dob}>24.04.2014</h4>
+                <h3 className={styles.header}>{this.props.parents.vater.parent_full_name}</h3>
+                <h4 className={styles.dob}>{this.props.parents.vater.parent_date_of_birth}</h4>
                 <div className={styles.img}>
                   <img
                     className={styles.imgRight}
-                    src={jetSetImg}
-                    alt={"card"}
+                    src={this.props.parents.vater.parent_image.data.full_url}
+                    alt={this.props.parents.vater.name}
                   ></img>
                 </div>
                 <table>
                   <tbody>
                     <tr>
                       <td>Von Willebrand/ENM: </td>
-                      <td>{this.state.dog.willebrand}</td>
+                      <td>{this.props.parents.vater.willebrand}</td>
                     </tr>
                     <tr>
                       <td>Luxation de la rotule: </td>
-                      <td>{this.state.dog.petella}</td>
+                      <td>{this.props.parents.vater.petella}</td>
                     </tr>
                     <tr>
                       <td>Tares oculaires: </td>
-                      <td>{this.state.dog.eyes}</td>
+                      <td>{this.props.parents.vater.eyes}</td>
                     </tr>
                     <tr>
                       <td>Dentition: </td>
-                      <td>{this.state.dog.dentures}</td>
+                      <td>{this.props.parents.vater.dentures}</td>
                     </tr>
                     <tr>
                       <td>Taille: </td>
-                      <td>{this.state.dog.height}</td>
+                      <td>{this.props.parents.vater.height}</td>
                     </tr>
                   </tbody>
                 </table>
                 <div className={styles.expositions}>
+                <p>{this.props.parents.vater.expositions}</p>
                   <p></p>
                 </div>
               </div>
@@ -142,7 +115,7 @@ class Parents extends Component {
       );
     }
   }
-}
+
 export default Parents;
 
 

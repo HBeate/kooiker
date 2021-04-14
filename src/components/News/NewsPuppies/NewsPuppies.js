@@ -6,7 +6,16 @@ class NewsPuppies extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      images:[]
+      images1:[],
+      images2:[],
+      images3:[],
+      images4:[],
+      images5:[],
+      images6:[],
+      images7:[],
+      images8:[],
+      images9:[],
+      images10:[],
     };
   }
 
@@ -14,20 +23,105 @@ class NewsPuppies extends Component {
     fetch(Constants.offspring)
       .then((resp) => resp.json())
       .then((result) => {
-        let images=[];
+       let images1=[];
+        let images2=[];
+        let images3=[];
+       let  images4=[];
+        let images5=[];
+        let images6=[];
+        let images7=[];
+       let  images8=[];
+        let images9=[];
+       let images10=[];
         result.data.forEach(element => {
           if(this.props.dob===element.dateofbirth.dateofbirth)
-          // console.log('HELLO' + element.dateofbirth.dateofbirth)
-        element.images.forEach(element => {
-          images.push({ 
-            "src" : element.directus_files_id.data.full_url,
-        });
-        });
+          switch (element.week) {
+            case '1':
+              element.images.forEach(element => {
+                images1.push({ 
+                  "src" : element.directus_files_id.data.full_url,
+              });
+              });
+              break;
+              case '2':
+                element.images.forEach(element => {
+                  images2.push({ 
+                    "src" : element.directus_files_id.data.full_url,
+                });
+                });
+                break;
+                case '3':
+                  element.images.forEach(element => {
+                    images3.push({ 
+                      "src" : element.directus_files_id.data.full_url,
+                  });
+                  });
+                  break;
+                  case '4':
+                    element.images.forEach(element => {
+                      images4.push({ 
+                        "src" : element.directus_files_id.data.full_url,
+                    });
+                    });
+                    break;
+                    case '5':
+                      element.images.forEach(element => {
+                        images5.push({ 
+                          "src" : element.directus_files_id.data.full_url,
+                      });
+                      });
+                      break;
+                      case '6':
+                        element.images.forEach(element => {
+                          images6.push({ 
+                            "src" : element.directus_files_id.data.full_url,
+                        });
+                        });
+                        break;
+                        case '7':
+                          element.images.forEach(element => {
+                            images7.push({ 
+                              "src" : element.directus_files_id.data.full_url,
+                          });
+                          });
+                          break;
+                          case '8':
+                            element.images.forEach(element => {
+                              images8.push({ 
+                                "src" : element.directus_files_id.data.full_url,
+                            });
+                            });
+                            break;
+                            case '9':
+                              element.images.forEach(element => {
+                                images9.push({ 
+                                  "src" : element.directus_files_id.data.full_url,
+                              });
+                              });
+                              break;
+                              default:
+                                  element.images.forEach(element => {
+                                    images10.push({ 
+                                      "src" : element.directus_files_id.data.full_url,
+                                  });
+                                  });
+                                  break;
+          }
+          console.log(element.week)
         });
         
 
         this.setState({
-          images:images,
+          images1:images1,
+          images2:images2,
+          images3:images3,
+          images4:images4,
+          images5:images5,
+          images6:images6,
+          images7:images7,
+          images8:images8,
+          images9:images9,
+          images10:images10,
         });
       });
   }
@@ -36,17 +130,26 @@ class NewsPuppies extends Component {
     
     return (
       <div>
-<ResponsiveGallery images={this.state.images} useLightBox={true}/>
-        {/* <div>1ère semaine / 1st week / 1. Woche </div>
+        <div>1ère semaine / 1st week / 1. Woche </div>
+        <ResponsiveGallery images={this.state.images1} useLightBox={true}/>
         <div>2ème semaine / 2nd week / 2. Woche </div>
+        <ResponsiveGallery images={this.state.images2} useLightBox={true}/>
         <div>3ème semaine / 3rd week / 3. Woche </div>
+        <ResponsiveGallery images={this.state.images3} useLightBox={true}/>
         <div>4ème semaine / 4th week / 4. Woche </div>
+        <ResponsiveGallery images={this.state.images4} useLightBox={true}/>
         <div>5ème semaine / 5th week / 5. Woche </div>
+        <ResponsiveGallery images={this.state.images5} useLightBox={true}/>
         <div>6ème semaine / 6th week / 6. Woche </div>
+        <ResponsiveGallery images={this.state.images6} useLightBox={true}/>
         <div>7ème semaine / 7th week / 7. Woche </div>
+        <ResponsiveGallery images={this.state.images7} useLightBox={true}/>
         <div>8ème semaine / 8th week / 8. Woche </div>
+        <ResponsiveGallery images={this.state.images8} useLightBox={true}/>
         <div>9ème semaine / 9th week / 9. Woche </div>
-        <div>Au revoir! / Bye, bye! / Tschüss! </div> */}
+        <ResponsiveGallery images={this.state.images9} useLightBox={true}/>
+        <div>Au revoir! / Bye, bye! / Tschüss! </div>
+        <ResponsiveGallery images={this.state.images10} useLightBox={true}/>
       </div>
     );
   }
