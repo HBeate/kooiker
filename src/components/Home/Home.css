@@ -19,118 +19,144 @@ div {
   margin-top: 10px;
 }
 
-.section1{
-    width: 100vw;
-    max-width: 100%;
-    height: 750px;
-    position: relative;
-    /* top: 0; */
-    /* z-index: -9; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-
- 
+.section1 {
+  width: 100vw;
+  max-width: 100%;
+  height: 750px;
+  position: relative;
+  /* top: 0; */
+  z-index: -9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-.section2{
-    width: 100vw;
-    max-width: 100%;
-    height: 750px;
-    position: relative;
-    /* top: calc(750px * 1); */
-    /* z-index: 99; */
-    
+.section2 {
+  width: 100vw;
+  max-width: 100%;
+  height: 750px;
+  position: relative;
+  /* top: calc(750px * 1); */
+  z-index: 99;
 }
 
-.section3{
-    width: 100vw;
-    max-width: 100%;
-    height: 750px;
-    position: relative;
-    /* top: calc(750px * 2) */
-    /* z-index: -9; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-
-    
+.section3 {
+  width: 100vw;
+  max-width: 100%;
+  height: 750px;
+  position: relative;
+  /* top: calc(750px * 2) */
+  z-index: -9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-.section4{
-    width: 100vw;
-    max-width: 100%;
-    height: 750px;
-    position: relative;
-    /* top: calc(750px * 3) */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    
+.section4 {
+  width: 100vw;
+  max-width: 100%;
+  height: 750px;
+  position: relative;
+  /* top: calc(750px * 3) */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.section5{
-    width: 100vw;
-    max-width: 100%;
-    height: 750px;
-    position: relative;
-    /* top: calc(750px * 4) */
-    /* z-index: -9; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-
-    
+.section5 {
+  width: 100vw;
+  max-width: 100%;
+  height: 750px;
+  position: relative;
+  /* top: calc(750px * 4) */
+  z-index: -9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 /* ++++++++++++ sectionen1 children +++++++++++++++++ */
 
-
-.dog_background{
-    position: absolute;
-    top: 0;
+.dog_background {
+  position: absolute;
+  top: 0;
 }
 
+.home_welcome_header {
+  position: absolute;
+  z-index: 99;
+}
 
-.home_welcome_header{
-    position: absolute;
-    z-index: 99;
-    font-size: xx-large;
-    color: white;
+.home_welcome_header > h1{
+  color: white;
+  border-bottom: none;
+}
+
+.home_welcome_header > h2{
+  color: white;
 }
 
 /* ++++++++++++ sectionen2 children +++++++++++++++++ */
-.first_content{
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    margin-left: auto;
-    margin-right: auto;
+.first_content {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* ++++++++++++ sectionen3 children +++++++++++++++++ */
+
+.second_dog_background{
+  position: absolute;
+  top: calc(550px * 2);
 }
 
 /* ++++++++++++ sectionen4 children +++++++++++++++++ */
 
-.section4_Container{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
+.section4_Container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
 }
 
-.zertifikat_logo img{
-    padding: 1rem;
+.zertifikat_logo img {
+  padding: 1rem;
 }
 
-.externe_links a{
-    color: black;
-    text-decoration: none;
+.externe_links a {
+  color: black;
+  text-decoration: none;
+}
+
+@media only screen and (max-device-width: 768px) {
+  .section1 {
+    height: 500px;
+  }
+  .section2 {
+    height: 500px;
+  }
+  .section3 {
+    height: 500px;
+  }
+  .section4 {
+    height: 500px;
+  }
+  .section5 {
+    height: 500px;
+  }
+
+  .zertifikat_logo img{
+    width: 100px;
+  }
 }

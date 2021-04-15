@@ -6,7 +6,7 @@ function ParallaxJSXWrapper (JSXElement, weight){
             super(props);
 
             this.state={
-                start_position: null,
+                start_position: 0,
                 ease: 0.05,
                 WrappedJSXElement: <Fragment></Fragment>
             }
@@ -15,7 +15,7 @@ function ParallaxJSXWrapper (JSXElement, weight){
         componentDidMount(){
             this.last_offset = 0;
             this.animation_runing = false;
-            this.wrappedJSXElement = null;
+            this.wrappedJSXElement = 0;
 
             const ref = React.createRef();
 
