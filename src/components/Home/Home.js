@@ -6,7 +6,7 @@ import dog1 from "./dog1.jpg";
 import logo from "./logo.jpg";
 import logo1 from "./logo1.png";
 import logo2 from "./logo2.png";
-import ParallaxJSXWrapper from "./ParallaxJSXWrapper";
+import ParallaxJSXWrapper from "./ParallaxJSXWrapper.js";
 
 export default function Home() {
   const Head = ParallaxJSXWrapper(
@@ -19,12 +19,12 @@ export default function Home() {
 
   const BackgroundImage = ParallaxJSXWrapper(
     <img className="dog_background" src={dog} alt="dog" />,
-    0.008
+    0.04
   );
 
   const BackgroundImageDogTwo = ParallaxJSXWrapper(
-    <img className="dog_background" src={dog2} alt="dog" />,
-    0.003
+    <img className="second_dog_background" src={dog2} alt="dog" />,
+    0.04
   );
 
   return (
