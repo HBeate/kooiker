@@ -6,27 +6,37 @@ import dog1 from "./dog1.jpg";
 import logo from "./logo.jpg";
 import logo1 from "./logo1.png";
 import logo2 from "./logo2.png";
+import Zoom from "react-reveal/Zoom";
 import ParallaxJSXWrapper from "./ParallaxJSXWrapper.js";
 
 export default function Home() {
+
   const Head = ParallaxJSXWrapper(
     <div className="home_welcome_header">
+      <Zoom>
       <h1>Kooikerhondje</h1>
       <h2>“de la bande de rigolos“</h2>
+
+      </Zoom>
     </div>,
     0.05
   );
 
   const BackgroundImage = ParallaxJSXWrapper(
     <img className="dog_background" src={dog} alt="dog" />,
-    0.04
+    0.035
   );
 
   const BackgroundImageDogTwo = ParallaxJSXWrapper(
     <img className="second_dog_background" src={dog2} alt="dog" />,
-    0.04
+    0.035
   );
 
+  const BackgroundImageDogPuppy = ParallaxJSXWrapper(
+    <img className="dog_background_puppy" src={dog1} alt="dog" />,
+    0.035
+  );
+  
   return (
     <div className="main_wrapper">
       <div className="main_container">
@@ -37,12 +47,15 @@ export default function Home() {
             <h1>Kooikerhondje</h1>
             <h2>“de la bande de rigolos“</h2>
           </div> */}
+          <Zoom>
+
           <Head />
+          </Zoom>
         </div>
         <div className="section2">
           <div className="first_content">
-            <h2>Hier kommt überschrift</h2>
-            <p>hier kommt der text</p>
+            <h2>Überschrift</h2>
+            <p>Text</p>
           </div>
         </div>
         <div className="section3">
@@ -122,7 +135,8 @@ export default function Home() {
           </div>
         </div>
         <div className="section5">
-          <img className="dog_background_puppy" src={dog1} alt="dog" />
+          {/* <img className="dog_background_puppy" src={dog1} alt="dog" /> */}
+          <BackgroundImageDogPuppy/>
         </div>
       </div>
     </div>
