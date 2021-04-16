@@ -30,7 +30,17 @@ getKey(){
   render() {
       return (
         <div className={styles.container}>
-        <Carousel autoPlay  infiniteLoop  emulateTouch showThumbs={false} labels={false} width={300} >
+        <Carousel 
+        autoPlay={true}  
+        infiniteLoop={true}  
+        emulateTouch 
+        showThumbs={false} 
+        labels={false} 
+        width={300} 
+        showStatus={false}
+        interval={3000}
+        showArrows={false}
+        >
         {this.getItems()}
      </Carousel>
      </div>
