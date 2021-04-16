@@ -39,9 +39,22 @@
   width:100%;
 }
 
-/* +++++++++++Parallax mobile ++++++++++ */
+/* +++++++++++ FrameWork Carousel ++++++++++ */
+.carousel .slide{
+  background: transparent !important;
+  height: 100% !important;
+  
+}
 
+.carousel-root{
+  margin: auto !important;
+  
+}
 
+.carousel .control-dots .dot{
+  background: rgb(167, 69, 39) !important;
+  opacity: 0.1;
+}
 
 /* .mainHeader {
   font-size: 2rem;
