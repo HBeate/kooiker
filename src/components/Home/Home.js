@@ -9,7 +9,7 @@ import logo2 from "./logo2.png";
 import Zoom from "react-reveal/Zoom";
 import ParallaxJSXWrapper from "./ParallaxJSXWrapper.js";
 
-export default function Home() {
+export default function Home (props) {
 
   const Head = ParallaxJSXWrapper(
     <div className="home_welcome_header">
@@ -54,8 +54,8 @@ export default function Home() {
         </div>
         <div className="section2">
           <div className="first_content">
-            <h2>Überschrift</h2>
-            <p>Text</p>
+            <h2>{props.title}</h2>
+            <p>{props.text}</p>
           </div>
         </div>
         <div className="section3">

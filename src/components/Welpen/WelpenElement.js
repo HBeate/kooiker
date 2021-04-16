@@ -21,6 +21,7 @@ class WelpenElement extends Component {
       parents: "",
       litterDOB: "",
       breedings: [],
+      elementsTitle:'',
     };
   }
 
@@ -41,8 +42,20 @@ class WelpenElement extends Component {
           };
           breedings.push(breeding);
         });
+        let elementsTitle='';
+        switch(this.props.language) {
+          case "de":
+            elementsTitle= "Würfe";
+            break;
+            case "en":
+              elementsTitle=  "Litters";
+              break;
+              default:
+                elementsTitle=  "Portées";
+      }
         this.setState({
           breedings: breedings,
+          elementsTitle:elementsTitle,
         });
       });
   }
@@ -202,7 +215,7 @@ class WelpenElement extends Component {
       return (
         <div className={styles.container}>
           
-          <h1 className={styles.mainHeader}>Litters / Würfe / Portées</h1>
+          <h1 className={styles.mainHeader}>{this.state.elementsTitle}</h1>
           <div>{this.elements()}</div>
         </div>
       );
