@@ -61,12 +61,12 @@
 .navigation_menu{
   display: grid;
   grid-template-columns: repeat(5, auto);
-  grid-gap: 10px;
+  grid-gap: 2rem;
   list-style: none;
   text-align: center;
   width: 100%;
   justify-content: flex-end;
-  margin-right: 2rem;
+  margin-right: 3rem;
 }
 
 .menu-button{
