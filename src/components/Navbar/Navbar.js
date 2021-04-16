@@ -72,7 +72,8 @@ class Navbar extends Component {
   };
 newsFunktionen=()=>{
   this.closeMobileMenu();
-  this.props.togglePoppiesNews();
+  // this.props.togglePoppiesNews();
+  this.props.defaultSwitch();
 }
   render() {
     return (

@@ -13,10 +13,6 @@ class Parents extends Component {
       
     };
   }
-  componentDidMount() {
-    console.log('XXX')
-    console.log(this.props.parents)
-  }
 
   render() {
       return (

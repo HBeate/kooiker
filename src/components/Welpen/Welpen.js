@@ -23,7 +23,7 @@ class Welpen extends Component {
       }
     render() { 
         if (!this.state.loaded) {return (<div><Spinner/></div>)}
-        if (this.state.loaded) {return (<WelpenElement elements={this.state.elements} language={this.props.language}  toggleParentsElement={this.props.toggleParentsElement} />)}
+        if (this.state.loaded) {return (<WelpenElement elements={this.state.elements} language={this.props.language}  defaultSwitch={this.defaultSwitch}  toggleParentsElement={this.props.toggleParentsElement} parentsSwitch={this.props.parentsSwitch} welpenSwitch={this.props.welpenSwitch} breedingSwitch={this.props.breedingSwitch} showParents={this.props.showParents} showLitter={this.props.showLitter} showDogs={this.props.showDogs}/>)}
     }
 }
  

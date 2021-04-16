@@ -2,19 +2,17 @@ import "./App.css";
 import BreedingCardContainer from "./components/Offspring/BreedingCardContainer";
 import React, { Component } from "react";
 import DogDetail from "./components/Offspring/DogDetail";
-import Constants from "./helper/Constants";
+// import Constants from "./helper/Constants";
 import Aboutus from "./components/Aboutus/Aboutus";
 import getUserLocale from "get-user-locale";
 import Navbar from "./components/Navbar/Navbar";
 import { Switch, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Footer from "./components/Footer/Footer";
-// import News from './components/News/News';
 import Ivy from './components/Ivy/Ivy';
 import { If, Else } from 'rc-if-else';
 import * as ReactBootStrap from 'react-bootstrap';
 import Contact from "./components/Contact/Contact";
-
 import Welpen from "./components/Welpen/Welpen";
 import Parents from "./components/Parents/Parents";
 
@@ -30,7 +28,11 @@ export default class App extends Component {
       image:'',
       showApp: false,
       poppies:false,
-      showParentsElement:false
+      showParentsElement:false,
+      // breedingShow: false,
+      showParents:false,
+      showLitter: false,
+      showDogs: false,
     }
   }
 
@@ -42,10 +44,22 @@ export default class App extends Component {
   };
 
   toggleParentsElement = () => {
-    console.log(this.state.showParentsElement)
     this.setState(state => ({ showParentsElement: !state.showParentsElement }));
-    console.log(this.state.showParentsElement)
   };
+
+  parentsSwitch = () => {
+    this.setState({ showParents: !this.state.showParents});
+  };
+
+  welpenSwitch = () => {
+    this.setState({ showLitter: !this.state.showLitter});
+  };
+
+  breedingSwitch = () => {
+    this.setState({ showDogs: !this.state.showDogs});
+  };
+
+  defaultSwitch =() =>{this.setState({ showDogs:false, showParents:false, showLitter:false});}
 
 
   componentDidMount() {
@@ -55,32 +69,32 @@ export default class App extends Component {
       language: res,
       showApp: true,
     });
-    fetch(Constants.breeding)
-      .then((response) => response.json())
-      .then((data) => {
-        let breedings = [];
-        data.data.forEach((element) => {
-          let breeding = {
-            id: element.id,
-            father: element.father.name,
-            mother: element.mother.name,
-            dateOfBirth: element.dateofbirth,
-            description: element.description,
-            image: element.image.data.thumbnails[7].url,
-            parents: element.mother.name + " x " + element.father.name,
-          };
-          breedings.push(breeding);
-        });
-        this.setState({
-          image: data.data[0].image.data.thumbnails[7].url,
-          breedings: breedings,
-        });
+    // fetch(Constants.breeding)
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     let breedings = [];
+    //     data.data.forEach((element) => {
+    //       let breeding = {
+    //         id: element.id,
+    //         father: element.father.name,
+    //         mother: element.mother.name,
+    //         dateOfBirth: element.dateofbirth,
+    //         description: element.description,
+    //         image: element.image.data.thumbnails[7].url,
+    //         parents: element.mother.name + " x " + element.father.name,
+    //       };
+    //       breedings.push(breeding);
+    //     });
+    //     this.setState({
+    //       image: data.data[0].image.data.thumbnails[7].url,
+    //       breedings: breedings,
+    //     });
        
-      });
+      // });
   }
 
   onBreedingSelected = (id) => {
-    alert("top App:" + id);
+    // alert("top App:" + id);
     this.setState({
       showDetail: true,
       actualBreeding: id,
@@ -111,13 +125,13 @@ export default class App extends Component {
         {<ReactBootStrap.Spinner animation='grow' style={{ position: 'fixed', top: '50%', left: '50%'}}/>}
         <Else >
       <div className="App">
-        <Navbar language={this.state.language} togglePoppiesNews={this.togglePoppiesNews}/>
+        <Navbar language={this.state.language} togglePoppiesNews={this.togglePoppiesNews} defaultSwitch={this.defaultSwitch} />
         <Switch>
           <Route path="/" exact render={() => <Home language={this.state.language}/>} />
         </Switch>
 
         <Switch>
-          <Route path="/parents" exact render={() => <Parents showParentsElement={this.state.showParentsElement} toggleParentsElement={this.toggleParentsElement}/>} />
+          <Route path="/parents" exact render={() => <Parents showParentsElement={this.state.showParentsElement} toggleParentsElement={this.toggleParentsElement} />} />
         </Switch>
 
         <Switch>
@@ -139,7 +153,7 @@ export default class App extends Component {
         </Switch> */}
 
         <Switch>
-          <Route path='/puppys' exact render ={()=><Welpen toggleParentsElement={this.toggleParentsElement} poppies={this.state.poppies} language={this.state.language}/> }/>
+          <Route path='/puppys' exact render ={()=><Welpen toggleParentsElement={this.toggleParentsElement} defaultSwitch={this.defaultSwitch}  poppies={this.state.poppies} language={this.state.language} parentsSwitch={this.parentsSwitch} welpenSwitch={this.welpenSwitch} breedingSwitch={this.breedingSwitch} showParents={this.state.showParents} showLitter={this.state.showLitter} showDogs={this.state.showDogs}/> }/>
         </Switch>
 
         <Switch>

@@ -47,16 +47,19 @@ class WelpenElement extends Component {
       });
   }
 
-  parentsSwitch = (element) => {
-    this.setState({ showParents: !this.state.showParents, parents:element });
+  parentsSwitchLocal = (element) => {
+    this.setState({parents:element });
+  this.props.parentsSwitch()
   };
 
-  welpenSwitch = (element) => {
-    this.setState({ showLitter: !this.state.showLitter, litterDOB:element });
+  welpenSwitchLocal = (element) => {
+    this.setState({ litterDOB:element });
+    this.props.welpenSwitch()
   };
 
-  breedingSwitch = (element) => {
-    this.setState({ showDogs: !this.state.showDogs,litterDOB:element});
+  breedingSwitchLocal = (element) => {
+    this.setState({ litterDOB:element});
+    this.props.breedingSwitch()
   };
 
 
@@ -72,9 +75,9 @@ class WelpenElement extends Component {
                 <h3 className={styles.header}>{element.translations[0].title}</h3>
                 {element.translations[0].uebersetzung}{" "}
                 <div>
-                  <button onClick={() => this.parentsSwitch(element)}>The parents</button>
-                  <button onClick={() => this.welpenSwitch(element.dob.dateofbirth)}> Week 1 to 9</button>
-                  <button onClick={() => this.breedingSwitch(element.dob.dateofbirth)}>In the new home</button>
+                  <button onClick={() => this.parentsSwitchLocal(element)}>The parents</button>
+                  <button onClick={() => this.welpenSwitchLocal(element.dob.dateofbirth)}> Week 1 to 9</button>
+                  <button onClick={() => this.breedingSwitchLocal(element.dob.dateofbirth)}>In the new home</button>
                 </div>
               </div>
               <div className={styles.imageContainer}>
@@ -91,9 +94,9 @@ class WelpenElement extends Component {
             <div>{element.translations[1].uebersetzung}</div>
             <img  src={element.foto.data.thumbnails[3].url} alt={element.name} ></img>
             <div>
-              <button onClick={() => this.parentsSwitch(element)}>Die Eltern</button>
-              <button onClick={() => this.welpenSwitch(element.dob.dateofbirth)}>Woche 1 bis 9 </button>
-              <button onClick={() => this.breedingSwitch(element.dob.dateofbirth)}>Im neuen Zuhause</button>
+              <button onClick={() => this.parentsSwitchLocal(element)}>Die Eltern</button>
+              <button onClick={() => this.welpenSwitchLocal(element.dob.dateofbirth)}>Woche 1 bis 9 </button>
+              <button onClick={() => this.breedingSwitchLocal(element.dob.dateofbirth)}>Im neuen Zuhause</button>
             </div>
           </div>
         );
@@ -108,13 +111,13 @@ class WelpenElement extends Component {
               alt={element.name}
             ></img>
             <div>
-            <button onClick={() => this.parentsSwitch(element)}>
+            <button onClick={() => this.parentsSwitchLocal(element)}>
             Les parents
                   </button>
-                  <button onClick={() => this.welpenSwitch(element.dob.dateofbirth)}>
+                  <button onClick={() => this.welpenSwitchLocal(element.dob.dateofbirth)}>
                   Semaine 1 à 9
                   </button>
-                  <button onClick={() => this.breedingSwitch(element.dob.dateofbirth)}>
+                  <button onClick={() => this.breedingSwitchLocal(element.dob.dateofbirth)}>
                   Dans le nouveau foyer
                   </button>
             </div>
@@ -128,10 +131,10 @@ class WelpenElement extends Component {
   render() {
 
     if (!this.state.loaded) {return (<div><Spinner /></div>);}
-    if (this.state.loaded && (!this.state.showParents) && (!this.state.showLitter) && (!this.state.showDogs)) {return (<div className={styles.container}><h1 className={styles.mainHeader}>Litters</h1><div>{this.elements()}</div></div>);}
-    if ((this.state.loaded) && (this.state.showParents) && (!this.state.showLitter) && (!this.state.showDogs)) {return (<div><Parents parents={this.state.parents} /></div>);}
-    if ((this.state.loaded) && (!this.state.showParents) && (this.state.showLitter) && (!this.state.showDogs)) {return (<div><NewsPuppies dob={this.state.litterDOB} /></div>);}
-    if ((this.state.loaded) && (!this.state.showParents) && (!this.state.showLitter) && (this.state.showDogs)) {return (<div><BreedingCardContainer breedings={this.state.breedings} dob={this.state.litterDOB}/></div>);}
+    if (this.state.loaded && (!this.props.showParents) && (!this.props.showLitter) && (!this.props.showDogs)) {return (<div className={styles.container}><h1 className={styles.mainHeader}>Litters</h1><div>{this.elements()}</div></div>);}
+    if ((this.state.loaded) && (this.props.showParents) && (!this.props.showLitter) && (!this.props.showDogs)) {return (<div><Parents parents={this.state.parents} /></div>);}
+    if ((this.state.loaded) && (!this.props.showParents) && (this.props.showLitter) && (!this.props.showDogs)) {return (<div><NewsPuppies dob={this.state.litterDOB} /></div>);}
+    if ((this.state.loaded) && (!this.props.showParents) && (!this.props.showLitter) && (this.props.showDogs)) {return (<div><BreedingCardContainer breedings={this.state.breedings} dob={this.state.litterDOB}/></div>);}
 
   }
 }
