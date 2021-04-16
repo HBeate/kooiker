@@ -13,6 +13,8 @@ import {
   TwitterIcon,
   RedditShareButton,
   RedditIcon,
+  EmailShareButton,
+  EmailIcon,
 } from "react-share";
 
 class Footer extends Component {
@@ -70,6 +72,13 @@ class Footer extends Component {
           >
             <WhatsappIcon size={25} round={true} />
           </WhatsappShareButton>
+          <EmailShareButton
+            subject={"kooikerhondje “de la bande de rigolos“"}
+            body={""}
+            url={"https://www.kooiker-fr.com/"}
+          >
+            <EmailIcon size={25} round={true} />
+          </EmailShareButton>
         </div>
         <div>
           <p className={styles.copyright}>
