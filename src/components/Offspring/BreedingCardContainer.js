@@ -24,7 +24,9 @@ class BreedingCardContainer extends Component {
     getBreedings = () => {
         let widgets = [];
         this.props.breedings.forEach(element => {
+            if(element.dateOfBirth===this.props.dob){
             widgets.push(<BreedingCard onClick={this.onDogSelected} key={element.id} breeding={element} />);
+        }
         });
         return widgets;
     }
