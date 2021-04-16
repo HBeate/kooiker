@@ -77,17 +77,17 @@ newsFunktionen=()=>{
   render() {
     return (
       <>
-      <div className="navbar-container">
+      <div className="navigation_container">
         {/* <nav className={`navbar ${this.state.nav && "navbar__brown"}`}> */}
-        <nav className="navbar">
+        <nav className="navigation">
             <NavLink to="/" >
-              <div className="navbar-logo">
+              <div className="navigation_logo">
               <h2>Kooikerhondje</h2>
               <h3>"de la bande de rigolos"</h3>
               </div>
             </NavLink>
-            <div className="menu-icon" onClick={this.handleClick}><i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i></div>
-            <ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
+            <div className="menu_icon" onClick={this.handleClick}><i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i></div>
+            <ul className={this.state.clicked ? "navigation_menu active" : "navigation_menu"}>
               <li><NavLink to="/" onClick={this.closeMobileMenu}><i className="fas fa-home"></i></NavLink></li>
               <li><NavLink to="/aboutus" onClick={this.closeMobileMenu}>{this.state.AboutUs}</NavLink></li>
               <li><NavLink to="/ivy" onClick={this.closeMobileMenu}>Ivy</NavLink></li>
