@@ -2,7 +2,6 @@ import "./App.css";
 import BreedingCardContainer from "./components/Offspring/BreedingCardContainer";
 import React, { Component } from "react";
 import DogDetail from "./components/Offspring/DogDetail";
-// import Constants from "./helper/Constants";
 import Aboutus from "./components/Aboutus/Aboutus";
 import getUserLocale from "get-user-locale";
 import Navbar from "./components/Navbar/Navbar";
@@ -29,10 +28,11 @@ export default class App extends Component {
       showApp: false,
       poppies:false,
       showParentsElement:false,
-      // breedingShow: false,
       showParents:false,
       showLitter: false,
       showDogs: false,
+      title:'',
+      text:'',
     }
   }
 
@@ -61,40 +61,33 @@ export default class App extends Component {
 
   defaultSwitch =() =>{this.setState({ showDogs:false, showParents:false, showLitter:false});}
 
-
   componentDidMount() {
     let userLocale = getUserLocale();
     var res = userLocale.substring(0, 2);
+    let title='';
+    let text='';
+    switch(res) {
+      case "de":
+        title= "Das Kooikerhondje, Charakter und Haltung:";
+        text= "The “Nederlandse Kooikerhondje” is a rather small, about knee-high white dog with orange-red plates. His coat is of medium length, smooth or slightly wavy. He is a funny and very docile dog; he is family-oriented and very affectionate, but rather reserved and distrustful towards strangers. A loving but consistent upbringing is appropriate, avoiding unnecessary harshness. As he is very sporty, agility, flyball or similar training would be a good idea. This breed has also proven itself as a therapy dog. But he is also happy if he is exercised regularly; in addition he loves water and all kinds of search games. Due to his pleasant size, he can be kept in a flat without any problems.";
+        break;
+        case "en":
+          title=  "The Kooikerhondje, character and keeping:";
+          text="Das “Nederlandse Kooikerhondje” ist ein eher kleiner, etwa kniehoher weisser Hund mit orangeroten Platten. Sein Fell ist mittellang, glatt oder leicht wellig. Er ist ein lustiger und sehr gelehriger Hund; er ist familienbezogen und sehr anhänglich, doch Fremden gegenüber eher zurückhaltend und misstrauisch. Eine liebevolle, aber konsequente Erziehung ist angebracht, wobei unnötige Härte zu vermeiden ist. Da er sehr sportlich ist, bietet sich eine Agility-, Flyball- oder ähnliche Ausbildung an. Auch als Therapiehund hat sich diese Rasse bewährt. Er ist aber auch zufrieden, wenn er regelmässig bewegt wird; ausserdem liebt er das Wasser und alle Arten von Suchspielen. Auf Grund seiner angenehmen Grösse kann er auch problemlos in einer Wohnung gehalten werden.";
+          break;
+          default:
+        title=  "Le Kooikerhonje, caractéristiques et détention:";
+        text= "Le Kooikerhondje (chien hollandais de canadière) est un chien blanc de petite taille, arrivant à peu près jusqu'aux genoux. Sa robe a des plaques rouge-orange. Son poil est de longueur moyenne, lisse ou légèrement ondulé. C'est un chien drôle et très facile à éduquer. Il est trés affectueux et sociable. Il a besoin d´une éducation douce mais cohérente et appropriée,. Toute sanction sévère est à éviter. Comme il est très sportif, un entraînement à l'agilité, au flyball ou tout autre entrainement est approprié. Cette race a également fait ses preuves en tant que chien thérapeutique. Mais il est également heureux quand on lui fait simplement faire régulièrement de l'exercice ; Ce chien rapporteur aime aussi l'eau et toutes sortes de jeux de recherche. En raison de sa taille agréable, il peut facilement être logé dans un appartement.";
+  }
     this.setState({
       language: res,
+      title:title,
+      text:text,
       showApp: true,
     });
-    // fetch(Constants.breeding)
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     let breedings = [];
-    //     data.data.forEach((element) => {
-    //       let breeding = {
-    //         id: element.id,
-    //         father: element.father.name,
-    //         mother: element.mother.name,
-    //         dateOfBirth: element.dateofbirth,
-    //         description: element.description,
-    //         image: element.image.data.thumbnails[7].url,
-    //         parents: element.mother.name + " x " + element.father.name,
-    //       };
-    //       breedings.push(breeding);
-    //     });
-    //     this.setState({
-    //       image: data.data[0].image.data.thumbnails[7].url,
-    //       breedings: breedings,
-    //     });
-       
-      // });
   }
 
   onBreedingSelected = (id) => {
-    // alert("top App:" + id);
     this.setState({
       showDetail: true,
       actualBreeding: id,
@@ -103,19 +96,9 @@ export default class App extends Component {
 
   getBreedingContent = () => {
     if (this.state.showDetail) {
-      return (
-        <div>
-          Detail{this.state.breedings[this.state.actualBreeding].name}
-          <DogDetail />
-        </div>
-      );
+      return (<div>Detail{this.state.breedings[this.state.actualBreeding].name}<DogDetail /></div>);
     } else {
-      return (
-        <BreedingCardContainer
-          onBreedingSelected={this.onBreedingSelected}
-          breedings={this.state.breedings}
-        />
-      );
+      return (<BreedingCardContainer onBreedingSelected={this.onBreedingSelected} breedings={this.state.breedings}/>);
     }
   };
 
@@ -127,7 +110,7 @@ export default class App extends Component {
       <div className="App">
         <Navbar language={this.state.language} togglePoppiesNews={this.togglePoppiesNews} defaultSwitch={this.defaultSwitch} />
         <Switch>
-          <Route path="/" exact render={() => <Home language={this.state.language}/>} />
+          <Route path="/" exact render={() => <Home title={this.state.title} text={this.state.text} language={this.state.language}/>} />
         </Switch>
 
         <Switch>
