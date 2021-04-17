@@ -29,14 +29,13 @@ getKey(){
 
   render() {
       return (
-        <div className={styles.container}>
+        <div >
         <Carousel 
         autoPlay={true}  
         infiniteLoop={true}  
         emulateTouch 
         showThumbs={false} 
         labels={false} 
-        width={300} 
         showStatus={false}
         interval={3000}
         showArrows={false}
