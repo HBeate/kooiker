@@ -1,5 +1,6 @@
 .iFrame{
     font-family: 'Roboto', sans-serif;
+    
 }
 
 .contact2{
@@ -14,6 +15,20 @@
     justify-content: center;
     text-align: center;
     width: 50%;
+    
+}
+
+.mailContact a{
+    text-decoration: none;
+    color: black;
+    padding-top: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: large;
+}
+
+.mailContact p{
+    font-family: 'Roboto', sans-serif;
+    font-size: large;
 }
 
 .headerKontakt{
