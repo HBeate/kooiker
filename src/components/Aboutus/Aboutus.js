@@ -4,8 +4,7 @@ import styles from "./Aboutus.module.css";
 import Car from "./Carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 // import { GiJumpingDog } from "react-icons/gi";
-import  Spinner from './../Spinner/Spinner'
-
+import Spinner from "./../Spinner/Spinner";
 
 class Aboutus extends Component {
   state = {
@@ -16,7 +15,7 @@ class Aboutus extends Component {
     title: "",
     image: "",
     loaded: false,
-    gallery:[]
+    gallery: [],
   };
 
   componentDidMount() {
@@ -62,7 +61,7 @@ class Aboutus extends Component {
     let x = this.state.body;
     x.split("\n").map(function (item) {
       let line = (
-        <span key={key}>
+        <span className={styles.spanText} key={key}>
           {item}
           <br />
         </span>
@@ -76,15 +75,15 @@ class Aboutus extends Component {
   render() {
     if (!this.state.loaded) {
       // return <div style={{ textAlign: "center", color: 'rgb(167, 69, 39)' }}><GiJumpingDog size={'100vh'} /></div>;
-      return(<Spinner/>)
+      return <Spinner />;
     }
     if (this.state.loaded) {
       return (
         <div className={styles.container}>
-          <div><h1 className={styles.mainHeader}>{this.state.title}</h1></div>
+          <h1>{this.state.title}</h1>
           <div className={styles.aboutUsCard}>
-            <div className={styles.imageContainer}>
-            <Car images={this.state.gallery} />
+            <div>
+              <Car images={this.state.gallery} />
             </div>
             <div className={styles.dataContainer}>
               {this.getAboutusContent()}

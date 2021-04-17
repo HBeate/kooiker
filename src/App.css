@@ -47,7 +47,12 @@
 }
 
 .carousel-root{
-  margin: auto !important;
+  margin: 1rem !important;
+  width: 25rem !important;
+}
+
+.carousel .slide img{
+  width: 25rem !important;
   
 }
 
@@ -56,11 +61,30 @@
   opacity: 0.1;
 }
 
-/* .mainHeader {
-  font-size: 2rem;
-  color: rgb(167, 69, 39);
-  display: flex;
-  justify-items: end;
-  padding: 20px 20px;
-  border-bottom: rgb(167, 69, 39) 2px solid;
-} */
+@media screen and (max-width: 767px){
+
+  .carousel-root{
+    width: 19rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+
+  .carousel .slide img{
+    width: 19rem !important;
+    
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .carousel-root{
+    width: 15rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .carousel .slide img{
+    width: 15rem !important;
+    
+  }
+}
