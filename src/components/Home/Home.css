@@ -100,7 +100,7 @@ div {
   width: 100vw;
 }
 
-.home_welcome_header > h1{
+.home_welcome_header > h1 {
   color: white;
   border-bottom: none;
   font-family: "Roboto", sans-serif;
@@ -108,11 +108,10 @@ div {
   justify-content: center;
 }
 
-.home_welcome_header > h2{
+.home_welcome_header > h2 {
   font-size: 4rem;
   font-family: "Dancing Script";
   color: white;
-  
 }
 
 /* ++++++++++++ sectionen2 children +++++++++++++++++ */
@@ -121,18 +120,16 @@ div {
   margin-left: auto;
   padding-right: 15px;
   padding-left: 15px;
-  max-width: 960px;  
+  max-width: 960px;
 }
 
-.first_content h2{
+.first_content h2 {
   margin-bottom: 2rem;
 }
 
-
-
 /* ++++++++++++ sectionen3 children +++++++++++++++++ */
 
-.second_dog_background{
+.second_dog_background {
   position: absolute;
   top: calc(550px * 1.5);
 }
@@ -159,8 +156,6 @@ div {
   font-size: large;
 }
 
-
-
 @media only screen and (max-device-width: 768px) {
   .section1 {
     height: 500px;
@@ -178,15 +173,15 @@ div {
     height: 400px;
   }
 
-  .zertifikat_logo img{
+  .zertifikat_logo img {
     width: 100px;
   }
 
-  .home_welcome_header > h1{
+  .home_welcome_header > h1 {
     font-size: 1.5rem;
   }
-  
-  .home_welcome_header > h2{
+
+  .home_welcome_header > h2 {
     font-size: 2rem;
   }
 }
