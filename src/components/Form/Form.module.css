@@ -1,113 +1,115 @@
-.container{
-    border: 1px solid  rgb(167, 69, 39);
-    border-radius: 2.5px;
-    width: 40%;
-    resize: both;
-    overflow: auto;
-    margin: 3rem;
+.container {
+  border: 1px solid rgb(167, 69, 39);
+  border-radius: 2.5px;
+  width: 40%;
+  resize: both;
+  overflow: auto;
+  margin: 3rem;
 }
 
-.inputField{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+.inputField {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.inputNamePhoneContainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 1rem;
-    width: 100%;
-    max-width: 94%;
+.inputNamePhoneContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 94%;
 }
 
-.nameInput{
-    margin: 0;
-    width: 100%;
-    max-width: 49%;
-    justify-content: center;
-    align-items: center;
+.nameInput {
+  margin: 0;
+  width: 100%;
+  max-width: 49%;
+  justify-content: center;
+  align-items: center;
 }
 
-.phoneInput{
-    margin: 0;
-    width: 100%;
-    max-width: 49%;
-    justify-content: center;
-    align-items: center;
-    
+.phoneInput {
+  margin: 0;
+  width: 100%;
+  max-width: 49%;
+  justify-content: center;
+  align-items: center;
 }
 
-.inputField input{
-    /* border: solid 1px rgba(0, 0, 0, 0.459); */
-    outline: none !important;
-    border: none;
-    border-bottom: 2px solid  rgb(167, 69, 39);
-    color: rgb(167, 69, 39);
-    font-size: 1.25rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    
+.inputField input {
+  /* border: solid 1px rgba(0, 0, 0, 0.459); */
+  outline: none !important;
+  border: none;
+  border-bottom: 2px solid rgb(167, 69, 39);
+  color: rgb(167, 69, 39);
+  font-size: 1.25rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 !important;
 }
-.inputFieldMail{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.inputFieldMail input{
-    margin-top: 1rem;
-    border: none;
-    border-bottom: 2px solid  rgb(167, 69, 39);
-    outline: none !important;
-    font-size: 1.25rem;
-    width: 100%;
-    max-width: 94%;
-    color: rgb(167, 69, 39);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.inputFieldMail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.inputFieldMail input:hover{
-    border-color: rgb(56, 120, 126);
+.inputFieldMail input {
+  margin-top: 1rem;
+  border: none;
+  border-bottom: 2px solid rgb(167, 69, 39);
+  outline: none !important;
+  font-size: 1.25rem;
+  width: 100%;
+  max-width: 94%;
+  color: rgb(167, 69, 39);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 !important;
 }
 
-.inputField textarea{
-    margin-top: 1rem;
-    border: none;
-    border-bottom: 2px solid  rgb(167, 69, 39);
-    outline: none !important;
-    font-size: 1.25rem;
-    width: 100%;
-    max-width: 94%;
-    height: 8rem;
-    color: rgb(167, 69, 39);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.inputFieldMail input:hover {
+  border-color: rgb(56, 120, 126);
+  border-radius: 0 !important;
 }
 
-.inputField textarea:hover{
-    border-color: rgb(56, 120, 126);
+.inputField textarea {
+  margin-top: 1rem;
+  border: none;
+  border-bottom: 2px solid rgb(167, 69, 39);
+  outline: none !important;
+  font-size: 1.25rem;
+  width: 100%;
+  max-width: 94%;
+  height: 8rem;
+  color: rgb(167, 69, 39);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 !important;
 }
 
-.inputField input:hover{
-    border-color: rgb(56, 120, 126);
+.inputField textarea:hover {
+  border-color: rgb(56, 120, 126);
+  border-radius: 0 !important;
 }
 
-.buttonCenter{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.inputField input:hover {
+  border-color: rgb(56, 120, 126);
+  border-radius: 0 !important;
 }
 
-.submitButton{
+.buttonCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submitButton {
   margin-top: 1rem;
   margin-bottom: 1rem;
   width: 100%;
@@ -117,51 +119,41 @@
   margin-right: auto;
 }
 
-@media (max-width: 800px){
+@media (max-width: 800px) {
+  .inputField {
+    display: flex;
+    flex-direction: column;
+  }
 
-    .inputField{
-        display: flex;
-        flex-direction: column;
-        
-    }
+  .container {
+    width: 300px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 3rem;
+  }
 
-    
+  .inputNamePhoneContainer {
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+    align-items: center;
+  }
 
-    .container{
-        width: 300px;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-        margin-left: auto;
-        margin-right: auto;
-        padding-bottom: 3rem;
-    }
+  .nameInput {
+    margin: 0;
+    width: 100%;
+    max-width: 94%;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .inputNamePhoneContainer{
-        flex-direction: column;
-        justify-content: center;
-        max-width: 100%;
-        align-items: center;
-
-    }
-    
-    .nameInput{
-        margin: 0;
-        width: 100%;
-        max-width: 94%;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .phoneInput{
-        margin-top: 1rem;
-        width: 100%;
-        max-width: 94%;
-        justify-content: center;
-        align-items: center;
-        
-    }
+  .phoneInput {
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 94%;
+    justify-content: center;
+    align-items: center;
+  }
 }
-
-
-
-
