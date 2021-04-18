@@ -29,13 +29,21 @@ body {
 img{
   padding: 10px 0; 
 }
+.mainHeaderContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: brown solid 2px;
+
+}
 .mainHeader {
   font-size: 2rem;
   color: brown;
   display: flex;
   justify-items: end;
   padding: 20px 20px;
-  border-bottom: brown solid 2px;
+  border-bottom: 0rem;
+ /*  border-bottom: brown solid 2px; */
 }
 
 .header {
