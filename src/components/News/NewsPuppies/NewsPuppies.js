@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Constants from "../../../helper/Constants";
 import ResponsiveGallery from 'react-responsive-gallery';
+import styles from './NewsPuppies.module.css';
 
 class NewsPuppies extends Component {
   constructor(props) {
@@ -129,27 +130,35 @@ class NewsPuppies extends Component {
   render() {
     
     return (
-      <div>
-        <div>1ère semaine / 1st week / 1. Woche </div>
+      <div className={styles.container}>
+                  <div className={styles.mainHeaderContainer}>
+            <h1 className={styles.mainHeader}>
+            Week 1 to 9
+            </h1>
+            <button>Back</button>
+          </div>
+        <div className={styles.weeks}>
+        <div><h3>1ère semaine / 1st week / 1. Woche </h3></div>
         <ResponsiveGallery images={this.state.images1} useLightBox={true}/>
-        <div>2ème semaine / 2nd week / 2. Woche </div>
+        <div><h3>2ème semaine / 2nd week / 2. Woche </h3></div>
         <ResponsiveGallery images={this.state.images2} useLightBox={true}/>
-        <div>3ème semaine / 3rd week / 3. Woche </div>
+        <div><h3>3ème semaine / 3rd week / 3. Woche </h3></div>
         <ResponsiveGallery images={this.state.images3} useLightBox={true}/>
-        <div>4ème semaine / 4th week / 4. Woche </div>
+        <div><h3>4ème semaine / 4th week / 4. Woche </h3></div>
         <ResponsiveGallery images={this.state.images4} useLightBox={true}/>
-        <div>5ème semaine / 5th week / 5. Woche </div>
+        <div><h3>5ème semaine / 5th week / 5. Woche </h3></div>
         <ResponsiveGallery images={this.state.images5} useLightBox={true}/>
-        <div>6ème semaine / 6th week / 6. Woche </div>
+        <div><h3>6ème semaine / 6th week / 6. Woche </h3></div>
         <ResponsiveGallery images={this.state.images6} useLightBox={true}/>
-        <div>7ème semaine / 7th week / 7. Woche </div>
+        <div><h3>7ème semaine / 7th week / 7. Woche </h3></div>
         <ResponsiveGallery images={this.state.images7} useLightBox={true}/>
-        <div>8ème semaine / 8th week / 8. Woche </div>
+        <div><h3>8ème semaine / 8th week / 8. Woche </h3></div>
         <ResponsiveGallery images={this.state.images8} useLightBox={true}/>
-        <div>9ème semaine / 9th week / 9. Woche </div>
+        <div><h3>9ème semaine / 9th week / 9. Woche </h3></div>
         <ResponsiveGallery images={this.state.images9} useLightBox={true}/>
-        <div>Au revoir! / Bye, bye! / Tschüss! </div>
+        <div><h3>Au revoir! / Bye, bye! / Tschüss! </h3></div>
         <ResponsiveGallery images={this.state.images10} useLightBox={true}/>
+        </div>
       </div>
     );
   }
