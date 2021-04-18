@@ -132,9 +132,7 @@ class NewsPuppies extends Component {
     return (
       <div className={styles.container}>
                   <div className={styles.mainHeaderContainer}>
-            <h1 className={styles.mainHeader}>
-            Week 1 to 9
-            </h1>
+            <h1 className={styles.mainHeader}>Week 1 to 9</h1>
             <button>Back</button>
           </div>
         <div className={styles.weeks}>
