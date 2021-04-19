@@ -3,6 +3,9 @@ import Constants from "../../helper/Constants";
 import styles from "./Ivy.module.css";
 import ivyImg from "../Ivy/ivy.jpg";
 import ResponsiveGallery from "react-responsive-gallery";
+
+// import { GiJumpingDog } from "react-icons/gi";
+
 import Spinner from "./../Spinner/Spinner";
 
 class Ivy extends Component {
@@ -97,6 +100,13 @@ class Ivy extends Component {
 
   render() {
     if (!this.state.loaded) {
+
+      // return (
+      //   <div style={{ textAlign: "center", color: "rgb(167, 69, 39)" }}>
+      //     <GiJumpingDog size={"100vh"} />
+      //   </div>
+      // );
+
       return <Spinner />;
     }
     if (this.state.loaded) {
@@ -177,13 +187,69 @@ class Ivy extends Component {
             </p>
           </div>
 
+
+          <div>
+
           <div className={styles.ivyPageButton}>
+
             <button onClick={this.showPedigree}>Ahnentafel</button>
 
             <button onClick={this.showImages}>Galerie</button>
 
             <button onClick={this.showExpositions}>Ausstellungen</button>
           </div>
+
+
+          <img
+            style={{ display: this.state.show }}
+            src={this.state.pedigree}
+            alt={"Ivy"}
+            onClick={this.showPedigree}
+          />
+          <div style={{ display: this.state.showGallery }}>
+            <ResponsiveGallery images={this.state.images} useLightBox={true} />
+          </div>
+          <div style={{ display: this.state.showExpositions }}>
+            {this.state.expositions.text}
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap" }}>
+            <img
+              style={{ display: this.state.showExpositions }}
+              src={
+                this.state.expositions.certificates[0].directus_files_id.data
+                  .thumbnails[2].url
+              }
+              alt={
+                this.state.expositions.certificates[0].directus_files_id.title
+              }
+              width="300"
+              height="300"
+            />
+            <img
+              style={{ display: this.state.showExpositions }}
+              src={
+                this.state.expositions.certificates[1].directus_files_id.data
+                  .thumbnails[2].url
+              }
+              alt={
+                this.state.expositions.certificates[1].directus_files_id.title
+              }
+              width="300"
+              height="300"
+            />
+            <img
+              style={{ display: this.state.showExpositions }}
+              src={
+                this.state.expositions.certificates[2].directus_files_id.data
+                  .thumbnails[2].url
+              }
+              alt={
+                this.state.expositions.certificates[2].directus_files_id.title
+              }
+              width="300"
+              height="300"
+            />
+
 
           <div className={styles.showPedigreeImage}>
             <img
@@ -197,7 +263,7 @@ class Ivy extends Component {
 
           <div className={styles.showGalleryIvyPage}>
 
-//           <button>close</button>
+
 
             <ResponsiveGallery images={this.state.images} useLightBox={true} />
             
@@ -244,6 +310,7 @@ class Ivy extends Component {
                 
               />
             </div>
+
           </div>
         </div>
       );

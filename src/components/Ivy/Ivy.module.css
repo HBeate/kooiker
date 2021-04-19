@@ -37,7 +37,8 @@
   margin: 3rem;
 }
 
-.mainText p {
+
+/* .mainText p {
   margin-bottom: 1rem;
   font-stretch: extra-expanded;
 }
@@ -128,7 +129,8 @@
 }
 .mainText {
   padding: 20px;
-}
+} */
+
 .container {
   display: flex;
   flex-direction: column;
@@ -138,6 +140,10 @@
   padding-left: 15px;
   padding: 15px;
   max-width: 960px;
+
+  /* margin-bottom: 100px;
+    object-fit: contain; */
+
 }
 .mainHeader {
   font-size: 2rem;
@@ -216,6 +222,9 @@ button {
 .card {
   display: flex;
   flex-wrap: wrap;
+
+  /* background: silver; */
+
 }
 
 .card > * {
@@ -225,6 +234,9 @@ button {
 }
 
 .media {
+
+  /* background: black; */
+
   min-height: 280px;
   padding: 20px;
 }
@@ -237,4 +249,7 @@ button {
   button {
     margin: 6px;
   }
-} */
+
+}
+
+
