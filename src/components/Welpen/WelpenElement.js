@@ -78,7 +78,12 @@ class WelpenElement extends Component {
   elements = () => {
     let welpen = [];
     this.props.elements.forEach((element) => {
+      console.log(element)
+      let newHome
       if (this.props.language === "en") {
+        if(element.dob.image.tumbnails<1){
+         newHome=''
+        } else{ newHome=<button onClick={() =>this.breedingSwitchLocal(element.dob.dateofbirth)}>In the new home</button>}
         let part = (
           <div key={element.id}>
             <div className={styles.welpenCard}>
@@ -99,13 +104,8 @@ class WelpenElement extends Component {
                     {" "}
                     Week 1 to 9
                   </button>
-                  <button
-                    onClick={() =>
-                      this.breedingSwitchLocal(element.dob.dateofbirth)
-                    }
-                  >
-                    In the new home
-                  </button>
+                  {newHome}
+            
                 </div>
               </div>
               <div className={styles.imageContainer}>

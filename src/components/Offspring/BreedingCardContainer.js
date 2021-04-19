@@ -6,8 +6,7 @@ class BreedingCardContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      actualDog: { name: "unknown" },
-      test: "hans",
+      actualDog: { name: "unknown" }
     };
   }
 
@@ -41,7 +40,6 @@ class BreedingCardContainer extends Component {
           <h1 className={styles.mainHeader}>In the new Home</h1>
           <button onClick={this.props.defaultSwitch}>Back</button>
         </div>
-
         {this.getBreedings()}
       </div>
     );
