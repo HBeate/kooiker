@@ -228,7 +228,7 @@ class WelpenElement extends Component {
     ) {
       return (
         <div>
-          <Parents parents={this.state.parents} />
+          <Parents parents={this.state.parents} defaultSwitch={this.props.defaultSwitch}/>
         </div>
       );
     }
@@ -240,7 +240,7 @@ class WelpenElement extends Component {
     ) {
       return (
         <div>
-          <NewsPuppies dob={this.state.litterDOB} />
+          <NewsPuppies dob={this.state.litterDOB} defaultSwitch={this.props.defaultSwitch} />
         </div>
       );
     }
@@ -255,6 +255,7 @@ class WelpenElement extends Component {
           <BreedingCardContainer
             breedings={this.state.breedings}
             dob={this.state.litterDOB}
+            defaultSwitch={this.props.defaultSwitch}
           />
         </div>
       );
