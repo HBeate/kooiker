@@ -1,9 +1,42 @@
-body {
-  overflow: scroll;
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  max-width: 960px;
+  margin-bottom: 100px;
 }
+
+.card {
+  display: flex;
+  margin: 2rem;
+  align-items: center;
+}
+
+.content {
+  margin: 1rem;
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-size: medium;
+  font-stretch: extra-expanded;
+}
+
+.header,
+.born,
+.willebrandTable {
+  margin-bottom: 1rem;
+}
+
+.media img {
+  width: 350px;
+  height: auto;
+  margin: 1rem;
+}
+
 .mainText {
-  padding: 20px;
+  margin: 3rem;
 }
+
 .container {
   display: flex;
   flex-direction: column;
@@ -119,3 +152,4 @@ button {
     margin: 6px;
   }
 }
+

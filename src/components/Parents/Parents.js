@@ -17,12 +17,12 @@ class Parents extends Component {
   render() {
       return (
         <div className={styles.container}>
-          <div>
+          <div className={styles.mainHeaderContainer}>
             <h1 className={styles.mainHeader}>
               {this.props.parents.mutter.name} x {this.props.parents.vater.name}
             </h1>
+            <button onClick={this.props.defaultSwitch}>Back</button>
           </div>
-          <div>
             <div className={styles.containerdog1}>
               <div className={styles.dogbox1}>
                 <h3 className={styles.header}>
@@ -107,7 +107,7 @@ class Parents extends Component {
               </div>
             </div>
           </div>
-        </div>
+      
       );
     }
   }

@@ -81,3 +81,9 @@
     width: 15rem !important;
   }
 }
+
+/* +++++++++++ Ivy Page Responsive Gallary ++++++++++ */
+.ril__image{
+  top: 7rem !important;
+}
+
