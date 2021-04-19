@@ -194,7 +194,9 @@ class Ivy extends Component {
             />
           </div>
           <div style={{ display: this.state.showGallery }}>
+          <div className={styles.showGalleryIvyPage}>
             <ResponsiveGallery images={this.state.images} useLightBox={true} />
+          </div>
           </div>
 
           <div className={styles.expositionsIvyPage}>
