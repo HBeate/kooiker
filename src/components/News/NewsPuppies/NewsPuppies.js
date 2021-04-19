@@ -136,25 +136,25 @@ class NewsPuppies extends Component {
             <button>Back</button>
           </div>
         <div className={styles.weeks}>
-        <div><h3>1ère semaine / 1st week / 1. Woche </h3></div>
+        <div><h3 >1ère semaine / 1st week / 1. Woche </h3></div>
         <ResponsiveGallery images={this.state.images1} useLightBox={true}/>
-        <div><h3>2ème semaine / 2nd week / 2. Woche </h3></div>
+        <div><h3 className={styles.week}>2ème semaine / 2nd week / 2. Woche </h3></div>
         <ResponsiveGallery images={this.state.images2} useLightBox={true}/>
-        <div><h3>3ème semaine / 3rd week / 3. Woche </h3></div>
+        <div><h3 className={styles.week}>3ème semaine / 3rd week / 3. Woche </h3></div>
         <ResponsiveGallery images={this.state.images3} useLightBox={true}/>
-        <div><h3>4ème semaine / 4th week / 4. Woche </h3></div>
+        <div><h3 className={styles.week}>4ème semaine / 4th week / 4. Woche </h3></div>
         <ResponsiveGallery images={this.state.images4} useLightBox={true}/>
-        <div><h3>5ème semaine / 5th week / 5. Woche </h3></div>
+        <div><h3 className={styles.week}>5ème semaine / 5th week / 5. Woche </h3></div>
         <ResponsiveGallery images={this.state.images5} useLightBox={true}/>
-        <div><h3>6ème semaine / 6th week / 6. Woche </h3></div>
+        <div><h3 className={styles.week}>6ème semaine / 6th week / 6. Woche </h3></div>
         <ResponsiveGallery images={this.state.images6} useLightBox={true}/>
-        <div><h3>7ème semaine / 7th week / 7. Woche </h3></div>
+        <div><h3 className={styles.week}>7ème semaine / 7th week / 7. Woche </h3></div>
         <ResponsiveGallery images={this.state.images7} useLightBox={true}/>
-        <div><h3>8ème semaine / 8th week / 8. Woche </h3></div>
+        <div><h3 className={styles.week}>8ème semaine / 8th week / 8. Woche </h3></div>
         <ResponsiveGallery images={this.state.images8} useLightBox={true}/>
-        <div><h3>9ème semaine / 9th week / 9. Woche </h3></div>
+        <div><h3 className={styles.week}>9ème semaine / 9th week / 9. Woche </h3></div>
         <ResponsiveGallery images={this.state.images9} useLightBox={true}/>
-        <div><h3>Au revoir! / Bye, bye! / Tschüss! </h3></div>
+        <div><h3 className={styles.week}>Au revoir! / Bye, bye! / Tschüss! </h3></div>
         <ResponsiveGallery images={this.state.images10} useLightBox={true}/>
         </div>
       </div>
