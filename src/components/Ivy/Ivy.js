@@ -105,6 +105,7 @@ class Ivy extends Component {
       // );
       return <Spinner />;
     }
+    
     if (this.state.loaded) {
       return (
         <div className={styles.container}>
