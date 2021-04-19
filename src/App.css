@@ -1,10 +1,9 @@
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-/*   font-family: 'PT Sans', sans-serif; */
-  font-family: 'Roboto', sans-serif;
+  /*   font-family: 'PT Sans', sans-serif; */
+  font-family: "Roboto", sans-serif;
 }
 
 .App-link {
@@ -20,7 +19,7 @@
   }
 }
 
-.center{
+.center {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -30,61 +29,55 @@
   padding-left: 15px;
   padding: 15px;
   width: 960px;
-/*   margin-top: 80px; */
+  /*   margin-top: 80px; */
   margin-bottom: 100px;
   object-fit: contain;
 }
 
-.doglist{
-  width:100%;
+.doglist {
+  width: 100%;
 }
 
 /* +++++++++++ FrameWork Carousel ++++++++++ */
-.carousel .slide{
+.carousel .slide {
   background: transparent !important;
   height: 100% !important;
-  
 }
 
-.carousel-root{
+.carousel-root {
   margin: 1rem !important;
   width: 25rem !important;
 }
 
-.carousel .slide img{
+.carousel .slide img {
   width: 25rem !important;
-  
 }
 
-.carousel .control-dots .dot{
+.carousel .control-dots .dot {
   background: rgb(167, 69, 39) !important;
   opacity: 0.1;
 }
 
-@media screen and (max-width: 767px){
-
-  .carousel-root{
+@media screen and (max-width: 767px) {
+  .carousel-root {
     width: 19rem !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }
 
-
-  .carousel .slide img{
+  .carousel .slide img {
     width: 19rem !important;
-    
   }
 }
 
 @media screen and (max-width: 320px) {
-  .carousel-root{
+  .carousel-root {
     width: 15rem !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }
 
-  .carousel .slide img{
+  .carousel .slide img {
     width: 15rem !important;
-    
   }
 }
