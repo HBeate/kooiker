@@ -26,8 +26,8 @@ class Contact extends Component {
                     <div className={styles.mailContact}>
                         <p>Chemin de Lanegrand; 32400 Fustérouau</p>
                         <a className={styles.iFrame} href = "mailto: helga-henny@kooiker-fr.com">
-                        <i  className="far fa-envelope"> </i>
-                        helga-henny@kooiker-fr.com
+                        <i className="far fa-envelope"></i>
+                        &nbsp;helga-henny@kooiker-fr.com
                         </a>
                     </div>
                      <Form/>
