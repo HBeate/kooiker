@@ -194,15 +194,12 @@ class Ivy extends Component {
             />
           </div>
           <div style={{ display: this.state.showGallery }}>
-
-          <div className={styles.showGalleryIvyPage}>
-
-//           <button>close</button>
-
-            <ResponsiveGallery images={this.state.images} useLightBox={true} />
-            
-          
-          </div>
+            <div className={styles.showGalleryIvyPage}>
+              <ResponsiveGallery
+                images={this.state.images}
+                useLightBox={true}
+              />
+            </div>
           </div>
 
           <div className={styles.expositionsIvyPage}>
@@ -219,7 +216,6 @@ class Ivy extends Component {
                 alt={
                   this.state.expositions.certificates[0].directus_files_id.title
                 }
-                
               />
               <img
                 style={{ display: this.state.showExpositions }}
@@ -230,7 +226,6 @@ class Ivy extends Component {
                 alt={
                   this.state.expositions.certificates[1].directus_files_id.title
                 }
-                
               />
               <img
                 style={{ display: this.state.showExpositions }}
@@ -241,7 +236,6 @@ class Ivy extends Component {
                 alt={
                   this.state.expositions.certificates[2].directus_files_id.title
                 }
-                
               />
             </div>
           </div>
