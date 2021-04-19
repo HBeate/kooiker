@@ -1,9 +1,136 @@
-body {
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  max-width: 960px;
+  margin-bottom: 100px;
+}
+
+.card {
+  display: flex;
+  margin: 2rem;
+  align-items: center;
+}
+
+.content {
+  margin: 1rem;
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-size: medium;
+  font-stretch: extra-expanded;
+}
+
+.header,
+.born,
+.willebrandTable {
+  margin-bottom: 1rem;
+}
+
+.media img {
+  width: 350px;
+  height: auto;
+  margin: 1rem;
+}
+
+.mainText {
+  margin: 3rem;
+}
+
+
+/* .mainText p {
+  margin-bottom: 1rem;
+  font-stretch: extra-expanded;
+}
+
+.ivyPageButton {
+  display: flex;
+  justify-content: space-around;
+}
+
+.showPedigreeImage {
+  margin: 3rem;
+  display: flex;
+}
+
+.showPedigreeImage img {
+  max-width: 100%;
+}
+
+.expositionsIvyPage{
+  margin: 3rem;
+}
+
+.expositionsIvyPage div{
+  margin-bottom: 2rem;
+}
+
+.expositionsIvyPageImage{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.expositionsIvyPageImage img{
+  width: 250px;
+  
+}
+.showGalleryIvyPage{
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+
+@media screen and (max-width: 767px) {
+  .card {
+    flex-direction: column-reverse;
+  }
+
+  .media img {
+    width: 300px;
+  }
+
+  .card {
+    margin: 0.5rem;
+  }
+
+  .mainText {
+    margin: 1.5rem;
+  }
+
+  .ivyPageButton {
+    justify-content: space-evenly;
+  }
+
+  .showPedigreeImage {
+    margin: 1rem;
+    
+  }
+
+  .expositionsIvyPageImage{
+    flex-direction: column;
+  }
+  .expositionsIvyPageImage img{
+    width: auto;
+    
+  }
+  
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 768px){
+  
+  .expositionsIvyPageImage img{
+    width: 200px;
+    
+  }
+}
+
+/* body {
   overflow: scroll;
 }
 .mainText {
   padding: 20px;
-}
+} */
+
 .container {
   display: flex;
   flex-direction: column;
@@ -13,8 +140,10 @@ body {
   padding-left: 15px;
   padding: 15px;
   max-width: 960px;
+
   /* margin-bottom: 100px;
     object-fit: contain; */
+
 }
 .mainHeader {
   font-size: 2rem;
@@ -93,7 +222,9 @@ button {
 .card {
   display: flex;
   flex-wrap: wrap;
+
   /* background: silver; */
+
 }
 
 .card > * {
@@ -103,7 +234,9 @@ button {
 }
 
 .media {
+
   /* background: black; */
+
   min-height: 280px;
   padding: 20px;
 }
@@ -116,4 +249,7 @@ button {
   button {
     margin: 6px;
   }
+
 }
+
+

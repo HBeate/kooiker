@@ -111,7 +111,6 @@ class BreedingCard extends Component {
                     images:images,
                     tileData: tileData
                 })
-
             });
     }
     render() {

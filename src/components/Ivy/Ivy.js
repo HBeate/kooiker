@@ -3,7 +3,9 @@ import Constants from "../../helper/Constants";
 import styles from "./Ivy.module.css";
 import ivyImg from "../Ivy/ivy.jpg";
 import ResponsiveGallery from "react-responsive-gallery";
+
 // import { GiJumpingDog } from "react-icons/gi";
+
 import Spinner from "./../Spinner/Spinner";
 
 class Ivy extends Component {
@@ -98,30 +100,32 @@ class Ivy extends Component {
 
   render() {
     if (!this.state.loaded) {
+
       // return (
       //   <div style={{ textAlign: "center", color: "rgb(167, 69, 39)" }}>
       //     <GiJumpingDog size={"100vh"} />
       //   </div>
       // );
+
       return <Spinner />;
     }
     if (this.state.loaded) {
       return (
         <div className={styles.container}>
           <div>
-            <h1 className={styles.mainHeader}>{this.state.dog.name}</h1>
+            <h1>{this.state.dog.name}</h1>
           </div>
           <div>
             <div className={styles.card}>
               <div className={styles.content}>
                 <div>
-                  <h3 className={styles.header}>
+                  <h2 className={styles.header}>
                     {this.state.dog.parent_full_name}
-                  </h3>
+                  </h2>
                   <h4 className={styles.born}>
                     {this.state.dog.parent_date_of_birth}
                   </h4>
-                  <table>
+                  <table className={styles.willebrandTable}>
                     <tbody>
                       <tr>
                         <td>Von Willebrand/ENM: </td>
@@ -152,17 +156,13 @@ class Ivy extends Component {
               </div>
 
               <div className={styles.media}>
-                <img
-                  className={styles.imgRight}
-                  src={ivyImg}
-                  alt={"card"}
-                ></img>
+                <img src={ivyImg} alt={"card"}></img>
               </div>
             </div>
           </div>
-          <div>
+          <div className={styles.mainText}>
             {" "}
-            <p className={styles.mainText}>
+            <p>
               Even though we had dogs (Leonberger and Tervueren) and two cats, I
               had a growing feeling that I needed a new task. I’m retired and I
               have always been very fond of dogs. Since we have plenty of space
@@ -173,7 +173,7 @@ class Ivy extends Component {
               appealing to me. Since my husband agreed to fully support me the
               way forward was clear.
             </p>
-            <p className={styles.mainText}>
+            <p>
               After some efforts I discovered the breeding site of Beate van
               Schelve/Wolfgang Brüner which was very attractive in all respects.
               We contacted the owners and after giving them some insight into
@@ -187,13 +187,18 @@ class Ivy extends Component {
             </p>
           </div>
 
+
           <div>
+
+          <div className={styles.ivyPageButton}>
+
             <button onClick={this.showPedigree}>Ahnentafel</button>
 
             <button onClick={this.showImages}>Galerie</button>
 
             <button onClick={this.showExpositions}>Ausstellungen</button>
           </div>
+
 
           <img
             style={{ display: this.state.show }}
@@ -244,6 +249,68 @@ class Ivy extends Component {
               width="300"
               height="300"
             />
+
+
+          <div className={styles.showPedigreeImage}>
+            <img
+              style={{ display: this.state.show }}
+              src={this.state.pedigree}
+              alt={"Ivy"}
+              onClick={this.showPedigree}
+            />
+          </div>
+          <div style={{ display: this.state.showGallery }}>
+
+          <div className={styles.showGalleryIvyPage}>
+
+
+
+            <ResponsiveGallery images={this.state.images} useLightBox={true} />
+            
+          
+          </div>
+          </div>
+
+          <div className={styles.expositionsIvyPage}>
+            <div style={{ display: this.state.showExpositions }}>
+              {this.state.expositions.text}
+            </div>
+            <div className={styles.expositionsIvyPageImage}>
+              <img
+                style={{ display: this.state.showExpositions }}
+                src={
+                  this.state.expositions.certificates[0].directus_files_id.data
+                    .thumbnails[2].url
+                }
+                alt={
+                  this.state.expositions.certificates[0].directus_files_id.title
+                }
+                
+              />
+              <img
+                style={{ display: this.state.showExpositions }}
+                src={
+                  this.state.expositions.certificates[1].directus_files_id.data
+                    .thumbnails[2].url
+                }
+                alt={
+                  this.state.expositions.certificates[1].directus_files_id.title
+                }
+                
+              />
+              <img
+                style={{ display: this.state.showExpositions }}
+                src={
+                  this.state.expositions.certificates[2].directus_files_id.data
+                    .thumbnails[2].url
+                }
+                alt={
+                  this.state.expositions.certificates[2].directus_files_id.title
+                }
+                
+              />
+            </div>
+
           </div>
         </div>
       );
