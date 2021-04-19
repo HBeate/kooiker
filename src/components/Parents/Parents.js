@@ -21,7 +21,7 @@ class Parents extends Component {
             <h1 className={styles.mainHeader}>
               {this.props.parents.mutter.name} x {this.props.parents.vater.name}
             </h1>
-            <button>Back</button>
+            <button onClick={this.props.defaultSwitch}>Back</button>
           </div>
             <div className={styles.containerdog1}>
               <div className={styles.dogbox1}>
