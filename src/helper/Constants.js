@@ -13,4 +13,5 @@ module.exports = {
   expositions: baseURL + "/expositons?fields=*.*.*.*",
   welpen: baseURL + "/welpen?fields=*.*.*.*&sort=-id",
   smallDogs: baseURL + '/dogs?fields=*.*.*&filter[date_of_birth.dateofbirth][eq]=',
+  dogs2: baseURL + "/dogs?fields=*.*.*",
 };

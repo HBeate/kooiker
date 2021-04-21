@@ -22,6 +22,7 @@ class WelpenElement extends Component {
       litterDOB: "",
       breedings: [],
       elementsTitle:'',
+      dOBS:''
     };
   }
 
@@ -53,11 +54,23 @@ class WelpenElement extends Component {
               default:
                 elementsTitle=  "Portées";
       }
+            fetch(Constants.dogs2)
+      .then((response2) => response2.json())
+      .then((data2) => {
+        let dOBS = [];
+        data2.data.forEach((element) => {
+    if(element.date_of_birth!==null){
+      if(!dOBS.includes(element.date_of_birth.dateofbirth)){
+          dOBS.push(element.date_of_birth.dateofbirth);}
+    }
+        });
         this.setState({
           breedings: breedings,
           elementsTitle:elementsTitle,
+          dOBS:dOBS,
         });
       });
+    })
   }
 
   parentsSwitchLocal = (element) => {
@@ -73,11 +86,29 @@ class WelpenElement extends Component {
   breedingSwitchLocal = (element) => {
     this.setState({ litterDOB: element });
     this.props.breedingSwitch();
+    // console.log('DOBS')
+    // console.log(this.state.dOBS)
   };
-
+  getInTheNewHome=(isTrue, element)=>{
+    if((isTrue) && (this.props.language === "de")&&(this.props.language !== "en")&&(this.props.language !== "fr") ){
+      return(<button onClick={() =>this.breedingSwitchLocal(element.dob.dateofbirth)}>Im neuen Zuhause</button>)
+    } 
+    else if((isTrue) && (this.props.language === "en")&& (this.props.language !== "de") &&(this.props.language !== "fr") ){
+      return(<button onClick={() =>this.breedingSwitchLocal(element.dob.dateofbirth)}>In the new home</button>)
+    } 
+    else if((isTrue)&& (this.props.language !== "en")&& (this.props.language !== "de")  ){
+      return(<button onClick={() =>this.breedingSwitchLocal(element.dob.dateofbirth)}>Dans le nouveau foyer</button>)
+    } 
+    else{return(<div></div>)}
+  }
   elements = () => {
     let welpen = [];
+
     this.props.elements.forEach((element) => {
+      var isTrue=false;
+      if(this.state.dOBS.includes(element.dob.dateofbirth)){
+        isTrue=true;
+      } else{ isTrue=false;}
       if (this.props.language === "en") {
         let part = (
           <div key={element.id}>
@@ -99,13 +130,7 @@ class WelpenElement extends Component {
                     {" "}
                     Week 1 to 9
                   </button>
-                  <button
-                    onClick={() =>
-                      this.breedingSwitchLocal(element.dob.dateofbirth)
-                    }
-                  >
-                    In the new home
-                  </button>
+                  {this.getInTheNewHome(isTrue, element)}
                 </div>
               </div>
               <div className={styles.imageContainer}>
@@ -139,13 +164,7 @@ class WelpenElement extends Component {
                   >
                     Woche 1 bis 9{" "}
                   </button>
-                  <button
-                    onClick={() =>
-                      this.breedingSwitchLocal(element.dob.dateofbirth)
-                    }
-                  >
-                    Im neuen Zuhause
-                  </button>
+                  {this.getInTheNewHome(isTrue, element)}
                 </div>
               </div>
               <div className={styles.imageContainer}>
@@ -175,13 +194,7 @@ class WelpenElement extends Component {
               >
                 Semaine 1 à 9
               </button>
-              <button
-                onClick={() =>
-                  this.breedingSwitchLocal(element.dob.dateofbirth)
-                }
-              >
-                Dans le nouveau foyer
-              </button>
+              {this.getInTheNewHome(isTrue, element)}
             </div>
           </div>
           <div className={styles.imageContainer}>
