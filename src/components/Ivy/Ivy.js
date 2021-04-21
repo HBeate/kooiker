@@ -96,14 +96,64 @@ class Ivy extends Component {
     }
   };
 
+
+  getText=()=>{
+    if(this.props.language==='en'){
+      // this.setState({
+      //   Von Willebrand/ENM: 
+      //   Luxation de la rotule: 
+      //   Tares oculaires: 
+      //   Taille: 
+      //   Dentition: 
+      // });
+      return(          <div>
+        {" "}
+        <p className={styles.mainText}>
+          Even though we had dogs (Leonberger and Tervueren) and two cats, I
+          had a growing feeling that I needed a new task. I’m retired and I
+          have always been very fond of dogs. Since we have plenty of space
+          and time I decided to start breeding them. I wanted it to be a
+          special breed, one that was not too common. After some
+          investigation I came upon the Nederlandse Kooikerhondje.
+          Character, appearance and size of this breed was immediately
+          appealing to me. Since my husband agreed to fully support me the
+          way forward was clear.
+        </p>
+        <p className={styles.mainText}>
+          After some efforts I discovered the breeding site of Beate van
+          Schelve/Wolfgang Brüner which was very attractive in all respects.
+          We contacted the owners and after giving them some insight into
+          our personal situation and living conditions we were added to the
+          waiting list. Finally, after one year we were taken into account
+          for the I-litter. At the beginning of Juli 2017 a good friend of
+          mine and I drove 14 hours to pick up the puppy. The drive was long
+          and quite tiring but it was definitely worth it. We are all -
+          people as well as animials - very happy with our new family
+          member.
+        </p>
+      </div>)
+    }
+    else if(this.props.language==='de'){
+      return(          <div>
+        {" "}
+        <p className={styles.mainText}>
+        {this.props.language}
+        </p>
+        <p className={styles.mainText}>
+        {this.props.language}
+        </p>
+      </div>)
+    }
+    else { return(<div>{" "}<p className={styles.mainText}>
+          {this.props.language}
+        </p><p className={styles.mainText}>
+          {this.props.language}
+        </p></div>)}
+        
+    }
   render() {
     if (!this.state.loaded) {
-      // return (
-      //   <div style={{ textAlign: "center", color: "rgb(167, 69, 39)" }}>
-      //     <GiJumpingDog size={"100vh"} />
-      //   </div>
-      // );
-      return <Spinner />;
+      return(<Spinner/>)
     }
     if (this.state.loaded) {
       return (
@@ -160,32 +210,7 @@ class Ivy extends Component {
               </div>
             </div>
           </div>
-          <div>
-            {" "}
-            <p className={styles.mainText}>
-              Even though we had dogs (Leonberger and Tervueren) and two cats, I
-              had a growing feeling that I needed a new task. I’m retired and I
-              have always been very fond of dogs. Since we have plenty of space
-              and time I decided to start breeding them. I wanted it to be a
-              special breed, one that was not too common. After some
-              investigation I came upon the Nederlandse Kooikerhondje.
-              Character, appearance and size of this breed was immediately
-              appealing to me. Since my husband agreed to fully support me the
-              way forward was clear.
-            </p>
-            <p className={styles.mainText}>
-              After some efforts I discovered the breeding site of Beate van
-              Schelve/Wolfgang Brüner which was very attractive in all respects.
-              We contacted the owners and after giving them some insight into
-              our personal situation and living conditions we were added to the
-              waiting list. Finally, after one year we were taken into account
-              for the I-litter. At the beginning of Juli 2017 a good friend of
-              mine and I drove 14 hours to pick up the puppy. The drive was long
-              and quite tiring but it was definitely worth it. We are all -
-              people as well as animials - very happy with our new family
-              member.
-            </p>
-          </div>
+          {this.getText()}
 
           <div className={styles.ivyButtonPage}>
             <button onClick={this.showPedigree}>Ahnentafel</button>

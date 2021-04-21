@@ -10,12 +10,17 @@ class Aboutus extends Component {
   state = {
     photos: [],
     body: "",
-    language: "fr",
     id: "",
     title: "",
     image: "",
     loaded: false,
     gallery: [],
+    titleDE:'',
+    titleFR:'',
+    titleEN:'',
+    bodyDE:'',
+    bodyFR:'',
+    bodyEN:'',
   };
 
   componentDidMount() {
@@ -24,13 +29,33 @@ class Aboutus extends Component {
       .then(
         (result) => {
           let translation = result.data[0].translations;
+          let titleDE='';
+          let titleFR='';
+          let titleEN='';
+          let bodyDE='';
+          let bodyFR='';
+          let bodyEN='';
           translation.forEach((element) => {
-            if (element.language === this.props.language) {
-              this.setState({
-                title: element.title,
-                body: element.uebersetzung,
-              });
+            if (element.language === 'de') {
+                titleDE = element.title;
+                bodyDE = element.uebersetzung;
             }
+            else if (element.language === 'en'){
+              titleEN= element.title;
+              bodyEN= element.uebersetzung;
+          }
+          else {
+            titleFR= element.title;
+            bodyFR= element.uebersetzung;
+        }
+        this.setState({
+          ttitleDE:titleDE,
+          titleFR:titleFR,
+          titleEN:titleEN,
+          bodyDE:bodyDE,
+          bodyFR:bodyFR,
+          bodyEN:bodyEN,
+        });
           });
           let gallery = [];
           result.data[0].gallery.forEach((element) => {
@@ -58,7 +83,16 @@ class Aboutus extends Component {
   getAboutusContent = () => {
     let tempdata = [];
     let key = 0;
-    let x = this.state.body;
+    let x;
+   if(this.props.language==='de'){
+     x = this.state.bodyDE;
+   }
+   else if(this.props.language==='en'){
+    x = this.state.bodyEN;
+  }
+  else {
+    x = this.state.bodyFR;
+  }
     x.split("\n").map(function (item) {
       let line = (
         <span className={styles.spanText} key={key}>
@@ -74,7 +108,6 @@ class Aboutus extends Component {
 
   render() {
     if (!this.state.loaded) {
-      // return <div style={{ textAlign: "center", color: 'rgb(167, 69, 39)' }}><GiJumpingDog size={'100vh'} /></div>;
       return <Spinner />;
     }
     if (this.state.loaded) {
