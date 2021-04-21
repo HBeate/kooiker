@@ -86,10 +86,10 @@ img {
 .buttonRight {
   float: right;
   margin-top: 20px;
-}
+} 
 button {
   margin: 20px;
-}
+} 
 .card {
   display: flex;
   flex-wrap: wrap;
