@@ -4,7 +4,7 @@ import styles from "./Ivy.module.css";
 import ivyImg from "../Ivy/ivy.jpg";
 import ResponsiveGallery from "react-responsive-gallery";
 // import { GiJumpingDog } from "react-icons/gi";
-import  Spinner from './../Spinner/Spinner'
+import Spinner from "./../Spinner/Spinner";
 
 class Ivy extends Component {
   constructor(props) {
@@ -13,10 +13,10 @@ class Ivy extends Component {
       show: "none",
       dog: "",
       showGallery: "none",
-      showExpositions: 'none',
+      showExpositions: "none",
       images: [],
       loaded: false,
-      expositions:[]
+      expositions: [],
     };
   }
   componentDidMount() {
@@ -38,7 +38,7 @@ class Ivy extends Component {
           loaded: true,
         });
       });
-      fetch(Constants.expositions)
+    fetch(Constants.expositions)
       .then((resp) => resp.json())
       .then((result) => {
         let expositions = result.data[0];
@@ -95,6 +95,7 @@ class Ivy extends Component {
       });
     }
   };
+
 
   getText=()=>{
     if(this.props.language==='en'){
@@ -211,42 +212,70 @@ class Ivy extends Component {
           </div>
           {this.getText()}
 
-          <div>
-                <button onClick={this.showPedigree}>Ahnentafel</button>
-         
-                <button onClick={this.showImages}>Galerie</button>
-        
-                <button onClick={this.showExpositions}>Ausstellungen</button>
-                
-              </div>
+          <div className={styles.ivyButtonPage}>
+            <button onClick={this.showPedigree}>Ahnentafel</button>
 
+            <button onClick={this.showImages}>Galerie</button>
+
+            <button onClick={this.showExpositions}>Ausstellungen</button>
+          </div>
+
+          <div className={styles.showPedigreeImage}>
+            <img
+              style={{ display: this.state.show }}
+              src={this.state.pedigree}
+              alt={"Ivy"}
+              onClick={this.showPedigree}
+            />
+          </div>
+          <div style={{ display: this.state.showGallery }}>
+            <div className={styles.showGalleryIvyPage}>
+              <ResponsiveGallery
+                images={this.state.images}
+                useLightBox={true}
+              />
+            </div>
+          </div>
+          <div className={styles.expositionsIvyPage}>
+            <div style={{ display: this.state.showExpositions }}>
+              {this.state.expositions.text}
+            </div>
+            <div className={styles.expositionsIvyPageImage}>
               <img
-          style={{ display: this.state.show }}
-          src={this.state.pedigree}
-          alt={"Ivy"} onClick={this.showPedigree}
-        />
-        <div style={{ display: this.state.showGallery }}><ResponsiveGallery images={this.state.images} useLightBox={true}/></div>
-        <div style={{ display: this.state.showExpositions }}>{this.state.expositions.text}</div>
-        <div style={{display:'flex', flexWrap: 'wrap'}}>
-        <img
-          style={{ display: this.state.showExpositions }}
-          src={this.state.expositions.certificates[0].directus_files_id.data.thumbnails[2].url}
-          alt={this.state.expositions.certificates[0].directus_files_id.title}
-          width="300" height="300"
-        />
-        <img
-          style={{ display: this.state.showExpositions }}
-          src={this.state.expositions.certificates[1].directus_files_id.data.thumbnails[2].url}
-          alt={this.state.expositions.certificates[1].directus_files_id.title}
-          width="300" height="300"
-        />
-        <img
-          style={{ display: this.state.showExpositions }}
-          src={this.state.expositions.certificates[2].directus_files_id.data.thumbnails[2].url}
-          alt={this.state.expositions.certificates[2].directus_files_id.title}
-          width="300" height="300"
-        /></div>
-
+                style={{ display: this.state.showExpositions }}
+                src={
+                  this.state.expositions.certificates[0].directus_files_id.data
+                    .thumbnails[2].url
+                }
+                alt={
+                  this.state.expositions.certificates[0].directus_files_id.title
+                }
+                
+              />
+              <img
+                style={{ display: this.state.showExpositions }}
+                src={
+                  this.state.expositions.certificates[1].directus_files_id.data
+                    .thumbnails[2].url
+                }
+                alt={
+                  this.state.expositions.certificates[1].directus_files_id.title
+                }
+                
+              />
+              <img
+                style={{ display: this.state.showExpositions }}
+                src={
+                  this.state.expositions.certificates[2].directus_files_id.data
+                    .thumbnails[2].url
+                }
+                alt={
+                  this.state.expositions.certificates[2].directus_files_id.title
+                }
+                
+              />
+            </div>
+          </div>
         </div>
       );
     }
