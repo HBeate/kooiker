@@ -53,7 +53,8 @@ class BreedingCard extends Component {
     getPuppies = () => {
     let widgets = [];
     this.state.puppies.forEach(element => {
-             widgets.push(<li onClick={() => { this.onDogSelected(element) }} key={element.id} > {element.name}</li>);
+/*         widgets.push(<li onClick={() => { this.onDogSelected(element) }} key={element.id} > {element.name}</li>);
+ */             widgets.push(<button className={styles.buttons} onClick={() => { this.onDogSelected(element) }} key={element.id} > {element.name}</button>);
         });
         return widgets;
     }
@@ -115,11 +116,12 @@ class BreedingCard extends Component {
                     </div>
                     <div className={styles.dataContainer}>
                         <div><h3 className={styles.header}>{this.props.breeding.parents}</h3></div>
-                        <ul>{this.getPuppies()} </ul>
+                        {/* <ul className={styles.buttons}>{this.getPuppies()} </ul> */}
+                        <div className={styles.buttonContainer}>{this.getPuppies()} </div>
                     </div>
                 </div>
                 <div>
-                     {this.state.showSubNav ? <h1>{this.state.tempDog}</h1> : ""}
+                     {this.state.showSubNav ? <h2 className={styles.header2}>{this.state.tempDog}</h2> : ""}
                    {this.state.showGallery ? <div><ResponsiveGallery images={this.state.images} useLightBox={true}/></div> : ""}</div>
             </div>
         );

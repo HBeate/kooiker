@@ -8,6 +8,8 @@
 .containerCard {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   border-radius: 6px;
   justify-content: center;
   -webkit-box-shadow: 4px 2px 16px 0 rgba(50, 50, 50, 0.62);
@@ -18,22 +20,24 @@
   -webkit-box-shadow: 4px 2px 16px 0 rgba(50, 50, 50, 0.62);
   -moz-box-shadow: 4px 2px 16px 0 rgba(50, 50, 50, 0.62);
   box-shadow: 10px 2px 16px 0 rgba(50, 50, 50, 0.62);
-  cursor: pointer;
+/*   cursor: pointer; */
   
 }
 .imageContainer {
   flex: 2;
   width: auto;
   text-align: right;
+  min-width: 300px;
   background-size: cover;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
 }
+
 .dataContainer {
   flex: 2;
   width: auto;
-  object-fit: contain;
-  text-align: left;
+/*   object-fit: contain; */
+/*   text-align: left; */
   padding: 20px;
   align-items: center;
   justify-content: center;
@@ -41,16 +45,50 @@
 .dataContainer p {
   padding: 8px 0;
 }
-.dataContainer li {
+/* .dataContainer li {
   list-style-type: none;
   font-weight: bold;
   padding: 5px 20px;
+} */
+.buttonContainer{
+  display: flex;
+  flex-direction:column;
 }
 .header {
   font-size: 1.5rem;
   color: brown;
   display: flex;
   padding-bottom: 20px;
+  justify-content: center;
+}
+ .header2 {
+  font-size: 1.5rem;
+  padding: 20px 10px 6px ; 
+  border-bottom: brown solid 2px;
+} 
+.buttons {
+  margin: 6px;
+}
+.buttons li{
+  background-color: white; /* Green */
+  border: 1px solid rgb(167, 69, 39);
+  border-color: rgb(167, 69, 39);
+  color: black;
+/*   padding: 6px 10px; */
+  border-radius: 6px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+/*   margin-top: 20px; */
+  float: left;
+
+}
+
+.buttons li a{
+  background-color: rgb(167, 69, 39);
+  color: white;
+  cursor: pointer;
+
 }
  .subnav {
   display: grid;
