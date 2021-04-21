@@ -9,6 +9,7 @@
     "@testing-library/react": "^11.1.2",
     "@testing-library/user-event": "^12.2.2",
     "bootstrap": "^4.6.0",
+    "chokidar": "^3.5.1",
     "get-user-locale": "^1.4.0",
     "public-id": "^1.1.0",
     "public-ip": "^4.0.3",
