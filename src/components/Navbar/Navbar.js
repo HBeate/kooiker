@@ -87,6 +87,10 @@ newsFunktionen=()=>{
               <h3>"de la bande de rigolos"</h3>
               </div>
             </NavLink>
+            <div>{this.props.language}</div>
+            <button onClick={this.props.toggleLanguagueEN}>EN</button>
+            <button onClick={this.props.toggleLanguagueFR}>FR</button>
+            <button onClick={this.props.toggleLanguagueDE}>DE</button>
             <div className="menu_icon" onClick={this.handleClick}><i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i></div>
             <ul className={this.state.clicked ? "navigation_menu active" : "navigation_menu"}>
               <li><NavLink to="/" onClick={this.closeMobileMenu}><i className="fas fa-home"></i></NavLink></li>
