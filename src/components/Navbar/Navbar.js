@@ -1,6 +1,15 @@
 import React, { Component } from "react";
 import "./Navbar.css";
-import { NavLink } from "react-router-dom";
+import {NavLink } from "react-router-dom";
+import { Dropdown } from "react-bootstrap";
+import DropdownMenu from "react-bootstrap/esm/DropdownMenu";
+import DropdownItem from "react-bootstrap/esm/DropdownItem";
+import german from './de.png';
+import french from './fr.png';
+import english from './gb-eng.png';
+
+
+
 
 class Navbar extends Component {
   state = {
@@ -87,10 +96,7 @@ newsFunktionen=()=>{
               <h3>"de la bande de rigolos"</h3>
               </div>
             </NavLink>
-            <div>{this.props.language}</div>
-            <button onClick={this.props.toggleLanguagueEN}>EN</button>
-            <button onClick={this.props.toggleLanguagueFR}>FR</button>
-            <button onClick={this.props.toggleLanguagueDE}>DE</button>
+            
             <div className="menu_icon" onClick={this.handleClick}><i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i></div>
             <ul className={this.state.clicked ? "navigation_menu active" : "navigation_menu"}>
               <li><NavLink to="/" onClick={this.closeMobileMenu}><i className="fas fa-home"></i></NavLink></li>
@@ -99,7 +105,19 @@ newsFunktionen=()=>{
 
               {/* <li><NavLink to="/offspring" onClick={this.closeMobileMenu}>{this.state.Offspring}</NavLink></li> */}
               <li><NavLink to="/puppys" onClick={this.newsFunktionen}>{this.state.Puppys}</NavLink></li>
-              <li><NavLink to="/contact" onClick={this.closeMobileMenu}>{this.state.Contact}</NavLink></li>   
+              <li><NavLink to="/contact" onClick={this.closeMobileMenu}>{this.state.Contact}</NavLink></li> 
+              <li>
+                <Dropdown>
+                  <Dropdown.Toggle split variant="success" id="dropdown-split-basic">
+                  <li><i class="fas fa-globe" > Language</i></li>
+                  </Dropdown.Toggle>
+                <DropdownMenu >
+                  <DropdownItem href="#" onClick={this.props.toggleLanguagueEN}><img src={english} alt="england"></img></DropdownItem>
+                  <DropdownItem href="#" onClick={this.props.toggleLanguagueFR}><img src={french} alt="french"></img></DropdownItem>
+                  <DropdownItem href="#" onClick={this.props.toggleLanguagueDE}> <img src={german} alt="german"></img> </DropdownItem>
+                </DropdownMenu>
+                </Dropdown>
+              </li>
 
             </ul>
         </nav>

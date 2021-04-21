@@ -60,7 +60,7 @@
 
 .navigation_menu{
   display: grid;
-  grid-template-columns: repeat(5, auto);
+  grid-template-columns: repeat(6, auto);
   grid-gap: 2rem;
   list-style: none;
   text-align: center;
@@ -128,6 +128,10 @@
   justify-content: flex-end;
   color: white;
 }
+
+
+
+
 
 @media screen and (max-width: 460px){
 
