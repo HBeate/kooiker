@@ -110,7 +110,7 @@ newsFunktionen=()=>{
                   </Dropdown.Toggle>
                 <DropdownMenu >
                   <DropdownItem href="#" onClick={this.props.toggleLanguagueEN}>English</DropdownItem>
-                  <DropdownItem href="#" onClick={this.props.toggleLanguagueFR}>Francais</DropdownItem>
+                  <DropdownItem href="#" onClick={this.props.toggleLanguagueFR}>Français</DropdownItem>
                   <DropdownItem href="#" onClick={this.props.toggleLanguagueDE}>Deutsch</DropdownItem>
                 </DropdownMenu>
                 </Dropdown>
