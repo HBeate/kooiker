@@ -109,12 +109,12 @@ newsFunktionen=()=>{
               <li>
                 <Dropdown>
                   <Dropdown.Toggle split variant="success" id="dropdown-split-basic">
-                  <li><i class="fas fa-globe" > Language</i></li>
+                  <li> <i class="fas fa-globe" ></i> {this.props.language}</li>
                   </Dropdown.Toggle>
                 <DropdownMenu >
-                  <DropdownItem href="#" onClick={this.props.toggleLanguagueEN}><img src={english} alt="england"></img></DropdownItem>
-                  <DropdownItem href="#" onClick={this.props.toggleLanguagueFR}><img src={french} alt="french"></img></DropdownItem>
-                  <DropdownItem href="#" onClick={this.props.toggleLanguagueDE}> <img src={german} alt="german"></img> </DropdownItem>
+                  <DropdownItem href="#" onClick={this.props.toggleLanguagueEN}>English</DropdownItem>
+                  <DropdownItem href="#" onClick={this.props.toggleLanguagueFR}>Francais</DropdownItem>
+                  <DropdownItem href="#" onClick={this.props.toggleLanguagueDE}>Deutsch</DropdownItem>
                 </DropdownMenu>
                 </Dropdown>
               </li>
