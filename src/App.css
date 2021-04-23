@@ -89,6 +89,8 @@
   }
 }
 
+
+/* +++++++++++ Framework React Bootstrap Dropdown-Menu ++++++++++ */
 .dropdown button{
   margin: 0;
   display: flex;
@@ -102,7 +104,12 @@
 }
 
 .dropdown-menu a{
-  background: rgb(167, 69, 39) !important;
+  background-color: rgb(167, 69, 39) !important ;
+  /* background: rgb(167, 69, 39) !important; */
+  box-shadow: 0 10px 25px rgb(167, 69, 39) !important ;  
+  border-bottom: rgb(167, 69, 39) !important;
+  padding: 0.8rem 1rem !important;
+  margin: 0 0 0 0;
 }
 
 /* .fa, .far, .fas{
