@@ -4,9 +4,6 @@ import {NavLink } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
 import DropdownMenu from "react-bootstrap/esm/DropdownMenu";
 import DropdownItem from "react-bootstrap/esm/DropdownItem";
-import german from './de.png';
-import french from './fr.png';
-import english from './gb-eng.png';
 
 
 
