@@ -49,7 +49,7 @@ class Aboutus extends Component {
             bodyFR= element.uebersetzung;
         }
         this.setState({
-          ttitleDE:titleDE,
+          titleDE:titleDE,
           titleFR:titleFR,
           titleEN:titleEN,
           bodyDE:bodyDE,
@@ -106,6 +106,14 @@ class Aboutus extends Component {
     return tempdata;
   };
 
+  getTitle=()=>{
+    let title='';
+    if(this.props.language==='de'){title = this.state.titleDE}
+    else if(this.props.language==='en'){title = this.state.titleEN}
+    else {title = this.state.titleFR}
+    return title
+  }
+
   render() {
     if (!this.state.loaded) {
       return <Spinner />;
@@ -113,7 +121,7 @@ class Aboutus extends Component {
     if (this.state.loaded) {
       return (
         <div className={styles.container}>
-           <h1 className={styles.mainHeader}>Xxxx{this.state.title}</h1>
+           <h1 className={styles.mainHeader}>{this.getTitle()}{this.state.title}</h1>
           <div className={styles.aboutUsCard}>
             <div>
               <Car images={this.state.gallery} />
