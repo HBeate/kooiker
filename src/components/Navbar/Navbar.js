@@ -16,6 +16,7 @@ class Navbar extends Component {
     Puppys: "",
     Contact: "",
     Parents: "",
+    token:''
   };
 
   componentDidMount() {
@@ -81,6 +82,13 @@ newsFunktionen=()=>{
   // this.props.togglePoppiesNews();
   this.props.defaultSwitch();
 }
+languagueTranslator=()=>{
+let token='';
+  if(this.props.language==='de'){token='DE'}
+  else if(this.props.language==='en'){ token='EN'} 
+  else {token='FR'}
+return token
+}
   render() {
     return (
       <>
@@ -106,7 +114,7 @@ newsFunktionen=()=>{
               <li>
                 <Dropdown>
                   <Dropdown.Toggle split variant="success" id="dropdown-split-basic">
-                  <li> <i class="fas fa-globe" ></i> {this.props.language}</li>
+                  <li> <i className="fas fa-globe" ></i>{'  '+this.languagueTranslator()}</li>
                   </Dropdown.Toggle>
                 <DropdownMenu >
                   <DropdownItem href="#" onClick={this.props.toggleLanguagueEN}>English</DropdownItem>
