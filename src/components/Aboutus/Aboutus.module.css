@@ -1,10 +1,9 @@
-.container{
+.container {
   margin-right: auto;
   margin-left: auto;
   padding: 15px;
   max-width: 960px;
   margin-bottom: 100px;
- 
 }
 .mainHeader {
   font-size: 2rem;
@@ -14,25 +13,25 @@
   padding: 20px 20px;
   border-bottom: brown solid 2px;
 }
-.aboutUsCard{
+.aboutUsCard {
   display: flex;
 }
 
-.spanText{
+.spanText {
+  font-size: 1.2rem;
   font-family: "Roboto", sans-serif;
-  font-size:large;
-  font-stretch:extra-expanded;
+  font-weight: 400;
+  font-stretch: extra-expanded;
 }
 
-.dataContainer{
+.dataContainer {
   margin: 1.2rem;
   justify-content: center;
-  
 }
 
-@media screen and (max-width: 767px){
-  .aboutUsCard{
-    flex-direction:column-reverse;
+@media screen and (max-width: 767px) {
+  .aboutUsCard {
+    flex-direction: column-reverse;
     justify-content: center;
   }
 }

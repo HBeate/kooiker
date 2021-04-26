@@ -31,7 +31,7 @@
 }
 
 .navigation_logo {
-  color: white; 
+  color: white;
   justify-content: flex-start;
   text-decoration: none;
   margin-left: 2.7rem;
@@ -43,22 +43,22 @@
   /* font-family: 'Josefin Sans', sans-serif; */
 }
 
-.navigation_logo h2{
+.navigation_logo h2 {
   color: white;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: medium;
   text-align: right;
   font-style: italic;
 }
 
-.navigation_logo h3{
+.navigation_logo h3 {
   color: white;
   text-align: right;
-  font-style: italic;
+  /* font-style: italic; */
   border-bottom: none;
 }
 
-.navigation_menu{
+.navigation_menu {
   display: grid;
   grid-template-columns: repeat(6, auto);
   grid-gap: 2rem;
@@ -69,7 +69,7 @@
   margin-right: 3rem;
 }
 
-.menu-button{
+.menu-button {
   display: flex;
   justify-content: flex-end;
 }
@@ -94,25 +94,24 @@
   border-bottom: 1px solid white;
 } */
 
-.navigation a{
+.navigation a {
   color: white;
   display: flex;
   align-items: center;
   text-decoration: none;
   padding: 0.2rem 0.5rem;
   height: 100%;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   border-bottom: 1px solid rgb(167, 69, 39);
   font-size: 1.2rem;
 }
 
-
-.navigation > ul > li > a:hover{
+.navigation > ul > li > a:hover {
   border-bottom: 1px solid white;
   transition: all 0.2s ease-out;
 }
 
-.navigation > ul > li > a:focus{
+.navigation > ul > li > a:focus {
   border-bottom: 1px solid white;
 }
 
@@ -130,12 +129,7 @@
   color: white;
 }
 
-
-
-
-
-@media screen and (max-width: 460px){
-
+@media screen and (max-width: 460px) {
 }
 
 @media screen and (max-width: 760px) {
@@ -143,8 +137,8 @@
     position: relative;
   }
 
-  .navigation{
-    background:  rgb(167, 69, 39);
+  .navigation {
+    background: rgb(167, 69, 39);
   }
 
   .navigation_menu {
@@ -176,12 +170,10 @@
     color: white;
   }
 
-  .navigation > ul > li > a:hover{
+  .navigation > ul > li > a:hover {
     border-bottom: none;
     transition: none;
   }
-
-  
 
   .navigation_logo {
     position: absolute;
@@ -193,9 +185,9 @@
     margin-left: 0px;
   }
 
-  .nav-header{
+  .nav-header {
     color: white;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: medium;
   }
 

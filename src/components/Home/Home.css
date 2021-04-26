@@ -41,9 +41,10 @@ div {
   z-index: 99;
   display: flex;
   align-items: center;
-  font-size: large;
+  font-size: 1.2rem;
   font-stretch: extra-expanded;
-  /* font-family: "Roboto", sans-serif; */
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
 }
 
 .section3 {
@@ -153,7 +154,9 @@ div {
 .externe_links a {
   color: black;
   text-decoration: none;
-  font-size: large;
+  font-size: 1.2rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
 }
 
 @media only screen and (max-device-width: 768px) {

@@ -86,10 +86,10 @@ img {
 .buttonRight {
   float: right;
   margin-top: 20px;
-} 
+}
 button {
   margin: 20px;
-} 
+}
 .card {
   display: flex;
   flex-wrap: wrap;
@@ -108,14 +108,14 @@ button {
   padding: 20px;
 }
 
-.ivyButtonPage{
-  display: flex; 
+.ivyButtonPage {
+  display: flex;
   justify-content: space-between;
   padding-left: 18px;
   padding-right: 18px;
 }
 
-.ivyButtonPage button{
+.ivyButtonPage button {
   margin: 0;
 }
 
@@ -123,32 +123,29 @@ button {
   margin-left: 1.2rem;
   margin-right: 1.2rem;
   margin-top: 3rem;
-  
 }
 
-.showGalleryIvyPage{
+.showGalleryIvyPage {
   max-width: 960px;
   padding-left: 0.6rem;
   padding-right: 0.6rem;
-  
 }
 
-.expositionsIvyPage{
+.expositionsIvyPage {
   margin: 1.2rem;
 }
 
-.expositionsIvyPage div{
+.expositionsIvyPage div {
   margin-bottom: 2rem;
 }
 
-.expositionsIvyPageImage{
+.expositionsIvyPageImage {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
 }
-.expositionsIvyPageImage img{
+.expositionsIvyPageImage img {
   width: 250px;
-  
 }
 
 @media only screen and (max-width: 767px) {
@@ -160,27 +157,25 @@ button {
     margin: 6px;
   }
 
-  .ivyButtonPage button{
+  .ivyButtonPage button {
     margin-left: 0;
     margin-right: 0;
     display: flex;
     margin: 0.1rem;
   }
 
-  .expositionsIvyPageImage{
+  .expositionsIvyPageImage {
     flex-direction: column;
   }
 
-  .expositionsIvyPageImage img{
+  .expositionsIvyPageImage img {
     width: auto;
     margin: 0.5rem;
   }
 }
 
-@media only screen and (max-width: 1023px) and (min-width: 768px){
-  
-  .expositionsIvyPageImage img{
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  .expositionsIvyPageImage img {
     width: 200px;
-    
   }
 }
