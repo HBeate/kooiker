@@ -13,7 +13,7 @@ body {
   position: relative;
   display: flex;
   width: 100%;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   border-bottom: brown solid 2px;
   /* background: lightcyan; */
   height: 330px;
@@ -30,7 +30,7 @@ body {
   justify-content: space-between; */
 }
 
-.imageContainer img{
+.imageContainer img {
   width: 300px;
   height: 300px;
   object-fit: cover;
@@ -47,17 +47,16 @@ body {
   justify-content: space-between;
 }
 
-.btn{
-  
+.btn {
   /* background: aqua; */
   display: flex;
   width: 62%;
   justify-content: space-between;
   position: absolute;
-  bottom: 1rem;  
+  bottom: 1rem;
 }
 
-.btn button{
+.btn button {
   display: flex;
   margin: 0;
 }
@@ -118,6 +117,49 @@ td {
   }
 
   .welpenCard {
-   flex-direction: column;
+    flex-direction: column;
+    height: 550px;
+  }
+
+  .btn {
+    width: 90%;
+  }
+
+  .btn button {
+    display: flex;
+    margin: 0;
+    font-size: 0.8rem;
+  }
+
+  .dataContainer {
+    width: 100%;
+  }
+
+  .welpenCard,
+  .imageContainer {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media only screen and (min-width: 701px) and (max-width: 768px) {
+  .dataContainer {
+    width: 50%;
+  }
+
+  .btn {
+    width: 45%;
+  }
+
+  .btn button {
+    display: flex;
+    margin: 0;
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .btn button {
+    font-size: 0.6rem;
   }
 }
