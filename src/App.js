@@ -161,7 +161,7 @@ export default class App extends Component {
         </Switch>
  
         <Switch>
-          <Route path='/contact' exact render ={()=><Contact/> }/>
+          <Route path='/contact' exact render ={()=><Contact  language={this.state.language}/> }/>
         </Switch>
  
         <Footer/>

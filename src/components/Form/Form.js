@@ -40,6 +40,63 @@ class Form extends Component {
         console.log(this.state.notification);
       });
   };
+  getName=()=>{
+    console.log(this.props.language)
+    let formName = "";
+        switch (this.props.language) {
+          case "de":
+            formName = "Name";
+            break;
+          case "en":
+            formName = "name";
+            break;
+          default:
+            formName = "le nom";
+        }
+        return formName;
+  }
+  getTelefon=()=>{
+    let contactTitle = "";
+        switch (this.props.language) {
+          case "de":
+            contactTitle = "Telefon";
+            break;
+          case "en":
+            contactTitle = "telephone";
+            break;
+          default:
+            contactTitle = "le téléphone";
+        }
+        return contactTitle;
+  }
+  getMessage=()=>{
+    let contactTitle = "";
+        switch (this.props.language) {
+          case "de":
+            contactTitle = "Nachricht";
+            break;
+          case "en":
+            contactTitle = "message";
+            break;
+          default:
+            contactTitle = "le message";
+        }
+        return contactTitle;
+  }
+  getSubmit=()=>{
+    let contactTitle = "";
+        switch (this.props.language) {
+          case "de":
+            contactTitle = "senden";
+            break;
+          case "en":
+            contactTitle = "submit";
+            break;
+          default:
+            contactTitle = "envoyer";
+        }
+        return contactTitle;
+  }
   render() {
     return (
       <div className={styles.container}>
@@ -54,23 +111,23 @@ class Form extends Component {
           <div className={styles.inputField}>
             <div className={styles.inputNamePhoneContainer}>
             <div className={styles.nameInput}>
-              <input type="text" name="name" placeholder="Name"></input>
+              <input type="text" name="name" placeholder={this.getName()}></input>
             </div>
             <div className={styles.phoneInput}>
-              <input type="text" name="phone" placeholder="Telefon" />
+              <input type="text" name="phone" placeholder={this.getTelefon()} />
             </div>
             </div>
             
           </div>
           <div className={styles.inputFieldMail}>
-            <input type="email" name="email" placeholder="E-Mail-Adresse" />
+            <input type="email" name="email" placeholder="E-Mail" />
           </div>
           <div className={styles.inputField}>
-            <textarea type="text" name="comments" placeholder="Nachricht" />
+            <textarea type="text" name="comments" placeholder={this.getMessage()} />
           </div>
           <div className={styles.buttonCenter}>
             <button className={styles.submitButton} type="submit">
-              Submit
+            {this.getSubmit()}
             </button>
           </div>
         </form>
