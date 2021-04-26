@@ -1,8 +1,8 @@
 import React from "react";
 import "./Home.css";
-import dog from "./dog-min.jpg";
-import dog2 from "./dog-2.jpg";
 import dog1 from "./dog1.jpg";
+import dog2 from "./dog2.jpg";
+import dog3 from "./dog3.jpg";
 import logo from "./logo.jpg";
 import logo1 from "./logo1.png";
 import logo2 from "./logo2.png";
@@ -23,7 +23,7 @@ export default function Home (props) {
   );
 
   const BackgroundImage = ParallaxJSXWrapper(
-    <img className="dog_background" src={dog} alt="dog" />,
+    <img className="dog_background" src={dog1} alt="dog" />,
     0.035
   );
 
@@ -33,7 +33,7 @@ export default function Home (props) {
   );
 
   const BackgroundImageDogPuppy = ParallaxJSXWrapper(
-    <img className="dog_background_puppy" src={dog1} alt="dog" />,
+    <img className="dog_background_puppy" src={dog3} alt="dog" />,
     0.035
   );
   
