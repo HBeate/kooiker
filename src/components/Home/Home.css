@@ -158,10 +158,10 @@ div {
 
 @media only screen and (max-device-width: 768px) {
   .section1 {
-    height: 500px;
+    height: 300px;
   }
   .section2 {
-    height: 500px;
+    height: 600px;
   }
   .section3 {
     height: 400px;
