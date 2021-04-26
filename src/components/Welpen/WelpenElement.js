@@ -87,8 +87,6 @@ class WelpenElement extends Component {
   breedingSwitchLocal = (element) => {
     this.setState({ litterDOB: element });
     this.props.breedingSwitch();
-    // console.log('DOBS')
-    // console.log(this.state.dOBS)
   };
   getInTheNewHome = (isTrue, element) => {
     if (
@@ -133,10 +131,28 @@ class WelpenElement extends Component {
       return null;
     }
   };
+  getContent = (x) => {
+    let tempdata = [];
+    let key = 0;
+    //let x=element.translations[0].uebersetzung;
+  
+    x.split("\n").map(function (item) {
+      let line = (
+        <span className={styles.spanText} key={key}>
+          {item}
+          <br />
+        </span>
+      );
+      tempdata.push(line);
+      return key++;
+    });
+    return tempdata;
+  };
   elements = () => {
     let welpen = [];
 
     this.props.elements.forEach((element) => {
+      console.log(element.translations[0].uebersetzung)
       var isTrue = false;
       if (this.state.dOBS.includes(element.dob.dateofbirth)) {
         isTrue = true;
@@ -144,6 +160,18 @@ class WelpenElement extends Component {
         isTrue = false;
       }
       if (this.props.language === "en") {
+     
+     
+        // element.translations[0].uebersetzung.split('\n').map(function(item){
+        //   let line=(
+        //     <span>
+        //       {item}
+        //       <br/>
+        //     </span>
+        //   )
+        //   tempdata.push(line);
+        // }
+      
         let part = (
           <div key={element.id}>
             <div className={styles.welpenCard}>
@@ -151,7 +179,7 @@ class WelpenElement extends Component {
                 <h3 className={styles.header}>
                   {element.translations[0].title}
                 </h3>
-                {element.translations[0].uebersetzung}{" "}
+                {this.getContent(element.translations[0].uebersetzung)}{" "}
                 <div className={styles.btn}>
                   <button onClick={() => this.parentsSwitchLocal(element)}>
                     The parents
@@ -185,7 +213,7 @@ class WelpenElement extends Component {
                 <h3 className={styles.header}>
                   {element.translations[1].title}
                 </h3>
-                {element.translations[1].uebersetzung}
+                {this.getContent(element.translations[1].uebersetzung)}{" "}
 
                 <div className={styles.btn}>
                   <button onClick={() => this.parentsSwitchLocal(element)}>
@@ -219,7 +247,7 @@ class WelpenElement extends Component {
                 <h3 className={styles.header}>
                   {element.translations[2].title}
                 </h3>{" "}
-                {element.translations[2].uebersetzung}
+                {this.getContent(element.translations[2].uebersetzung)}{" "}
                 <div style={styles.btn}>
                   <button onClick={() => this.parentsSwitchLocal(element)}>
                     Les parents
