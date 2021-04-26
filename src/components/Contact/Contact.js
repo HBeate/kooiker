@@ -4,6 +4,20 @@ import styles from './Contact.module.css';
 
 class Contact extends Component {
     state = {}
+    getTitle=()=>{
+        let contactTitle = "";
+            switch (this.props.language) {
+              case "de":
+                contactTitle = "Kontakt";
+                break;
+              case "en":
+                contactTitle = "Contact";
+                break;
+              default:
+                contactTitle = "le contact";
+            }
+            return contactTitle;
+      }
     render() {
         return (
             <div>  
@@ -19,7 +33,7 @@ class Contact extends Component {
                 </iframe>
                 </div>
                 <div className={styles.headerKontakt}>
-                <h1>Kontakt</h1>
+                <h1>{this.getTitle()}</h1>
                 </div>
                 
                 <div className={styles.contact2}>
@@ -30,7 +44,7 @@ class Contact extends Component {
                         &nbsp;helga-henny@kooiker-fr.com
                         </a>
                     </div>
-                     <Form/>
+                     <Form  language={this.props.language}/>
                 </div>
 
             </div>
