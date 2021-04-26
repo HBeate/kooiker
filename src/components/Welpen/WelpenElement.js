@@ -131,11 +131,25 @@ class WelpenElement extends Component {
       return null;
     }
   };
+
+  getTitle=()=>{
+    let elementsTitle = "";
+        switch (this.props.language) {
+          case "de":
+            elementsTitle = "Würfe";
+            break;
+          case "en":
+            elementsTitle = "Litters";
+            break;
+          default:
+            elementsTitle = "Portées";
+        }
+        return elementsTitle;
+  }
+
   getContent = (x) => {
     let tempdata = [];
     let key = 0;
-    //let x=element.translations[0].uebersetzung;
-  
     x.split("\n").map(function (item) {
       let line = (
         <span className={styles.spanText} key={key}>
@@ -148,6 +162,7 @@ class WelpenElement extends Component {
     });
     return tempdata;
   };
+  
   elements = () => {
     let welpen = [];
 
@@ -160,18 +175,6 @@ class WelpenElement extends Component {
         isTrue = false;
       }
       if (this.props.language === "en") {
-     
-     
-        // element.translations[0].uebersetzung.split('\n').map(function(item){
-        //   let line=(
-        //     <span>
-        //       {item}
-        //       <br/>
-        //     </span>
-        //   )
-        //   tempdata.push(line);
-        // }
-      
         let part = (
           <div key={element.id}>
             <div className={styles.welpenCard}>
@@ -245,7 +248,7 @@ class WelpenElement extends Component {
             <div className={styles.welpenCard}>
               <div className={styles.dataContainer}>
                 <h3 className={styles.header}>
-                  {element.translations[1].title}
+                  {element.translations[2].title}
                 </h3>
                 {this.getContent(element.translations[2].uebersetzung)}{" "}
 
@@ -294,7 +297,7 @@ class WelpenElement extends Component {
     ) {
       return (
         <div className={styles.container}>
-          <h1 className={styles.mainHeader}>{this.state.elementsTitle}</h1>
+          <h1 className={styles.mainHeader}>{this.getTitle()}</h1>
           <div>{this.elements()}</div>
         </div>
       );
