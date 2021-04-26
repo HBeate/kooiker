@@ -85,7 +85,7 @@ class BreedingCard extends Component {
                 let index = 0;
                 let tempDog=dog.name
                 data.data[0].images.forEach(element => {
-                    let url = "https://api.kooiker-fr.com/kooiker/assets/" + element.directus_files_id.private_hash + "?key=directus-medium-contain"
+                    let url = "https://api.kooiker-fr.com/kooiker/assets/" + element.directus_files_id.private_hash + "?key=directus-large-contain"
                     let cols = 1;
                     if (index % 3 === 0) {
                         cols = 1;

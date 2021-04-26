@@ -26,10 +26,14 @@ class Ivy extends Component {
         let ivy = result.data[0];
         let pedigree = result.data[0].pedigree.data.full_url;
         let images = [];
+        console.log(result.data[0].images)
         result.data[0].images.forEach((element) => {
+          //console.log(element)
+          if(element.directus_files_id.type==='image/jpeg'){
           images.push({
-            src: element.directus_files_id.data.full_url,
+            src: element.directus_files_id.data.thumbnails[5].url,
           });
+        }
         });
         this.setState({
           images: images,
