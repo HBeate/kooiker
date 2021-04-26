@@ -239,25 +239,26 @@ class WelpenElement extends Component {
           </div>
         );
         welpen.push(part);
-      } else if (this.props.language === "fr") {
+      } else if (this.props.language !== "de"&&this.props.language !== "en") {
         let part = (
           <div key={element.id}>
             <div className={styles.welpenCard}>
               <div className={styles.dataContainer}>
                 <h3 className={styles.header}>
-                  {element.translations[2].title}
-                </h3>{" "}
+                  {element.translations[1].title}
+                </h3>
                 {this.getContent(element.translations[2].uebersetzung)}{" "}
-                <div style={styles.btn}>
+
+                <div className={styles.btn}>
                   <button onClick={() => this.parentsSwitchLocal(element)}>
-                    Les parents
+                  Les parents
                   </button>
                   <button
                     onClick={() =>
                       this.welpenSwitchLocal(element.dob.dateofbirth)
                     }
                   >
-                    Semaine 1 à 9
+                    Semaine 1 à 9{" "}
                   </button>
                   {this.getInTheNewHome(isTrue, element)}
                 </div>
@@ -271,6 +272,7 @@ class WelpenElement extends Component {
             </div>
           </div>
         );
+        
         welpen.push(part);
       }
     });
