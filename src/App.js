@@ -32,6 +32,7 @@ export default class App extends Component {
       showDogs: false,
       title: "",
       text: "",
+      goto3:false,
     };
   }
   toggleLanguagueDE = () => {
@@ -81,6 +82,11 @@ export default class App extends Component {
   defaultSwitch = () => {
     this.setState({ showDogs: false, showParents: false, showLitter: false });
   };
+
+  scroollto3=()=>{
+    this.setState({
+      goto3:true,
+    } );  }
 
   componentDidMount() {
     if (this.state.language === "") {
@@ -163,6 +169,7 @@ export default class App extends Component {
               toggleLanguagueEN={this.toggleLanguagueEN}
               toggleLanguagueFR={this.toggleLanguagueFR}
               toggleLanguagueDE={this.toggleLanguagueDE}
+              scroollto3={this.scroollto3}
             />
             <Switch>
               <Route

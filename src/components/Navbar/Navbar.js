@@ -93,6 +93,11 @@ class Navbar extends Component {
     }
     return token;
   };
+
+  linksFunction=()=>{
+    this.closeMobileMenu();
+    this.props.scroollto3()
+  }
   render() {
     return (
       <>
@@ -146,7 +151,7 @@ class Navbar extends Component {
                 </NavLink>
               </li>
               <li>
-                <NavLink to onClick={this.closeMobileMenu}>
+                <NavLink to="/" onClick={this.linksFunction}>
                   Links
                 </NavLink>
               </li>
