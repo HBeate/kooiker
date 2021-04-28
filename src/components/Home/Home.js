@@ -8,7 +8,7 @@ import logo1 from "./logo1.png";
 import logo2 from "./logo2.png";
 import Zoom from "react-reveal/Zoom";
 import ParallaxJSXWrapper from "./ParallaxJSXWrapper.js";
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, Fragment  } from 'react';
 
 export default function Home(props) {
   const Head = ParallaxJSXWrapper(
@@ -69,39 +69,26 @@ export default function Home(props) {
     0.035
   );
 
+  const text2=()=>{
+    let fragment=[]
+    props.text.split('\n').map((item, key) => {
+      fragment.push( <Fragment key={key}>{item}<br/></Fragment>)
+      return null
+    })
+     return fragment
+   
+  }
+
   return (
     <div className="main_wrapper">
       <div className="main_container">
-        <div className="section1">
-          <BackgroundImage />
-          {/* <img className="dog_background" src={dog} alt="dog" /> */}
-          {/* <div className="home_welcome_header">
-            <h1>Kooikerhondje</h1>
-            <h2>“de la bande de rigolos“</h2>
-          </div> */}
-          
-          <Zoom>
-            <Head />
-          </Zoom>
-        </div>
-        <BackgroundImageFloat className="section2"/>
-        <div className="section2">
-          
-          <div className="first_content">
-            <h2>{props.title}</h2>
-            <p>{props.text}</p>
-          </div>
-        </div>
-        <div className="section3">
-          {/* <img className="dog_background" src={dog-2} alt="dog" /> */}
-          <BackgroundImageDogTwo />
-        </div>
+        <div className="section1"><BackgroundImage /><Zoom><Head/></Zoom></div>
+        <BackgroundImageFloat className="section2"/><div className="section2"><div className="first_content"><h2>{props.title}</h2><p>{text2()}</p></div></div><div className="section3"><BackgroundImageDogTwo /></div>
         <div className="section4" id="links" ref={myRef}>
           <div className="section4_Container">
             <div className="zertifikat_logo">
               <a href="http://www.fci.be/de/" target="_blank" rel="noreferrer">
-                <img src={logo2} alt={"logo2"} />
-              </a>
+                <img src={logo2} alt={"logo2"} /></a>
               <a
                 href="https://www.centrale-canine.fr/"
                 target="_blank"
@@ -169,7 +156,6 @@ export default function Home(props) {
           </div>
         </div>
         <div className="section5">
-          {/* <img className="dog_background_puppy" src={dog1} alt="dog" /> */}
           <BackgroundImageDogPuppy />
         </div>
       </div>
