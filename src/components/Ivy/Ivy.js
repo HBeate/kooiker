@@ -17,6 +17,11 @@ class Ivy extends Component {
       images: [],
       loaded: false,
       expositions: [],
+      one: '',
+      two:'',
+      three:'',
+      four:'',
+      five:''
     };
   }
   componentDidMount() {
@@ -28,7 +33,6 @@ class Ivy extends Component {
         let images = [];
         console.log(result.data[0].images)
         result.data[0].images.forEach((element) => {
-          //console.log(element)
           if(element.directus_files_id.type==='image/jpeg'){
           images.push({
             src: element.directus_files_id.data.thumbnails[5].url,
@@ -99,17 +103,97 @@ class Ivy extends Component {
       });
     }
   };
-
-
+  getTwo = () => {
+    let two = "";
+    switch (this.props.language) {
+      case "de":
+        two = "Patella: ";
+        break;
+      case "en":
+        two = "Patella: ";
+        break;
+      default:
+        two = "Luxation de la rotule: ";
+    }
+    return two;
+  };
+  getThree = () => {
+    let three = "";
+    switch (this.props.language) {
+      case "de":
+        three = "Augen: ";
+        break;
+      case "en":
+        three = "Eyes: ";
+        break;
+      default:
+        three = "Tares oculaires: ";
+    }
+    return three;
+  };
+  getFour = () => {
+    let four = "";
+    switch (this.props.language) {
+      case "de":
+        four = "Gebiss: ";
+        break;
+      case "en":
+        four = "Dentures: ";
+        break;
+      default:
+        four = "Dentition: ";
+    }
+    return four;
+  };
+  getFive = () => {
+    let five = "";
+    switch (this.props.language) {
+      case "de":
+        five = "Grösse: ";
+        break;
+      case "en":
+        five = "Height: ";
+        break;
+      default:
+        five = "Taille: ";
+    }
+    return five;
+  };
+  getDentures = () => {
+    let dentures = "";
+    console.log(this.state.dog.gebiss)
+    switch (this.props.language) {
+      case "de":
+        if(this.state.dog.gebiss==='schere'){
+          dentures = "Schere";
+        } else if (this.state.dog.gebiss==='komplette Schere'){
+          dentures = "komplette Schere";
+        }else{
+          dentures = "Zange";
+        }
+        break;
+      case "en":
+        if(this.state.dog.gebiss==='schere'){
+          dentures = "EN Schere";
+        } else if (this.state.dog.gebiss==='komplette Schere'){
+          dentures = "EN komplette Schere";
+        }else{
+          dentures = "EN Zange";
+        }
+        break;
+      default:
+        if(this.state.dog.gebiss==='schere'){
+          dentures = "FR Schere";
+        } else if (this.state.dog.gebiss==='komplette Schere'){
+          dentures = "FR komplette Schere";
+        }else{
+          dentures = "FR Zange";
+        }
+    }
+    return dentures;
+  };
   getText=()=>{
     if(this.props.language==='en'){
-      // this.setState({
-      //   Von Willebrand/ENM: 
-      //   Luxation de la rotule: 
-      //   Tares oculaires: 
-      //   Taille: 
-      //   Dentition: 
-      // });
       return(          <div>
         {" "}
         <p className={styles.mainText}>
@@ -138,21 +222,24 @@ class Ivy extends Component {
       </div>)
     }
     else if(this.props.language==='de'){
-      return(          <div>
+       return(          <div>
         {" "}
         <p className={styles.mainText}>
-        {this.props.language}
+        Trotz unserer Hunde (Leonberger und Tervueren) und zwei Katzen hatte ich je länger je mehr das Gefühl, mein beschauliches Pensionistendasein mit einer neuen Aufgabe aufwerten zu müssen. Da ich zeitlebens schon immer sehr hundeaffin war, Platz und Zeit genug vorhanden sind, lag der Aufbau einer kleinen Zucht nahe. Es sollte allerdings etwas Besonderes sein, sprich eine seltene Rasse. Nach längeren Recherchen stiess ich auf das Nederlandse Kooikerhondje. Charakter, Aussehen und Grösse dieser Rasse haben mich sofort angesprochen. Nachdem mir mein Mann seine uneingeschränkte Unterstützung zusagte, war der weitere Weg klar.
         </p>
         <p className={styles.mainText}>
-        {this.props.language}
+        Nach längeren Bemühungen stiess ich auf die Zuchtstätte von Beate van Schelve/Wolfgang Brüner, die mir in jeder Hinsicht sehr zusagte. Nach Kontaktaufnahme und Offenlegung unserer persönlichen und wohnlichen Situation wurde ich auf die Warteliste genommen. Endlich - nach Ablauf eines Jahres - wurde ich beim I-Wurf berücksichtigt. Mit einer guten Freundin machte ich mich Anfang Juli 2017 auf die 14-stündige Autofahrt, um die kleine Fellnase abzuholen. Der Weg war lang und ziemlich beschwerlich, hat sich aber auf jeden Fall gelohnt; wir alle - Mensch und Tier - sind mit dem Nachwuchs sehr glücklich!
         </p>
       </div>)
     }
-    else { return(<div>{" "}<p className={styles.mainText}>
-          {this.props.language}
-        </p><p className={styles.mainText}>
-          {this.props.language}
-        </p></div>)}
+    else {return(<div>
+      {" "}
+      <p className={styles.mainText}>
+      Malgré nos chiens (Leonberger et Tervueren) et deux chats, j’ai eu le sentiment que ma retraite contemplative serait enrichie par une nouvelle tâche. Comme j’ai toujours eu beaucoup d’intérêt pour les chiens, que l’espace et le temps sont suffisants, la mise en place d’un élevage canin était une évidence. Mais cela devrait être quelque chose de spécial, une race rare. Après quelques recherches, je suis tombé sur le Nederlandse Kooikerhondje. Le caractère, l’apparence et la taille de cette race m’ont immédiatement séduite.
+      </p>
+      <p className={styles.mainText}>
+      Après de longues recherches, je suis tombée sur l’élevage Beate van Schelve/Wolfgang Brüner en Allemagne, qui m’a convenu à tous les égards. Après avoir pris contact et donné des informations sur notre situation personnelle et sur notre environnement de vie, j’ai été mise sur la liste d’attente. Finalement - après un an - j’ai été retenue pour la portée I. Début juillet 2017, je me suis mise en route avec une amie pour 14 heures de route pour aller chercher la petite boule de poils. Le voyage a été long et ardu, mais le jeu en valait la chandelle; nous sommes tous - humains et animaux - très heureux de la nouvelle progénitur!      </p>
+    </div>)}
         
     }
   render() {
@@ -182,19 +269,21 @@ class Ivy extends Component {
                         <td>{this.state.dog.willebrand}</td>
                       </tr>
                       <tr>
-                        <td>Luxation de la rotule: </td>
+                        <td>{this.getTwo()} </td>
                         <td>{this.state.dog.petella}</td>
                       </tr>
                       <tr>
-                        <td>Tares oculaires: </td>
+                        <td>{this.getThree()} </td>
                         <td>{this.state.dog.eyes}</td>
                       </tr>
                       <tr>
-                        <td>Dentition: </td>
-                        <td>{this.state.dog.dentures}</td>
+                        <td>{this.getFour()} </td>
+                        {/* <td>{this.state.dog.dentures}</td> */}
+                         {/* <td>{this.state.dog.gebiss}</td> */}
+                         <td>{this.getDentures()}</td>
                       </tr>
                       <tr>
-                        <td>Taille: </td>
+                        <td>{this.getFive()} </td>
                         <td>{this.state.dog.height}</td>
                       </tr>
                     </tbody>

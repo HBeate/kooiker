@@ -41,7 +41,6 @@ class Form extends Component {
       });
   };
   getName = () => {
-    console.log(this.props.language);
     let formName = "";
     switch (this.props.language) {
       case "de":
