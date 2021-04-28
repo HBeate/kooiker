@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import "./Home.css";
 import dog1 from "./dog1.jpg";
 import dog2 from "./dog2.jpg";
@@ -8,6 +8,7 @@ import logo1 from "./logo1.png";
 import logo2 from "./logo2.png";
 import Zoom from "react-reveal/Zoom";
 import ParallaxJSXWrapper from "./ParallaxJSXWrapper.js";
+import React, { useEffect, useRef } from 'react';
 
 export default function Home(props) {
   const Head = ParallaxJSXWrapper(
@@ -19,6 +20,19 @@ export default function Home(props) {
     </div>,
     0.05
   );
+  const myRef = useRef(null)
+  //const executeScroll = () => myRef.current.scrollIntoView() 
+
+  useEffect(() => {
+    if (props.goto3 === true) {
+      // this.parallax.scrollTo(3)
+    if(props.goto3===true){
+      myRef.current.scrollIntoView();
+      console.log('useEffect');
+    }
+     // <a href={'links'}></a>
+    }
+  });
 
   const BackgroundImage = ParallaxJSXWrapper(
     <img className="dog_background" src={dog1} alt="dog" />,
@@ -59,7 +73,7 @@ export default function Home(props) {
           {/* <img className="dog_background" src={dog-2} alt="dog" /> */}
           <BackgroundImageDogTwo />
         </div>
-        <div className="section4" id="#links">
+        <div className="section4" id="links" ref={myRef}>
           <div className="section4_Container">
             <div className="zertifikat_logo">
               <a href="http://www.fci.be/de/" target="_blank" rel="noreferrer">

@@ -86,7 +86,10 @@ export default class App extends Component {
   scroollto3=()=>{
     this.setState({
       goto3:true,
-    } );  }
+    } ); 
+    setTimeout(function() {
+      this.setState({goto3: false})
+  }.bind(this), 3000); }
 
   componentDidMount() {
     if (this.state.language === "") {
@@ -180,6 +183,7 @@ export default class App extends Component {
                     title={this.state.title}
                     text={this.state.text}
                     language={this.state.language}
+                    goto3={this.state.goto3}
                   />
                 )}
               />
