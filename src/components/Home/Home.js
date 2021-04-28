@@ -38,10 +38,30 @@ export default function Home(props) {
     <img className="dog_background" src={dog1} alt="dog" />,
     0.035
   );
+  const BackgroundImageFloat = ParallaxJSXWrapper(
+    <div > <a href="http://www.fci.be/de/" target="_blank" rel="noreferrer">
+                <img src={logo2} alt={"logo2"} style={{maxHeight:'50px'}}/>
+              </a>
+              <a
+                href="https://www.centrale-canine.fr/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={logo1} alt={"logo1"} style={{maxHeight:'50px'}}/>
+              </a>
+              <a
+                href="http://association-francaise-kooikerhondje.fr/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={logo} alt={"logo"} style={{maxHeight:'50px'}} />
+              </a></div>,
+    0.036
+  );
 
   const BackgroundImageDogTwo = ParallaxJSXWrapper(
     <img className="second_dog_background" src={dog2} alt="dog" />,
-    0.035
+    0.034
   );
 
   const BackgroundImageDogPuppy = ParallaxJSXWrapper(
@@ -59,11 +79,14 @@ export default function Home(props) {
             <h1>Kooikerhondje</h1>
             <h2>“de la bande de rigolos“</h2>
           </div> */}
+          
           <Zoom>
             <Head />
           </Zoom>
         </div>
+        <BackgroundImageFloat className="section2"/>
         <div className="section2">
+          
           <div className="first_content">
             <h2>{props.title}</h2>
             <p>{props.text}</p>

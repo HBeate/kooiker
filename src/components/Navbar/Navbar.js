@@ -4,6 +4,9 @@ import { NavLink } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
 import DropdownMenu from "react-bootstrap/esm/DropdownMenu";
 import DropdownItem from "react-bootstrap/esm/DropdownItem";
+import logo from "../Home/logo.jpg";
+import logo1 from "../Home/logo1.png";
+import logo2 from "../Home/logo2.png";
 
 class Navbar extends Component {
   state = {
@@ -105,7 +108,9 @@ class Navbar extends Component {
           {/* <nav className={`navbar ${this.state.nav && "navbar__brown"}`}> */}
           <nav className="navigation">
             <NavLink to="/">
+            
               <div className="navigation_logo">
+                
                 <h2>Kooikerhondje</h2>
                 <h3>"de la bande de rigolos"</h3>
               </div>
