@@ -106,7 +106,7 @@ export default function Home(props) {
             </div>
             <div className="externe_links">
               <ul>
-                <li>
+{/*                 <li>
                   <a
                     href="http://association-francaise-kooikerhondje.fr/"
                     target="_blank"
@@ -114,7 +114,7 @@ export default function Home(props) {
                   >
                     Association Francaise Kooikerhond
                   </a>
-                </li>
+                </li> */}
                 <li>
                   <a
                     href="https://www.vom-kooikerbeis.de/"
