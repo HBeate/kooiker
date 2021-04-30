@@ -8,9 +8,11 @@ import logo1 from "./logo1.png";
 import logo2 from "./logo2.png";
 import Zoom from "react-reveal/Zoom";
 import ParallaxJSXWrapper from "./ParallaxJSXWrapper.js";
-import React, { useEffect, useRef, Fragment  } from 'react';
+import React, { useEffect, useRef, Fragment } from "react";
+
 
 export default function Home(props) {
+  
   const Head = ParallaxJSXWrapper(
     <div className="home_welcome_header">
       <Zoom>
@@ -20,17 +22,17 @@ export default function Home(props) {
     </div>,
     0.05
   );
-  const myRef = useRef(null)
-  //const executeScroll = () => myRef.current.scrollIntoView() 
+  const myRef = useRef(null);
+  //const executeScroll = () => myRef.current.scrollIntoView()
 
   useEffect(() => {
     if (props.goto3 === true) {
       // this.parallax.scrollTo(3)
-    if(props.goto3===true){
-      myRef.current.scrollIntoView();
-      console.log('useEffect');
-    }
-     // <a href={'links'}></a>
+      if (props.goto3 === true) {
+        myRef.current.scrollIntoView();
+        console.log("useEffect");
+      }
+      // <a href={'links'}></a>
     }
   });
 
@@ -38,26 +40,10 @@ export default function Home(props) {
     <img className="dog_background" src={dog1} alt="dog" />,
     0.035
   );
-  const BackgroundImageFloat = ParallaxJSXWrapper(
-    <div > <a href="http://www.fci.be/de/" target="_blank" rel="noreferrer">
-                <img src={logo2} alt={"logo2"} style={{maxHeight:'50px'}}/>
-              </a>
-              <a
-                href="https://www.centrale-canine.fr/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img src={logo1} alt={"logo1"} style={{maxHeight:'50px'}}/>
-              </a>
-              <a
-                href="http://association-francaise-kooikerhondje.fr/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img src={logo} alt={"logo"} style={{maxHeight:'50px'}} />
-              </a></div>,
-    0.036
-  );
+  // const BackgroundImageFloat = ParallaxJSXWrapper(
+    
+  //   0.036
+  // );
 
   const BackgroundImageDogTwo = ParallaxJSXWrapper(
     <img className="second_dog_background" src={dog2} alt="dog" />,
@@ -69,26 +55,64 @@ export default function Home(props) {
     0.035
   );
 
-  const text2=()=>{
-    let fragment=[]
-    props.text.split('\n').map((item, key) => {
-      fragment.push( <Fragment key={key}>{item}<br/></Fragment>)
-      return null
-    })
-     return fragment
-   
-  }
+  const text2 = () => {
+    let fragment = [];
+    props.text.split("\n").map((item, key) => {
+      fragment.push(
+        <Fragment key={key}>
+          {item}
+          <br />
+        </Fragment>
+      );
+      return null;
+    });
+    return fragment;
+  };
 
   return (
     <div className="main_wrapper">
       <div className="main_container">
-        <div className="section1"><BackgroundImage /><Zoom><Head/></Zoom></div>
-        <BackgroundImageFloat className="section2"/><div className="section2"><div className="first_content"><h2>{props.title}</h2><p>{text2()}</p></div></div><div className="section3"><BackgroundImageDogTwo /></div>
+        <div className="section1">
+          <BackgroundImage />
+          <div className="logo_top_home">
+      {" "}
+      <a href="http://www.fci.be/de/" target="_blank" rel="noreferrer">
+        <img src={logo2} alt={"logo2"} style={{ maxHeight: "50px" }} />
+      </a>
+      <a
+        href="https://www.centrale-canine.fr/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <img src={logo1} alt={"logo1"} style={{ maxHeight: "50px" }} />
+      </a>
+      <a
+        href="http://association-francaise-kooikerhondje.fr/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <img src={logo} alt={"logo"} style={{ maxHeight: "50px" }} />
+      </a>
+    </div>,
+          <Zoom>
+            <Head />
+          </Zoom>
+        </div>
+        <div className="section2">
+          <div className="first_content">
+            <h2>{props.title}</h2>
+            <p>{text2()}</p>
+          </div>
+        </div>
+        <div className="section3">
+          <BackgroundImageDogTwo />
+        </div>
         <div className="section4" id="links" ref={myRef}>
           <div className="section4_Container">
             <div className="zertifikat_logo">
               <a href="http://www.fci.be/de/" target="_blank" rel="noreferrer">
-                <img src={logo2} alt={"logo2"} /></a>
+                <img src={logo2} alt={"logo2"} />
+              </a>
               <a
                 href="https://www.centrale-canine.fr/"
                 target="_blank"
@@ -106,15 +130,6 @@ export default function Home(props) {
             </div>
             <div className="externe_links">
               <ul>
-{/*                 <li>
-                  <a
-                    href="http://association-francaise-kooikerhondje.fr/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Association Francaise Kooikerhond
-                  </a>
-                </li> */}
                 <li>
                   <a
                     href="https://www.vom-kooikerbeis.de/"

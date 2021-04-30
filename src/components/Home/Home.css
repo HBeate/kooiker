@@ -104,6 +104,16 @@ div {
   top: -0.7rem;
 }
 
+.logo_top_home{
+  position: fixed;
+  top: 5rem;
+  left: 0;
+  margin: 0.5rem;
+}
+
+.logo_top_home img{
+  margin: 0.5rem;
+}
 .home_welcome_header {
   display: flex;
   z-index: 99;
