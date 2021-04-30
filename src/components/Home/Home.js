@@ -76,21 +76,21 @@ export default function Home(props) {
           <BackgroundImage />
           <div className="logo_top_home">
       <a href="http://www.fci.be/de/" target="_blank" rel="noreferrer">
-        <img src={logo2} alt={"logo2"} style={{ maxHeight: "50px" }} />
+        <img src={logo2} alt={"logo2"} />
       </a>
       <a
         href="https://www.centrale-canine.fr/"
         target="_blank"
         rel="noreferrer"
       >
-        <img src={logo1} alt={"logo1"} style={{ maxHeight: "50px" }} />
+        <img src={logo1} alt={"logo1"} />
       </a>
       <a
         href="http://association-francaise-kooikerhondje.fr/"
         target="_blank"
         rel="noreferrer"
       >
-        <img src={logo} alt={"logo"} style={{ maxHeight: "50px" }} />
+        <img src={logo} alt={"logo"} />
       </a>
     </div>
           <Zoom>
