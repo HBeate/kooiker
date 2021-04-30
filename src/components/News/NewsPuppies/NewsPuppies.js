@@ -108,7 +108,6 @@ class NewsPuppies extends Component {
                                   });
                                   break;
           }
-          console.log(element.week)
         });
         
 

@@ -3,8 +3,6 @@ import styles from "./News.module.css";
 import Constants from "../../helper/Constants";
 import NewsPuppies from "./NewsPuppies/NewsPuppies";
 import NewsBreeding from "./NewsBreeding/NewsBreeding";
-//import { GiJumpingDog } from 'react-icons/fa/GiJumpingDog';
-// import { GiJumpingDog } from "react-icons/gi";
 import  Spinner from './../Spinner/Spinner'
 
 class News extends Component {
@@ -13,14 +11,13 @@ class News extends Component {
     this.state = {
       news: [],
       loaded: false,
-      // puppies: false,
       puppiesDOB: "",
       parents: false,
     };
   }
-  showStates = () => {
-    console.log("STATES: " + this.state.parents + "  " + this.props.poppies);
-  };
+  // showStates = () => {
+  //   console.log("STATES: " + this.state.parents + "  " + this.props.poppies);
+  // };
   changeBreedingState = () => {
     this.setState({
       parents: true,
@@ -92,8 +89,6 @@ class News extends Component {
             news.push(part);
           }
           if (element.topic === "2") {
-            console.log("BREEDING ");
-            console.log(element);
             let part = (
               <div className={styles.newsCard} key={element.id}>
                 <p>breeding</p>

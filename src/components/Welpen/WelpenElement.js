@@ -76,7 +76,6 @@ class WelpenElement extends Component {
 
   parentsSwitchLocal = (element) => {
     this.setState({ parents: element });
-    console.log(element)
     this.props.parentsSwitch();
   };
 
