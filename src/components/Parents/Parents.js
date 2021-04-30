@@ -108,8 +108,10 @@ class Parents extends Component {
                 </div>
               </div>
             </div>
+            <div className={styles.coefficient}>
             <div>ALC:{this.props.parents.dob.alc}</div>
             <div>IC:{this.props.parents.dob.ic}</div>
+            </div>
           </div>
       
       );
