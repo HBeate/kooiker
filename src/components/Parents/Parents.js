@@ -19,13 +19,13 @@ class Parents extends Component {
     let alc = "";
     switch (this.props.language) {
       case "de":
-        alc = "Inzuchtgradkoeffizient: ";
+        alc = "Inzuchtgradkoeffizient ";
         break;
       case "en":
-        alc = "ALC: ";
+        alc = "ALC ";
         break;
       default:
-        alc = "Le CS est de: ";
+        alc = "Le CS est de ";
     }
     return alc;
   };
@@ -34,13 +34,13 @@ class Parents extends Component {
     let ic = "";
     switch (this.props.language) {
       case "de":
-        ic = "Ahnenverlust: ";
+        ic = "Ahnenverlust ";
         break;
       case "en":
-        ic = "IC: ";
+        ic = "IC ";
         break;
       default:
-        ic = "L'indice d'implexe est de: ";
+        ic = "L'indice d'implexe est de ";
     }
     return ic;
   };
