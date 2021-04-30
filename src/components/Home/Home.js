@@ -11,13 +11,10 @@ import ParallaxJSXWrapper from "./ParallaxJSXWrapper.js";
 import React, { useEffect, useRef, Fragment } from "react";
 
 export default function Home(props) {
-
   // +++++++++++++++++++++++++++++++++++++++++++++++++
   // ++++++++++++++logo verschwinden lassen ++++++++++
   // const [logoTop, setLogoTop] = useState(false);
-
   // const changeDisplay = () => {
-    
   //   if (window.scrollY >= 800) {
   //     setLogoTop(true);
   //   } else {
@@ -34,68 +31,34 @@ export default function Home(props) {
         <h2>“de la bande de rigolos“</h2>
       </Zoom>
     </div>,
-    0.05
-  );
+    0.05 );
+
   const myRef = useRef(null);
-  //const executeScroll = () => myRef.current.scrollIntoView()
 
   useEffect(() => {
     if (props.goto3 === true) {
-      // this.parallax.scrollTo(3)
       if (props.goto3 === true) {
-        myRef.current.scrollIntoView();
-        console.log("useEffect");
-      }
-      // <a href={'links'}></a>
+        myRef.current.scrollIntoView();}
     }
   });
 
-  const BackgroundImage = ParallaxJSXWrapper(
-    <img className="dog_background" src={dog1} alt="dog" />,
-    0.035
-  );
+  const BackgroundImage = ParallaxJSXWrapper(<img className="dog_background" src={dog1} alt="dog" />,0.035);
+
   const LogoTop = ParallaxJSXWrapper(
     <div className="logoTopPageActive">
-            <a href="http://www.fci.be/de/" target="_blank" rel="noreferrer">
-              <img src={logo2} alt={"logo2"} />
-            </a>
-            <a
-              href="https://www.centrale-canine.fr/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={logo1} alt={"logo1"} />
-            </a>
-            <a
-              href="http://association-francaise-kooikerhondje.fr/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={logo} alt={"logo"} />
-            </a>
-          </div>,
-    0.035
-  );
+            <a href="http://www.fci.be/de/" target="_blank" rel="noreferrer"><img src={logo2} alt={"logo2"} /></a>
+            <a href="https://www.centrale-canine.fr/" target="_blank" rel="noreferrer" ><img src={logo1} alt={"logo1"} /></a>
+            <a  href="http://association-francaise-kooikerhondje.fr/"  target="_blank"  rel="noreferrer" >  <img src={logo} alt={"logo"} /></a>
+          </div>,0.035);
 
-  const BackgroundImageDogTwo = ParallaxJSXWrapper(
-    <img className="second_dog_background" src={dog2} alt="dog" />,
-    0.034
-  );
+  const BackgroundImageDogTwo = ParallaxJSXWrapper(<img className="second_dog_background" src={dog2} alt="dog" />, 0.034);
 
-  const BackgroundImageDogPuppy = ParallaxJSXWrapper(
-    <img className="dog_background_puppy" src={dog3} alt="dog" />,
-    0.035
-  );
+  const BackgroundImageDogPuppy = ParallaxJSXWrapper(<img className="dog_background_puppy" src={dog3} alt="dog" />,0.035);
 
   const text2 = () => {
     let fragment = [];
     props.text.split("\n").map((item, key) => {
-      fragment.push(
-        <Fragment key={key}>
-          {item}
-          <br />
-        </Fragment>
-      );
+      fragment.push(<Fragment key={key}>{item}<br /></Fragment>);
       return null;
     });
     return fragment;
@@ -107,25 +70,6 @@ export default function Home(props) {
         <div className="section1">
           <BackgroundImage />
           <LogoTop/>
-          {/* <div className={logoTop ? 'logoTopPage' : 'logoTopPageActive'}>
-            <a href="http://www.fci.be/de/" target="_blank" rel="noreferrer">
-              <img src={logo2} alt={"logo2"} />
-            </a>
-            <a
-              href="https://www.centrale-canine.fr/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={logo1} alt={"logo1"} />
-            </a>
-            <a
-              href="http://association-francaise-kooikerhondje.fr/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={logo} alt={"logo"} />
-            </a>
-          </div> */}
           <Zoom>
             <Head />
           </Zoom>
@@ -142,62 +86,16 @@ export default function Home(props) {
         <div className="section4" id="links" ref={myRef}>
           <div className="section4_Container">
             <div className="zertifikat_logo">
-              <a href="http://www.fci.be/de/" target="_blank" rel="noreferrer">
-                <img src={logo2} alt={"logo2"} />
-              </a>
-              <a
-                href="https://www.centrale-canine.fr/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img src={logo1} alt={"logo1"} />
-              </a>
-              <a
-                href="http://association-francaise-kooikerhondje.fr/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img src={logo} alt={"logo"} />
-              </a>
+              <a href="http://www.fci.be/de/" target="_blank" rel="noreferrer"><img src={logo2} alt={"logo2"} /></a>
+              <a href="https://www.centrale-canine.fr/" target="_blank" rel="noreferrer"><img src={logo1} alt={"logo1"}/></a>
+                <a href="http://association-francaise-kooikerhondje.fr/" target="_blank" rel="noreferrer"><img src={logo} alt={"logo"} /></a>
             </div>
             <div className="externe_links">
               <ul>
-                <li>
-                  <a
-                    href="https://www.vom-kooikerbeis.de/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Vom Kooikerbeis
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.vom-haus-tusburch.de/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Vom Haus Tusburch
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="http://www.rundumahund.com/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Rund uma Hund
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.cdc-goetzis.at/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    CDC Götzis
-                  </a>
-                </li>
+                <li><a href="https://www.vom-kooikerbeis.de/"  target="_blank" rel="noreferrer"> Vom Kooikerbeis</a></li>
+                <li><a href="https://www.vom-haus-tusburch.de/" target="_blank" rel="noreferrer">Vom Haus Tusburch</a></li>
+                <li><a href="http://www.rundumahund.com/" target="_blank" rel="noreferrer">Rund uma Hund</a></li>
+                <li><a href="https://www.cdc-goetzis.at/" target="_blank" rel="noreferrer">CDC Götzis</a></li>
               </ul>
             </div>
           </div>

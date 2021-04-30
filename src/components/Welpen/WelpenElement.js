@@ -76,6 +76,7 @@ class WelpenElement extends Component {
 
   parentsSwitchLocal = (element) => {
     this.setState({ parents: element });
+   // console.log(element)
     this.props.parentsSwitch();
   };
 
@@ -167,7 +168,6 @@ class WelpenElement extends Component {
     let welpen = [];
 
     this.props.elements.forEach((element) => {
-      console.log(element.translations[0].uebersetzung)
       var isTrue = false;
       if (this.state.dOBS.includes(element.dob.dateofbirth)) {
         isTrue = true;
