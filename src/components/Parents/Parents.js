@@ -10,10 +10,40 @@ class Parents extends Component {
       showGallery: "none",
       images: [],
       loaded: true,
+      alc: "",
+      ic: "",
       
     };
   }
+  getAlc = () => {
+    let alc = "";
+    switch (this.props.language) {
+      case "de":
+        alc = "Inzuchtgradkoeffizient: ";
+        break;
+      case "en":
+        alc = "ALC: ";
+        break;
+      default:
+        alc = "Le CS est de: ";
+    }
+    return alc;
+  };
 
+  getIc = () => {
+    let ic = "";
+    switch (this.props.language) {
+      case "de":
+        ic = "Ahnenverlust: ";
+        break;
+      case "en":
+        ic = "IC: ";
+        break;
+      default:
+        ic = "L'indice d'implexe est de: ";
+    }
+    return ic;
+  };
   render() {
       return (
         <div className={styles.container}>
@@ -109,8 +139,8 @@ class Parents extends Component {
               </div>
             </div>
             <div className={styles.coefficient}>
-            <div>ALC:{this.props.parents.dob.alc}</div>
-            <div>IC:{this.props.parents.dob.ic}</div>
+            <div>ALC:{this.getAlc()}{this.props.parents.dob.alc}</div>
+            <div>IC:{this.getIc()}{this.props.parents.dob.ic}</div>
             </div>
           </div>
       
