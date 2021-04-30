@@ -34,7 +34,8 @@ class Parents extends Component {
                 <div className={styles.img}>
                   <img
                     className={styles.imgRight}
-                    src={this.props.parents.mutter.parent_image.data.full_url}
+                    // src={this.props.parents.mutter.parent_image.data.full_url}
+                    src={this.props.parents.dob.mother_image.data.full_url}
                     alt={this.props.parents.mutter.name}
                   ></img>
                 </div>
@@ -72,7 +73,8 @@ class Parents extends Component {
                 <div className={styles.img}>
                   <img
                     className={styles.imgRight}
-                    src={this.props.parents.vater.parent_image.data.full_url}
+                    // src={this.props.parents.vater.parent_image.data.full_url}
+                    src={this.props.parents.dob.father_image.data.full_url}
                     alt={this.props.parents.vater.name}
                   ></img>
                 </div>
