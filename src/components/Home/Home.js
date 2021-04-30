@@ -8,7 +8,7 @@ import logo1 from "./logo1.png";
 import logo2 from "./logo2.png";
 import Zoom from "react-reveal/Zoom";
 import ParallaxJSXWrapper from "./ParallaxJSXWrapper.js";
-import React, { useEffect, useRef, Fragment, useState } from "react";
+import React, { useEffect, useRef, Fragment } from "react";
 
 export default function Home(props) {
 
