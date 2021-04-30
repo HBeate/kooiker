@@ -14,18 +14,18 @@ export default function Home(props) {
 
   // +++++++++++++++++++++++++++++++++++++++++++++++++
   // ++++++++++++++logo verschwinden lassen ++++++++++
-  const [logoTop, setLogoTop] = useState(false);
+  // const [logoTop, setLogoTop] = useState(false);
 
-  const changeDisplay = () => {
+  // const changeDisplay = () => {
     
-    if (window.scrollY >= 800) {
-      setLogoTop(true);
-    } else {
-      setLogoTop(false);
-    }
-  };
+  //   if (window.scrollY >= 800) {
+  //     setLogoTop(true);
+  //   } else {
+  //     setLogoTop(false);
+  //   }
+  // };
 
-  window.addEventListener("scroll", changeDisplay);
+  // window.addEventListener("scroll", changeDisplay);
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++
   const Head = ParallaxJSXWrapper(
     <div className="home_welcome_header">
@@ -54,10 +54,28 @@ export default function Home(props) {
     <img className="dog_background" src={dog1} alt="dog" />,
     0.035
   );
-  // const BackgroundImageFloat = ParallaxJSXWrapper(
-
-  //   0.036
-  // );
+  const LogoTop = ParallaxJSXWrapper(
+    <div className="logoTopPageActive">
+            <a href="http://www.fci.be/de/" target="_blank" rel="noreferrer">
+              <img src={logo2} alt={"logo2"} />
+            </a>
+            <a
+              href="https://www.centrale-canine.fr/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={logo1} alt={"logo1"} />
+            </a>
+            <a
+              href="http://association-francaise-kooikerhondje.fr/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={logo} alt={"logo"} />
+            </a>
+          </div>,
+    0.001
+  );
 
   const BackgroundImageDogTwo = ParallaxJSXWrapper(
     <img className="second_dog_background" src={dog2} alt="dog" />,
@@ -88,7 +106,8 @@ export default function Home(props) {
       <div className="main_container">
         <div className="section1">
           <BackgroundImage />
-          <div className={logoTop ? 'logoTopPage' : 'logoTopPageActive'}>
+          <LogoTop/>
+          {/* <div className={logoTop ? 'logoTopPage' : 'logoTopPageActive'}>
             <a href="http://www.fci.be/de/" target="_blank" rel="noreferrer">
               <img src={logo2} alt={"logo2"} />
             </a>
@@ -106,7 +125,7 @@ export default function Home(props) {
             >
               <img src={logo} alt={"logo"} />
             </a>
-          </div>
+          </div> */}
           <Zoom>
             <Head />
           </Zoom>
