@@ -132,20 +132,20 @@ class WelpenElement extends Component {
     }
   };
 
-  getTitle=()=>{
+  getTitle = () => {
     let elementsTitle = "";
-        switch (this.props.language) {
-          case "de":
-            elementsTitle = "Würfe";
-            break;
-          case "en":
-            elementsTitle = "Litters";
-            break;
-          default:
-            elementsTitle = "Portées";
-        }
-        return elementsTitle;
-  }
+    switch (this.props.language) {
+      case "de":
+        elementsTitle = "Würfe";
+        break;
+      case "en":
+        elementsTitle = "Litters";
+        break;
+      default:
+        elementsTitle = "Portées";
+    }
+    return elementsTitle;
+  };
 
   getContent = (x) => {
     let tempdata = [];
@@ -162,7 +162,7 @@ class WelpenElement extends Component {
     });
     return tempdata;
   };
-  
+
   elements = () => {
     let welpen = [];
 
@@ -216,7 +216,6 @@ class WelpenElement extends Component {
                   {element.translations[1].title}
                 </h3>
                 {this.getContent(element.translations[1].uebersetzung)}{" "}
-
                 <div className={styles.btn}>
                   <button onClick={() => this.parentsSwitchLocal(element)}>
                     Die Eltern
@@ -241,7 +240,7 @@ class WelpenElement extends Component {
           </div>
         );
         welpen.push(part);
-      } else if (this.props.language !== "de"&&this.props.language !== "en") {
+      } else if (this.props.language !== "de" && this.props.language !== "en") {
         let part = (
           <div key={element.id}>
             <div className={styles.welpenCard}>
@@ -250,10 +249,9 @@ class WelpenElement extends Component {
                   {element.translations[2].title}
                 </h3>
                 {this.getContent(element.translations[2].uebersetzung)}{" "}
-
                 <div className={styles.btn}>
                   <button onClick={() => this.parentsSwitchLocal(element)}>
-                  Les parents
+                    Les parents
                   </button>
                   <button
                     onClick={() =>
@@ -274,7 +272,7 @@ class WelpenElement extends Component {
             </div>
           </div>
         );
-        
+
         welpen.push(part);
       }
     });
@@ -310,6 +308,7 @@ class WelpenElement extends Component {
       return (
         <div>
           <Parents
+            language={this.props.languague}
             parents={this.state.parents}
             defaultSwitch={this.props.defaultSwitch}
           />
