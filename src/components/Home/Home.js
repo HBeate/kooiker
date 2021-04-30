@@ -18,7 +18,7 @@ export default function Home(props) {
 
   const changeDisplay = () => {
     
-    if (window.scrollY >= 300) {
+    if (window.scrollY >= 750) {
       setLogoTop(true);
     } else {
       setLogoTop(false);
