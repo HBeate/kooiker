@@ -308,7 +308,7 @@ class WelpenElement extends Component {
       return (
         <div>
           <Parents
-            language={this.props.languague}
+            language={this.props.language}
             parents={this.state.parents}
             defaultSwitch={this.props.defaultSwitch}
           />

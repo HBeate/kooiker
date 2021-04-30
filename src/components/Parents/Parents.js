@@ -139,8 +139,8 @@ class Parents extends Component {
               </div>
             </div>
             <div className={styles.coefficient}>
-            <div>ALC:{this.getAlc()}{this.props.parents.dob.alc}</div>
-            <div>IC:{this.getIc()}{this.props.parents.dob.ic}</div>
+            <div>{this.getAlc()}{this.props.parents.dob.alc}</div>
+            <div>{this.getIc()}{this.props.parents.dob.ic}</div>
             </div>
           </div>
       
