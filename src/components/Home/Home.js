@@ -75,7 +75,6 @@ export default function Home(props) {
         <div className="section1">
           <BackgroundImage />
           <div className="logo_top_home">
-      {" "}
       <a href="http://www.fci.be/de/" target="_blank" rel="noreferrer">
         <img src={logo2} alt={"logo2"} style={{ maxHeight: "50px" }} />
       </a>
@@ -93,7 +92,7 @@ export default function Home(props) {
       >
         <img src={logo} alt={"logo"} style={{ maxHeight: "50px" }} />
       </a>
-    </div>,
+    </div>
           <Zoom>
             <Head />
           </Zoom>
