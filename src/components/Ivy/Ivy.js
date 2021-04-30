@@ -31,7 +31,6 @@ class Ivy extends Component {
         let ivy = result.data[0];
         let pedigree = result.data[0].pedigree.data.full_url;
         let images = [];
-        console.log(result.data[0].images)
         result.data[0].images.forEach((element) => {
           if(element.directus_files_id.type==='image/jpeg'){
           images.push({
@@ -161,7 +160,6 @@ class Ivy extends Component {
   };
   getDentures = () => {
     let dentures = "";
-    console.log(this.state.dog.gebiss)
     switch (this.props.language) {
       case "de":
         if(this.state.dog.gebiss==='schere'){
