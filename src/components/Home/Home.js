@@ -74,7 +74,7 @@ export default function Home(props) {
               <img src={logo} alt={"logo"} />
             </a>
           </div>,
-    0.034
+    0.035
   );
 
   const BackgroundImageDogTwo = ParallaxJSXWrapper(
