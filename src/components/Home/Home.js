@@ -8,11 +8,25 @@ import logo1 from "./logo1.png";
 import logo2 from "./logo2.png";
 import Zoom from "react-reveal/Zoom";
 import ParallaxJSXWrapper from "./ParallaxJSXWrapper.js";
-import React, { useEffect, useRef, Fragment } from "react";
-
+import React, { useEffect, useRef, Fragment, useState } from "react";
 
 export default function Home(props) {
-  
+
+  // +++++++++++++++++++++++++++++++++++++++++++++++++
+  // ++++++++++++++logo verschwinden lassen ++++++++++
+  const [logoTop, setLogoTop] = useState(false);
+
+  const changeDisplay = () => {
+    
+    if (window.scrollY >= 300) {
+      setLogoTop(true);
+    } else {
+      setLogoTop(false);
+    }
+  };
+
+  window.addEventListener("scroll", changeDisplay);
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++
   const Head = ParallaxJSXWrapper(
     <div className="home_welcome_header">
       <Zoom>
@@ -41,7 +55,7 @@ export default function Home(props) {
     0.035
   );
   // const BackgroundImageFloat = ParallaxJSXWrapper(
-    
+
   //   0.036
   // );
 
@@ -74,25 +88,25 @@ export default function Home(props) {
       <div className="main_container">
         <div className="section1">
           <BackgroundImage />
-          <div className="logo_top_home">
-      <a href="http://www.fci.be/de/" target="_blank" rel="noreferrer">
-        <img src={logo2} alt={"logo2"} />
-      </a>
-      <a
-        href="https://www.centrale-canine.fr/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <img src={logo1} alt={"logo1"} />
-      </a>
-      <a
-        href="http://association-francaise-kooikerhondje.fr/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <img src={logo} alt={"logo"} />
-      </a>
-    </div>
+          <div className={logoTop ? 'logoTopPage' : 'logoTopPageActive'}>
+            <a href="http://www.fci.be/de/" target="_blank" rel="noreferrer">
+              <img src={logo2} alt={"logo2"} />
+            </a>
+            <a
+              href="https://www.centrale-canine.fr/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={logo1} alt={"logo1"} />
+            </a>
+            <a
+              href="http://association-francaise-kooikerhondje.fr/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={logo} alt={"logo"} />
+            </a>
+          </div>
           <Zoom>
             <Head />
           </Zoom>

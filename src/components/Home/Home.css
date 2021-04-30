@@ -104,17 +104,28 @@ div {
   top: -0.7rem;
 }
 
-.logo_top_home{
+.logoTopPageActive{
+  
   position: fixed;
   top: 5rem;
   left: 0;
   margin: 0.5rem;
 }
 
-.logo_top_home img{
+.logoTopPage{
+  position: fixed;
+  top: 5rem;
+  left: 0;
+  margin: 0.5rem;
+  display: none;
+}
+
+.logoTopPageActive img{
   margin: 0.5rem;
   height: 50px;
 }
+
+
 .home_welcome_header {
   display: flex;
   z-index: 99;
@@ -213,7 +224,7 @@ div {
   }
 
 
-  .logo_top_home img{
+  .logoTopPageActive img{
     width: 30px;
     display: flex;
     flex-direction: column;
@@ -221,10 +232,12 @@ div {
    margin-bottom: -0.5rem;
   }
 
-  .logo_top_home{
+  .logoTopPageActive{
     position: fixed;
     top: 4.5rem;
     left: 1rem;
     margin: 0.1rem;
   }
+
+  
 }
