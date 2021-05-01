@@ -61,7 +61,7 @@ td {
   padding-right: 20px;
 }
 .expositions {
-  padding-top: 20px;
+  padding-top: 10px;
 }
 .imageContainer {
   flex: 3;
@@ -132,7 +132,8 @@ button {
 }
 
 .expositionsIvyPage {
-  margin: 1.2rem;
+  margin-right: 1.2rem;
+  margin-left: 1.2rem;
 }
 
 .expositionsIvyPage div {
@@ -166,6 +167,9 @@ button {
 
   .expositionsIvyPageImage {
     flex-direction: column;
+  }
+  .txtExpositions{
+    display: row;
   }
 
   .expositionsIvyPageImage img {

@@ -246,20 +246,6 @@ class Ivy extends Component {
     return expositions;
   };
 
-  getTextAusstellungen = () => {
-    let txtExpositions = "";
-    switch (this.props.language) {
-      case "de":
-        txtExpositions = "Internationale Rassehundeausstellung in Tarbes am 18.11.2018, offene Klasse, Richter: Roger Barenne, Bewertung: excellent, CACIB, CACS, Rassebeste";
-        break;
-      case "en":
-        txtExpositions = "International Dog Show in Tarbes on 18.11.2018 open class, judge: Roger Barenne, Ration: excellent, CACIB, CACS, Best of Breed";
-        break;
-      default:
-        txtExpositions = "Exposition canine à Tarbes le 18.11.2018, Clase ouverte, juge: Roger Barenne, Classement: excellent, CACIB, CACS, Meilleur de race";
-    }
-    return txtExpositions;
-  };
   
   getDentures = () => {
     let dentures = "";
@@ -292,6 +278,36 @@ class Ivy extends Component {
         }
     }
     return dentures;
+  };
+  getLinebreak = (x) => {
+    let tempdata = [];
+    let key = 0;
+    x.split("\n").map(function (item) {
+      let line = (
+        <span className={styles.spanText} key={key}>
+          {item}
+          <br />
+        </span>
+      );
+      tempdata.push(line);
+      return key++;
+    });
+    return tempdata;
+  };
+
+  getTextAusstellungen = () => {
+    let txtExpositions = "";
+    switch (this.props.language) {
+      case "de":
+        txtExpositions = "Internationale Rassehundeausstellung in Tarbes am 18.11.2018 \n offene Klasse, Richter: Roger Barenne \n Bewertung: excellent, CACIB, CACS, Rassebeste";
+        break;
+      case "en":
+        txtExpositions = "International Dog Show in Tarbes on 18.11.2018 open class \n Judge: Roger Barenne \n Ration: excellent, CACIB, CACS, Best of Breed";
+        break;
+      default:
+        txtExpositions = "Exposition canine à Tarbes le 18.11.2018, Clase ouverte \n Juge: Roger Barenne \n Classement: excellent, CACIB, CACS, Meilleur de race";
+    }
+    return txtExpositions;
   };
   getText=()=>{
     if(this.props.language==='en'){
@@ -390,8 +406,9 @@ class Ivy extends Component {
                     </tbody>
                   </table>
                   <div className={styles.expositions}>
-                    <p>{this.getTextAusstellungen()}{/* {this.state.dog.expositions} */}</p>
-                  </div>
+                                {this.getLinebreak(this.getTextAusstellungen())}
+{/*                     <p>{this.getTextAusstellungen()}{ {this.state.dog.expositions} }</p>
+ */}                  </div>
                 </div>
               </div>
 
@@ -432,9 +449,11 @@ class Ivy extends Component {
             </div>
           </div>
           <div className={styles.expositionsIvyPage}>
-            <div style={{ display: this.state.showExpositions }}>
 
-            {this.getTextAusstellungen()}
+            <div style={{ display: this.state.showExpositions }}>
+            <div className={styles.txtExpositions}>{this.getLinebreak(this.getTextAusstellungen())} </div>
+
+{/*             {this.getTextAusstellungen()} */}
 {/* 
               {this.state.expositions.text} */}
             </div>
