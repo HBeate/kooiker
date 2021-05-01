@@ -102,7 +102,22 @@ class Ivy extends Component {
       });
     }
   };
-  getTwo = () => {
+
+  getWillebrand = () => {
+    let willebrand = "";
+    switch (this.props.language) {
+      case "de":
+        willebrand = "frei";
+        break;
+      case "en":
+        willebrand = "free";
+        break;
+      default:
+        willebrand = "indemne";
+    }
+    return willebrand;
+  }; 
+   getTwo = () => {
     let two = "";
     switch (this.props.language) {
       case "de":
@@ -115,7 +130,22 @@ class Ivy extends Component {
         two = "Luxation de la rotule: ";
     }
     return two;
-  };
+  }; 
+
+   getPatella = () => {
+    let patella = "";
+    switch (this.props.language) {
+      case "de":
+        patella = "frei";
+        break;
+      case "en":
+        patella = "free";
+        break;
+      default:
+        patella = "indemne";
+    }
+    return patella;
+  }; 
   getThree = () => {
     let three = "";
     switch (this.props.language) {
@@ -130,6 +160,20 @@ class Ivy extends Component {
     }
     return three;
   };
+  getEyes = () => {
+    let eyes = "";
+    switch (this.props.language) {
+      case "de":
+        eyes = "o.B.";
+        break;
+      case "en":
+        eyes = "without findings";
+        break;
+      default:
+        eyes = "indemne";
+    }
+    return eyes;
+  }; 
   getFour = () => {
     let four = "";
     switch (this.props.language) {
@@ -158,6 +202,65 @@ class Ivy extends Component {
     }
     return five;
   };
+  getButtonPedigree = () => {
+    let pedigree = "";
+    switch (this.props.language) {
+      case "de":
+        pedigree = "Ahnentafel";
+        break;
+      case "en":
+        pedigree = "Pedigree";
+        break;
+      default:
+        pedigree = "Pedigree";
+    }
+    return pedigree;
+  };
+  getButtonGallery = () => {
+    let gallery = "";
+    switch (this.props.language) {
+      case "de":
+        gallery = "Galerie";
+        break;
+      case "en":
+        gallery = "Gallery";
+        break;
+      default:
+        gallery = "Galerie";
+    }
+    return gallery;
+  };
+
+  getButtonExpositions = () => {
+    let expositions = "";
+    switch (this.props.language) {
+      case "de":
+        expositions = "Ausstellungen";
+        break;
+      case "en":
+        expositions = "Expositions";
+        break;
+      default:
+        expositions = "Expositions";
+    }
+    return expositions;
+  };
+
+  getTextAusstellungen = () => {
+    let txtExpositions = "";
+    switch (this.props.language) {
+      case "de":
+        txtExpositions = "Internationale Rassehundeausstellung in Tarbes am 18.11.2018, offene Klasse, Richter: Roger Barenne, Bewertung: excellent, CACIB, CACS, Rassebeste";
+        break;
+      case "en":
+        txtExpositions = "International Dog Show in Tarbes on 18.11.2018 open class, judge: Roger Barenne, Ration: excellent, CACIB, CACS, Best of Breed";
+        break;
+      default:
+        txtExpositions = "Exposition canine à Tarbes le 18.11.2018, Clase ouverte, juge: Roger Barenne, Classement: excellent, CACIB, CACS, Meilleur de race";
+    }
+    return txtExpositions;
+  };
+  
   getDentures = () => {
     let dentures = "";
     switch (this.props.language) {
@@ -172,18 +275,18 @@ class Ivy extends Component {
         break;
       case "en":
         if(this.state.dog.gebiss==='schere'){
-          dentures = "EN Schere";
+          dentures = "scissors";
         } else if (this.state.dog.gebiss==='komplette Schere'){
-          dentures = "EN komplette Schere";
+          dentures = "complete scissors";
         }else{
           dentures = "EN Zange";
         }
         break;
       default:
         if(this.state.dog.gebiss==='schere'){
-          dentures = "FR Schere";
+          dentures = "ciseaux";
         } else if (this.state.dog.gebiss==='komplette Schere'){
-          dentures = "FR komplette Schere";
+          dentures = "ciseaux complets";
         }else{
           dentures = "FR Zange";
         }
@@ -264,15 +367,15 @@ class Ivy extends Component {
                     <tbody>
                       <tr>
                         <td>Von Willebrand/ENM: </td>
-                        <td>{this.state.dog.willebrand}</td>
+                        <td>{this.getWillebrand()}{/* {this.state.dog.willebrand} */}</td>
                       </tr>
                       <tr>
                         <td>{this.getTwo()} </td>
-                        <td>{this.state.dog.petella}</td>
+                        <td>{this.getPatella()}{/* {this.state.dog.petella} */}</td>
                       </tr>
                       <tr>
                         <td>{this.getThree()} </td>
-                        <td>{this.state.dog.eyes}</td>
+                        <td>{this.getEyes()}{/* {this.state.dog.eyes} */}</td>
                       </tr>
                       <tr>
                         <td>{this.getFour()} </td>
@@ -287,7 +390,7 @@ class Ivy extends Component {
                     </tbody>
                   </table>
                   <div className={styles.expositions}>
-                    <p>{this.state.dog.expositions}</p>
+                    <p>{this.getTextAusstellungen()}{/* {this.state.dog.expositions} */}</p>
                   </div>
                 </div>
               </div>
@@ -304,11 +407,12 @@ class Ivy extends Component {
           {this.getText()}
 
           <div className={styles.ivyButtonPage}>
-            <button onClick={this.showPedigree}>Ahnentafel</button>
+            <button onClick={this.showPedigree}>{this.getButtonPedigree()}</button>
 
-            <button onClick={this.showImages}>Galerie</button>
+            <button onClick={this.showImages}>{this.getButtonGallery()}</button>
 
-            <button onClick={this.showExpositions}>Ausstellungen</button>
+            <button onClick={this.showExpositions}>{this.getButtonExpositions(this.props.language)}</button>
+         
           </div>
 
           <div className={styles.showPedigreeImage}>
@@ -329,7 +433,10 @@ class Ivy extends Component {
           </div>
           <div className={styles.expositionsIvyPage}>
             <div style={{ display: this.state.showExpositions }}>
-              {this.state.expositions.text}
+
+            {this.getTextAusstellungen()}
+{/* 
+              {this.state.expositions.text} */}
             </div>
             <div className={styles.expositionsIvyPageImage}>
               <img
@@ -343,6 +450,7 @@ class Ivy extends Component {
                 }
                 
               />
+            
               <img
                 style={{ display: this.state.showExpositions }}
                 src={
