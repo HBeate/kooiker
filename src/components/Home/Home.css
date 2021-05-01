@@ -160,6 +160,7 @@ div {
 
 .first_content h2 {
   margin-bottom: 2rem;
+  margin-top: 1rem;
 }
 
 /* ++++++++++++ sectionen3 children +++++++++++++++++ */
@@ -199,6 +200,11 @@ div {
   }
   .section2 {
     height: 600px;
+    font-size: large;
+  }
+
+  .first_content h2 {
+    margin-top: 0;
   }
   .section3 {
     height: 400px;
