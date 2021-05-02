@@ -256,7 +256,7 @@ class Ivy extends Component {
         } else if (this.state.dog.gebiss==='komplette Schere'){
           dentures = "komplette Schere";
         }else{
-          dentures = "Zange";
+          dentures = "Zangengebiss";
         }
         break;
       case "en":
@@ -265,7 +265,7 @@ class Ivy extends Component {
         } else if (this.state.dog.gebiss==='komplette Schere'){
           dentures = "complete scissors";
         }else{
-          dentures = "EN Zange";
+          dentures = "pincer bite";
         }
         break;
       default:
@@ -274,7 +274,7 @@ class Ivy extends Component {
         } else if (this.state.dog.gebiss==='komplette Schere'){
           dentures = "ciseaux complets";
         }else{
-          dentures = "FR Zange";
+          dentures = "articulé en pince";
         }
     }
     return dentures;
