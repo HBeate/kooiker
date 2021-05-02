@@ -42,6 +42,7 @@ class WelpenElement extends Component {
             parents: element.mother.name + " x " + element.father.name,
           };
           breedings.push(breeding);
+
         });
         let elementsTitle = "";
         switch (this.props.language) {
@@ -71,7 +72,7 @@ class WelpenElement extends Component {
               dOBS: dOBS,
             });
           });
-      });
+      });console.log(this.state.parents);
   }
 
   parentsSwitchLocal = (element) => {
