@@ -299,13 +299,13 @@ class Ivy extends Component {
     let txtExpositions = "";
     switch (this.props.language) {
       case "de":
-        txtExpositions = "Internationale Rassehundeausstellung in Tarbes am 18.11.2018 \n offene Klasse, Richter: Roger Barenne \n Bewertung: excellent, CACIB, CACS, Rassebeste";
+        txtExpositions = "Internationale Rassehundeausstellung in Tarbes am 18.11.2018 \n Offene Klasse, Richter: Roger Barenne \n Bewertung: excellent, CACIB, CACS, Rassebeste";
         break;
       case "en":
-        txtExpositions = "International Dog Show in Tarbes on 18.11.2018 open class \n Judge: Roger Barenne \n Ration: excellent, CACIB, CACS, Best of Breed";
+        txtExpositions = "International Dog Show in Tarbes on 18.11.2018  \n Open class Judge: Roger Barenne \n Ration: excellent, CACIB, CACS, Best of Breed";
         break;
       default:
-        txtExpositions = "Exposition canine à Tarbes le 18.11.2018, Clase ouverte \n Juge: Roger Barenne \n Classement: excellent, CACIB, CACS, Meilleur de race";
+        txtExpositions = "Exposition canine à Tarbes le 18.11.2018 \n Clase ouverte Juge: Roger Barenne \n Classement: excellent, CACIB, CACS, Meilleur de race";
     }
     return txtExpositions;
   };
