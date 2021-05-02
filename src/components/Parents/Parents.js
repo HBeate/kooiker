@@ -181,6 +181,23 @@ class Parents extends Component {
     }
     return lableHeight;
   };
+
+  getLinebreak = (x) => {
+    let tempdata = [];
+    let key = 0;
+    x.split("\n").map(function (item) {
+      let line = (
+        <span className={styles.spanText} key={key}>
+          {item}
+          <br />
+        </span>
+      );
+      tempdata.push(line);
+      return key++;
+    });
+    return tempdata;
+  };
+
     getTextAusstellungen = () => {
     let txtExpositions = "";
     switch (this.props.language) {
@@ -275,7 +292,7 @@ class Parents extends Component {
                   </tbody>
                 </table>
                 <div className={styles.expositions}>
-                  <div>{this.getTextAusstellungen()}</div>
+                  <div>{this.getLinebreak(this.getTextAusstellungen())}</div>
                    {/* <p>{this.props.parents.mutter.expositions}</p>  */}
                 </div>
               </div>
