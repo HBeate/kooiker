@@ -1,4 +1,4 @@
-// import React from "react";
+
 import "./Home.css";
 import dog1 from "./dog1.jpg";
 import dog2 from "./dog2.jpg";
