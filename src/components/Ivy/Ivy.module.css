@@ -30,7 +30,7 @@ body {
 .content {
   display: flex;
   flex: 7;
-  align-items: center;
+  align-items: top;
   padding: 20px;
 }
 .header {
