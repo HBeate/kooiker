@@ -26,6 +26,11 @@ body {
   justify-content: space-between;
 }
 
+.headerButtonBack{
+  display: flex;
+  align-items: center;
+}
+
 img {
   padding: 0px 0;
 }
