@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Constants from "../../../helper/Constants";
 import ResponsiveGallery from 'react-responsive-gallery';
 import styles from './NewsPuppies.module.css';
+import  Spinner from '../../Spinner/Spinner'
 
 class NewsPuppies extends Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class NewsPuppies extends Component {
       images8:[],
       images9:[],
       images10:[],
+      loaded: false,
     };
   }
 
@@ -122,12 +124,21 @@ class NewsPuppies extends Component {
           images8:images8,
           images9:images9,
           images10:images10,
+          loaded: true,
         });
       });
   }
 
   render() {
-    
+    if (!this.state.loaded) {
+      // return (
+      //   <div style={{ textAlign: "center", color: "rgb(167, 69, 39)" }}>
+      //     <GiJumpingDog size={"100vh"} />
+      //   </div>
+      // );
+      return(<Spinner/>)
+    }
+    if (this.state.loaded) {
     return (
       <div className={styles.container}>
                   <div className={styles.mainHeaderContainer}>
@@ -157,7 +168,8 @@ class NewsPuppies extends Component {
         <ResponsiveGallery images={this.state.images10} useLightBox={true}/>
         </div>
       </div>
-    );
+    );}
   }
+
 }
 export default NewsPuppies;
