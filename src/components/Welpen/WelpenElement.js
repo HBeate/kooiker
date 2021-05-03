@@ -216,7 +216,9 @@ class WelpenElement extends Component {
                 <h3 className={styles.header}>
                   {element.translations[1].title}
                 </h3>
+                <div className={styles.translations}>
                 {this.getContent(element.translations[1].uebersetzung)}{" "}
+                  </div>
                 <div className={styles.btn}>
                   <button onClick={() => this.parentsSwitchLocal(element)}>
                     Die Eltern
