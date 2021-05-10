@@ -19,7 +19,6 @@ class Form extends Component {
   }
   componentDidMount() {
     this.getSuccess() 
-    console.log(this.state.success)
   } 
 
   changeHandler = (e) => {
@@ -35,6 +34,10 @@ class Form extends Component {
     });
     return formData;
   };
+
+   sendedStateChange=()=> {
+    setTimeout(() => {  this.setState({ sended: false}); }, 3000);
+  }
 
    onSubmit = (event) => {
     event.preventDefault();
@@ -57,6 +60,7 @@ class Form extends Component {
           notification: "Daten wurden abgeschickt",
           sended: true,
         });
+          this.sendedStateChange();
       })
       .catch((error) => {
         this.setState({
@@ -128,7 +132,6 @@ class Form extends Component {
       this.setState({
         success: suc,
       });
-      
   }
   render() {
     return (
