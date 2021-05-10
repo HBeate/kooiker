@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styles from "./Form.module.css";
-import { If, Else } from 'rc-if-else';
+import { If } from 'rc-if-else';
 import Success from './Success.js'
 
 class Form extends Component {
@@ -14,14 +14,16 @@ class Form extends Component {
       userTelefonNummber: "",
       sended: false,
       notification: "",
+      success:'',
     };
   }
+  componentDidMount() {
+    this.getSuccess() } 
 
   changeHandler = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
     });
-    //console.log(e.target.name+"   "+ e.target.value)
   };
 
   createFormDataObj = (data) => {
@@ -49,20 +51,16 @@ class Form extends Component {
       body: new URLSearchParams(this.createFormDataObj(data)).toString(),
     })
       .then(() => {
-        console.log(data)
         this.setState({
           notification: "Daten wurden abgeschickt",
           sended: true,
         });
-        console.log(this.state.notification);
       })
       .catch((error) => {
-        console.log(error);
         this.setState({
           notification: "Fehler... " + error,
           sended: true,
         });
-        console.log(this.state.notification);
       });
   }; 
   getName = () => {
@@ -121,9 +119,16 @@ class Form extends Component {
     }
     return contactTitle;
   };
+  getSuccess=()=>{
+    let suc
+      if(this.props.language==='de'){suc='Nachricht wurde gesendet'}else if (this.props.language==='en'){suc='Message was sent'} else{suc='Le message a été envoyé'}
+      this.setState({
+        success: suc,
+      });
+  }
   render() {
     return (
-      <If condition={!this.state.sended} >
+    
       <div id="contact" className={styles.container}>
         <form
           name="contact"
@@ -177,9 +182,9 @@ class Form extends Component {
             </button>
           </div>
         </form>
+        <If condition={this.state.sended} ><Success language={this.props.language}/></If>
       </div>
-      <Else><Success/></Else>
-  </If>
+
     );
   }
 }
