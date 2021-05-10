@@ -1,10 +1,15 @@
 import React, { Component } from "react";
 import styles from "./Form.module.css";
+import { If, Else } from 'rc-if-else';
+import Success from './Success.js'
 
 class Form extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      sended: false,
+      notification: "",
+    };
   }
   /* onSubmit = (event) => {
     event.preventDefault();
@@ -98,6 +103,7 @@ class Form extends Component {
   };
   render() {
     return (
+      <If condition={!this.state.sended} >
       <div id="contact" className={styles.container}>
         <form
           name="contact"
@@ -142,6 +148,8 @@ class Form extends Component {
           </div>
         </form>
       </div>
+      <Else><Success/></Else>
+  </If>
     );
   }
 }
