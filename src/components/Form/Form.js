@@ -98,7 +98,7 @@ class Form extends Component {
   };
   render() {
     return (
-      <div className={styles.container}>
+      <div id="contact" className={styles.container}>
         <form
           name="contact"
           method="post"
