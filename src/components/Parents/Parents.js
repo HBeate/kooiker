@@ -6,7 +6,9 @@ class Parents extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      show: "none",
+      show: "none",      
+      showMother: "none",
+      showFather: "none",
       dog: "",
       showGallery: "none",
       images: [],
@@ -15,7 +17,32 @@ class Parents extends Component {
       ic: "",
     };
   }
-
+  showPedigreeMother = () => {
+    if (this.state.showMother === "none") {
+      this.setState({
+        showMother: "flex",
+        showFather: "none",
+      });
+    } else {
+      this.setState({
+        showMother :"none",
+        showFather: "none",
+      });
+    }
+  };
+  showPedigreeFather = () => {
+    if (this.state.showFather === "none") {
+      this.setState({
+        showFather: "flex",
+        showMother :"none",
+      });
+    } else {
+      this.setState({
+        showFather: "none",
+        showMother :"none",
+      });
+    }
+  };
   getWillebrand = () => {
     let willebrand = "";
     switch (this.props.language) {
@@ -216,6 +243,20 @@ class Parents extends Component {
     return txtExpositions;
   };
 
+  getButtonPedigree = () => {
+    let pedigree = "";
+    switch (this.props.language) {
+      case "de":
+        pedigree = "Ahnentafel";
+        break;
+      case "en":
+        pedigree = "Pedigree";
+        break;
+      default:
+        pedigree = "Pedigree";
+    }
+    return pedigree;
+  };
   getAlc = () => {
     let alc = "";
     switch (this.props.language) {
@@ -314,7 +355,11 @@ class Parents extends Component {
               </tbody>
             </table>
             <div className={styles.expositions}>
+              <button onClick={this.showPedigreeMother}>
+                {this.getButtonPedigree()}
+              </button>
               <div>{this.getLinebreak(this.getTextAusstellungen())}</div>
+
               {/* <p>{this.props.parents.mutter.expositions}</p>  */}
             </div>
           </div>
@@ -370,8 +415,10 @@ class Parents extends Component {
               </tbody>
             </table>
             <div className={styles.expositions}>
+              <button onClick={this.showPedigreeFather}>
+                {this.getButtonPedigree()}
+              </button>
               <p>{this.props.parents.vater.expositions}</p>
-              <p></p>
             </div>
           </div>
         </div>
@@ -384,6 +431,22 @@ class Parents extends Component {
             {this.getIc()}
             {this.props.parents.dob.ic}
           </div>
+        </div>
+        <div className={styles.showPedigreeImage}>
+          <img
+            style={{ display: this.state.showMother }}
+            src={this.props.parents.mutter.pedigree.data.full_url}
+            alt={"Pedigree"}
+            onClick={this.showPedigreeMother}
+            //let pedigree = result.data[0].pedigree.data.full_url;
+          />
+          <img
+            style={{ display: this.state.showFather }}
+            src={this.props.parents.vater.pedigree.data.full_url}
+            alt={"Pedigree"}
+            onClick={this.showPedigreeFather}
+            //let pedigree = result.data[0].pedigree.data.full_url;
+          />
         </div>
       </div>
     );

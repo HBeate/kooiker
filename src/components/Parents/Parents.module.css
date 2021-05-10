@@ -73,8 +73,15 @@ td {
   padding-right: 10px;
 }
 .expositions {
+  display:flex;
+  flex-direction: column;
   padding-top: 20px;
 }
+.expositions button{
+  margin: 0px;
+  margin-bottom: 20px;
+  max-width: 375px;
+} 
 .coefficient {
   text-align: center;
 }
@@ -106,3 +113,4 @@ td {
     max-height: 200px;
   }
 }
+
