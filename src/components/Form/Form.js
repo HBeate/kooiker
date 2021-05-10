@@ -6,7 +6,7 @@ class Form extends Component {
     super(props);
     this.state = {};
   }
-  onSubmit = (event) => {
+  /* onSubmit = (event) => {
     event.preventDefault();
 
     const data = {
@@ -39,7 +39,7 @@ class Form extends Component {
         });
         console.log(this.state.notification);
       });
-  };
+  }; */
   getName = () => {
     let formName = "";
     switch (this.props.language) {
@@ -132,7 +132,7 @@ class Form extends Component {
             <textarea
               type="text"
               name="comments"
-              placeholder={this.getMessage()}
+              placeholder="text" /* this.getMessage()} */
             />
           </div>
           <div className={styles.buttonCenter}>
