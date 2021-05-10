@@ -8,7 +8,6 @@ class Form extends Component {
     super(props);
     this.state = {
       firstName: "",
-      lastName: "",
       userEmail: "",
       message: "",
       userTelefonNummber: "",
@@ -16,10 +15,12 @@ class Form extends Component {
       notification: "",
     };
   }
+
   changeHandler = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
     });
+    //console.log(e.target.name+"   "+ e.target.value)
   };
 
   createFormDataObj = (data) => {
@@ -29,17 +30,16 @@ class Form extends Component {
     });
     return formData;
   };
-  
+
    onSubmit = (event) => {
     event.preventDefault();
 
     const data = {
       "form-name": "contact",
       firstName: this.state.firstName,
-      lastName: this.state.lastName,
       message: this.state.message,
       userEmail: this.state.userEmail,
-      userTelefonNummber: this.state.userTelefonNummber,
+      userTelefonNummber: this.state.userTelefonNummber
     };
 
     fetch("/", {
@@ -52,20 +52,16 @@ class Form extends Component {
           notification: "Daten wurden abgeschickt",
           sended: true,
         });
-        // TODO Felder leeren
         console.log(this.state.notification);
       })
       .catch((error) => {
         console.log(error);
         this.setState({
-          notification: "Fehlerlein... " + error,
+          notification: "Fehler... " + error,
           sended: true,
         });
         console.log(this.state.notification);
       });
-
-     
-
   }; 
   getName = () => {
     let formName = "";
