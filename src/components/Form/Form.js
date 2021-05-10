@@ -8,6 +8,7 @@ class Form extends Component {
     super(props);
     this.state = {
       firstName: "",
+      lastName: "",
       userEmail: "",
       message: "",
       userTelefonNummber: "",
@@ -48,6 +49,7 @@ class Form extends Component {
       body: new URLSearchParams(this.createFormDataObj(data)).toString(),
     })
       .then(() => {
+        console.log(data)
         this.setState({
           notification: "Daten wurden abgeschickt",
           sended: true,
