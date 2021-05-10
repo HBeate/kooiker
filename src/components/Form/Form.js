@@ -7,6 +7,11 @@ class Form extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      firstName: "",
+      lastName: "",
+      userEmail: "",
+      message: "",
+      userTelefonNummber: "",
       sended: false,
       notification: "",
     };
@@ -14,42 +19,39 @@ class Form extends Component {
    onSubmit = (event) => {
     event.preventDefault();
 
-    // const data = {
-    //   "form-name": "contact",
-    //   firstName: this.state.firstName,
-    //   lastName: this.state.lastName,
-    //   message: this.state.message,
-    //   userEmail: this.state.userEmail,
-    //   userTelefonNummber: this.state.userTelefonNummber,
-    // };
+    const data = {
+      "form-name": "contact",
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      message: this.state.message,
+      userEmail: this.state.userEmail,
+      userTelefonNummber: this.state.userTelefonNummber,
+    };
 
-    // fetch("/", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    //   body: new URLSearchParams(this.createFormDataObj(data)).toString(),
-    // })
-    //   .then(() => {
-    //     this.setState({
-    //       notification: "Daten wurden abgeschickt",
-    //       sended: true,
-    //     });
-    //     // TODO Felder leeren
-    //     console.log(this.state.notification);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //     this.setState({
-    //       notification: "Fehlerlein... " + error,
-    //       sended: true,
-    //     });
-    //     console.log(this.state.notification);
-    //   });
-
-     
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(this.createFormDataObj(data)).toString(),
+    })
+      .then(() => {
         this.setState({
           notification: "Daten wurden abgeschickt",
           sended: true,
         });
+        // TODO Felder leeren
+        console.log(this.state.notification);
+      })
+      .catch((error) => {
+        console.log(error);
+        this.setState({
+          notification: "Fehlerlein... " + error,
+          sended: true,
+        });
+        console.log(this.state.notification);
+      });
+
+     
+
   }; 
   getName = () => {
     let formName = "";
@@ -122,30 +124,40 @@ class Form extends Component {
           <div className={styles.inputField}>
             <div className={styles.inputNamePhoneContainer}>
               <div className={styles.nameInput}>
-                <input
-                  type="text"
-                  name="name"
+              <input
+                  name="firstName"
+                  value={this.state.firstName}
+                  onChange={(e) => this.changeHandler(e)}
                   placeholder={this.getName()}
                 ></input>
               </div>
               <div className={styles.phoneInput}>
-                <input
-                  type="text"
-                  name="phone"
+              <input
+                  name="userTelefonNummber"
+                  value={this.state.userTelefonNummber}
+                  onChange={(e) => this.changeHandler(e)}
                   placeholder={this.getTelefon()}
-                />
+                ></input>
               </div>
             </div>
           </div>
           <div className={styles.inputFieldMail}>
-            <input type="email" name="email" placeholder="E-Mail" />
+          <input
+                  name="userEmail"
+                  placeholder="E-Mail"
+                  value={this.state.userEmail}
+                  onChange={(e) => this.changeHandler(e)
+                  }
+                ></input>
+           
           </div>
           <div className={styles.inputField}>
-            <textarea
-              type="text"
-              name="comments"
-              placeholder="text" /* this.getMessage()} */
-            />
+          <textarea
+                  name="message"
+                  value={this.state.message}
+                  onChange={(e) => this.changeHandler(e)}
+                  placeholder={this.getMessage()} 
+                ></textarea>
           </div>
           <div className={styles.buttonCenter}>
             <button className={styles.submitButton} type="submit">
