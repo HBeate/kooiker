@@ -11,40 +11,46 @@ class Form extends Component {
       notification: "",
     };
   }
-  /* onSubmit = (event) => {
+   onSubmit = (event) => {
     event.preventDefault();
 
-    const data = {
-      "form-name": "contact",
-      firstName: this.state.firstName,
-      lastName: this.state.lastName,
-      message: this.state.message,
-      userEmail: this.state.userEmail,
-      userTelefonNummber: this.state.userTelefonNummber,
-    };
+    // const data = {
+    //   "form-name": "contact",
+    //   firstName: this.state.firstName,
+    //   lastName: this.state.lastName,
+    //   message: this.state.message,
+    //   userEmail: this.state.userEmail,
+    //   userTelefonNummber: this.state.userTelefonNummber,
+    // };
 
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(this.createFormDataObj(data)).toString(),
-    })
-      .then(() => {
+    // fetch("/", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    //   body: new URLSearchParams(this.createFormDataObj(data)).toString(),
+    // })
+    //   .then(() => {
+    //     this.setState({
+    //       notification: "Daten wurden abgeschickt",
+    //       sended: true,
+    //     });
+    //     // TODO Felder leeren
+    //     console.log(this.state.notification);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //     this.setState({
+    //       notification: "Fehlerlein... " + error,
+    //       sended: true,
+    //     });
+    //     console.log(this.state.notification);
+    //   });
+
+     
         this.setState({
           notification: "Daten wurden abgeschickt",
           sended: true,
         });
-        // TODO Felder leeren
-        console.log(this.state.notification);
-      })
-      .catch((error) => {
-        console.log(error);
-        this.setState({
-          notification: "Fehlerlein... " + error,
-          sended: true,
-        });
-        console.log(this.state.notification);
-      });
-  }; */
+  }; 
   getName = () => {
     let formName = "";
     switch (this.props.language) {
