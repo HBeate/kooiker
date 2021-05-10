@@ -16,6 +16,20 @@ class Form extends Component {
       notification: "",
     };
   }
+  changeHandler = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  createFormDataObj = (data) => {
+    const formData = new FormData();
+    Object.keys(data).forEach((k) => {
+      formData.append(k, data[k]);
+    });
+    return formData;
+  };
+  
    onSubmit = (event) => {
     event.preventDefault();
 
