@@ -3,12 +3,12 @@ import React from "react";
 import styles from "./Success.module.css";
 
 
-const success = () => {
+const success = (props) => {
 
   return (
     <div className={styles.container}>
         <div className={styles.successElement}>
-          <h1>{this.props.success}</h1>
+          <h1>{props.success}</h1>
         </div>
     </div>
   );

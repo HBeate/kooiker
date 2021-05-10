@@ -18,7 +18,9 @@ class Form extends Component {
     };
   }
   componentDidMount() {
-    this.getSuccess() } 
+    this.getSuccess() 
+    console.log(this.state.success)
+  } 
 
   changeHandler = (e) => {
     this.setState({
@@ -119,12 +121,14 @@ class Form extends Component {
     }
     return contactTitle;
   };
+
   getSuccess=()=>{
     let suc
       if(this.props.language==='de'){suc='Nachricht wurde gesendet'}else if (this.props.language==='en'){suc='Message was sent'} else{suc='Le message a été envoyé'}
       this.setState({
         success: suc,
       });
+      
   }
   render() {
     return (
@@ -182,7 +186,7 @@ class Form extends Component {
             </button>
           </div>
         </form>
-        <If condition={this.state.sended} ><Success language={this.props.language}/></If>
+        <If condition={this.state.sended} ><Success success={this.state.success}/></If>
       </div>
 
     );
