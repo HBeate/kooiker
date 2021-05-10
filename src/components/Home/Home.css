@@ -51,7 +51,7 @@ div {
   height: 300px;
   position: relative;
   /* top: calc(750px * 1); */
-  z-index: 99;
+  /* z-index: 99; */
   display: flex;
   align-items: center;
   font-size: 1.2rem;
@@ -127,7 +127,7 @@ div {
 
 .home_welcome_header {
   display: flex;
-  z-index: 99;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;

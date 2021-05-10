@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styles from "./Form.module.css";
-import { If, Else } from 'rc-if-else';
+import { If } from 'rc-if-else';
 import Success from './Success.js'
 
 class Form extends Component {
@@ -14,8 +14,13 @@ class Form extends Component {
       userTelefonNummber: "",
       sended: false,
       notification: "",
+      success:'',
     };
   }
+  componentDidMount() {
+    this.getSuccess() 
+  } 
+
   changeHandler = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
@@ -29,17 +34,20 @@ class Form extends Component {
     });
     return formData;
   };
-  
+
+   sendedStateChange=()=> {
+    setTimeout(() => {  this.setState({ sended: false}); }, 3000);
+  }
+
    onSubmit = (event) => {
     event.preventDefault();
 
     const data = {
       "form-name": "contact",
       firstName: this.state.firstName,
-      lastName: this.state.lastName,
       message: this.state.message,
       userEmail: this.state.userEmail,
-      userTelefonNummber: this.state.userTelefonNummber,
+      userTelefonNummber: this.state.userTelefonNummber
     };
 
     fetch("/", {
@@ -52,20 +60,14 @@ class Form extends Component {
           notification: "Daten wurden abgeschickt",
           sended: true,
         });
-        // TODO Felder leeren
-        console.log(this.state.notification);
+          this.sendedStateChange();
       })
       .catch((error) => {
-        console.log(error);
         this.setState({
-          notification: "Fehlerlein... " + error,
+          notification: "Fehler... " + error,
           sended: true,
         });
-        console.log(this.state.notification);
       });
-
-     
-
   }; 
   getName = () => {
     let formName = "";
@@ -123,9 +125,17 @@ class Form extends Component {
     }
     return contactTitle;
   };
+
+  getSuccess=()=>{
+    let suc
+      if(this.props.language==='de'){suc='Nachricht wurde gesendet'}else if (this.props.language==='en'){suc='Message was sent'} else{suc='Le message a été envoyé'}
+      this.setState({
+        success: suc,
+      });
+  }
   render() {
     return (
-      <If condition={!this.state.sended} >
+    
       <div id="contact" className={styles.container}>
         <form
           name="contact"
@@ -179,9 +189,9 @@ class Form extends Component {
             </button>
           </div>
         </form>
+        <If condition={this.state.sended} ><Success success={this.state.success}/></If>
       </div>
-      <Else><Success/></Else>
-  </If>
+
     );
   }
 }
