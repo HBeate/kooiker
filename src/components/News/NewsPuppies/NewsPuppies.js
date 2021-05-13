@@ -35,6 +35,20 @@ class NewsPuppies extends Component {
     }
     return weekHeading;
   };
+  getButtonLabelBack= () => {
+    let back = "";
+    switch (this.props.language) {
+      case "de":
+        back = "zurück";
+        break;
+      case "en":
+        back = "back";
+        break;
+      default:
+        back = "retour";
+    }
+    return back;
+  };
   getWeek1 = () => {
     let week1 = "";
     switch (this.props.language) {
@@ -196,70 +210,92 @@ class NewsPuppies extends Component {
             case '1':
               element.images.forEach(element => {
                 images1.push({ 
-                  "src" : element.directus_files_id.data.full_url,
+
+/* 
+                  "src" : element.directus_files_id.data.full_url, */
+                  "src" : element.directus_files_id.data.thumbnails[2].url,
+
               });
               });
               break;
               case '2':
                 element.images.forEach(element => {
                   images2.push({ 
-                    "src" : element.directus_files_id.data.full_url,
+/* 
+                  "src" : element.directus_files_id.data.full_url, */
+                  "src" : element.directus_files_id.data.thumbnails[2].url,
                 });
                 });
                 break;
                 case '3':
                   element.images.forEach(element => {
                     images3.push({ 
-                      "src" : element.directus_files_id.data.full_url,
+/* 
+                  "src" : element.directus_files_id.data.full_url, */
+                  "src" : element.directus_files_id.data.thumbnails[2].url,
                   });
                   });
                   break;
                   case '4':
                     element.images.forEach(element => {
                       images4.push({ 
-                        "src" : element.directus_files_id.data.full_url,
+/* 
+                  "src" : element.directus_files_id.data.full_url, */
+                  "src" : element.directus_files_id.data.thumbnails[2].url,
                     });
                     });
                     break;
                     case '5':
                       element.images.forEach(element => {
                         images5.push({ 
-                          "src" : element.directus_files_id.data.full_url,
+/* 
+                  "src" : element.directus_files_id.data.full_url, */
+                  "src" : element.directus_files_id.data.thumbnails[2].url,
                       });
                       });
                       break;
                       case '6':
                         element.images.forEach(element => {
                           images6.push({ 
-                            "src" : element.directus_files_id.data.full_url,
+/* 
+                  "src" : element.directus_files_id.data.full_url, */
+                  "src" : element.directus_files_id.data.thumbnails[2].url,
                         });
                         });
                         break;
                         case '7':
                           element.images.forEach(element => {
                             images7.push({ 
-                              "src" : element.directus_files_id.data.full_url,
+/* 
+                  "src" : element.directus_files_id.data.full_url, */
+                  "src" : element.directus_files_id.data.thumbnails[2].url,
                           });
                           });
                           break;
                           case '8':
                             element.images.forEach(element => {
                               images8.push({ 
-                                "src" : element.directus_files_id.data.full_url,
+ /* 
+                  "src" : element.directus_files_id.data.full_url, */
+                  "src" : element.directus_files_id.data.thumbnails[2].url,
                             });
                             });
                             break;
                             case '9':
                               element.images.forEach(element => {
                                 images9.push({ 
-                                  "src" : element.directus_files_id.data.full_url,
+/* 
+                  "src" : element.directus_files_id.data.full_url, */
+                  "src" : element.directus_files_id.data.thumbnails[2].url,
                               });
                               });
                               break;
                               default:
                                   element.images.forEach(element => {
                                     images10.push({ 
-                                      "src" : element.directus_files_id.data.full_url,
+/* 
+                  "src" : element.directus_files_id.data.full_url, */
+                  "src" : element.directus_files_id.data.thumbnails[2].url,
                                   });
                                   });
                                   break;
@@ -297,7 +333,7 @@ class NewsPuppies extends Component {
       <div className={styles.container}>
                   <div className={styles.mainHeaderContainer}>
             <h1 className={styles.mainHeader}>{this.getWeekHeading()}</h1>
-            <button onClick={this.props.defaultSwitch}>Back</button>
+            <button onClick={this.props.defaultSwitch}>{this.getButtonLabelBack()}</button>
           </div>
         <div className={styles.weeks}>
         <div><h2 className={styles.week1}>{this.getWeek1()}</h2></div>
