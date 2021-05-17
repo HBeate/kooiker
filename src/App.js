@@ -35,6 +35,8 @@ export default class App extends Component {
       goto3:false,
     };
   }
+
+  //test
   toggleLanguagueDE = () => {
     let title = "Das Kooikerhondje, Charakter und Haltung:";
     let text =
