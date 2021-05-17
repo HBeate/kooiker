@@ -361,7 +361,6 @@ class Parents extends Component {
               <div className={styles.img}>
                 <img
                   className={styles.imgRight}
-                  // src={this.props.parents.mutter.parent_image.data.full_url}
                   src={this.props.parents.dob.mother_image.data.full_url}
                   alt={this.props.parents.mutter.name}
                 ></img>
@@ -372,31 +371,26 @@ class Parents extends Component {
                     <td>Von Willebrand/ENM: </td>
                     <td>
                       {this.getWillebrand()}
-                      {/* {this.props.parents.mutter.willebrand} */}
                     </td>
                   </tr>
                   <tr>
                     <td>
                       {this.getLabelPatella()}
-                      {/* Luxation de la rotule:  */}
                     </td>
                     <td>
                       {this.getPatella()}
-                      {/* {this.props.parents.mutter.petella} */}
                     </td>
                   </tr>
                   <tr>
                     <td>{this.getLabelEyes()}</td>
                     <td>
                       {this.getEyes()}
-                      {/* {this.props.parents.mutter.eyes} */}
                     </td>
                   </tr>
                   <tr>
                     <td>{this.getLabelDentures()}</td>
                     <td>
                       {this.getDenturesMother()}
-                      {/* {this.props.parents.mutter.dentures} */}
                     </td>
                   </tr>
                   <tr>
@@ -410,8 +404,6 @@ class Parents extends Component {
                   {this.getButtonPedigree()}
                 </button>
                 <div>{this.getLinebreak(this.getTextAusstellungen())}</div>
-
-                {/* <p>{this.props.parents.mutter.expositions}</p>  */}
               </div>
             </div>
             <div className={styles.dogbox2}>
@@ -424,7 +416,6 @@ class Parents extends Component {
               <div className={styles.img}>
                 <img
                   className={styles.imgRight}
-                  // src={this.props.parents.vater.parent_image.data.full_url}
                   src={this.props.parents.dob.father_image.data.full_url}
                   alt={this.props.parents.vater.name}
                 ></img>
@@ -435,28 +426,24 @@ class Parents extends Component {
                     <td>Von Willebrand/ENM: </td>
                     <td>
                       {this.getWillebrand()}
-                      {/* {this.props.parents.vater.willebrand} */}
                     </td>
                   </tr>
                   <tr>
                     <td>{this.getLabelPatella()}</td>
                     <td>
                       {this.getPatella()}
-                      {/* {this.props.parents.vater.petella} */}
                     </td>
                   </tr>
                   <tr>
                     <td>{this.getLabelEyes()}</td>
                     <td>
                       {this.getEyes()}
-                      {/* {this.props.parents.vater.eyes} */}
                     </td>
                   </tr>
                   <tr>
                     <td>{this.getLabelDentures()}</td>
                     <td>
                       {this.getDenturesFather()}
-                      {/* {this.props.parents.vater.dentures} */}
                     </td>
                   </tr>
                   <tr>
@@ -489,14 +476,12 @@ class Parents extends Component {
               src={this.props.parents.mutter.pedigree.data.full_url}
               alt={"Pedigree"}
               onClick={this.showPedigreeMother}
-              //let pedigree = result.data[0].pedigree.data.full_url;
             />
             <img
               style={{ display: this.state.showFather }}
               src={this.props.parents.vater.pedigree.data.full_url}
               alt={"Pedigree"}
               onClick={this.showPedigreeFather}
-              //let pedigree = result.data[0].pedigree.data.full_url;
             />
           </div>
         </div>

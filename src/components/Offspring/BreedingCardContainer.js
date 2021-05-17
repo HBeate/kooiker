@@ -10,7 +10,8 @@ class BreedingCardContainer extends Component {
       test: "hans",
     };
   }
-  getButtonLabelBack= () => {
+
+  getButtonLabelBack = () => {
     let back = "";
     switch (this.props.language) {
       case "de":
@@ -20,11 +21,11 @@ class BreedingCardContainer extends Component {
         back = "back";
         break;
       default:
-        back = "retour / arrière";
+        back = "retour";
     }
     return back;
   };
-  getNewHome= () => {
+  getNewHome = () => {
     let newHome = "";
     switch (this.props.language) {
       case "de":
@@ -65,8 +66,14 @@ class BreedingCardContainer extends Component {
     return (
       <div className={styles.container}>
         <div className={styles.mainHeaderContainer}>
-          <h1 className={styles.mainHeader}>{this.getNewHome()}</h1>
-          <button onClick={this.props.defaultSwitch}>{this.getButtonLabelBack()}</button>
+          <div>
+            <h1 className={styles.mainHeader}>{this.getNewHome()}</h1>
+          </div>
+          <div className={styles.headerButtonBack}>
+            <button onClick={this.props.defaultSwitch}>
+              {this.getButtonLabelBack()}
+            </button>
+          </div>
         </div>
 
         {this.getBreedings()}
