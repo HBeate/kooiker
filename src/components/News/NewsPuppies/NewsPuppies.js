@@ -309,10 +309,14 @@ class NewsPuppies extends Component {
       return (
         <div className={styles.container}>
           <div className={styles.mainHeaderContainer}>
-            <h1 className={styles.mainHeader}>{this.getWeekHeading()}</h1>
-            <button onClick={this.props.defaultSwitch}>
-              {this.getButtonLabelBack()}
-            </button>
+            <div>
+              <h1 className={styles.mainHeader}>{this.getWeekHeading()}</h1>
+            </div>
+            <div className={styles.headerButtonBack}>
+              <button onClick={this.props.defaultSwitch}>
+                {this.getButtonLabelBack()}
+              </button>
+            </div>
           </div>
           <div className={styles.weeks}>
             <div>
