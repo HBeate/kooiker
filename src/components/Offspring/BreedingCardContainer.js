@@ -10,6 +10,7 @@ class BreedingCardContainer extends Component {
       test: "hans",
     };
   }
+
   getButtonLabelBack = () => {
     let back = "";
     switch (this.props.language) {

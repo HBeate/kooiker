@@ -5,7 +5,7 @@ import styles from "./WelpenElement.module.css";
 import Parents from "../Parents/Parents";
 import Constants from "../../helper/Constants";
 import BreedingCardContainer from "../Offspring/BreedingCardContainer";
-
+//test
 class WelpenElement extends Component {
   constructor(props) {
     super(props);
@@ -347,6 +347,7 @@ class WelpenElement extends Component {
             breedings={this.state.breedings}
             dob={this.state.litterDOB}
             defaultSwitch={this.props.defaultSwitch}
+            language={this.props.language}
           />
         </div>
       );

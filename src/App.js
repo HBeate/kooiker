@@ -15,6 +15,7 @@ import Contact from "./components/Contact/Contact";
 import Welpen from "./components/Welpen/Welpen";
 import Parents from "./components/Parents/Parents";
 
+// main class
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -35,6 +36,8 @@ export default class App extends Component {
       goto3:false,
     };
   }
+
+  //test
   toggleLanguagueDE = () => {
     let title = "Das Kooikerhondje, Charakter und Haltung:";
     let text =

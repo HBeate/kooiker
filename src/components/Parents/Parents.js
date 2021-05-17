@@ -404,7 +404,6 @@ class Parents extends Component {
                   {this.getButtonPedigree()}
                 </button>
                 <div>{this.getLinebreak(this.getTextAusstellungen())}</div>
-
               </div>
             </div>
             <div className={styles.dogbox2}>

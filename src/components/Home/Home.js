@@ -1,6 +1,6 @@
 
 import "./Home.css";
-import dog1 from "./dog1.jpg";
+import dog1 from "./dog1.jpeg";
 import dog2 from "./dog2.jpg";
 import dog3 from "./dog3.jpg";
 import logo from "./logo.jpg";
@@ -95,8 +95,7 @@ export default function Home(props) {
                 <li><a href="https://www.vom-kooikerbeis.de/"  target="_blank" rel="noreferrer"> Vom Kooikerbeis</a></li>
                 <li><a href="https://www.vom-haus-tusburch.de/" target="_blank" rel="noreferrer">Vom Haus Tusburch</a></li>
                 <li><a href="http://www.rundumahund.com/" target="_blank" rel="noreferrer">Rund uma Hund</a></li>
-                <li><a href="https://www.cdc-goetzis.at/" target="_blank" rel="noreferrer">cdc Götzis</a></li>
-              </ul>
+                <li><a href="https://www.cdc-goetzis.at/" target="_blank" rel="noreferrer">cdc Götzis</a></li>              </ul>
             </div>
           </div>
         </div>

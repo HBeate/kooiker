@@ -35,6 +35,7 @@ class NewsPuppies extends Component {
     }
     return weekHeading;
   };
+
   getButtonLabelBack = () => {
     let back = "";
     switch (this.props.language) {
@@ -194,6 +195,7 @@ class NewsPuppies extends Component {
     fetch(Constants.offspring)
       .then((resp) => resp.json())
       .then((result) => {
+
         let images1 = [];
         let images2 = [];
         let images3 = [];
@@ -254,6 +256,7 @@ class NewsPuppies extends Component {
                   images7.push({
                     src: element.directus_files_id.data.full_url,
                   });
+
                 });
                 break;
               case "8":
