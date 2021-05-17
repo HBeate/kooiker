@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-/* import { ThemeConsumer } from "react-bootstrap/esm/ThemeProvider"; */
 import styles from "./Parents.module.css";
+import { Carousel } from "react-responsive-carousel";
 
 class Parents extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      show: "none",      
+      show: "none",
       showMother: "none",
       showFather: "none",
       dog: "",
@@ -15,34 +15,65 @@ class Parents extends Component {
       loaded: true,
       alc: "",
       ic: "",
+      parents: true,
+      parent: "",
+      parentName: "",
     };
   }
   showPedigreeMother = () => {
-    if (this.state.showMother === "none") {
-      this.setState({
-        showMother: "flex",
-        showFather: "none",
-      });
-    } else {
-      this.setState({
-        showMother :"none",
-        showFather: "none",
-      });
-    }
+    let img = [];
+    let key = 0;
+    this.props.parents.mutter.pedigrees.forEach((element) => {
+      img.push(
+        <img src={element.directus_files_id.data.full_url} alt={key}></img>
+      );
+      key++;
+    });
+    this.setState({
+      parents: false,
+      parentName: this.props.parents.mutter.name,
+      parent: img,
+    });
   };
+  getParentsBack = () => {
+    this.setState({
+      parents: true,
+    });
+  };
+
   showPedigreeFather = () => {
-    if (this.state.showFather === "none") {
-      this.setState({
-        showFather: "flex",
-        showMother :"none",
-      });
-    } else {
-      this.setState({
-        showFather: "none",
-        showMother :"none",
-      });
-    }
+    let img = [];
+    let key = 0;
+    this.props.parents.vater.pedigrees.forEach((element) => {
+      img.push(
+        <img src={element.directus_files_id.data.full_url} alt={key}></img>
+      );
+      key++;
+    });
+    this.setState({
+      parents: false,
+      parentName: this.props.parents.vater.name,
+      parent: img,
+    });
   };
+
+
+  getButtonLabelBack= () => {
+    let back = "";
+    switch (this.props.language) {
+      case "de":
+        back = "zurück";
+        break;
+      case "en":
+        back = "back";
+        break;
+      default:
+        back = "retour";
+    }
+    return back;
+  };
+
+
   getWillebrand = () => {
     let willebrand = "";
     switch (this.props.language) {
@@ -287,169 +318,176 @@ class Parents extends Component {
     return ic;
   };
   render() {
-    return (
-      <div className={styles.container}>
-        <div className={styles.mainHeaderContainer}>
-          <div>
-            <h1 className={styles.mainHeader}>
-              {this.props.parents.mutter.name} x {this.props.parents.vater.name}
-            </h1>
-          </div>
-          <div className={styles.headerButtonBack}>
-            <button onClick={this.props.defaultSwitch}>Back</button>
-          </div>
-        </div>
-        <div className={styles.containerdog1}>
-          <div className={styles.dogbox1}>
-            <h3 className={styles.header}>
-              {this.props.parents.mutter.parent_full_name}
-            </h3>
-            <h4 className={styles.dob}>
-              {this.props.parents.mutter.parent_date_of_birth}
-            </h4>
-            <div className={styles.img}>
-              <img
-                className={styles.imgRight}
-                // src={this.props.parents.mutter.parent_image.data.full_url}
-                src={this.props.parents.dob.mother_image.data.full_url}
-                alt={this.props.parents.mutter.name}
-              ></img>
+    if (!this.state.parents) {
+      return (
+        <div className={styles.container}>
+          <div className={styles.mainHeaderContainer}>
+            <div>
+              <h1 className={styles.mainHeader}>
+                {this.getButtonPedigree()} {this.state.parentName}
+              </h1>
             </div>
-            <table>
-              <tbody>
-                <tr>
-                  <td>Von Willebrand/ENM: </td>
-                  <td>
-                    {this.getWillebrand()}
-                    {/* {this.props.parents.mutter.willebrand} */}
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    {this.getLabelPatella()}
-                    {/* Luxation de la rotule:  */}
-                  </td>
-                  <td>
-                    {this.getPatella()}
-                    {/* {this.props.parents.mutter.petella} */}
-                  </td>
-                </tr>
-                <tr>
-                  <td>{this.getLabelEyes()}</td>
-                  <td>
-                    {this.getEyes()}
-                    {/* {this.props.parents.mutter.eyes} */}
-                  </td>
-                </tr>
-                <tr>
-                  <td>{this.getLabelDentures()}</td>
-                  <td>
-                    {this.getDenturesMother()}
-                    {/* {this.props.parents.mutter.dentures} */}
-                  </td>
-                </tr>
-                <tr>
-                  <td>{this.getLabelHeight()}</td>
-                  <td>{this.props.parents.mutter.height}</td>
-                </tr>
-              </tbody>
-            </table>
-            <div className={styles.expositions}>
-              <button onClick={this.showPedigreeMother}>
-                {this.getButtonPedigree()}
+            <div className={styles.headerButtonBack}>
+              <button onClick={this.getParentsBack}>
+                {this.getButtonLabelBack()}
               </button>
-              <div>{this.getLinebreak(this.getTextAusstellungen())}</div>
+            </div>
+          </div>
+          <Carousel dynamicHeight={true} showArrows={true}>{this.state.parent}</Carousel>
+        </div>
+      );
+    } else if (this.state.parents) {
+      return (
+        <div className={styles.container}>
+          <div className={styles.mainHeaderContainer}>
+            <div>
+              <h1 className={styles.mainHeader}>
+                {this.props.parents.mutter.name} x{" "}
+                {this.props.parents.vater.name}
+              </h1>
+            </div>
+            <div className={styles.headerButtonBack}>
+              <button onClick={this.props.defaultSwitch}>{this.getButtonLabelBack()}</button>
+            </div>
+          </div>
+          <div className={styles.containerdog1}>
+            <div className={styles.dogbox1}>
+              <h3 className={styles.header}>
+                {this.props.parents.mutter.parent_full_name}
+              </h3>
+              <h4 className={styles.dob}>
+                {this.props.parents.mutter.parent_date_of_birth}
+              </h4>
+              <div className={styles.img}>
+                <img
+                  className={styles.imgRight}
+                  src={this.props.parents.dob.mother_image.data.full_url}
+                  alt={this.props.parents.mutter.name}
+                ></img>
+              </div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>Von Willebrand/ENM: </td>
+                    <td>
+                      {this.getWillebrand()}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      {this.getLabelPatella()}
+                    </td>
+                    <td>
+                      {this.getPatella()}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>{this.getLabelEyes()}</td>
+                    <td>
+                      {this.getEyes()}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>{this.getLabelDentures()}</td>
+                    <td>
+                      {this.getDenturesMother()}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>{this.getLabelHeight()}</td>
+                    <td>{this.props.parents.mutter.height}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div className={styles.expositions}>
+                <button onClick={this.showPedigreeMother}>
+                  {this.getButtonPedigree()}
+                </button>
+                <div>{this.getLinebreak(this.getTextAusstellungen())}</div>
 
-              {/* <p>{this.props.parents.mutter.expositions}</p>  */}
+              </div>
+            </div>
+            <div className={styles.dogbox2}>
+              <h3 className={styles.header}>
+                {this.props.parents.vater.parent_full_name}
+              </h3>
+              <h4 className={styles.dob}>
+                {this.props.parents.vater.parent_date_of_birth}
+              </h4>
+              <div className={styles.img}>
+                <img
+                  className={styles.imgRight}
+                  src={this.props.parents.dob.father_image.data.full_url}
+                  alt={this.props.parents.vater.name}
+                ></img>
+              </div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>Von Willebrand/ENM: </td>
+                    <td>
+                      {this.getWillebrand()}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>{this.getLabelPatella()}</td>
+                    <td>
+                      {this.getPatella()}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>{this.getLabelEyes()}</td>
+                    <td>
+                      {this.getEyes()}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>{this.getLabelDentures()}</td>
+                    <td>
+                      {this.getDenturesFather()}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>{this.getLabelHeight()}</td>
+                    <td>{this.props.parents.vater.height}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div className={styles.expositions}>
+                <button onClick={this.showPedigreeFather}>
+                  {this.getButtonPedigree()}
+                </button>
+                <p>{this.props.parents.vater.expositions}</p>
+              </div>
             </div>
           </div>
-          <div className={styles.dogbox2}>
-            <h3 className={styles.header}>
-              {this.props.parents.vater.parent_full_name}
-            </h3>
-            <h4 className={styles.dob}>
-              {this.props.parents.vater.parent_date_of_birth}
-            </h4>
-            <div className={styles.img}>
-              <img
-                className={styles.imgRight}
-                // src={this.props.parents.vater.parent_image.data.full_url}
-                src={this.props.parents.dob.father_image.data.full_url}
-                alt={this.props.parents.vater.name}
-              ></img>
+          <div className={styles.coefficient}>
+            <div>
+              {this.getAlc()}
+              {this.props.parents.dob.alc}
             </div>
-            <table>
-              <tbody>
-                <tr>
-                  <td>Von Willebrand/ENM: </td>
-                  <td>
-                    {this.getWillebrand()}
-                    {/* {this.props.parents.vater.willebrand} */}
-                  </td>
-                </tr>
-                <tr>
-                  <td>{this.getLabelPatella()}</td>
-                  <td>
-                    {this.getPatella()}
-                    {/* {this.props.parents.vater.petella} */}
-                  </td>
-                </tr>
-                <tr>
-                  <td>{this.getLabelEyes()}</td>
-                  <td>
-                    {this.getEyes()}
-                    {/* {this.props.parents.vater.eyes} */}
-                  </td>
-                </tr>
-                <tr>
-                  <td>{this.getLabelDentures()}</td>
-                  <td>
-                    {this.getDenturesFather()}
-                    {/* {this.props.parents.vater.dentures} */}
-                  </td>
-                </tr>
-                <tr>
-                  <td>{this.getLabelHeight()}</td>
-                  <td>{this.props.parents.vater.height}</td>
-                </tr>
-              </tbody>
-            </table>
-            <div className={styles.expositions}>
-              <button onClick={this.showPedigreeFather}>
-                {this.getButtonPedigree()}
-              </button>
-              <p>{this.props.parents.vater.expositions}</p>
+            <div>
+              {this.getIc()}
+              {this.props.parents.dob.ic}
             </div>
           </div>
-        </div>
-        <div className={styles.coefficient}>
-          <div>
-            {this.getAlc()}
-            {this.props.parents.dob.alc}
+          <div className={styles.showPedigreeImage}>
+            <img
+              style={{ display: this.state.showMother }}
+              src={this.props.parents.mutter.pedigree.data.full_url}
+              alt={"Pedigree"}
+              onClick={this.showPedigreeMother}
+            />
+            <img
+              style={{ display: this.state.showFather }}
+              src={this.props.parents.vater.pedigree.data.full_url}
+              alt={"Pedigree"}
+              onClick={this.showPedigreeFather}
+            />
           </div>
-          <div>
-            {this.getIc()}
-            {this.props.parents.dob.ic}
-          </div>
         </div>
-        <div className={styles.showPedigreeImage}>
-          <img
-            style={{ display: this.state.showMother }}
-            src={this.props.parents.mutter.pedigree.data.full_url}
-            alt={"Pedigree"}
-            onClick={this.showPedigreeMother}
-            //let pedigree = result.data[0].pedigree.data.full_url;
-          />
-          <img
-            style={{ display: this.state.showFather }}
-            src={this.props.parents.vater.pedigree.data.full_url}
-            alt={"Pedigree"}
-            onClick={this.showPedigreeFather}
-            //let pedigree = result.data[0].pedigree.data.full_url;
-          />
-        </div>
-      </div>
-    );
+      );
+    }
   }
 }
 

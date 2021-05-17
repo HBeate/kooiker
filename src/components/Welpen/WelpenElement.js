@@ -329,6 +329,7 @@ class WelpenElement extends Component {
           <NewsPuppies
             dob={this.state.litterDOB}
             defaultSwitch={this.props.defaultSwitch}
+            language={this.props.language}
           />
         </div>
       );
@@ -342,6 +343,7 @@ class WelpenElement extends Component {
       return (
         <div>
           <BreedingCardContainer
+           language={this.props.language}
             breedings={this.state.breedings}
             dob={this.state.litterDOB}
             defaultSwitch={this.props.defaultSwitch}
