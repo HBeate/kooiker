@@ -15,7 +15,7 @@ import Contact from "./components/Contact/Contact";
 import Welpen from "./components/Welpen/Welpen";
 import Parents from "./components/Parents/Parents";
 
-//andi
+// main class
 export default class App extends Component {
   constructor(props) {
     super(props);
