@@ -1,21 +1,53 @@
 import React, { Component } from "react";
 import styles from "./Form.module.css";
+import { If } from 'rc-if-else';
+import Success from './Success.js'
 
 class Form extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      firstName: "",
+      lastName: "",
+      userEmail: "",
+      message: "",
+      userTelefonNummber: "",
+      sended: false,
+      notification: "",
+      success:'',
+    };
   }
-  onSubmit = (event) => {
+  componentDidMount() {
+    this.getSuccess() 
+  } 
+
+  changeHandler = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  createFormDataObj = (data) => {
+    const formData = new FormData();
+    Object.keys(data).forEach((k) => {
+      formData.append(k, data[k]);
+    });
+    return formData;
+  };
+
+   sendedStateChange=()=> {
+    setTimeout(() => {  this.setState({ sended: false}); }, 3000);
+  }
+
+   onSubmit = (event) => {
     event.preventDefault();
 
     const data = {
       "form-name": "contact",
       firstName: this.state.firstName,
-      lastName: this.state.lastName,
       message: this.state.message,
       userEmail: this.state.userEmail,
-      userTelefonNummber: this.state.userTelefonNummber,
+      userTelefonNummber: this.state.userTelefonNummber
     };
 
     fetch("/", {
@@ -28,18 +60,15 @@ class Form extends Component {
           notification: "Daten wurden abgeschickt",
           sended: true,
         });
-        // TODO Felder leeren
-        console.log(this.state.notification);
+          this.sendedStateChange();
       })
       .catch((error) => {
-        console.log(error);
         this.setState({
-          notification: "Fehlerlein... " + error,
+          notification: "Fehler... " + error,
           sended: true,
         });
-        console.log(this.state.notification);
       });
-  };
+  }; 
   getName = () => {
     let formName = "";
     switch (this.props.language) {
@@ -96,9 +125,18 @@ class Form extends Component {
     }
     return contactTitle;
   };
+
+  getSuccess=()=>{
+    let suc
+      if(this.props.language==='de'){suc='Nachricht wurde gesendet'}else if (this.props.language==='en'){suc='Message was sent'} else{suc='Le message a été envoyé'}
+      this.setState({
+        success: suc,
+      });
+  }
   render() {
     return (
-      <div className={styles.container}>
+    
+      <div id="contact" className={styles.container}>
         <form
           name="contact"
           method="post"
@@ -110,30 +148,40 @@ class Form extends Component {
           <div className={styles.inputField}>
             <div className={styles.inputNamePhoneContainer}>
               <div className={styles.nameInput}>
-                <input
-                  type="text"
-                  name="name"
+              <input
+                  name="firstName"
+                  value={this.state.firstName}
+                  onChange={(e) => this.changeHandler(e)}
                   placeholder={this.getName()}
                 ></input>
               </div>
               <div className={styles.phoneInput}>
-                <input
-                  type="text"
-                  name="phone"
+              <input
+                  name="userTelefonNummber"
+                  value={this.state.userTelefonNummber}
+                  onChange={(e) => this.changeHandler(e)}
                   placeholder={this.getTelefon()}
-                />
+                ></input>
               </div>
             </div>
           </div>
           <div className={styles.inputFieldMail}>
-            <input type="email" name="email" placeholder="E-Mail" />
+          <input
+                  name="userEmail"
+                  placeholder="E-Mail"
+                  value={this.state.userEmail}
+                  onChange={(e) => this.changeHandler(e)
+                  }
+                ></input>
+           
           </div>
           <div className={styles.inputField}>
-            <textarea
-              type="text"
-              name="comments"
-              placeholder={this.getMessage()}
-            />
+          <textarea
+                  name="message"
+                  value={this.state.message}
+                  onChange={(e) => this.changeHandler(e)}
+                  placeholder={this.getMessage()} 
+                ></textarea>
           </div>
           <div className={styles.buttonCenter}>
             <button className={styles.submitButton} type="submit">
@@ -141,7 +189,9 @@ class Form extends Component {
             </button>
           </div>
         </form>
+        <If condition={this.state.sended} ><Success success={this.state.success}/></If>
       </div>
+
     );
   }
 }

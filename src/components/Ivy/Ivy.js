@@ -69,6 +69,10 @@ class Ivy extends Component {
         showExpositions: "none",
       });
     }
+    setTimeout(() => {
+      if (this.state.show){ window.scrollTo({top: 700, left: 0, behavior: 'smooth' }); }
+      else if (!this.state.show) { window.scrollTo({top: 0, left: 0, behavior: 'smooth' }); }
+    }, 1000);
   };
 
   showImages = () => {
@@ -85,6 +89,10 @@ class Ivy extends Component {
         showExpositions: "none",
       });
     }
+    setTimeout(() => {
+      if (this.state.showGallery){ window.scrollTo({top: 700, left: 0, behavior: 'smooth' }); }
+      else if (!this.state.showGallery) { window.scrollTo({top: 0, left: 0, behavior: 'smooth' }); }
+    }, 1000);
   };
 
   showExpositions = () => {
@@ -101,6 +109,10 @@ class Ivy extends Component {
         showExpositions: "none",
       });
     }
+    setTimeout(() => {
+      if (this.state.showExpositions){ window.scrollTo({top: 800, left: 0, behavior: 'smooth' }); }
+      else if (!this.state.showExpositions)  { window.scrollTo({top: 0, left: 0, behavior: 'smooth' }); }
+    }, 1000);
   };
 
   getWillebrand = () => {
@@ -229,6 +241,7 @@ class Ivy extends Component {
         gallery = "Galerie";
     }
     return gallery;
+ 
   };
 
   getButtonExpositions = () => {
@@ -365,7 +378,7 @@ class Ivy extends Component {
     }
     if (this.state.loaded) {
       return (
-        <div className={styles.container}>
+        <div className={styles.container} id='start'>
           <div>
             <h1 className={styles.mainHeader}>{this.state.dog.name}</h1>
           </div>
