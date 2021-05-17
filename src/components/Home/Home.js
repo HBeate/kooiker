@@ -1,6 +1,6 @@
 
 import "./Home.css";
-import dog1 from "./dog1.jpg";
+import dog1 from "./dog1.jpeg";
 import dog2 from "./dog2.jpg";
 import dog3 from "./dog3.jpg";
 import logo from "./logo.jpg";
