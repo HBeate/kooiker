@@ -347,7 +347,6 @@ class WelpenElement extends Component {
             breedings={this.state.breedings}
             dob={this.state.litterDOB}
             defaultSwitch={this.props.defaultSwitch}
-            language={this.props.language}
           />
         </div>
       );
