@@ -112,6 +112,7 @@ class Navbar extends Component {
             <NavLink to="/"><div className="navigation_logo"><h2>Kooikerhondje</h2><h3>"de la bande de rigolos"</h3></div></NavLink>
             <div className="menu_icon" onClick={this.handleClick}> <i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i></div>
             <ul className={this.state.clicked ? "navigation_menu active" : "navigation_menu"}>
+              <div><p>DEV</p></div>
               <li><NavLink to="/" onClick={this.closeMobileMenu}><i className="fas fa-home"></i> </NavLink></li>
               <li> <NavLink to="/aboutus" onClick={this.closeMobileMenu}> {this.getAboutUS()}</NavLink></li>
               <li><NavLink to="/ivy" onClick={this.closeMobileMenu}>Ivy</NavLink></li>
