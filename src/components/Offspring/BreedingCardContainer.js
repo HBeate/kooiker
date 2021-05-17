@@ -38,8 +38,14 @@ class BreedingCardContainer extends Component {
     return (
       <div className={styles.container}>
         <div className={styles.mainHeaderContainer}>
+          <div>
+
           <h1 className={styles.mainHeader}>In the new Home</h1>
+          </div>
+          <div className={styles.headerButtonBack}>
+
           <button onClick={this.props.defaultSwitch}>Back</button>
+          </div>
         </div>
 
         {this.getBreedings()}
