@@ -1,5 +1,6 @@
 .navigation {
-  background: red; 
+  /* background: red;  */
+  background:  rgb(167, 69, 39);
   height: 80px;
   display: flex;
   align-items: center;
