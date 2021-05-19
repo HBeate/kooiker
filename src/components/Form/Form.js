@@ -36,10 +36,11 @@ class Form extends Component {
   };
 
    sendedStateChange=()=> {
-    setTimeout(() => {  this.setState({ sended: false}); }, 3000);
+    setTimeout(() => {  this.setState({ sended: false, firstName:'',message:'',userEmail:'', userTelefonNummber:''}); }, 3000);
   }
 
    onSubmit = (event) => {
+   
     event.preventDefault();
 
     const data = {
