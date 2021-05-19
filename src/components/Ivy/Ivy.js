@@ -110,7 +110,7 @@ class Ivy extends Component {
       });
     }
     setTimeout(() => {
-      if (this.state.showExpositions){ window.scrollTo({top: 800, left: 0, behavior: 'smooth' }); }
+      if (this.state.showExpositions){ window.scrollTo({top: 600, left: 0, behavior: 'smooth' }); }
       else if (!this.state.showExpositions)  { window.scrollTo({top: 0, left: 0, behavior: 'smooth' }); }
     }, 1000);
   };
