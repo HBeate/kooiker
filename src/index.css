@@ -39,7 +39,7 @@ h1 {
   display: flex;
   justify-items: end;
   padding: 20px 20px;
-  border-bottom: brown solid 2px;
+/*   border-bottom: brown solid 2px; */
 }
 
 button {

@@ -14,6 +14,8 @@ import * as ReactBootStrap from "react-bootstrap";
 import Contact from "./components/Contact/Contact";
 import Welpen from "./components/Welpen/Welpen";
 import Parents from "./components/Parents/Parents";
+import Impressum from "./components/Impressum/Impressum"
+import Datenschutz from "./components/Datenschutz/Datenschutz"
 
 // main class
 export default class App extends Component {
@@ -269,6 +271,20 @@ export default class App extends Component {
                 path="#exLinks"
                 exact
                 render={() => <Home language={this.state.language} />}
+              />
+            </Switch>
+            <Switch>
+              <Route
+                path="/impressum"
+                exact
+                render={() => <Impressum language={this.state.language} />}
+              />
+            </Switch>
+            <Switch>
+              <Route
+                path="/datenschutz"
+                exact
+                render={() => <Datenschutz language={this.state.language} />}
               />
             </Switch>
 

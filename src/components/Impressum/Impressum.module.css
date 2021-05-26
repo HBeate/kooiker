@@ -1,0 +1,46 @@
+body {
+    overflow: scroll;
+  }
+  .container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding: 15px;
+    max-width: 960px;
+    height: 75vh;
+  }
+
+  .content{
+      margin: 20px;
+  }
+  .content p{
+    margin-top: 1rem;
+  }
+
+  .mainHeader {
+    font-size: 2rem;
+    color: brown;
+    display: flex;
+    justify-items: end;
+    padding: 20px 20px;
+    border-bottom: brown solid 2px;
+  }
+
+  .header {
+    font-size: 1.5rem;
+    color: brown;
+    padding-bottom: 8px;
+  }
+
+  .mailImpressum a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    padding-top: 1rem;
+
+}
+.mailImpressum a:hover{
+    text-decoration: none;
+    color: brown;
+
+}

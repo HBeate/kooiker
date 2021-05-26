@@ -33,7 +33,7 @@ class Contact extends Component {
           ></iframe>
         </div>
         <div className={styles.headerKontakt}>
-          <h1>{this.getTitle()}</h1>
+          <h1 >{this.getTitle()}</h1>
         </div>
 
         <div className={styles.contact2}>

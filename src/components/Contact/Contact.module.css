@@ -25,19 +25,25 @@
     font-family: 'Roboto', sans-serif;
     font-size: large;
 }
+.mailContact a:hover{
+    text-decoration: none;
+    color: brown;
+    padding-top: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: large;
+}
 
 .mailContact p{
     font-family: 'Roboto', sans-serif;
     font-size: large;
 }
 
-.headerKontakt{
+.headerKontakt {
     display: flex;
     text-align: center;
     justify-content: center;
-
-    
 }
+
 
 @media (max-width: 800px){
     .contact2{
