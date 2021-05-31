@@ -8,7 +8,7 @@ class Datenschutz extends Component {
     return (
       <div className={styles.container}>
                                     <Helmet> 
-          <title>Datenschutz | Kooikerhondje</title>
+          <title>Privacy Policy | Kooikerhondje</title>
           <meta
             name="description"
             content="Kooikerhondje de la bande de rigolos"
