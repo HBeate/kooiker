@@ -5,6 +5,7 @@ import styles from "./WelpenElement.module.css";
 import Parents from "../Parents/Parents";
 import Constants from "../../helper/Constants";
 import BreedingCardContainer from "../Offspring/BreedingCardContainer";
+import {Helmet} from "react-helmet";
 //test
 class WelpenElement extends Component {
   constructor(props) {
@@ -297,6 +298,18 @@ class WelpenElement extends Component {
     ) {
       return (
         <div className={styles.container}>
+                    <Helmet> 
+          <title>Litter | Kooikerhondje</title>
+          <meta
+            name="description"
+            content="Kooikerhondje de la bande de rigolos"
+          />
+          <meta
+            name="keywords"
+            content="Kooikerhondje, Kooiker, breeding, puppies, France"
+          />
+          <link rel="canonical" href="https://kooiker-fr.com/puppys" />
+          </Helmet>
           <h1 className={styles.mainHeader}>{this.getTitle()}</h1>
           <div>{this.elements()}</div>
         </div>

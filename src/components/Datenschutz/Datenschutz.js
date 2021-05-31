@@ -1,11 +1,24 @@
 import React, { Component } from "react";
 import styles from "./Datenschutz.module.css"; 
+import {Helmet} from "react-helmet";
 
 class Datenschutz extends Component {
   state = {};
   render() {
     return (
       <div className={styles.container}>
+                                    <Helmet> 
+          <title>Datenschutz | Kooikerhondje</title>
+          <meta
+            name="description"
+            content="Kooikerhondje de la bande de rigolos"
+          />
+          <meta
+            name="keywords"
+            content="Kooikerhondje, Kooiker, breeding, puppies, France"
+          />
+          <link rel="canonical" href="https://kooiker-fr.com/datenschutz" />
+          </Helmet>
         <div className={styles.mainHeader}>
           <h1 className="adsimple-111742326">Datenschutzerklärung</h1>
         </div>

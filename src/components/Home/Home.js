@@ -9,6 +9,7 @@ import logo2 from "./logo2.png";
 import Zoom from "react-reveal/Zoom";
 import ParallaxJSXWrapper from "./ParallaxJSXWrapper.js";
 import React, { useEffect, useRef, Fragment } from "react";
+import {Helmet} from "react-helmet";
 
 export default function Home(props) {
   // +++++++++++++++++++++++++++++++++++++++++++++++++
@@ -66,6 +67,18 @@ export default function Home(props) {
 
   return (
     <div className="main_wrapper">
+                                  <Helmet> 
+          <title>Home | Kooikerhondje</title>
+          <meta
+            name="description"
+            content="Kooikerhondje de la bande de rigolos"
+          />
+          <meta
+            name="keywords"
+            content="Kooikerhondje, Kooiker, breeding, puppies, France"
+          />
+          <link rel="canonical" href="https://kooiker-fr.com/" />
+          </Helmet>
       <div className="main_container">
         <div className="section1">
           <BackgroundImage />

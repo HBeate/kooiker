@@ -5,6 +5,7 @@ import Car from "./Carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 // import { GiJumpingDog } from "react-icons/gi";
 import Spinner from "./../Spinner/Spinner";
+import {Helmet} from "react-helmet";
 
 class Aboutus extends Component {
   state = {
@@ -120,7 +121,20 @@ class Aboutus extends Component {
     }
     if (this.state.loaded) {
       return (
+      
         <div className={styles.container}>
+          <Helmet> 
+          <title>About Us | Kooikerhondje</title>
+          <meta
+            name="description"
+            content="Kooikerhondje de la bande de rigolos"
+          />
+          <meta
+            name="keywords"
+            content="Kooikerhondje, Kooiker, breeding, puppies, France"
+          />
+          <link rel="canonical" href="https://kooiker-fr.com/aboutus" />
+          </Helmet>
            <h1 className={styles.mainHeader}>{this.getTitle()}{this.state.title}</h1>
           <div className={styles.aboutUsCard}>
             <div>

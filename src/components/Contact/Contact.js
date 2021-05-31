@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Form from "../Form/Form";
 import styles from "./Contact.module.css";
+import {Helmet} from "react-helmet";
 
 class Contact extends Component {
   state = {};
@@ -21,6 +22,18 @@ class Contact extends Component {
   render() {
     return (
       <div>
+                            <Helmet> 
+          <title>Contact | Kooikerhondje</title>
+          <meta
+            name="description"
+            content="Kooikerhondje de la bande de rigolos"
+          />
+          <meta
+            name="keywords"
+            content="Kooikerhondje, Kooiker, breeding, puppies, France"
+          />
+          <link rel="canonical" href="https://kooiker-fr.com/contact" />
+          </Helmet>
         <div>
           <iframe
             title="GoogleMap"

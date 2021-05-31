@@ -1,11 +1,24 @@
 import React, { Component } from "react";
 import styles from "./Impressum.module.css";
+import {Helmet} from "react-helmet";
 
 class Impressum extends Component {
   state = {};
   render() {
     return (
       <div className={styles.container}>
+                                          <Helmet> 
+          <title>Impressum | Kooikerhondje</title>
+          <meta
+            name="description"
+            content="Kooikerhondje de la bande de rigolos"
+          />
+          <meta
+            name="keywords"
+            content="Kooikerhondje, Kooiker, breeding, puppies, France"
+          />
+          <link rel="canonical" href="https://kooiker-fr.com/impressum" />
+          </Helmet>
         <div >
           <h1 className={styles.mainHeader}>Impressum</h1>
         </div>

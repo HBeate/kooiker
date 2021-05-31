@@ -5,6 +5,7 @@ import ivyImg from "../Ivy/ivy.jpg";
 import ResponsiveGallery from "react-responsive-gallery";
 // import { GiJumpingDog } from "react-icons/gi";
 import Spinner from "./../Spinner/Spinner";
+import {Helmet} from "react-helmet";
 
 class Ivy extends Component {
   constructor(props) {
@@ -379,6 +380,18 @@ class Ivy extends Component {
     if (this.state.loaded) {
       return (
         <div className={styles.container} id='start'>
+                    <Helmet> 
+          <title>Ivy | Kooikerhondje</title>
+          <meta
+            name="description"
+            content="Kooikerhondje de la bande de rigolos"
+          />
+          <meta
+            name="keywords"
+            content="Kooikerhondje, Kooiker, breeding, puppies, France"
+          />
+          <link rel="canonical" href="https://kooiker-fr.com/ivy" />
+          </Helmet>
           <div>
             <h1 className={styles.mainHeader}>{this.state.dog.name}</h1>
           </div>
