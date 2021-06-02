@@ -83,7 +83,7 @@ class Footer extends Component {
         <div>
           <p className={styles.copyright}>
             Copyright&copy;
-            {new Date().getFullYear()}&nbsp;| All Rights Reserverd
+            {new Date().getFullYear()}&nbsp;| All Rights Reserved
           </p>
         </div>
       </div>
