@@ -70,7 +70,7 @@ class Navbar extends Component {
         aboutUS = "About us";
         break;
       default:
-        aboutUS = "à propos de nous";
+        aboutUS = "À propos de nous";
     }
     return aboutUS;
   };

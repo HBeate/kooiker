@@ -5,6 +5,21 @@ import {Helmet} from "react-helmet";
 
 class Contact extends Component {
   state = {};
+
+  getHelmet = () => {
+    let helmet = "";
+    switch (this.props.language) {
+      case "de":
+        helmet = "Kontakt";
+        break;
+      case "en":
+        helmet = "Contact";
+        break;
+      default:
+        helmet = "Contacter";
+    }
+    return helmet;
+  }; 
   getTitle = () => {
     let contactTitle = "";
     switch (this.props.language) {
@@ -23,7 +38,7 @@ class Contact extends Component {
     return (
       <div>
                             <Helmet> 
-          <title>Contact | Kooikerhondje</title>
+          <title>{this.getHelmet()} | Kooikerhondje</title>
           <meta
             name="description"
             content="Kooikerhondje de la bande de rigolos"

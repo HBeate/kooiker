@@ -107,6 +107,22 @@ class Aboutus extends Component {
     return tempdata;
   };
 
+
+  getHelmet = () => {
+    let helmet = "";
+    switch (this.props.language) {
+      case "de":
+        helmet = "Über uns";
+        break;
+      case "en":
+        helmet = "About us";
+        break;
+      default:
+        helmet = "À propos de nous";
+    }
+    return helmet;
+  }; 
+
   getTitle=()=>{
     let title='';
     if(this.props.language==='de'){title = this.state.titleDE}
@@ -124,7 +140,7 @@ class Aboutus extends Component {
       
         <div className={styles.container}>
           <Helmet> 
-          <title>About Us | Kooikerhondje</title>
+          <title>{this.getHelmet()}| Kooikerhondje</title>
           <meta
             name="description"
             content="Kooikerhondje de la bande de rigolos"

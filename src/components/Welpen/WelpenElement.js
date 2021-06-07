@@ -134,6 +134,21 @@ class WelpenElement extends Component {
     }
   };
 
+  getHelmet = () => {
+    let helmet = "";
+    switch (this.props.language) {
+      case "de":
+        helmet = "Würfe";
+        break;
+      case "en":
+        helmet = "Litter";
+        break;
+      default:
+        helmet = "Portees";
+    }
+    return helmet;
+  }; 
+
   getTitle = () => {
     let elementsTitle = "";
     switch (this.props.language) {
@@ -299,7 +314,7 @@ class WelpenElement extends Component {
       return (
         <div className={styles.container}>
                     <Helmet> 
-          <title>Litter | Kooikerhondje</title>
+          <title>{this.getHelmet()} | Kooikerhondje</title>
           <meta
             name="description"
             content="Kooikerhondje de la bande de rigolos"

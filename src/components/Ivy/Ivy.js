@@ -56,6 +56,7 @@ class Ivy extends Component {
       });
   }
 
+
   showPedigree = () => {
     if (this.state.show === "none") {
       this.setState({
