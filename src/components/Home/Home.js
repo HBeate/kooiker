@@ -68,7 +68,7 @@ export default function Home(props) {
   return (
     <div className="main_wrapper">
                                   <Helmet> 
-          <title>Home | Kooikerhondje</title>
+          <title>Kooikerhondje "de la bande de rigolos"</title>
           <meta
             name="description"
             content="Kooikerhondje de la bande de rigolos"
