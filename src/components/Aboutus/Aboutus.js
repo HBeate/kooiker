@@ -140,7 +140,7 @@ class Aboutus extends Component {
       
         <div className={styles.container}>
           <Helmet> 
-          <title>{this.getHelmet()}| Kooikerhondje</title>
+          <title>{this.getHelmet()} | Kooikerhondje</title>
           <meta
             name="description"
             content="Kooikerhondje de la bande de rigolos"
