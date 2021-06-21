@@ -11,6 +11,7 @@
     "bootstrap": "^4.6.0",
     "chokidar": "^3.5.1",
     "get-user-locale": "^1.4.0",
+    "pro-gallery": "^3.1.24",
     "public-id": "^1.1.0",
     "public-ip": "^4.0.3",
     "rc-if-else": "^1.1.0",
