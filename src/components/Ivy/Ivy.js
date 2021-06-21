@@ -463,10 +463,9 @@ class Ivy extends Component {
       hoveringBehaviour: "DISAPPEARS",
       overlayBackground: "rgba(8,8,8,0)",
      itemBorderRadius: 5,
- /*      itemEnableShadow: true,
-      itemBorderColor: "rgba(255,255,255,1)", */
-           videoPlay: 'auto',
            hidePlay: false,
+           videoPlay: 'auto',
+           videoLoop: false,
 
     };
 
