@@ -463,8 +463,8 @@ class Ivy extends Component {
       hoveringBehaviour: "DISAPPEARS",
       overlayBackground: "rgba(8,8,8,0)",
      itemBorderRadius: 5,
-           hidePlay: false,
-           videoPlay: 'auto',
+     //      hidePlay: false,
+      //     videoPlay: 'auto',
            videoLoop: false,
 
     };
