@@ -465,7 +465,7 @@ class Ivy extends Component {
      itemBorderRadius: 5,
  /*      itemEnableShadow: true,
       itemBorderColor: "rgba(255,255,255,1)", */
-      //     videoPlay: 'auto',
+           videoPlay: 'auto',
            hidePlay: false,
 
     };
