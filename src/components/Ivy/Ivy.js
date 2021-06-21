@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import Constants from "../../helper/Constants";
 import styles from "./Ivy.module.css";
 import ivyImg from "../Ivy/ivy.jpg";
+import ResponsiveGallery from "react-responsive-gallery";
+// import { GiJumpingDog } from "react-icons/gi";
 import Spinner from "./../Spinner/Spinner";
-import { ProGallery } from "pro-gallery";
-import "pro-gallery/dist/statics/main.css";
+import {Helmet} from "react-helmet";
 
 class Ivy extends Component {
   constructor(props) {
@@ -17,11 +18,11 @@ class Ivy extends Component {
       images: [],
       loaded: false,
       expositions: [],
-      one: "",
-      two: "",
-      three: "",
-      four: "",
-      five: "",
+      one: '',
+      two:'',
+      three:'',
+      four:'',
+      five:''
     };
   }
   componentDidMount() {
@@ -32,45 +33,11 @@ class Ivy extends Component {
         let pedigree = result.data[0].pedigree.data.full_url;
         let images = [];
         result.data[0].images.forEach((element) => {
-          if (element.directus_files_id.type === "image/jpeg") {
-            console.log(element);
-            images.push({
-              itemId: element.directus_files_id.data.id,
-              mediaUrl: element.directus_files_id.data.full_url,
-              metaData: {
-                type: "image",
-                height: element.directus_files_id.height,
-                width: element.directus_files_id.width,
-                title: element.directus_files_id.title,
-                description: element.directus_files_id.type,
-                focalPoint: [0, 0],
-                link: {
-                  url: element.directus_files_id.data.full_url,
-                  target: "_blank",
-                },
-              },
-            });
-          } else {
-            console.log(element, "lala");
-            images.push({
-              // Video Item:
-              itemId: element.directus_files_id.data.id,
-              mediaUrl: element.directus_files_id.data.full_url,
-              metaData: {
-                type: "video",
-                height: 200,
-                width: 200,
-                poster: { ivyImg },
-                title: element.directus_files_id.title,
-                description: element.directus_files_id.type,
-                focalPoint: [0, 0],
-                link: {
-                  url: element.directus_files_id.data.full_url,
-                  target: "_blank",
-                },
-              },
-            });
-          }
+          if(element.directus_files_id.type==='image/jpeg'){
+          images.push({
+            src: element.directus_files_id.data.thumbnails[5].url,
+          });
+        }
         });
         this.setState({
           images: images,
@@ -89,6 +56,7 @@ class Ivy extends Component {
       });
   }
 
+
   showPedigree = () => {
     if (this.state.show === "none") {
       this.setState({
@@ -104,11 +72,8 @@ class Ivy extends Component {
       });
     }
     setTimeout(() => {
-      if (this.state.show) {
-        window.scrollTo({ top: 700, left: 0, behavior: "smooth" });
-      } else if (!this.state.show) {
-        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-      }
+      if (this.state.show){ window.scrollTo({top: 700, left: 0, behavior: 'smooth' }); }
+      else if (!this.state.show) { window.scrollTo({top: 0, left: 0, behavior: 'smooth' }); }
     }, 1000);
   };
 
@@ -127,11 +92,8 @@ class Ivy extends Component {
       });
     }
     setTimeout(() => {
-      if (this.state.showGallery) {
-        window.scrollTo({ top: 700, left: 0, behavior: "smooth" });
-      } else if (!this.state.showGallery) {
-        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-      }
+      if (this.state.showGallery){ window.scrollTo({top: 700, left: 0, behavior: 'smooth' }); }
+      else if (!this.state.showGallery) { window.scrollTo({top: 0, left: 0, behavior: 'smooth' }); }
     }, 1000);
   };
 
@@ -150,11 +112,8 @@ class Ivy extends Component {
       });
     }
     setTimeout(() => {
-      if (this.state.showExpositions) {
-        window.scrollTo({ top: 800, left: 0, behavior: "smooth" });
-      } else if (!this.state.showExpositions) {
-        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-      }
+      if (this.state.showExpositions){ window.scrollTo({top: 700, left: 0, behavior: 'smooth' }); }
+      else if (!this.state.showExpositions)  { window.scrollTo({top: 0, left: 0, behavior: 'smooth' }); }
     }, 1000);
   };
 
@@ -171,8 +130,8 @@ class Ivy extends Component {
         willebrand = "indemne";
     }
     return willebrand;
-  };
-  getTwo = () => {
+  }; 
+   getTwo = () => {
     let two = "";
     switch (this.props.language) {
       case "de":
@@ -185,9 +144,9 @@ class Ivy extends Component {
         two = "Luxation de la rotule: ";
     }
     return two;
-  };
+  }; 
 
-  getPatella = () => {
+   getPatella = () => {
     let patella = "";
     switch (this.props.language) {
       case "de":
@@ -200,7 +159,7 @@ class Ivy extends Component {
         patella = "indemne";
     }
     return patella;
-  };
+  }; 
   getThree = () => {
     let three = "";
     switch (this.props.language) {
@@ -228,7 +187,7 @@ class Ivy extends Component {
         eyes = "indemne";
     }
     return eyes;
-  };
+  }; 
   getFour = () => {
     let four = "";
     switch (this.props.language) {
@@ -284,6 +243,7 @@ class Ivy extends Component {
         gallery = "Galerie";
     }
     return gallery;
+ 
   };
 
   getButtonExpositions = () => {
@@ -301,33 +261,34 @@ class Ivy extends Component {
     return expositions;
   };
 
+  
   getDentures = () => {
     let dentures = "";
     switch (this.props.language) {
       case "de":
-        if (this.state.dog.gebiss === "schere") {
+        if(this.state.dog.gebiss==='schere'){
           dentures = "Schere";
-        } else if (this.state.dog.gebiss === "komplette Schere") {
+        } else if (this.state.dog.gebiss==='komplette Schere'){
           dentures = "komplette Schere";
-        } else {
+        }else{
           dentures = "Zangengebiss";
         }
         break;
       case "en":
-        if (this.state.dog.gebiss === "schere") {
+        if(this.state.dog.gebiss==='schere'){
           dentures = "scissors";
-        } else if (this.state.dog.gebiss === "komplette Schere") {
+        } else if (this.state.dog.gebiss==='komplette Schere'){
           dentures = "complete scissors";
-        } else {
+        }else{
           dentures = "pincer bite";
         }
         break;
       default:
-        if (this.state.dog.gebiss === "schere") {
+        if(this.state.dog.gebiss==='schere'){
           dentures = "ciseaux";
-        } else if (this.state.dog.gebiss === "komplette Schere") {
+        } else if (this.state.dog.gebiss==='komplette Schere'){
           dentures = "ciseaux complets";
-        } else {
+        }else{
           dentures = "articulé en pince";
         }
     }
@@ -353,141 +314,85 @@ class Ivy extends Component {
     let txtExpositions = "";
     switch (this.props.language) {
       case "de":
-        txtExpositions =
-          "Internationale Rassehundeausstellung in Tarbes am 18.11.2018 \n Offene Klasse, Richter: Roger Barenne \n Bewertung: excellent, CACIB, CACS, Rassebeste";
+        txtExpositions = "Internationale Rassehundeausstellung in Tarbes am 18.11.2018 \n Offene Klasse, Richter: Roger Barenne \n Bewertung: excellent, CACIB, CACS, Rassebeste";
         break;
       case "en":
-        txtExpositions =
-          "International Dog Show in Tarbes on 18.11.2018  \n Open class, judge: Roger Barenne \n Ration: excellent, CACIB, CACS, Best of Breed";
+        txtExpositions = "International Dog Show in Tarbes on 18.11.2018  \n Open class, judge: Roger Barenne \n Ration: excellent, CACIB, CACS, Best of Breed";
         break;
       default:
-        txtExpositions =
-          "Exposition canine à Tarbes le 18.11.2018 \n Clase ouverte, juge: Roger Barenne \n Classement: excellent, CACIB, CACS, Meilleur de race";
+        txtExpositions = "Exposition canine à Tarbes le 18.11.2018 \n Clase ouverte, juge: Roger Barenne \n Classement: excellent, CACIB, CACS, Meilleur de race";
     }
     return txtExpositions;
   };
-  getText = () => {
-    if (this.props.language === "en") {
-      return (
-        <div>
-          {" "}
-          <p className={styles.mainText}>
-            Even though we had dogs (Leonberger and Tervueren) and two cats, I
-            had a growing feeling that I needed a new task. I’m retired and I
-            have always been very fond of dogs. Since we have plenty of space
-            and time I decided to start breeding them. I wanted it to be a
-            special breed, one that was not too common. After some investigation
-            I came upon the Nederlandse Kooikerhondje. Character, appearance and
-            size of this breed was immediately appealing to me. Since my husband
-            agreed to fully support me the way forward was clear.
-          </p>
-          <p className={styles.mainText}>
-            After some efforts I discovered the breeding site of Beate van
-            Schelve/Wolfgang Brüner which was very attractive in all respects.
-            We contacted the owners and after giving them some insight into our
-            personal situation and living conditions we were added to the
-            waiting list. Finally, after one year we were taken into account for
-            the I-litter. At the beginning of Juli 2017 a good friend of mine
-            and I drove 14 hours to pick up the puppy. The drive was long and
-            quite tiring but it was definitely worth it. We are all - people as
-            well as animials - very happy with our new family member.
-          </p>
-        </div>
-      );
-    } else if (this.props.language === "de") {
-      return (
-        <div>
-          {" "}
-          <p className={styles.mainText}>
-            Trotz unserer Hunde (Leonberger und Tervueren) und zwei Katzen hatte
-            ich je länger je mehr das Gefühl, mein beschauliches
-            Pensionistendasein mit einer neuen Aufgabe aufwerten zu müssen. Da
-            ich zeitlebens schon immer sehr hundeaffin war, Platz und Zeit genug
-            vorhanden sind, lag der Aufbau einer kleinen Zucht nahe. Es sollte
-            allerdings etwas Besonderes sein, sprich eine seltene Rasse. Nach
-            längeren Recherchen stiess ich auf das Nederlandse Kooikerhondje.
-            Charakter, Aussehen und Grösse dieser Rasse haben mich sofort
-            angesprochen. Nachdem mir mein Mann seine uneingeschränkte
-            Unterstützung zusagte, war der weitere Weg klar.
-          </p>
-          <p className={styles.mainText}>
-            Nach längeren Bemühungen stiess ich auf die Zuchtstätte von Beate
-            van Schelve/Wolfgang Brüner, die mir in jeder Hinsicht sehr zusagte.
-            Nach Kontaktaufnahme und Offenlegung unserer persönlichen und
-            wohnlichen Situation wurde ich auf die Warteliste genommen. Endlich
-            - nach Ablauf eines Jahres - wurde ich beim I-Wurf berücksichtigt.
-            Mit einer guten Freundin machte ich mich Anfang Juli 2017 auf die
-            14-stündige Autofahrt, um die kleine Fellnase abzuholen. Der Weg war
-            lang und ziemlich beschwerlich, hat sich aber auf jeden Fall
-            gelohnt; wir alle - Mensch und Tier - sind mit dem Nachwuchs sehr
-            glücklich!
-          </p>
-        </div>
-      );
-    } else {
-      return (
-        <div>
-          {" "}
-          <p className={styles.mainText}>
-            Malgré nos chiens (Leonberger et Tervueren) et deux chats, j’ai eu
-            le sentiment que ma retraite contemplative serait enrichie par une
-            nouvelle tâche. Comme j’ai toujours eu beaucoup d’intérêt pour les
-            chiens, que l’espace et le temps sont suffisants, la mise en place
-            d’un élevage canin était une évidence. Mais cela devrait être
-            quelque chose de spécial, une race rare. Après quelques recherches,
-            je suis tombé sur le Nederlandse Kooikerhondje. Le caractère,
-            l’apparence et la taille de cette race m’ont immédiatement séduite.
-          </p>
-          <p className={styles.mainText}>
-            Après de longues recherches, je suis tombée sur l’élevage Beate van
-            Schelve/Wolfgang Brüner en Allemagne, qui m’a convenu à tous les
-            égards. Après avoir pris contact et donné des informations sur notre
-            situation personnelle et sur notre environnement de vie, j’ai été
-            mise sur la liste d’attente. Finalement - après un an - j’ai été
-            retenue pour la portée I. Début juillet 2017, je me suis mise en
-            route avec une amie pour 14 heures de route pour aller chercher la
-            petite boule de poils. Le voyage a été long et ardu, mais le jeu en
-            valait la chandelle; nous sommes tous - humains et animaux - très
-            heureux de la nouvelle progénitur!{" "}
-          </p>
-        </div>
-      );
+  getText=()=>{
+    if(this.props.language==='en'){
+      return(          <div>
+        {" "}
+        <p className={styles.mainText}>
+          Even though we had dogs (Leonberger and Tervueren) and two cats, I
+          had a growing feeling that I needed a new task. I’m retired and I
+          have always been very fond of dogs. Since we have plenty of space
+          and time I decided to start breeding them. I wanted it to be a
+          special breed, one that was not too common. After some
+          investigation I came upon the Nederlandse Kooikerhondje.
+          Character, appearance and size of this breed was immediately
+          appealing to me. Since my husband agreed to fully support me the
+          way forward was clear.
+        </p>
+        <p className={styles.mainText}>
+          After some efforts I discovered the breeding site of Beate van
+          Schelve/Wolfgang Brüner which was very attractive in all respects.
+          We contacted the owners and after giving them some insight into
+          our personal situation and living conditions we were added to the
+          waiting list. Finally, after one year we were taken into account
+          for the I-litter. At the beginning of Juli 2017 a good friend of
+          mine and I drove 14 hours to pick up the puppy. The drive was long
+          and quite tiring but it was definitely worth it. We are all -
+          people as well as animials - very happy with our new family
+          member.
+        </p>
+      </div>)
     }
-  };
+    else if(this.props.language==='de'){
+       return(          <div>
+        {" "}
+        <p className={styles.mainText}>
+        Trotz unserer Hunde (Leonberger und Tervueren) und zwei Katzen hatte ich je länger je mehr das Gefühl, mein beschauliches Pensionistendasein mit einer neuen Aufgabe aufwerten zu müssen. Da ich zeitlebens schon immer sehr hundeaffin war, Platz und Zeit genug vorhanden sind, lag der Aufbau einer kleinen Zucht nahe. Es sollte allerdings etwas Besonderes sein, sprich eine seltene Rasse. Nach längeren Recherchen stiess ich auf das Nederlandse Kooikerhondje. Charakter, Aussehen und Grösse dieser Rasse haben mich sofort angesprochen. Nachdem mir mein Mann seine uneingeschränkte Unterstützung zusagte, war der weitere Weg klar.
+        </p>
+        <p className={styles.mainText}>
+        Nach längeren Bemühungen stiess ich auf die Zuchtstätte von Beate van Schelve/Wolfgang Brüner, die mir in jeder Hinsicht sehr zusagte. Nach Kontaktaufnahme und Offenlegung unserer persönlichen und wohnlichen Situation wurde ich auf die Warteliste genommen. Endlich - nach Ablauf eines Jahres - wurde ich beim I-Wurf berücksichtigt. Mit einer guten Freundin machte ich mich Anfang Juli 2017 auf die 14-stündige Autofahrt, um die kleine Fellnase abzuholen. Der Weg war lang und ziemlich beschwerlich, hat sich aber auf jeden Fall gelohnt; wir alle - Mensch und Tier - sind mit dem Nachwuchs sehr glücklich!
+        </p>
+      </div>)
+    }
+    else {return(<div>
+      {" "}
+      <p className={styles.mainText}>
+      Malgré nos chiens (Leonberger et Tervueren) et deux chats, j’ai eu le sentiment que ma retraite contemplative serait enrichie par une nouvelle tâche. Comme j’ai toujours eu beaucoup d’intérêt pour les chiens, que l’espace et le temps sont suffisants, la mise en place d’un élevage canin était une évidence. Mais cela devrait être quelque chose de spécial, une race rare. Après quelques recherches, je suis tombé sur le Nederlandse Kooikerhondje. Le caractère, l’apparence et la taille de cette race m’ont immédiatement séduite.
+      </p>
+      <p className={styles.mainText}>
+      Après de longues recherches, je suis tombée sur l’élevage Beate van Schelve/Wolfgang Brüner en Allemagne, qui m’a convenu à tous les égards. Après avoir pris contact et donné des informations sur notre situation personnelle et sur notre environnement de vie, j’ai été mise sur la liste d’attente. Finalement - après un an - j’ai été retenue pour la portée I. Début juillet 2017, je me suis mise en route avec une amie pour 14 heures de route pour aller chercher la petite boule de poils. Le voyage a été long et ardu, mais le jeu en valait la chandelle; nous sommes tous - humains et animaux - très heureux de la nouvelle progénitur!      </p>
+    </div>)}
+        
+    }
   render() {
-    // The options of the gallery (from the playground current state)
-    const options = {
-      galleryLayout: -1,
-       groupSize: 0,
-     imageMargin: 3,
-      hoveringBehaviour: "DISAPPEARS",
-      overlayBackground: "rgba(8,8,8,0)",
-     itemBorderRadius: 5,
-     //      hidePlay: false,
-      //     videoPlay: 'auto',
-           videoLoop: false,
-
-    };
-
-    // The size of the gallery container. The images will fit themselves in it
-    const box = {
-      width: /* window.innerWidth */ 900,
-      height: window.innerHeight,
-    };
-
-    // The eventsListener will notify you anytime something has happened in the gallery.
-    const eventsListener = (eventName, eventData) =>
-      console.log({ eventName, eventData });
-
-    // The scrollingElement is usually the window, if you are scrolling inside another element, suplly it here
-    const scrollingElement = window;
-
     if (!this.state.loaded) {
-      return <Spinner />;
+      return(<Spinner/>)
     }
     if (this.state.loaded) {
       return (
-        <div className={styles.container} id="start">
+        <div className={styles.container} id='start'>
+                    <Helmet> 
+          <title>Ivy | Kooikerhondje</title>
+          <meta
+            name="description"
+            content="Kooikerhondje de la bande de rigolos"
+          />
+          <meta
+            name="keywords"
+            content="Kooikerhondje, Kooiker, breeding, puppies, France"
+          />
+          <link rel="canonical" href="https://kooiker-fr.com/ivy" />
+          </Helmet>
           <div>
             <h1 className={styles.mainHeader}>{this.state.dog.name}</h1>
           </div>
@@ -505,19 +410,21 @@ class Ivy extends Component {
                     <tbody>
                       <tr>
                         <td>Von Willebrand/ENM: </td>
-                        <td>{this.getWillebrand()}</td>
+                        <td>{this.getWillebrand()}{/* {this.state.dog.willebrand} */}</td>
                       </tr>
                       <tr>
                         <td>{this.getTwo()} </td>
-                        <td>{this.getPatella()}</td>
+                        <td>{this.getPatella()}{/* {this.state.dog.petella} */}</td>
                       </tr>
                       <tr>
                         <td>{this.getThree()} </td>
-                        <td>{this.getEyes()}</td>
+                        <td>{this.getEyes()}{/* {this.state.dog.eyes} */}</td>
                       </tr>
                       <tr>
                         <td>{this.getFour()} </td>
-                        <td>{this.getDentures()}</td>
+                        {/* <td>{this.state.dog.dentures}</td> */}
+                         {/* <td>{this.state.dog.gebiss}</td> */}
+                         <td>{this.getDentures()}</td>
                       </tr>
                       <tr>
                         <td>{this.getFive()} </td>
@@ -526,8 +433,9 @@ class Ivy extends Component {
                     </tbody>
                   </table>
                   <div className={styles.expositions}>
-                    {this.getLinebreak(this.getTextAusstellungen())}
-                  </div>
+                                {this.getLinebreak(this.getTextAusstellungen())}
+{/*                     <p>{this.getTextAusstellungen()}{ {this.state.dog.expositions} }</p>
+ */}                  </div>
                 </div>
               </div>
 
@@ -541,15 +449,16 @@ class Ivy extends Component {
             </div>
           </div>
           {this.getText()}
+
           <div className={styles.ivyButtonPage}>
-            <button onClick={this.showPedigree}>
-              {this.getButtonPedigree()}
-            </button>
+            <button onClick={this.showPedigree}>{this.getButtonPedigree()}</button>
+
             <button onClick={this.showImages}>{this.getButtonGallery()}</button>
-            <button onClick={this.showExpositions}>
-              {this.getButtonExpositions(this.props.language)}
-            </button>
+
+            <button onClick={this.showExpositions}>{this.getButtonExpositions(this.props.language)}</button>
+         
           </div>
+
           <div className={styles.showPedigreeImage}>
             <img
               style={{ display: this.state.show }}
@@ -560,20 +469,20 @@ class Ivy extends Component {
           </div>
           <div style={{ display: this.state.showGallery }}>
             <div className={styles.showGalleryIvyPage}>
-              <ProGallery
-                items={this.state.images}
-                options={options}
-                container={box}
-                eventsListener={eventsListener}
-                scrollingElement={scrollingElement}
+              <ResponsiveGallery
+                images={this.state.images}
+                useLightBox={true}
               />
             </div>
           </div>
           <div className={styles.expositionsIvyPage}>
+
             <div style={{ display: this.state.showExpositions }}>
-              <div className={styles.txtExpositions}>
-                {this.getLinebreak(this.getTextAusstellungen())}{" "}
-              </div>
+            <div className={styles.txtExpositions}>{this.getLinebreak(this.getTextAusstellungen())} </div>
+
+{/*             {this.getTextAusstellungen()} */}
+{/* 
+              {this.state.expositions.text} */}
             </div>
             <div className={styles.expositionsIvyPageImage}>
               <img
@@ -585,7 +494,9 @@ class Ivy extends Component {
                 alt={
                   this.state.expositions.certificates[0].directus_files_id.title
                 }
+                
               />
+            
               <img
                 style={{ display: this.state.showExpositions }}
                 src={
@@ -595,6 +506,7 @@ class Ivy extends Component {
                 alt={
                   this.state.expositions.certificates[1].directus_files_id.title
                 }
+                
               />
               <img
                 style={{ display: this.state.showExpositions }}
@@ -605,6 +517,7 @@ class Ivy extends Component {
                 alt={
                   this.state.expositions.certificates[2].directus_files_id.title
                 }
+                
               />
             </div>
           </div>
