@@ -38,7 +38,7 @@ class Contact extends Component {
 
         <div className={styles.contact2}>
           <div className={styles.mailContact}>
-            <p>Chemin de Lannegrand; 32400 Fustérouau</p>
+            <p>165 Chemin de Lannegrand; 32400 Fustérouau</p>
             <a
               className={styles.iFrame}
               href="mailto: helga-henny@kooiker-fr.com"
