@@ -96,7 +96,7 @@ export default function Home(props) {
                 <li><a href="https://www.vom-haus-tusburch.de/" target="_blank" rel="noreferrer">Vom Haus Tusburch</a></li>
                 <li><a href="http://www.rundumahund.com/" target="_blank" rel="noreferrer">Rund uma Hund</a></li>
                 <li><a href="https://www.cdc-goetzis.at/" target="_blank" rel="noreferrer">cdc Götzis</a></li>
-                <li><a href="https://www.shinothekooiker.ch/" target="_blank" rel="noreferrer">Shino de la bande de rigolos</a></li></ul>
+                <li><a href="https://www.shinothekooiker.ch/" target="_blank" rel="noreferrer">Shino the Kooiker</a></li></ul>
             </div>
           </div>
         </div>
