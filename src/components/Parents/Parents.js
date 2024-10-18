@@ -298,7 +298,7 @@ class Parents extends Component {
         alc = "ALC ";
         break;
       default:
-        alc = "Le CS est de ";
+        alc = "TAD ";
     }
     return alc;
   };
@@ -313,7 +313,7 @@ class Parents extends Component {
         ic = "IC ";
         break;
       default:
-        ic = "L'indice d'implexe est de ";
+        ic = "CC ";
     }
     return ic;
   };
