@@ -292,13 +292,13 @@ class Parents extends Component {
     let alc = "";
     switch (this.props.language) {
       case "de":
-        alc = "AVK ";
+        alc = "AVK  ";
         break;
       case "en":
-        alc = "ALC ";
+        alc = "ALC  ";
         break;
       default:
-        alc = "TAD ";
+        alc = "TAD  ";
     }
     return alc;
   };
@@ -307,13 +307,13 @@ class Parents extends Component {
     let ic = "";
     switch (this.props.language) {
       case "de":
-        ic = "IK ";
+        ic = "IK  ";
         break;
       case "en":
-        ic = "IC ";
+        ic = "IC  ";
         break;
       default:
-        ic = "COI ";
+        ic = "COI  ";
     }
     return ic;
   };
