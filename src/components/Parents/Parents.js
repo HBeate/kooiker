@@ -313,7 +313,7 @@ class Parents extends Component {
         ic = "IC ";
         break;
       default:
-        ic = "CC ";
+        ic = "COI ";
     }
     return ic;
   };
