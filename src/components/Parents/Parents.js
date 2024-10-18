@@ -292,7 +292,7 @@ class Parents extends Component {
     let alc = "";
     switch (this.props.language) {
       case "de":
-        alc = "Inzuchtgradkoeffizient ";
+        alc = "Ahnenverlust ";
         break;
       case "en":
         alc = "ALC ";
@@ -307,7 +307,7 @@ class Parents extends Component {
     let ic = "";
     switch (this.props.language) {
       case "de":
-        ic = "Ahnenverlust ";
+        ic = "Inzuchtgradkoeffizient ";
         break;
       case "en":
         ic = "IC ";
