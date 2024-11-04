@@ -409,7 +409,7 @@ class Ivy extends Component {
                   <table>
                     <tbody>
                       <tr>
-                        <td>Von Willebrand/ENM: </td>
+                        <td>Von Willebrand/ENM/PM: </td>
                         <td>{this.getWillebrand()}{/* {this.state.dog.willebrand} */}</td>
                       </tr>
                       <tr>
