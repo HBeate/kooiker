@@ -368,7 +368,7 @@ class Parents extends Component {
               <table>
                 <tbody>
                   <tr>
-                    <td>Von Willebrand/ENM: </td>
+                    <td>Von Willebrand/ENM/PM: </td>
                     <td>
                       {this.getWillebrand()}
                     </td>
